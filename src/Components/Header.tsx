@@ -90,7 +90,7 @@ export default function Header() {
                     <Link href="/about">ABOUT US</Link>
                     <Link href="/">HOW IT WORKS</Link>
                     <Link href="/">COST ESTIMATOR</Link>
-                    <Link href="/">CONTACT US</Link>
+                    <Link href="/contact-us">CONTACT US</Link>
                     <span className="flex items-center gap-1 text-black">
                         <Zap className="w-4 h-4 text-red-500" />
                         ZERO COST EMI
@@ -132,7 +132,7 @@ export default function Header() {
                     <Link href="/about" className="text-black block">ABOUT US</Link>
                     <Link href="/" className="text-black block">HOW IT WORKS</Link>
                     <Link href="/" className="text-black block">COST ESTIMATOR</Link>
-                    <Link href="/" className="text-black block">CONTACT US</Link>
+                    <Link href="/contact-us" className="text-black block">CONTACT US</Link>
                     <span className="flex items-center gap-1 text-black">
                         <Zap className="w-4 h-4 text-red-500 block" />
                         <span className="text-black">
