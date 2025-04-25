@@ -87,7 +87,7 @@ export default function Header() {
                         <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
                         HOME
                     </span>
-                    <Link href="/">ABOUT US</Link>
+                    <Link href="/about">ABOUT US</Link>
                     <Link href="/">HOW IT WORKS</Link>
                     <Link href="/">COST ESTIMATOR</Link>
                     <Link href="/">CONTACT US</Link>
@@ -129,7 +129,7 @@ export default function Header() {
                         <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
                         HOME
                     </div>
-                    <Link href="/" className="text-black block">ABOUT US</Link>
+                    <Link href="/about" className="text-black block">ABOUT US</Link>
                     <Link href="/" className="text-black block">HOW IT WORKS</Link>
                     <Link href="/" className="text-black block">COST ESTIMATOR</Link>
                     <Link href="/" className="text-black block">CONTACT US</Link>
