@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from "next/image";
 
 
 interface Option {
@@ -46,7 +45,7 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
                 <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-500">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <rect x="24" width="24" height="24" transform="rotate(90 24 0)" fill="#F55252" />
-                        <path fillRule="evenodd" clip-rule="evenodd" d="M17.5059 10.7024L16.0028 9.19931L11.9965 13.2056L7.99023 9.19937L6.48718 10.7024L10.4953 14.7106L11.9966 13.2093L13.4977 14.7105L17.5059 10.7024Z" fill="white" />
+                        <path fillRule="evenodd" clipRule="evenodd" d="M17.5059 10.7024L16.0028 9.19931L11.9965 13.2056L7.99023 9.19937L6.48718 10.7024L10.4953 14.7106L11.9966 13.2093L13.4977 14.7105L17.5059 10.7024Z" fill="white" />
                     </svg>
                 </div>
             </div>
