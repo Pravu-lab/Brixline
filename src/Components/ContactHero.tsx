@@ -16,7 +16,7 @@ const ContactHero = () => {
     })
     const enquiryTypeOption = [{ label: "social", value: "Social" }]
   return (
-    <Section className="" >
+    <Section className="!py-0" >
     <div className="grid lg:grid-cols-2 grid-cols-1 items-center relative bg-gray-100">
         {/* Left side: Image */}
         <div className="relative h-[500px] md:h-full">
