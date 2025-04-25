@@ -44,7 +44,7 @@ const Hero = () => {
           </div>
 
           <Button className="bg-[#F55252] flex justify-evenly items-center w-[282px] border-[#F55252] mt-[20px]">
-            <span className="text-sm text-white leading-[100%]">DOWNLOAD THE BROCHURE</span>
+            <span className="text-sm text-white leading-[100%] font-bold">DOWNLOAD THE BROCHURE</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
               <g clipPath="url(#clip0_266_1416)">
                 <path d="M24.0416 17L16.9706 24.0711L9.89951 17" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
