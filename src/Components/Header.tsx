@@ -59,7 +59,7 @@ export default function Header() {
                         </button>
 
                         {dropdownOpen && (
-                            <div className="absolute left-0 mt-1 bg-[rgba(245,82,82,0.10)] backdrop-blur-2xl shadow-md w-32 min-w-40 text-right z-[1000]">
+                            <div className="absolute mt-1 bg-[rgba(245,82,82,0.10)] backdrop-blur-2xl shadow-md w-32 min-w-40 text-right z-[1000]">
                                 {cities.map((city) => (
                                     <div
                                         key={city}
