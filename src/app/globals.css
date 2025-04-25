@@ -44,7 +44,7 @@ body {
 
 /* Apply Inter to all tags by default */
 body, html, * {
-  font-family: var(--font-intertight);
+  font-family: var(--font-inter);
 }
 
 /* Override font for all span tags */
