@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from "react";
-import { Menu, X, Zap } from "lucide-react";
+import { Zap } from "lucide-react";
+import Link from "next/link";
 
 export default function Header() {
     const [mobileOpen, setMobileOpen] = useState(false);
@@ -86,10 +87,10 @@ export default function Header() {
                         <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
                         HOME
                     </span>
-                    <a href="/">ABOUT US</a>
-                    <a href="/">HOW IT WORKS</a>
-                    <a href="/">COST ESTIMATOR</a>
-                    <a href="/">CONTACT US</a>
+                    <Link href="/">ABOUT US</Link>
+                    <Link href="/">HOW IT WORKS</Link>
+                    <Link href="/">COST ESTIMATOR</Link>
+                    <Link href="/">CONTACT US</Link>
                     <span className="flex items-center gap-1 text-black">
                         <Zap className="w-4 h-4 text-red-500" />
                         ZERO COST EMI
@@ -128,10 +129,10 @@ export default function Header() {
                         <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
                         HOME
                     </div>
-                    <a href="/" className="text-black block">ABOUT US</a>
-                    <a href="/" className="text-black block">HOW IT WORKS</a>
-                    <a href="/" className="text-black block">COST ESTIMATOR</a>
-                    <a href="/" className="text-black block">CONTACT US</a>
+                    <Link href="/" className="text-black block">ABOUT US</Link>
+                    <Link href="/" className="text-black block">HOW IT WORKS</Link>
+                    <Link href="/" className="text-black block">COST ESTIMATOR</Link>
+                    <Link href="/" className="text-black block">CONTACT US</Link>
                     <span className="flex items-center gap-1 text-black">
                         <Zap className="w-4 h-4 text-red-500 block" />
                         <span className="text-black">

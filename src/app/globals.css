@@ -3,13 +3,32 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --viewportDesktop: 1440;
 }
 
-@theme inline {
+@font-face {
+  font-family: 'Biter';
+  src: url('../../public/fonts/Bitter-Bold.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter Tight';
+  src: url('../../public/fonts/InterTight-Light.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-helvetica: "Helvetica Neue", "sans-serif";
+  --font-inter:"Inter Tight";
+  --font-biter:"Biter"
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,7 +39,43 @@
 }
 
 body {
-  background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Apply Inter to all tags by default */
+body, html, * {
+  font-family: var(--font-intertight);
+}
+
+/* Override font for all span tags */
+h1 {
+  font-family: var(--font-biter);
+}
+
+/* Utility class for title font size */
+.clamp-title {
+  font-size: clamp(
+    24px,
+    calc(48 * (100vw / var(--viewportDesktop))),
+    48px
+  );
+  line-height: 120%;
+  font-weight: 500;
+}
+
+/* Utility class for description font size */
+.clamp-description {
+  font-size: clamp(
+    14px,
+    calc(16 * (100vw / var(--viewportDesktop))),
+    16px
+  );
+  line-height: 140%;
+}
+
+.clamp-title-82 {
+  font-size: clamp(40px, 6.5vw, 82px);
+  line-height: 120%;
+  font-weight: 600;
+}
+
