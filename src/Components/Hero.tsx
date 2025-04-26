@@ -21,7 +21,7 @@ const Hero = () => {
     <div className="tracking-wide overflow-hidden w-full">
       <header
         className={`backdrop-blur shadow-sm p-8 ${mobileOpen ? 'h-[100dvh]' : 'h-auto'
-          } sm:h-auto transition-all duration-300 overflow-hidden absolute bottom-0 left-0 z-[999] w-full`}
+          } sm:h-auto transition-all duration-300 overflow-hidden absolute bottom-0 left-0 z-[999] w-full mt-16`}
       >
         <div className="max-w-screen-xl mx-auto flex justify-between items-center">
           {/* Logo + City */}
