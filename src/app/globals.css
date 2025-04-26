@@ -44,7 +44,7 @@ body {
 
 /* Apply Inter to all tags by default */
 body, html, * {
-  font-family: var(--font-intertight);
+  font-family: var(--font-inter);
 }
 
 /* Override font for all span tags */
@@ -67,7 +67,7 @@ h1 {
 .clamp-description {
   font-size: clamp(
     14px,
-    calc(16 * (100vw / var(--viewportDesktop))),
+    calc(18 * (100vw / var(--viewportDesktop))),
     16px
   );
   line-height: 140%;
@@ -79,3 +79,25 @@ h1 {
   font-weight: 600;
 }
 
+.slick-slide {
+  transition: transform 0.3s ease-in-out;
+}
+
+.slick-slide:not(.slick-center){
+  scale: 0.8;
+}
+.overlay-image {
+  position: absolute;
+  inset: 0;
+  background-image: url('../../public/slideroverlay.png'); /* Replace with your overlay image path */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none; /* so the overlay doesn't block interactions */
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.slick-slide:not(.slick-center) .overlay-image {
+  opacity: 1;
+}

@@ -10,16 +10,37 @@ const slides = [
   {
     year: 2024,
     image: "/service1.png",
+    title: "Crossed 600 Units Mark.",
     text: "Launched 5 New Projects. Expanded Our Real Estate Reach.",
   },
   {
     year: 2023,
-    image: "/service1.png",
-    text: "Crossed 600 Units Mark. We Have Booked Projects Which Will Provide Home To 600+ Families.",
+    image: "/service2.png",
+    title: "Crossed 600 Units Mark.",
+    text: "We Have Booked Projects Which Will Provide Home To 600+ Families.",
   },
   {
     year: 2022,
     image: "/service1.png",
+    title: "Crossed 600 Units Mark.",
+    text: "Launched 5 New Projects. Expanded Our Real Estate Reach.",
+  },
+  {
+    year: 2024,
+    image: "/service1.png",
+    title: "Crossed 600 Units Mark.",
+    text: "Launched 5 New Projects. Expanded Our Real Estate Reach.",
+  },
+  {
+    year: 2023,
+    image: "/service2.png",
+    title: "Crossed 600 Units Mark.",
+    text: " We Have Booked Projects Which Will Provide Home To 600+ Families.",
+  },
+  {
+    year: 2022,
+    image: "/service1.png",
+    title: "Crossed 600 Units Mark.",
     text: "Launched 5 New Projects. Expanded Our Real Estate Reach.",
   },
 ];
@@ -30,23 +51,31 @@ interface ArrowProps {
 
 const NextArrow = ({ onClick }: ArrowProps) => (
   <div
-    className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 cursor-pointer"
+    className="absolute right-10 top-1/2 transform -translate-y-1/2 z-10 cursor-pointer"
     onClick={onClick}
   >
-    <div className="bg-red-500 hover:bg-red-600 text-white w-10 h-10 rounded-4 flex items-center justify-center shadow-md">
-      <span className="text-lg font-bold">›</span>
-    </div>
+    <Image
+                  src="/svg/right-button.svg"
+                  alt="go-next"
+                  width={60}
+                  height={60}
+                  className="w-13 h-13"
+                />
   </div>
 );
 
 const PrevArrow = ({ onClick }: ArrowProps) => (
   <div
-    className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 cursor-pointer"
+    className="absolute left-10 top-1/2 transform -translate-y-1/2 z-10 cursor-pointer"
     onClick={onClick}
   >
-    <div className="bg-red-500 hover:bg-red-600 text-white w-10 h-10 rounded-4 flex items-center justify-center shadow-md">
-      <span className="text-lg font-bold">‹</span>
-    </div>
+    <Image
+                src="/svg/left-button.svg"
+                alt="go-previous"
+                width={60}
+                height={60}
+                className="w-13 h-13"
+              />
   </div>
 );
 
@@ -59,26 +88,18 @@ const AboutUsSlider = () => {
   );
 
   const settings = {
-    className: "center",
     centerMode: true,
-    dots: true,
+    className: "center",
+    dots: false,
     arrows: true,
     infinite: true,
+    centerPadding: "30px",
     slidesToShow: 3,
     speed: 500,
     beforeChange: (_: number, next: number) => setActiveSlide(next),
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
-    customPaging: () => (
-      <div className="flex flex-col items-center gap-1 group">
-        <div className="dot-indicator w-4 h-4 border-2 rounded-full transition-colors duration-200 bg-black" />
-      </div>
-    ),
-    appendDots: (dots: React.ReactNode) => (
-      <div className="mt-6">
-        <ul className="flex justify-center gap-6">{dots}</ul>
-      </div>
-    ),
+    
   };
 
   const getAnimatedYear = () => {
@@ -104,41 +125,60 @@ const AboutUsSlider = () => {
       );
     });
   };
-
-  return (
-    <div className="w-full text-center slider-container">
-      <Slider {...settings}>
-        {slides.map((slide, index) => (
-          <div key={index}>
-            <Image
-              src={slide.image}
-              alt={`Slide ${index}`}
-              width={400}
-              height={288}
-              className="mx-auto object-cover rounded-xl shadow"
-            />
-          </div>
-        ))}
-      </Slider>
-
-      <div className="flex justify-between">
-        <div className="text-red-500 font-extrabold text-5xl mt-6 tracking-wider">
-          {getAnimatedYear()}
-        </div>
-
-        <div className="mt-4 px-6">
-          <AnimatePresence>
-            <motion.p
+  const getAnimatedText=()=>{
+    return(
+    <span className="block w-full relative text-center mx-auto">
+      <AnimatePresence>
+            <motion.div
               key={activeSlide}
               initial={{ x: 100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: -100, opacity: 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="text-gray-700 text-lg"
+              className="text-gray-700 text-lg absolute w-full bottom-0 translate-y-1/2"
             >
+              <p className="text-[#F55252] font-bold">{slides[activeSlide].title}</p>
               {slides[activeSlide].text}
-            </motion.p>
+            </motion.div>
           </AnimatePresence>
+    </span>)
+  }
+
+  return (
+    <div className=" slider-container my-10">
+      <Slider {...settings}>
+        {slides.map((slide, index) => (
+          <div key={index} className="relative">
+            <Image
+              src={slide.image}
+              alt={`Slide ${index}`}
+              width={400}
+              height={288}
+              className="mx-auto object-cover shadow"
+            />
+            <div className="overlay-image"></div>
+          </div>
+        ))}
+      </Slider>
+
+      <div className="flex justify-between items-center my-5">
+        <div className="text-red-500 font-extrabold text-5xl tracking-wider">
+          {getAnimatedYear()}
+        </div>
+
+        <div className=" px-6 w-1/2 h-full">
+          {getAnimatedText()}
+        </div>
+        <div className="custom-dots">
+          <ul className="flex gap-2 justify-end items-baseline">
+            {slides.map((_, index) => (
+              <li
+                key={index}
+              >
+                <div className={`dot-indicator w-2 h-2 border-2 ${activeSlide === index ? "bg-[#ef4444] h-4 mb-0.5" : "bg-black"}`}></div>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>
