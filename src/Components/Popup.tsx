@@ -1,14 +1,34 @@
-'use client'; // Marking this file as a Client Component
+"use client";
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Button } from './Tag';
-import { PackageDetails as AllPackages } from '@/lib/PackageDetails';
 
+type PackageKey = 'basic_package' | 'standard_package' | 'premium_package' | 'elite_package';
 
-export default function MobileQuotePopup({ setOpen }: { setOpen: (open: boolean) => void }) {
+interface PackageData {
+  price: string;
+  data: Section[];
+}
+interface Section {
+  title: string;
+  items: string[];
+}
+
+interface MobileQuotePopupProps {
+  setOpen: (open: boolean) => void;
+  setSelectedPackageKey: (key: PackageKey) => void;
+  selectedPackageKey: PackageKey;
+  AllPackages: Record<PackageKey, PackageData>; // AllPackages will be an object with keys as PackageKey and values as PackageData
+}
+export default function MobileQuotePopup({
+  setOpen,
+  setSelectedPackageKey,
+  selectedPackageKey,
+  AllPackages
+}: MobileQuotePopupProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const selectRef = useRef<HTMLSelectElement | null>(null); // Define the ref type
 
-  const [selectedPackageKey, setSelectedPackageKey] = useState<'basic_package' | 'standard_package' | 'premium_package' | 'elite_package'>('basic_package');
   const data = AllPackages[selectedPackageKey];
 
   const handleClose = () => {
@@ -16,13 +36,14 @@ export default function MobileQuotePopup({ setOpen }: { setOpen: (open: boolean)
   };
 
   const handlePackageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedPackageKey(e.target.value as 'basic_package' | 'standard_package' | 'premium_package' | 'elite_package');
-    setOpenIndex(0); // Reset accordion when package changes
+    setSelectedPackageKey(e.target.value as PackageKey);
+    setOpenIndex(0); // Reset accordion
   };
 
   return (
     <div className="fixed inset-0 z-50 bg-gradient-to-b from-black to-neutral-900 text-white flex w-full">
       <div className="flex flex-col sm:flex-row h-full w-full relative">
+
         {/* Form Section */}
         <div className="relative w-full sm:w-[70%]">
           <div className="flex justify-end p-4 absolute top-0 right-0">
@@ -52,15 +73,16 @@ export default function MobileQuotePopup({ setOpen }: { setOpen: (open: boolean)
           </div>
         </div>
 
-        {/* Pricing Accordion Section */}
+        {/* Accordion Section */}
         <div className="bg-[#1a1a1a] text-white p-4 w-full max-w-md mx-auto rounded-md overflow-y-auto">
           <div className="text-center">
-            <h2 className="text-3xl font-bold">{data.price}</h2>
+            <h2 className="text-3xl font-bold">₹ {data.price}</h2>
             <p className="text-sm">/sq.ft (Incl. GST)</p>
 
-            {/* Dropdown to select package */}
+            {/* Dropdown */}
             <div className="mt-2 px-3 py-1 inline-block text-xs font-semibold rounded bg-[#F55252]">
               <select
+                ref={selectRef}
                 value={selectedPackageKey}
                 onChange={handlePackageChange}
                 className="bg-transparent text-white text-xs font-semibold appearance-none focus:outline-none"
@@ -70,39 +92,43 @@ export default function MobileQuotePopup({ setOpen }: { setOpen: (open: boolean)
                 <option value="premium_package">PREMIUM PACKAGE</option>
                 <option value="elite_package">ELITE PACKAGE</option>
               </select>
-              <span className="ml-1 inline-block align-middle">▼</span>
+              <span
+                className="ml-1 inline-block align-middle cursor-pointer"
+                onClick={() => selectRef.current?.focus()} // Focus the select when arrow is clicked
+              >
+                ▼
+              </span>
+            </div>
+
+
+
+            <div className="mt-6 divide-y divide-gray-700">
+              {data.data.map((section: Section, index: number) => {
+                const isOpen = openIndex === index;
+                return (
+                  <div key={section.title} className="py-4">
+                    <div
+                      className="flex justify-between items-center cursor-pointer"
+                      onClick={() => setOpenIndex(isOpen ? null : index)}
+                    >
+                      <h3 className="font-semibold text-lg">{section.title}</h3>
+                      <button className="w-6 h-6 text-sm font-bold rounded-sm bg-[#F55252]">
+                        {isOpen ? '–' : '+'}
+                      </button>
+                    </div>
+                    {isOpen && (
+                      <ul className="mt-3 text-sm text-gray-300 space-y-1 pl-2 text-left">
+                        {section.items.map((item: string, i: number) => (
+                          <li key={i}>• {item}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </div>
 
-          <div className="mt-6 divide-y divide-gray-700">
-            {data.data.map((section, index) => {
-              const isOpen = openIndex === index;
-              return (
-                <div key={section.title} className="py-4">
-                  <div
-                    className="flex justify-between items-center cursor-pointer"
-                    onClick={() => setOpenIndex(isOpen ? null : index)}
-                  >
-                    <h3 className="font-semibold text-lg">{section.title}</h3>
-                    <button
-                      className={`w-6 h-6 text-sm font-bold rounded-sm ${
-                        isOpen ? 'bg-[#F55252]' : 'bg-[#F55252]'
-                      }`}
-                    >
-                      {isOpen ? '–' : '+'}
-                    </button>
-                  </div>
-                  {isOpen && (
-                    <ul className="mt-3 text-sm text-gray-300 space-y-1 pl-2">
-                      {section.items.map((item, i) => (
-                        <li key={i}>• {item}</li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              );
-            })}
-          </div>
         </div>
       </div>
     </div>
