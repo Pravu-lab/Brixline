@@ -1,6 +1,5 @@
 import React from 'react'
 import { Button, Description, Title } from './Tag'
-import Image from 'next/image';
 
 const HomeCalculation = () => {
   return (
