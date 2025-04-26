@@ -1,6 +1,6 @@
 import FAQ from "@/Components/FAQ/Faq";
 import FooterSection from "@/Components/Footer";
-import Header from "@/Components/Header";
+
 import Hero from "@/Components/Hero";
 import HomeCalculation from "@/Components/HomeCalculation";
 import HomePackagesSection from "@/Components/HomePackagesSection";
@@ -13,7 +13,6 @@ import Work from "@/Components/Work";
 export default function Home() {
   return (
     <>
-    <Header/> 
     <Hero/>
     <WhyChooseUs/>
     <HomeCalculation/>
