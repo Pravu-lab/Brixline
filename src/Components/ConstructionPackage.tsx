@@ -28,8 +28,8 @@ const ConstructionPackage = () => {
   const dataKeys = Object.keys(PackageDetails);
 
   return (
-    <Section className="flex flex-col justify-center bg-[#0000001A] w-full">
-      <div className="w-[90%] m-auto text-center">
+    <Section className="flex flex-col justify-center bg-[#0000001A] !w-full">
+      <div className=" m-auto text-center">
         <SubTitle>DISCOVER</SubTitle>
         <Title className="text-black">
           Our Home Construction<br /> Packages
