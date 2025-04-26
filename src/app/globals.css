@@ -60,7 +60,7 @@ h1 {
     48px
   );
   line-height: 120%;
-  font-weight: 500;
+
 }
 
 /* Utility class for description font size */
@@ -70,7 +70,7 @@ h1 {
     calc(16 * (100vw / var(--viewportDesktop))),
     16px
   );
-  line-height: 140%;
+  line-height: 160%;
 }
 
 .clamp-title-82 {
@@ -100,4 +100,17 @@ h1 {
 }
 .slick-slide:not(.slick-center) .overlay-image {
   opacity: 1;
+}
+
+.ticker {
+  animation: tickerMove 10s linear infinite;
+}
+
+@keyframes tickerMove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
