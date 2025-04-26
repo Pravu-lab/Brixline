@@ -20,8 +20,8 @@ const Hero = () => {
   return (
     <div className="tracking-wide overflow-hidden w-full">
       <header
-        className={`bg-white shadow-sm p-8 ${mobileOpen ? 'h-[100dvh]' : 'h-auto'
-          } sm:h-auto transition-all duration-300 overflow-hidden`}
+        className={`backdrop-blur shadow-sm p-8 ${mobileOpen ? 'h-[100dvh]' : 'h-auto'
+          } sm:h-auto transition-all duration-300 overflow-hidden absolute bottom-0 left-0 z-[999] w-full`}
       >
         <div className="max-w-screen-xl mx-auto flex justify-between items-center">
           {/* Logo + City */}
@@ -85,14 +85,14 @@ const Hero = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex gap-6 items-center text-sm font-semibold text-black uppercase">
-            <span className="flex items-center gap-1 text-red-500">
+            <Link href="/" className="flex items-center gap-1 text-red-500">
               <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
               HOME
-            </span>
-            <Link href="/about">ABOUT US</Link>
-            <Link href="/how-it-works">HOW IT WORKS</Link>
-            <Link href="/cost-estimator">COST ESTIMATOR</Link>
-            <Link href="/contact-us">CONTACT US</Link>
+            </Link>
+            <Link className="text-white" href="/about">ABOUT US</Link>
+            <Link className="text-white" href="/how-it-works">HOW IT WORKS</Link>
+            <Link className="text-white" href="/cost-estimator">COST ESTIMATOR</Link>
+            <Link className="text-white" href="/contact-us">CONTACT US</Link>
             {/* <span className="flex items-center gap-1 text-black">
                         <Zap className="w-4 h-4 text-red-500" />
                         ZERO COST EMI

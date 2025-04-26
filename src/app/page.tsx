@@ -1,5 +1,6 @@
 import FAQ from "@/Components/FAQ/Faq";
 import FooterSection from "@/Components/Footer";
+import Header from "@/Components/Header";
 import Hero from "@/Components/Hero";
 import HomeCalculation from "@/Components/HomeCalculation";
 import HomePackagesSection from "@/Components/HomePackagesSection";
