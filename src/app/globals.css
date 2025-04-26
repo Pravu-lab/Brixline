@@ -67,7 +67,7 @@ h1 {
 .clamp-description {
   font-size: clamp(
     14px,
-    calc(18 * (100vw / var(--viewportDesktop))),
+    calc(16 * (100vw / var(--viewportDesktop))),
     16px
   );
   line-height: 140%;
