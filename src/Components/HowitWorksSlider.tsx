@@ -106,7 +106,7 @@ export default function HowitWorksSlider() {
     }
   });
 
-  const useIsMobile = (() => {
+  const useIsMobile = () => {
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
@@ -121,8 +121,9 @@ export default function HowitWorksSlider() {
     }, []);
 
     return isMobile;
-  })();
+  };
 
+  const isMobile=useIsMobile()
   const titleX = useTransform(scrollYProgress, [0, 0.3], ["0vw", "-28vw"]);
   const titleY = useTransform(scrollYProgress, [0, 0.3], ["0vh", "0vh"]);
 
@@ -145,7 +146,7 @@ export default function HowitWorksSlider() {
 
   return (
     <div ref={ref} className="h-[400vh] w-screen relative">
-      {!useIsMobile ? (
+      {!isMobile ? (
         <div className="sticky top-0 h-screen w-full overflow-hidden mx-auto">
           <div className="absolute left-6 top-1/2 transform -translate-y-1/2 h-64 w-2 bg-gray-300 rounded-full overflow-hidden z-50">
             <motion.div
@@ -235,7 +236,7 @@ export default function HowitWorksSlider() {
                     <img
                       src={slide.image}
                       alt="Slide 1"
-                      className="w-[300px] mx-auto object-cover mb-4"
+                      className="w-[150px] mx-auto object-cover mb-4"
                     />
                     <div className=" flex items-end gap-[15px]">
                       <span className="text-[#F55252] text-[18px]/[120%] font-bold">{`0${
