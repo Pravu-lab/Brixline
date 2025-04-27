@@ -24,10 +24,16 @@ export default function HomePackagesSection() {
     setOpen(true);
   };
 
+  const [isCommercial, setIsCommercial] = useState(false);
+
+  const handleToggle = () => {
+    setIsCommercial((prev) => !prev);
+  };
+
   return (
     <Section className='flex pr-0 sm:!w-full items-center gap-[10%]'>
       {/* Left Section */}
-      <div className='sm:ml-[5%]'>
+      <div className='sm:ml-[5%] w-full'>
         <SubTitle>Discover</SubTitle>
         <Title className="text-black text-left">Our Home Construction Packages</Title>
         <Description className="text-black opacity-50">
@@ -44,38 +50,66 @@ export default function HomePackagesSection() {
               <rect x="2.32306" y="4.45142" width="5.2" height="1.2" transform="rotate(45 2.32306 4.45142)" fill="white" />
             </svg>
           </button>
-          <div className="flex items-center gap-4">
-            <span className="text-xs font-medium text-black">Residential</span>
-            <div className="relative inline-block w-10 mr-2 align-middle select-none">
-              <input type="checkbox" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" />
-              <label className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer" />
-            </div>
-            <span className="text-xs font-medium text-gray-400">Commercial</span>
+          <div className="flex items-center gap-6 flex-wrap">
+          {/* Residential */}
+          <span className={`text-xs font-medium ${isCommercial ? 'text-gray-400' : 'text-black'} transition-all duration-300`}>
+            Residential
+          </span>
+
+          {/* Toggle Button */}
+          <div className="relative inline-block w-12 mr-2 align-middle select-none">
+            <input
+              id="toggle"
+              type="checkbox"
+              checked={isCommercial}
+              onChange={handleToggle}
+              className="peer absolute w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer transition-transform duration-300 ease-in-out checked:translate-x-6"
+            />
+            <label
+              htmlFor="toggle"
+              className="block h-6 bg-gray-300 rounded-full transition-colors duration-300 ease-in-out peer-checked:bg-[#F55252] cursor-pointer"
+            />
           </div>
+
+          {/* Commercial */}
+          <span className={`text-xs font-medium ${isCommercial ? 'text-black' : 'text-gray-400'} transition-all duration-300`}>
+            Commercial
+          </span>
+        </div>
+
         </div>
 
         {/* Package Cards */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 gap-4 mt-6 w-full">
-          {packages.map((pkg, i) => (
-            <div
-              key={i}
-              className="bg-[#F55252] text-white p-6 w-full flex flex-col sm:flex-row justify-between md:items-center"
-            >
-              <div>
-                <h3 className="text-xl font-bold">₹ {pkg.price}</h3>
-                <p className="text-sm">/sq.ft (Incl. GST)</p>
-                <div className="mt-4 text-sm font-semibold">{pkg.label}</div>
-              </div>
-              <div onClick={() => handleClick(pkg.key)} role="button" aria-label="Open Quote Popup">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31" fill="none">
-                  <rect y="0.5" width="30" height="30" fill="white" />
-                  <rect x="7" y="7.5" width="13" height="3" fill="#F55252" />
-                  <rect x="20" y="23.5" width="13" height="3" transform="rotate(-90 20 23.5)" fill="#F55252" />
-                </svg>
-              </div>
+        <div className="mt-6 w-full">
+          {!isCommercial ? (
+            <div className="grid grid-cols-2 sm:grid-cols-2 gap-4">
+              {packages.map((pkg, i) => (
+                <div
+                  key={i}
+                  className="bg-[#F55252] text-white p-6 w-full flex flex-col sm:flex-row justify-between md:items-center"
+                >
+                  <div>
+                    <h3 className="text-xl font-bold">₹ {pkg.price}</h3>
+                    <p className="text-sm">/sq.ft (Incl. GST)</p>
+                    <div className="mt-4 text-sm font-semibold">{pkg.label}</div>
+                  </div>
+                  <div onClick={() => handleClick(pkg.key)} role="button" aria-label="Open Quote Popup">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31" fill="none">
+                      <rect y="0.5" width="30" height="30" fill="white" />
+                      <rect x="7" y="7.5" width="13" height="3" fill="#F55252" />
+                      <rect x="20" y="23.5" width="13" height="3" transform="rotate(-90 20 23.5)" fill="#F55252" />
+                    </svg>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+          ) : (
+            <div className="flex justify-center items-center h-40 bg-gray-100 rounded-lg">
+              <span className="text-lg font-semibold text-gray-500">Coming Soon 🚧</span>
+            </div>
+          )}
         </div>
+
       </div>
 
       {/* Right Image */}

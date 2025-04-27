@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { Zap } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from 'next/navigation';
+
 
 export default function Header() {
     const [mobileOpen, setMobileOpen] = useState(false);
@@ -15,6 +17,8 @@ export default function Header() {
         setSelectedCity(city);
         setDropdownOpen(false);
     };
+
+    const pathname = usePathname();
 
     return (
         // <header
@@ -87,14 +91,40 @@ export default function Header() {
 
                 {/* Desktop Navigation */}
                 <nav className="hidden md:flex gap-6 items-center text-sm font-semibold text-black uppercase">
-                    <Link href="/" className="flex items-center gap-1 text-red-500">
-                        <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
+                    <Link href="/" className={`flex items-center gap-1 ${pathname === '/' ? 'text-red-500' : ''}`}>
+                        {pathname === '/' && (
+                            <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
+                        )}
                         HOME
                     </Link>
-                    <Link href="/about">ABOUT US</Link>
-                    <Link href="/how-it-works">HOW IT WORKS</Link>
-                    <Link href="/cost-estimator">COST ESTIMATOR</Link>
-                    <Link href="/contact-us">CONTACT US</Link>
+
+                    <Link href="/about" className={`${pathname === '/about' ? 'text-red-500' : ''}`}>
+                        {pathname === '/about' && (
+                            <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
+                        )}
+                        ABOUT US
+                    </Link>
+
+                    <Link href="/how-it-works" className={`${pathname === '/how-it-works' ? 'text-red-500' : ''}`}>
+                        {pathname === '/how-it-works' && (
+                            <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
+                        )}
+                        HOW IT WORKS
+                    </Link>
+
+                    <Link href="/cost-estimator" className={`${pathname === '/cost-estimator' ? 'text-red-500' : ''}`}>
+                        {pathname === '/cost-estimator' && (
+                            <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
+                        )}
+                        COST ESTIMATOR
+                    </Link>
+
+                    <Link href="/contact-us" className={`${pathname === '/contact-us' ? 'text-red-500' : ''}`}>
+                        {pathname === '/contact-us' && (
+                            <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
+                        )}
+                        CONTACT US
+                    </Link>
                     {/* <span className="flex items-center gap-1 text-black">
                         <Zap className="w-4 h-4 text-red-500" />
                         ZERO COST EMI
