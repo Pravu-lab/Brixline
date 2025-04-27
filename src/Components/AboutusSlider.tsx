@@ -180,6 +180,7 @@ const AboutUsSlider = () => {
             ))}
           </ul>
         </div>
+        
       </div>
     </div>
   );

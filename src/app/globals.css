@@ -40,6 +40,7 @@
 
 body {
   color: var(--foreground);
+  overflow-x: hidden;
 }
 
 /* Apply Inter to all tags by default */

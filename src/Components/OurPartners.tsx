@@ -17,42 +17,42 @@ const OurPartners = () => {
           alt="house-image-2"
           width={500}
           height={500}
-          className="max-w-[122px] w-full"
+          className="max-w-[122px] w-full h-fit"
         />
         <Image
           src="/partner2.png"
           alt="house-image-2"
           width={500}
           height={500}
-          className="max-w-[122px] w-full"
+          className="max-w-[122px] w-full h-fit"
         />
         <Image
           src="/partner3.png"
           alt="house-image-2"
           width={500}
           height={500}
-          className="max-w-[122px] w-full"
+          className="max-w-[122px] w-full h-fit"
         />
         <Image
           src="/partner4.png"
           alt="house-image-2"
           width={500}
           height={500}
-          className="max-w-[122px] w-full"
+          className="max-w-[122px] w-full h-fit"
         />
         <Image
           src="/partner5.png"
           alt="house-image-2"
           width={500}
           height={500}
-          className="max-w-[122px] w-full"
+          className="max-w-[122px] w-full h-fit"
         />
         <Image
           src="/partner6.png"
           alt="house-image-2"
           width={500}
           height={500}
-          className="max-w-[122px] w-full"
+          className="max-w-[122px] w-full h-fit"
         />
       </div>
 
