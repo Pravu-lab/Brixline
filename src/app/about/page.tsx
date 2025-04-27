@@ -15,8 +15,8 @@ const page = () => {
 <AboutHero/>
 <AboutUsSlider/>
 <Aboutus/>
-<HowitWorksSlider/>
 <FounderSection/>
+<HowitWorksSlider/>
 <OurPartners/>
 <FooterSection/>
     </>
