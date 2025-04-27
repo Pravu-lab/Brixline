@@ -87,10 +87,10 @@ export default function Header() {
 
                 {/* Desktop Navigation */}
                 <nav className="hidden md:flex gap-6 items-center text-sm font-semibold text-black uppercase">
-                    <span className="flex items-center gap-1 text-red-500">
+                    <Link href="/" className="flex items-center gap-1 text-red-500">
                         <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
                         HOME
-                    </span>
+                    </Link>
                     <Link href="/about">ABOUT US</Link>
                     <Link href="/how-it-works">HOW IT WORKS</Link>
                     <Link href="/cost-estimator">COST ESTIMATOR</Link>

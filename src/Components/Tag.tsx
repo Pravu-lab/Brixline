@@ -17,7 +17,7 @@ export const Section: React.FC<TagProps> = ({ children, className }) => {
 
 
 export const Title: React.FC<TagProps> = ({ children, className }) => {
-    const baseClasses = 'text-center font-medium clamp-title mb-4';
+    const baseClasses = 'text-center clamp-title mb-4 font-bold';
     return (
     <h2 className={`${baseClasses} ${className || ''}`}>
       {children}
@@ -44,7 +44,7 @@ export const SubTitle: React.FC<TagProps> = ({ children, className }) => {
 };
 
 export const Description: React.FC<TagProps> = ({ children, className }) => {
-    const baseClasses = 'my-0 clamp-description';
+    const baseClasses = 'my-0 clamp-description font-bold leading-[140%]';
   return (
     <p className={`${baseClasses} ${className || ''}`}>
       {children}

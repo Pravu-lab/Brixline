@@ -60,7 +60,7 @@ h1 {
     48px
   );
   line-height: 120%;
-  font-weight: 500;
+
 }
 
 /* Utility class for description font size */
@@ -70,7 +70,7 @@ h1 {
     calc(16 * (100vw / var(--viewportDesktop))),
     16px
   );
-  line-height: 140%;
+  line-height: 160%;
 }
 
 .clamp-title-82 {

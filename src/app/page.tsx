@@ -12,7 +12,6 @@ import Work from "@/Components/Work";
 export default function Home() {
   return (
     <>
-    {/* <Header/> */}
     <Hero/>
     <WhyChooseUs/>
     <HomeCalculation/>

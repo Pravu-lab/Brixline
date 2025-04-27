@@ -20,7 +20,7 @@ const CostEstimetor = () => {
             {/* Right Side */}
             <div className="justify-center w-full hidden sm:flex">
                 <Image
-                    src="/png/costestimator.png"
+                    src="/costEstimetor.png"
                     alt="bookwithus"
                     width={634}
                     height={100}

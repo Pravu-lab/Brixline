@@ -22,7 +22,7 @@ export default function EstimatePage() {
   });
   const [estimates, setEstimates] = useState<Estimate[]>([]);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setForm(prev => ({ ...prev, [name]: value }));
   };
@@ -83,15 +83,52 @@ export default function EstimatePage() {
   };
 
   return (
-    <Section className=" bg-white py-4 justify-center">
+    <Section className=" bg-white py-4 justify-center !pt-0">
       <div className="w-full">
-        <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-3 gap-4 bg-black text-white p-6 rounded-md">
+        <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-3 gap-4 bg-black text-white p-6">
           <input name="name" placeholder="First Name" onChange={handleChange} required className="p-3 text-black bg-white" />
           <input name="contact" placeholder="Contact Number" onChange={handleChange} required className="p-3 text-black bg-white" />
           <input name="location" placeholder="Location of Plot" onChange={handleChange} required className="p-3 text-black bg-white" />
-          <input name="builtUpArea" type="number" placeholder="Super Built Up Area (sq.ft)*" onChange={handleChange} required className="p-3 text-black bg-white" />
-          <input name="carParkingUnits" type="number" placeholder="No Of Car Parking (130 sq.ft/unit)*" onChange={handleChange} required className="p-3 text-black bg-white" />
-          <input name="balconyArea" type="number" placeholder="Balcony & Utility Area (sq.ft)*" onChange={handleChange} required className="p-3 text-black bg-white" />
+          <input name="builtUpArea" type="number" placeholder="Super Built Up Area (sq.ft)*" onChange={handleChange} required className="p-3 text-black bg-white [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none" />
+          <div className="relative w-full">
+  <select
+    name="carParkingUnits"
+    onChange={handleChange}
+    className="p-3 pr-10 text-black bg-white appearance-none w-full"
+  >
+    <option value="">Select Car Parking Units</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+  </select>
+
+  {/* Dropdown Icon */}
+  <div className="pointer-events-none absolute right-3 top-1/2 transform -translate-y-1/2">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+    >
+      <rect
+        x="24"
+        width="24"
+        height="24"
+        transform="rotate(90 24 0)"
+        fill="#F55252"
+      />
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M17.5059 10.7023L16.0028 9.19928L11.9965 13.2056L7.99023 9.19934L6.48718 10.7024L10.4953 14.7105L11.9966 13.2093L13.4977 14.7105L17.5059 10.7023Z"
+        fill="white"
+      />
+    </svg>
+  </div>
+</div>
+      <input name="balconyArea" type="number" placeholder="Balcony & Utility Area (sq.ft)*" onChange={handleChange} required className="p-3 text-black bg-white [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none" />
 
           <Description className="text-xs text-white md:col-span-2 ">
             The costs indicated are approximate costs for each resource. Actual cost estimates may vary for your city. Please check with our technical expert for a more accurate pricing or visit our office for a custom cost estimate as per your requirement. This amount is an approximate amount for construction area & it does not include compound wall area.
@@ -100,10 +137,10 @@ export default function EstimatePage() {
         </form>
 
         {estimates.length > 0 && (
-          <div className="mt-12 text-center">
+          <div className="mt-16 text-center">
             <SubTitle>QUOTATION</SubTitle>
             <Title className='text-black'>Your Cost Estimate</Title>
-            <Description className="text-black opacity-70 mt-2 mb-6">Your Perfect Home, Designed & Built for You. Hassle-free, On-Time,<br/> and Within Budget.</Description>
+            <Description className="text-black opacity-70 mt-2 mb-6">Your Perfect Home, Designed & Built for You. Hassle-free, On-Time,<br /> and Within Budget.</Description>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {estimates.map(pkg => (
@@ -112,10 +149,10 @@ export default function EstimatePage() {
                   <div className="text-left text-sm p-4 text-black font-bold">
                     <div className='flex justify-between mb-6'>
                       <div>
-                        <p>Built Up Cost:</p>
+                        <p className='font-semibold '>Built Up Cost:</p>
                         <p className='text-xs font-semibold'>1070 sq.ft * ₹ 1,900/sq.ft </p>
                       </div>
-                       <p>₹{pkg.builtUpCost.toLocaleString()}</p></div>
+                      <p className='font-extrabold'>₹{pkg.builtUpCost.toLocaleString()}</p></div>
                     <div className='flex justify-between mb-6'>
                       <div>
                         <p>Car Parking Cost:</p>
@@ -126,7 +163,7 @@ export default function EstimatePage() {
                       <div>
                         <p>Balcony & Utility Cost:</p>
                         <p className='text-xs font-semibold'>800 sq.ft * ₹1,235/sq.ft</p>
-                        </div><p>₹{pkg.balconyCost.toLocaleString()}</p></div>
+                      </div><p>₹{pkg.balconyCost.toLocaleString()}</p></div>
                     <hr className="my-2" />
                     <div className='flex justify-between'><p className="font-bold text-base">Total Cost:</p> <p>₹{pkg.total.toLocaleString()}</p></div>
                   </div>
