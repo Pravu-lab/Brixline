@@ -162,7 +162,7 @@ const AboutUsSlider = () => {
       </Slider>
 
       <div className="flex justify-between items-center my-5">
-        <div className="text-red-500 font-extrabold text-5xl tracking-wider">
+        <div className="text-[#ef4444] font-extrabold text-5xl tracking-wider">
           {getAnimatedYear()}
         </div>
 
@@ -175,7 +175,7 @@ const AboutUsSlider = () => {
               <li
                 key={index}
               >
-                <div className={`dot-indicator w-2 h-2 border-2 ${activeSlide === index ? "bg-[#ef4444] h-4 mb-0.5" : "bg-black"}`}></div>
+                <div className={`dot-indicator w-2 h-2 ${activeSlide === index ? "bg-[#ef4444] h-4 mb-0.5" : "bg-black"}`}></div>
               </li>
             ))}
           </ul>
