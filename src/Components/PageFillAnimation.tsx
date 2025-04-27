@@ -12,7 +12,7 @@ export default function PageFillAnimation() {
   const stripeScale = useTransform(scrollYProgress, [0.08, 0.7], [0,1]);
   return (
     
-    <div ref={ref} className="absolute bottom-0 left-0 h-full overflow-hidden z-20 flex flex-col w-full">
+    <div ref={ref} className="absolute bottom-0 left-0 h-full overflow-hidden z-20 flex flex-col w-full pointer-events-none">
         {/* Create multiple stripes */}
         {[...Array(20)].map((_, index) => (
           <motion.div
@@ -20,6 +20,7 @@ export default function PageFillAnimation() {
             style={{
               scaleY: stripeScale,
               originY: 1,
+              pointerEvents: "none"
             }}
             className=" bg-black h-screen flex-1"
           />

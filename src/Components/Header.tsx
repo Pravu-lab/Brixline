@@ -26,7 +26,7 @@ export default function Header() {
           offset: ["start end", "end start"],
         });
 
-    const compTwoOpacity = useTransform(scrollYProgress, [0.8,0.85], [0, 1]);
+    const compTwoOpacity = useTransform(scrollYProgress, [0.75,0.8], [0, 1]);
     return (
         // <header
         //     className={`bg-black sm:bg-white shadow-sm p-4 ${mobileOpen ? 'h-[100dvh]' : 'h-auto'
