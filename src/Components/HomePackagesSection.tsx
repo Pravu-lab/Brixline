@@ -64,11 +64,11 @@ export default function HomePackagesSection() {
               type="checkbox"
               checked={isCommercial}
               onChange={handleToggle}
-              className="peer absolute w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer transition-transform duration-300 ease-in-out checked:translate-x-6"
+              className="peer absolute w-6 h-6 rounded-full bg-[#F55252] border-4 border-transparent appearance-none cursor-pointer transition-transform duration-300 ease-in-out checked:translate-x-6"
             />
             <label
               htmlFor="toggle"
-              className="block h-6 bg-gray-300 rounded-full transition-colors duration-300 ease-in-out peer-checked:bg-[#F55252] cursor-pointer"
+              className="block h-6 bg-[#feeeee] rounded-full transition-colors duration-300 ease-in-out cursor-pointer"
             />
           </div>
 
