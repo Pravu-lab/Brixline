@@ -41,7 +41,7 @@ interface GetQuoteProps {
     return (
         <div className={`relative w-full flex justify-end ${classname}`}>
             <div className='max-w-[390px] relative'>
-                <div className=' absolute px-7 pt-[72px]'>
+                <div className=' absolute px-7 pt-[72px] z-20'>
                     <span className='absolute bg-[#F55252] text-xs px-5 py-[7px] font-bold top-0 left-1/4 rounded-bl-2xl rounded-br-2xl'>
                         FREE CONSULTATION
                     </span>
@@ -105,7 +105,7 @@ interface GetQuoteProps {
                         .
                     </p>
                 </div>
-                <svg className='w-full' xmlns="http://www.w3.org/2000/svg" width="390" height="566" viewBox="0 0 390 566" fill="none" >
+                <svg className='w-full z-10' xmlns="http://www.w3.org/2000/svg" width="390" height="566" viewBox="0 0 390 566" fill="none" >
                     <foreignObject x="-74" y="-74" width="538" height="714"><div
                         style={{
                             backdropFilter: 'blur(37px)',
