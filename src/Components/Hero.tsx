@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Zap } from "lucide-react";
+// import { Zap } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button, Description, MainTitle } from "./Tag";
@@ -20,8 +20,8 @@ const Hero = () => {
   return (
     <div className="tracking-wide w-full">
       <header
-        className={`backdrop-blur shadow-sm p-8 ${mobileOpen ? 'h-[100dvh]' : 'h-auto'
-          } sm:h-auto transition-all duration-300 absolute bottom-0 left-0 z-[999] w-full mt-16`}
+        className={`bg-black md:bg-transparent shadow-sm p-8 ${mobileOpen ? 'h-[100dvh]' : 'h-auto bg-transparent'
+          } sm:h-auto transition-all duration-300 absolute top-0 md:bottom-0 md:top-auto left-0 z-[999] w-full mt-0 md:mt-16`}
       >
         <div className="max-w-screen-xl mx-auto flex justify-between items-center">
           {/* Logo + City */}
@@ -84,6 +84,7 @@ const Hero = () => {
           </div>
 
           {/* Desktop Navigation */}
+          
           <nav className="hidden md:flex gap-6 items-center text-sm font-semibold text-black uppercase">
             <Link href="/" className="flex items-center gap-1 text-red-500">
               <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
@@ -126,26 +127,26 @@ const Hero = () => {
 
         {/* Mobile Nav Menu */}
         {mobileOpen && (
-          <div className="md:hidden p-4 text-sm font-semibold text-black uppercase space-y-3">
+          <div className="md:hidden p-4 text-sm font-semibold text-white uppercase space-y-3">
             <div className="flex items-center gap-1 text-red-500">
               <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
               HOME
             </div>
-            <Link href="/about" className="text-black block">ABOUT US</Link>
-            <Link href="/how-it-works" className="text-black block">HOW IT WORKS</Link>
-            <Link href="/cost-estimator" className="text-black block">COST ESTIMATOR</Link>
-            <Link href="/contact-us" className="text-black block">CONTACT US</Link>
-            <span className="flex items-center gap-1 text-black">
+            <Link href="/about" className=" block">ABOUT US</Link>
+            <Link href="/how-it-works" className=" block">HOW IT WORKS</Link>
+            <Link href="/cost-estimator" className=" block">COST ESTIMATOR</Link>
+            <Link href="/contact-us" className=" block">CONTACT US</Link>
+            {/* <span className="flex items-center gap-1 ">
               <Zap className="w-4 h-4 text-red-500 block" />
-              {/* <span className="text-black">
+              <span className="text-black">
                             ZERO COST EMI
-                        </span> */}
-            </span>
+                        </span>
+            </span> */}
           </div>
         )}
       </header>
 
-      <section className="relative z-100 h-screen max-w-screen-7xl mx-auto w-full flex flex-col lg:flex-row lg:justify-between pb-10 items-center px-4 sm:px-8 lg:px-16 xl:px-20 2xl:px-24 mt-30 lg:mt-10">
+      <section className="relative z-10 h-screen max-w-screen-7xl mx-auto w-full flex flex-col lg:flex-row lg:justify-between pb-10 items-center px-4 sm:px-8 lg:px-16 xl:px-20 2xl:px-24 mt-30 lg:mt-10">
         {/* Text Section */}
         <div className="flex flex-col items-start justify-center w-fit">
           {/* Desktop Content */}

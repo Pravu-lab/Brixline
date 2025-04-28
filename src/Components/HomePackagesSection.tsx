@@ -5,6 +5,7 @@ import { Title, SubTitle, Description, Section } from './Tag';
 import Image from 'next/image';
 import { useState } from 'react';
 import { PackageDetails as AllPackages } from '@/lib/PackageDetails';
+import PageFillAnimation from './PageFillAnimation';
 
 const packages = [
   { price: "1,760", label: "BASIC PACKAGE", key: 'basic_package' },
@@ -31,7 +32,7 @@ export default function HomePackagesSection() {
   };
 
   return (
-    <Section className='flex pr-0 sm:!w-full items-center gap-[10%]'>
+    <Section className='flex pr-0 sm:!w-full items-center gap-[10%] relative'>
       {/* Left Section */}
       <div className='sm:ml-[5%] w-full'>
         <SubTitle>Discover</SubTitle>
@@ -131,6 +132,7 @@ export default function HomePackagesSection() {
           AllPackages={AllPackages}
         />
       )}
+      <PageFillAnimation/>
     </Section>
   );
 }

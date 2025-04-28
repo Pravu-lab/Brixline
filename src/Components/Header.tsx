@@ -1,10 +1,10 @@
 'use client';
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Zap } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from 'next/navigation';
-
+import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function Header() {
     const [mobileOpen, setMobileOpen] = useState(false);
@@ -20,14 +20,22 @@ export default function Header() {
 
     const pathname = usePathname();
 
+    const ref = useRef(null);
+        const { scrollYProgress } = useScroll({
+          target: ref,
+          offset: ["start end", "end start"],
+        });
+
+    const compTwoOpacity = useTransform(scrollYProgress, [0.75,0.8], [0, 1]);
     return (
         // <header
         //     className={`bg-black sm:bg-white shadow-sm p-4 ${mobileOpen ? 'h-[100dvh]' : 'h-auto'
         //         } sm:h-auto transition-all duration-300 overflow-hidden`}
         // >
-        <header
-            className={`bg-white shadow-sm p-8 ${mobileOpen ? 'h-[100dvh]' : 'h-auto'
-                } sm:h-auto transition-all duration-300 overflow-hidden`}
+        <motion.header ref={ref}
+            className={`bg-white shadow-sm p-4 ${mobileOpen ? 'h-[100dvh]' : 'h-auto'
+                } sm:h-auto transition-all duration-300 overflow-hidden sticky w-screen top-0 z-[9999]`}
+                style={{ opacity: compTwoOpacity, pointerEvents: "auto" }}
         >
             <div className="max-w-screen-xl mx-auto flex justify-between items-center">
                 {/* Logo + City */}
@@ -175,6 +183,6 @@ export default function Header() {
                     </span>
                 </div>
             )}
-        </header>
+        </motion.header>
     );
 }

@@ -6,6 +6,7 @@ import {
   useTransform,
 } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import PageFillAnimation from "./PageFillAnimation";
 
 const slidesData = [
   {
@@ -120,7 +121,7 @@ export default function HowitWorksSlider() {
         setIsMobile(window.innerWidth <= 768);
       };
 
-      checkMobile(); 
+      checkMobile();
       window.addEventListener("resize", checkMobile);
 
       return () => window.removeEventListener("resize", checkMobile);
@@ -130,7 +131,6 @@ export default function HowitWorksSlider() {
   };
 
   const isMobile = useIsMobile();
-
   const titleX = useTransform(scrollYProgress, [0, 0.3], ["0vw", "-28vw"]);
   const titleY = useTransform(scrollYProgress, [0, 0.3], ["0vh", "0vh"]);
 
@@ -143,7 +143,11 @@ export default function HowitWorksSlider() {
     [0.2, 0.8],
     ["500vh", "-500vh"]
   );
-  const slideProgress = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const slideProgress = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [0,1]
+  );
   const mobileH1 = useTransform(scrollYProgress, [0, 0.3], ["0vw", "-100vw"]);
   const mobileSlider = useTransform(
     scrollYProgress,
@@ -196,7 +200,13 @@ export default function HowitWorksSlider() {
                 className={`relative  lg:w-12 md:w-9 lg:h-12 md:h-9`}
               />
             </div>
-          </motion.div>
+            </motion.div>
+            <motion.h1
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 lg:text-[48px]/[120%] md:text-[38px]/[120%] font-black z-20 lg:w-[450px] md:w-[350px] text-left text-black"
+              style={{ x: titleX, y: titleY }}
+            >
+              We make your dream home possible.
+            </motion.h1>
 
           {/* Slides Section */}
           <motion.div
@@ -231,6 +241,7 @@ export default function HowitWorksSlider() {
               ))}
             </div>
           </motion.div>
+          <PageFillAnimation/>
         </div>
       ) : (
         <div className="sticky top-0 h-screen w-full overflow-hidden mx-auto">
@@ -277,6 +288,7 @@ export default function HowitWorksSlider() {
               ))}
             </div>
           </motion.div>
+          <PageFillAnimation/>
         </div>
       )}
     </div>

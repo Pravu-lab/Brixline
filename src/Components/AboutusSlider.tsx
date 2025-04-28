@@ -5,6 +5,7 @@ import { useState } from "react";
 import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import PageFillAnimation from "./PageFillAnimation";
 
 const slides = [
   {
@@ -145,7 +146,8 @@ const AboutUsSlider = () => {
   }
 
   return (
-    <div className=" slider-container my-10">
+    <>
+    <div className=" slider-container py-10 relative">
       <Slider {...settings}>
         {slides.map((slide, index) => (
           <div key={index} className="relative">
@@ -181,7 +183,9 @@ const AboutUsSlider = () => {
           </ul>
         </div>
       </div>
+        <PageFillAnimation/>
     </div>
+    </>
   );
 };
 
