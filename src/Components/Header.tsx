@@ -26,16 +26,16 @@ export default function Header() {
           offset: ["start end", "end start"],
         });
 
-    const compTwoOpacity = useTransform(scrollYProgress, [0.75,0.8], [0, 1]);
+    const compTwoOpacity = useTransform(scrollYProgress, [0.8,0.81], [0, 1]);
     return (
         // <header
         //     className={`bg-black sm:bg-white shadow-sm p-4 ${mobileOpen ? 'h-[100dvh]' : 'h-auto'
         //         } sm:h-auto transition-all duration-300 overflow-hidden`}
         // >
-        <motion.header ref={ref}
-            className={`bg-white shadow-sm p-4 ${mobileOpen ? 'h-[100dvh]' : 'h-auto'
-                } sm:h-auto transition-all duration-300 overflow-hidden sticky w-screen top-0 z-[9999]`}
-                style={{ opacity: compTwoOpacity, pointerEvents: "auto" }}
+        <header 
+        className={`bg-white shadow-sm p-4 ${mobileOpen ? 'h-[100dvh] mobileHeader' : 'h-auto'
+        } sm:h-auto transition-all duration-300 overflow-hidden sticky w-screen top-0 z-[9999] `}
+        
         >
             <div className="max-w-screen-xl mx-auto flex justify-between items-center">
                 {/* Logo + City */}
@@ -98,7 +98,7 @@ export default function Header() {
                 </div>
 
                 {/* Desktop Navigation */}
-                <nav className="hidden md:flex gap-6 items-center text-sm font-semibold text-black uppercase">
+                <nav className="hidden md:flex gap-6 items-center text-sm font-semibold text-black uppercase sticky top-0">
                     <Link href="/" className={`flex items-center gap-1 ${pathname === '/' ? 'text-red-500' : ''}`}>
                         {pathname === '/' && (
                             <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
@@ -166,10 +166,10 @@ export default function Header() {
 
             {/* Mobile Nav Menu */}
             {mobileOpen && (
-                <div className="md:hidden p-4 text-sm font-semibold text-black uppercase space-y-3">
-                    <div className="flex items-center gap-1 text-red-500">
-                        <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
+                <div className="md:hidden p-4 text-sm font-semibold text-black uppercase space-y-3 relative z-10">
+                    <div className="flex items-center justify-between gap-1 text-red-500">
                         HOME
+                        <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
                     </div>
                     <Link href="/about" className="text-black block">ABOUT US</Link>
                     <Link href="/how-it-works" className="text-black block">HOW IT WORKS</Link>
@@ -183,6 +183,8 @@ export default function Header() {
                     </span>
                 </div>
             )}
-        </motion.header>
+        <motion.div ref={ref} className="pointer-events-none" style={{ opacity: compTwoOpacity, pointerEvents: "none"}} >
+        </motion.div>
+        </header>
     );
 }

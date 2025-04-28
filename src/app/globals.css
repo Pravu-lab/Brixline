@@ -42,6 +42,9 @@ body {
   color: var(--foreground);
   overflow-x: hidden;
 }
+body:has(.mobileHeader){
+  overflow: hidden;
+}
 
 /* Apply Inter to all tags by default */
 body, html, * {

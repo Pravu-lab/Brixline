@@ -27,8 +27,8 @@ export default function OurServicesSection() {
             />
           </div>
 
-          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex justify-between items-center w-[80%] mb-4">
-            <h3 className="text-[32px] font-semibold text-white">
+          <div className="absolute bottom-0 flex justify-between items-center mb-4 px-5 w-full">
+            <h3 className="text-[32px]/[120%] font-semibold text-white">
               Renovation &<br /> Remodeling
             </h3>
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
@@ -55,8 +55,8 @@ export default function OurServicesSection() {
             className="object-cover group-hover:scale-105 transition-transform duration-300"
           />
           </div>
-          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex justify-between items-center w-[80%] mb-4">
-            <h3 className="text-[24px] font-semibold text-white">Turn-Key <br/>Construction</h3>
+          <div className="absolute bottom-0 mx-auto flex justify-between items-center px-5 mb-4 w-full ">
+            <h3 className="text-[32px]/[120%] font-semibold text-white">Turn-Key <br/>Construction</h3>
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
               <rect width="30" height="30" fill="#F55252" />
               <rect x="7" y="7" width="13" height="3" fill="white" />
@@ -66,16 +66,16 @@ export default function OurServicesSection() {
         </div>
 
         {/* Card 3 */}
-        <div className="relative rounded-lg overflow-hidden group w-full mt-28">
+        <div className="relative rounded-lg overflow-hidden group w-full md:mt-28">
           <Image
             src="/service3.png"
             alt="Commercial Constructions"
             height={1000}
               width={1000}
-            className="object-cover group-hover:scale-105 transition-transform duration-300"
+            className="object-cover group-hover:scale-105 transition-transform duration-300 aspect-square md:aspect-auto"
           />
-          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[80%] mb-4">
-          <h3 className="text-[24px] font-semibold text-white">
+          <div className="absolute bottom-0 px-5 mb-4 w-full">
+          <h3 className="text-[32px]/[120%] font-semibold text-white">
               Commercial <br/>Constructions
             </h3>
             <Description className='text-white'>

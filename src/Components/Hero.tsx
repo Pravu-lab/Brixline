@@ -1,10 +1,11 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 // import { Zap } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button, Description, MainTitle } from "./Tag";
 import GetQuote from "./GetQuote";
+import { useScroll, useTransform, motion } from "framer-motion";
 
 const Hero = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -17,11 +18,34 @@ const Hero = () => {
     setSelectedCity(city);
     setDropdownOpen(false);
   };
+
+  const ref = useRef(null);
+      const { scrollYProgress } = useScroll({
+        target: ref,
+        offset: ["start start", "end start"],
+      });
+    
+      const stripeScale = useTransform(scrollYProgress, [0,1], [0,1]);
+
+      
   return (
-    <div className="tracking-wide w-full">
+    <div className="tracking-wide h-full w-full bg-[url('/image%204.png')] bg-cover bg-center relative">
+      <div ref={ref} className="absolute top-0 left-0 h-full overflow-hidden z-[9999] flex w-full pointer-events-none">
+        {[...Array(5)].map((_, index) => (
+          <motion.div
+            key={index}
+            style={{
+              scaleX: stripeScale,
+              originX: 0,
+              pointerEvents: "none",
+            }}
+            className=" flex-1 bg-white h-full w-0 "
+          />
+        ))}
+      </div>
       <header
-        className={`bg-black md:bg-transparent shadow-sm p-8 ${mobileOpen ? 'h-[100dvh]' : 'h-auto bg-transparent'
-          } sm:h-auto transition-all duration-300 absolute top-0 md:bottom-0 md:top-auto left-0 z-[999] w-full mt-0 md:mt-16`}
+        className={`bg-black md:bg-transparent shadow-sm p-8 ${mobileOpen ? 'h-[100dvh] mobileHeader' : 'h-auto bg-transparent'
+          } sm:h-auto transition-all duration-300 relative top-0 md:bottom-0 md:top-auto left-0 z-[999] w-full mt-0 md:mt-16`}
       >
         <div className="max-w-screen-xl mx-auto flex justify-between items-center">
           {/* Logo + City */}
@@ -128,9 +152,9 @@ const Hero = () => {
         {/* Mobile Nav Menu */}
         {mobileOpen && (
           <div className="md:hidden p-4 text-sm font-semibold text-white uppercase space-y-3">
-            <div className="flex items-center gap-1 text-red-500">
-              <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
+            <div className="flex items-center justify-between gap-1 text-red-500">
               HOME
+              <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
             </div>
             <Link href="/about" className=" block">ABOUT US</Link>
             <Link href="/how-it-works" className=" block">HOW IT WORKS</Link>
@@ -142,11 +166,48 @@ const Hero = () => {
                             ZERO COST EMI
                         </span>
             </span> */}
+            <div className='flex justify-between flex-col pt-10 gap-[18px]'>
+            <h4 className="text-[20px]/[140%] text-white opacity-60 font-semibold sm:mb-3 ">FOLLOW US</h4>
+            <div className="flex space-x-4 text-xl">
+              <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                  <path d="M22 4.82815C22 4.82815 21.3 6.92815 20 8.22815C21.6 18.2281 10.6 25.5281 2 19.8281C4.2 19.9281 6.4 19.2281 8 17.8281C3 16.3281 0.5 10.4281 3 5.82815C5.2 8.42815 8.6 9.92815 12 9.82815C11.1 5.62815 16 3.22815 19 6.02815C20.1 6.02815 22 4.82815 22 4.82815Z" stroke="#F55252" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
+              <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                  <path d="M16 8.82812C17.5913 8.82812 19.1174 9.46027 20.2426 10.5855C21.3679 11.7107 22 13.2368 22 14.8281V21.8281H18V14.8281C18 14.2977 17.7893 13.789 17.4142 13.4139C17.0391 13.0388 16.5304 12.8281 16 12.8281C15.4696 12.8281 14.9609 13.0388 14.5858 13.4139C14.2107 13.789 14 14.2977 14 14.8281V21.8281H10V14.8281C10 13.2368 10.6321 11.7107 11.7574 10.5855C12.8826 9.46027 14.4087 8.82812 16 8.82812Z" stroke="#F55252" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M6 9.82812H2V21.8281H6V9.82812Z" stroke="#F55252" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M4 6.82812C5.10457 6.82812 6 5.93269 6 4.82812C6 3.72356 5.10457 2.82812 4 2.82812C2.89543 2.82812 2 3.72356 2 4.82812C2 5.93269 2.89543 6.82812 4 6.82812Z" stroke="#F55252" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
+              <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                  <path d="M18 2.82812H15C13.6739 2.82813 12.4021 3.35491 11.4645 4.29259C10.5268 5.23027 10 6.50204 10 7.82812V10.8281H7V14.8281H10V22.8281H14V14.8281H17L18 10.8281H14V7.82812C14 7.56291 14.1054 7.30855 14.2929 7.12102C14.4804 6.93348 14.7348 6.82812 15 6.82812H18V2.82812Z" stroke="#F55252" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
+              <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                  <path d="M17 2.82812H7C4.23858 2.82812 2 5.0667 2 7.82812V17.8281C2 20.5895 4.23858 22.8281 7 22.8281H17C19.7614 22.8281 22 20.5895 22 17.8281V7.82812C22 5.0667 19.7614 2.82812 17 2.82812Z" stroke="#F55252" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M15.9997 12.1984C16.1231 13.0307 15.981 13.8806 15.5935 14.6274C15.206 15.3742 14.5929 15.9798 13.8413 16.3581C13.0898 16.7364 12.2382 16.868 11.4075 16.7344C10.5768 16.6007 9.80947 16.2085 9.21455 15.6136C8.61962 15.0187 8.22744 14.2513 8.09377 13.4206C7.96011 12.59 8.09177 11.7383 8.47003 10.9868C8.84829 10.2353 9.45389 9.62217 10.2007 9.23467C10.9475 8.84717 11.7975 8.70501 12.6297 8.82843C13.4786 8.95431 14.2646 9.34989 14.8714 9.95673C15.4782 10.5636 15.8738 11.3495 15.9997 12.1984Z" stroke="#F55252" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M17.5 7.32812H17.51" stroke="#F55252" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <Image
+            src="/mobileimage.png"
+            alt="decorative-shape"
+            height={500}
+            width={500}
+            className="object-cover w-full absolute bottom-0 left-0"
+          />
+
           </div>
         )}
       </header>
 
-      <section className="relative z-10 h-screen max-w-screen-7xl mx-auto w-full flex flex-col lg:flex-row lg:justify-between pb-10 items-center px-4 sm:px-8 lg:px-16 xl:px-20 2xl:px-24 mt-30 lg:mt-10">
+      <section className="relative z-10 h-full max-w-screen-7xl mx-auto w-full flex flex-col lg:flex-row lg:justify-between pb-10 items-center px-4 sm:px-8 lg:px-16 xl:px-20 2xl:px-24 pt-30 lg:pt-10">
         {/* Text Section */}
         <div className="flex flex-col items-start justify-center w-fit">
           {/* Desktop Content */}
@@ -245,14 +306,14 @@ const Hero = () => {
 
         {/* Background Image */}
       </section>
-      <div className="absolute bottom-0 left-0 w-full h-full">
+      {/* <div className="absolute bottom-0 left-0 w-screen h-screen">
         <Image
           src="/image 4.png"
           alt="house-image-2"
           fill
-          className="object-cover object-left"
+          className="object-cover"
         />
-      </div>
+      </div> */}
     </div>
   );
 };

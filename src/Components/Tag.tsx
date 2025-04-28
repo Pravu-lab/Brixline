@@ -6,7 +6,7 @@ interface TagProps {
 }
 
 export const Section: React.FC<TagProps> = ({ children, className }) => {
-    const baseClasses = 'w-[90%] sm:w-11/12 mx-auto py-8 sm:py-12 relative';
+    const baseClasses = 'px-10 py-8 sm:py-12 relative';
 
   return (
     <section className={`${baseClasses} ${className || ''}`}>

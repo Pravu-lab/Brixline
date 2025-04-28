@@ -26,7 +26,7 @@ const FAQ = () => {
         }
     ]
     return (
-        <Section className='w-4/5 m-auto py-16'>
+        <Section className='md:w-4/5 m-auto py-16 px-5'>
             <div className='mb-8 sm:mb-20 text-center'>
                 <SubTitle className='mb-4'>Frequently Asked Questions</SubTitle>
                 <Title className="text-black">
