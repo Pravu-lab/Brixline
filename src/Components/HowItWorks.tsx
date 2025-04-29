@@ -6,7 +6,7 @@ const HowItWorks = () => {
     return (
         <div className="flex flex-col md:flex-row justify-center items-start px-4 sm:px-8 md:px-16 py-12 md:py-20 gap-y-10 md:gap-[91px]">
             {/* Left Section */}
-            <div className="w-full md:w-[65%]">
+            <div className="w-full md:w-[65%] order-1 md:order-0">
                 <h1 className="text-black text-[32px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-medium leading-tight tracking-tight">
                     Creating Spaces You’ll Love to Call Home
                 </h1>
@@ -23,7 +23,7 @@ const HowItWorks = () => {
             </div>
 
             {/* Right Section */}
-            <div className="w-full md:w-[35%]">
+            <div className="w-full md:w-[35%] order-0 md:order-1">
                 <GetQuote />
             </div>
         </div>
