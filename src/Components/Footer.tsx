@@ -51,7 +51,7 @@ export default function FooterSection() {
               {stats.map((item, i) => (
                 <div
                   key={i}
-                  className={`flex items-center justify-start w-full gap-[20px]`}
+                  className={`flex items-center justify-start w-full gap-[16px]`}
                 >
                   {item.icon}
                   <div>

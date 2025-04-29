@@ -11,7 +11,7 @@ const OurPartners = () => {
         Winning collaborations that<br/>
         produce winning homes.
       </Title>
-      <div className="flex gap-10 sm:gap-[120px] overflow-auto w-full justify-self-start sm:justify-center">
+      <div className="flex gap-10 sm:gap-[120px] overflow-auto w-full justify-self-start sm:justify-center items-center mt-22">
         <Image
           src="/partner1.png"
           alt="house-image-2"
