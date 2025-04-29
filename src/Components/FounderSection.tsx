@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { Description, MainTitle, Section, Title } from './Tag';
 const FounderSection = () => {
   return (
-    <Section className="relative h-[100vh] !w-full !py-0 !px-[77px]">
+    <Section className="relative h-[100vh] !w-full !py-0 md:!px-[77px]">
       {/* Text Section */}
       {/* flex flex-col justify-end m-auto items-center h-fit sm:h-full absolute max-w-[1028px] z-10 bottom-0 w-full top-1/1 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pb-8 */}
       <div className="absolute z-10 flex flex-col items-start bottom-1/10 w-full max-w-[530px] left-20">
@@ -27,7 +27,13 @@ const FounderSection = () => {
           src="/founder-image.webp"
           alt="house-image-2"
           fill
-          className="object-cover object-center sm:object-left"
+          className="object-cover object-center sm:object-left hidden md:block"
+        />
+        <Image
+          src="/foundersImage.png"
+          alt="house-image-2"
+          fill
+          className="object-cover object-center sm:object-left block md:hidden"
         />
       </div>
 
