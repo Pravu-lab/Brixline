@@ -91,7 +91,7 @@ interface GetQuoteProps {
                                 GET A FREE QUOTE
                         </button>
                     </form>
-                    <p className="text-center font-normal text-xs text-[#fff] mt-3">
+                    <p className="text-center font-normal text-xs text-[#fff] mt-3 pt-4">
                         By proceeding, you are indicating that you have read and agree to our
                         <a href="#" className="font-normal underline">
                             {" "}

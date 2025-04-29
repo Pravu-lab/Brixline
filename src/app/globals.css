@@ -186,3 +186,9 @@ h1 {
     transform: translateX(-50%);
   }
 }
+
+@media (max-width: 749px){
+  .mobile-background-image{
+    background-image: url('/howitworks.png');
+  }
+}
