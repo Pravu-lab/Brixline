@@ -153,3 +153,16 @@ h1 {
     opacity: 0;
   }
 }
+
+.ticker {
+  animation: ticker-marquee 30s linear infinite;
+}
+
+@keyframes ticker-marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

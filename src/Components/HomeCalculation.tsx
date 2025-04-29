@@ -35,6 +35,13 @@ const HomeCalculation = () => {
             height={100}
             className="inline-block w-full h-full"
           />
+             <Image
+            src="/scale.svg"
+            alt="Scale Decoration 3"
+            width={500}
+            height={100}
+            className="inline-block w-full h-full"
+          />
         </div>
       </div>
 
