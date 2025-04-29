@@ -147,7 +147,7 @@ const AboutUsSlider = () => {
 
   return (
     <>
-    <div className=" slider-container py-10 relative">
+    <div className=" slider-container p-10 relative">
       <Slider {...settings}>
         {slides.map((slide, index) => (
           <div key={index} className="relative">
@@ -163,7 +163,7 @@ const AboutUsSlider = () => {
         ))}
       </Slider>
 
-      <div className="flex justify-between items-center my-5">
+      <div className="flex justify-between items-center my-5 py-10">
         <div className="text-[#ef4444] font-extrabold text-5xl tracking-wider">
           {getAnimatedYear()}
         </div>
