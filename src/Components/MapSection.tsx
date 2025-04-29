@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const MapSection = () => {
     return (
-        <Section>
+        <Section className='!px-0 md:!px-10'>
             <Image
                 src="/png/map.png"
                 alt="bookwithus"

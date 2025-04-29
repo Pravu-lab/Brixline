@@ -1,7 +1,6 @@
 'use client';
 
 import { useRef, useState } from "react";
-import { Zap } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from 'next/navigation';
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -177,12 +176,12 @@ export default function Header() {
                     <Link href="/how-it-works" className="text-black block">HOW IT WORKS</Link>
                     <Link href="/cost-estimator" className="text-black block">COST ESTIMATOR</Link>
                     <Link href="/contact-us" className="text-black block">CONTACT US</Link>
-                    <span className="flex items-center gap-1 text-black">
+                    {/* <span className="flex items-center gap-1 text-black">
                         <Zap className="w-4 h-4 text-red-500 block" />
-                        {/* <span className="text-black">
+                        <span className="text-black">
                             ZERO COST EMI
-                        </span> */}
-                    </span>
+                        </span> 
+                    </span> */}
                 </div>
             )}
         </header>

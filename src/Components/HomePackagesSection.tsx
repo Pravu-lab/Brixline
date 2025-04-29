@@ -19,16 +19,24 @@ type PackageKey = typeof packages[number]['key'];
 export default function HomePackagesSection() {
   const [open, setOpen] = useState(false);
   const [selectedPackageKey, setSelectedPackageKey] = useState<PackageKey>('basic_package');
+  const [isCommercial, setIsCommercial] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [selectedCity, setSelectedCity] = useState("BENGALURU");
+
+  const cities = ["BENGALURU", "CHENNAI", "HYDERABAD"];
 
   const handleClick = (key: PackageKey) => {
     setSelectedPackageKey(key);
     setOpen(true);
   };
 
-  const [isCommercial, setIsCommercial] = useState(false);
-
   const handleToggle = () => {
     setIsCommercial((prev) => !prev);
+  };
+
+  const toggleCity = (city: string) => {
+    setSelectedCity(city);
+    setDropdownOpen(false);
   };
 
   return (
@@ -43,42 +51,68 @@ export default function HomePackagesSection() {
 
         {/* Location and Toggle */}
         <div className="mt-6 flex items-center gap-6 flex-wrap">
-          <button className="bg-red-100 text-[#F55252] font-bold px-4 py-2 rounded text-xs flex gap-1 items-center">
-            <span>BENGALURU</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none">
-              <rect x="12" y="12.5" width="12" height="12" transform="rotate(-180 12 12.5)" fill="#F55252" />
-              <rect x="10.5255" y="5.30005" width="5.2" height="1.2" transform="rotate(135 10.5255 5.30005)" fill="white" />
-              <rect x="2.32306" y="4.45142" width="5.2" height="1.2" transform="rotate(45 2.32306 4.45142)" fill="white" />
-            </svg>
+          <button
+            onClick={() => setDropdownOpen(!dropdownOpen)}
+            className="flex items-center gap-1 px-4 py-1 bg-[rgba(245,82,82,0.1)] text-red-600 text-xs font-semibold rounded"
+          >
+            {selectedCity}
+            {dropdownOpen ? (
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none">
+                <rect width="12" height="12" transform="matrix(-1 0 0 1 12 0.5)" fill="#F55252" />
+                <rect width="5.2" height="1.2" transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 10.5254 7.7)" fill="white" />
+                <rect width="5.2" height="1.2" transform="matrix(0.707107 -0.707107 -0.707107 -0.707107 2.323 8.54853)" fill="white" />
+              </svg>
+            ) : (
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none">
+                <rect width="12" height="12" transform="matrix(-1 0 0 1 12 0.5)" fill="#F55252" />
+                <rect width="5.2" height="1.2" transform="matrix(0.707107 0.707107 0.707107 -0.707107 1.7 4.5)" fill="white" />
+                <rect width="5.2" height="1.2" transform="matrix(-0.707107 0.707107 0.707107 0.707107 9.5 4.5)" fill="white" />
+              </svg>
+            )}
           </button>
-          <div className="flex items-center gap-6 flex-wrap">
-          {/* Residential */}
-          <span className={`text-xs font-medium ${isCommercial ? 'text-gray-400' : 'text-black'} transition-all duration-300`}>
-            Residential
-          </span>
 
-          {/* Toggle Button */}
-          <div className="relative inline-block w-12 mr-2 align-middle select-none">
-            <input
-              id="toggle"
-              type="checkbox"
-              checked={isCommercial}
-              onChange={handleToggle}
-              className="peer absolute w-6 h-6 rounded-full bg-[#F55252] border-4 border-transparent appearance-none cursor-pointer transition-transform duration-300 ease-in-out checked:translate-x-6"
-            />
-            <label
-              htmlFor="toggle"
-              className="block h-6 bg-[#feeeee] rounded-full transition-colors duration-300 ease-in-out cursor-pointer"
-            />
+          {dropdownOpen && (
+            <div className="absolute mt-1 bg-[rgba(245,82,82,0.10)] backdrop-blur-2xl shadow-md w-32 min-w-40 text-right z-[1000]">
+              {cities.map((city) => (
+                <div
+                  key={city}
+                  onClick={() => toggleCity(city)}
+                  className={`px-3 py-2 text-xs cursor-pointer border-b border-b-[rgba(255,255,255,.2)] text-right flex align-middle gap-2.5 justify-end ${selectedCity === city ? 'font-bold text-white' : 'text-white'} hover:bg-gray-100 hover:text-black`}
+                >
+                  {city !== "BENGALURU" && (
+                    <div className="bg-[#F55252] text-white p-1 flex align-middle justify-center">
+                      <span className="text-white text-[6px]">COMING SOON</span>
+                    </div>
+                  )}
+                  {city}
+                </div>
+              ))}
+            </div>
+          )}
+
+          <div className="flex items-center gap-6 flex-wrap p-2">
+            <span className={`text-xs font-medium ${isCommercial ? 'text-gray-400' : 'text-black'} transition-all duration-300`}>
+              Residential
+            </span>
+            <div className="relative inline-block w-12 mr-2 align-middle select-none">
+              <input
+                id="toggle"
+                type="checkbox"
+                checked={isCommercial}
+                onChange={handleToggle}
+                className="peer absolute w-6 h-6 rounded-full bg-[#F55252] border-4 border-transparent appearance-none cursor-pointer transition-transform duration-300 ease-in-out checked:translate-x-6"
+              />
+              <label
+                htmlFor="toggle"
+                className="block h-6 bg-[#feeeee] rounded-full transition-colors duration-300 ease-in-out cursor-pointer"
+              />
+            </div>
+            <span className={`text-xs font-medium ${isCommercial ? 'text-black' : 'text-gray-400'} transition-all duration-300`}>
+              Commercial
+            </span>
           </div>
-
-          {/* Commercial */}
-          <span className={`text-xs font-medium ${isCommercial ? 'text-black' : 'text-gray-400'} transition-all duration-300`}>
-            Commercial
-          </span>
         </div>
 
-        </div>
 
         {/* Package Cards */}
         <div className="mt-6 w-full">
@@ -105,21 +139,20 @@ export default function HomePackagesSection() {
               ))}
             </div>
           ) : (
-            <div className="flex justify-center items-center h-40 bg-gray-100 rounded-lg">
+            <div className="flex justify-center items-center h-40 bg-gray-100 rounded-lg md:min-h-[280px]">
               <span className="text-lg font-semibold text-gray-500">Coming Soon 🚧</span>
             </div>
           )}
         </div>
-
       </div>
 
-      {/* Right Image */}
+      {/* Right Section with Image */}
       <div className="relative w-full h-[100vh] hidden md:flex justify-end">
         <Image
           src="/download 1.png"
           alt="house-image-2"
           fill
-          className="!h-auto object-cover object-right"
+          className="!h-full object-contain object-right"
         />
       </div>
 
@@ -132,7 +165,7 @@ export default function HomePackagesSection() {
           AllPackages={AllPackages}
         />
       )}
-      <PageFillAnimation/>
+      <PageFillAnimation />
     </Section>
   );
 }

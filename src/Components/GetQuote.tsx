@@ -40,7 +40,7 @@ interface GetQuoteProps {
     };
     return (
         <div className={`relative w-full flex justify-end ${classname}`}>
-            <div className='max-w-[390px] relative'>
+            <div className='max-w-[390px] relative max-h-[532px]'>
                 <div className=' absolute px-7 pt-[72px] z-20'>
                     <span className='absolute bg-[#F55252] text-xs px-5 py-[7px] font-bold top-0 left-1/4 rounded-bl-2xl rounded-br-2xl'>
                         FREE CONSULTATION
@@ -48,7 +48,7 @@ interface GetQuoteProps {
                     <h3 className="text-center text-[28px] md:text-3xl font-light text-white mt-2">
                             Connect with our <br/> architectural experts.                    
                     </h3>
-                    <form className="mt-8 space-y-4" onSubmit={handleSubmit}>
+                    <form className="mt-8 space-y-4" onSubmit={(e)=>handleSubmit(e)}>
                         <input
                             type="text"
                             placeholder="First Name"
@@ -91,7 +91,7 @@ interface GetQuoteProps {
                                 GET A FREE QUOTE
                         </button>
                     </form>
-                    <p className="text-center font-normal text-xs text-[#fff] mt-3">
+                    <p className="text-center font-normal text-xs text-[#fff] mt-3 pt-4">
                         By proceeding, you are indicating that you have read and agree to our
                         <a href="#" className="font-normal underline">
                             {" "}
@@ -105,7 +105,7 @@ interface GetQuoteProps {
                         .
                     </p>
                 </div>
-                <svg className='w-full z-10' xmlns="http://www.w3.org/2000/svg" width="390" height="566" viewBox="0 0 390 566" fill="none" >
+                <svg className='w-full h-full z-10' xmlns="http://www.w3.org/2000/svg" width="390" height="566" viewBox="0 0 390 566" fill="none" >
                     <foreignObject x="-74" y="-74" width="538" height="714"><div
                         style={{
                             backdropFilter: 'blur(37px)',

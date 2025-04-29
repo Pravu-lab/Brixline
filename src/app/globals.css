@@ -7,7 +7,7 @@
 }
 
 @font-face {
-  font-family: 'Biter';
+  font-family: 'Bitter';
   src: url('../../public/fonts/Bitter-Bold.ttf') format('opentype');
   font-weight: normal;
   font-style: normal;
@@ -27,8 +27,8 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-helvetica: "Helvetica Neue", "sans-serif";
-  --font-inter:"Inter Tight";
-  --font-biter:"Biter"
+  --font-inter: "Inter Tight";
+  --font-Bitter: "Bitter"
 }
 
 @media (prefers-color-scheme: dark) {
@@ -46,34 +46,36 @@ body:has(.mobileHeader){
   overflow: hidden;
 }
 
+body:has(.mobileHeader) {
+  overflow: hidden;
+}
+
 /* Apply Inter to all tags by default */
-body, html, * {
+body,
+html,
+* {
   font-family: var(--font-inter);
 }
 
 /* Override font for all span tags */
 h1 {
-  font-family: var(--font-biter);
+  font-family: var(--font-Bitter);
 }
 
 /* Utility class for title font size */
 .clamp-title {
-  font-size: clamp(
-    24px,
-    calc(48 * (100vw / var(--viewportDesktop))),
-    48px
-  );
+  font-size: clamp(24px,
+      calc(48 * (100vw / var(--viewportDesktop))),
+      48px);
   line-height: 120%;
 
 }
 
 /* Utility class for description font size */
 .clamp-description {
-  font-size: clamp(
-    14px,
-    calc(16 * (100vw / var(--viewportDesktop))),
-    16px
-  );
+  font-size: clamp(14px,
+      calc(16 * (100vw / var(--viewportDesktop))),
+      16px);
   line-height: 160%;
 }
 
@@ -87,21 +89,25 @@ h1 {
   transition: transform 0.3s ease-in-out;
 }
 
-.slick-slide:not(.slick-center){
+.slick-slide:not(.slick-center) {
   scale: 0.8;
 }
+
 .overlay-image {
   position: absolute;
   inset: 0;
-  background-image: url('../../public/slideroverlay.png'); /* Replace with your overlay image path */
+  background-image: url('../../public/slideroverlay.png');
+  /* Replace with your overlay image path */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  pointer-events: none; /* so the overlay doesn't block interactions */
+  pointer-events: none;
+  /* so the overlay doesn't block interactions */
   z-index: 2;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
+
 .slick-slide:not(.slick-center) .overlay-image {
   opacity: 1;
 }
@@ -128,16 +134,64 @@ h1 {
 
 .pulse-ring:nth-child(2) {
   animation-delay: 1s;
-
 }
+
+.description-slide {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+.description-slide-visible {
+  max-height: 100%;
+  /* Adjust this to fit your content */
+  opacity: 1;
+}
+
 
 @keyframes pulseAnimation {
   0% {
     transform: translate(-50%, -50%) scale(.5);
     opacity: 0.6;
   }
+
   100% {
     transform: translate(-50%, -50%) scale(2);
     opacity: 0;
+  }
+}
+
+.ticker {
+  animation: ticker-marquee 30s linear infinite;
+}
+
+@keyframes ticker-marquee {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.logo-ticker {
+  animation: logo-marquee 30s linear infinite;
+}
+
+@keyframes logo-marquee {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 749px){
+  .mobile-background-image{
+    background-image: url('/howitworks.png');
   }
 }
