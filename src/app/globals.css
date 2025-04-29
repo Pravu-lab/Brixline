@@ -128,8 +128,20 @@ h1 {
 
 .pulse-ring:nth-child(2) {
   animation-delay: 1s;
-
 }
+
+.description-slide {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+.description-slide-visible {
+  max-height: 100%; /* Adjust this to fit your content */
+  opacity: 1;
+}
+
 
 @keyframes pulseAnimation {
   0% {
