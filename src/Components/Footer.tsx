@@ -56,7 +56,7 @@ export default function FooterSection() {
                   {item.icon}
                   <div>
                   <h4 className="font-bold text-lg mt-2 text-black">{item.value}</h4>
-                  <Description className="text-sm mt-1 text-center text-black opacity-70">{item.label}</Description>
+                  <Description className="text-sm mt-1 text-black opacity-70">{item.label}</Description>
                   </div>
                 </div>
               ))}
