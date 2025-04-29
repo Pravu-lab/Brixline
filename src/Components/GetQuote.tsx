@@ -41,7 +41,7 @@ interface GetQuoteProps {
     return (
         <div className={`relative w-full flex justify-end ${classname}`}>
             <div className='max-w-[390px] relative max-h-[532px]'>
-                <div className=' absolute px-7 pt-[72px] z-20'>
+                <div className=' absolute px-7 pt-[50px] md:pt-[72px] z-20'>
                     <span className='absolute bg-[#F55252] text-xs px-5 py-[7px] font-bold top-0 left-1/4 rounded-bl-2xl rounded-br-2xl'>
                         FREE CONSULTATION
                     </span>
