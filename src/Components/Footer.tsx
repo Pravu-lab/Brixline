@@ -75,14 +75,14 @@ export default function FooterSection() {
           </div>
         </div>
       </div>
-    <div className=' text-white pt-16 bg-black'>
+    <div className='text-white pt-16 bg-black'>
       <div className="max-w-7xl mx-auto px-4 lg:px-8 bg-black">
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Logo & Address */}
           <div className='col-span-2 sm:col-span-1'>
             <div className="text-2xl font-bold flex items-center space-x-2 max-w-[261px]">
               <Image
-                src="/logo.png"
+                src="/Logo.png"
                 alt="house-image-2"
                 fill
                 className="object-cover object-left !static"

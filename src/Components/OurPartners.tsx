@@ -23,11 +23,11 @@ const OurPartners = () => {
       },
       {
         breakpoint: 768,
-        settings: { slidesToShow: 2 }
+        settings: { slidesToShow: 3 }
       },
       {
         breakpoint: 480,
-        settings: { slidesToShow: 1 }
+        settings: { slidesToShow: 2 }
       }
     ]
   };

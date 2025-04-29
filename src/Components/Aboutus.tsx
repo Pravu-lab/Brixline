@@ -40,7 +40,7 @@ const Aboutus = () => {
                     />
     </div>
 
-    <div className=' flex w-[90%] m-auto items-center justify-center flex-col pb-16'>
+    <div className='flex w-[90%] m-auto items-center justify-center flex-col pb-16'>
         <SubTitle className='text-center'>
         OUR VISION
         </SubTitle>

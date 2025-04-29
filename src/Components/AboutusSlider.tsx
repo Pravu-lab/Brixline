@@ -56,12 +56,12 @@ const NextArrow = ({ onClick }: ArrowProps) => (
     onClick={onClick}
   >
     <Image
-                  src="/svg/right-button.svg"
-                  alt="go-next"
-                  width={60}
-                  height={60}
-                  className="w-13 h-13"
-                />
+      src="/svg/right-button.svg"
+      alt="go-next"
+      width={60}
+      height={60}
+      className="w-13 h-13"
+    />
   </div>
 );
 
@@ -71,12 +71,12 @@ const PrevArrow = ({ onClick }: ArrowProps) => (
     onClick={onClick}
   >
     <Image
-                src="/svg/left-button.svg"
-                alt="go-previous"
-                width={60}
-                height={60}
-                className="w-13 h-13"
-              />
+      src="/svg/left-button.svg"
+      alt="go-previous"
+      width={60}
+      height={60}
+      className="w-13 h-13"
+    />
   </div>
 );
 
@@ -96,11 +96,25 @@ const AboutUsSlider = () => {
     infinite: true,
     centerPadding: "30px",
     slidesToShow: 3,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: { slidesToShow: 3 }
+      },
+      {
+        breakpoint: 768,
+        settings: { slidesToShow: 3 }
+      },
+      {
+        breakpoint: 480,
+        settings: { slidesToShow: 1.1 }
+      }
+    ],
     speed: 500,
     beforeChange: (_: number, next: number) => setActiveSlide(next),
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
-    
+
   };
 
   const getAnimatedYear = () => {
@@ -126,64 +140,64 @@ const AboutUsSlider = () => {
       );
     });
   };
-  const getAnimatedText=()=>{
-    return(
-    <span className="block w-full relative text-center mx-auto">
-      <AnimatePresence>
-            <motion.div
-              key={activeSlide}
-              initial={{ x: 100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: -100, opacity: 0 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="text-gray-700 text-lg absolute w-full bottom-0 translate-y-1/2">
-              <p className="text-[#F55252] font-bold text-[28px]">{slides[activeSlide].title}</p>
-              <span className="text-[18px]">{slides[activeSlide].text}</span>
-            </motion.div>
-          </AnimatePresence>
-    </span>)
+  const getAnimatedText = () => {
+    return (
+      <span className="block w-full relative text-center mx-auto">
+        <AnimatePresence>
+          <motion.div
+            key={activeSlide}
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: -100, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="text-gray-700 text-lg absolute w-full bottom-0 translate-y-1/2">
+            <p className="text-[#F55252] font-bold text-[28px]">{slides[activeSlide].title}</p>
+            <span className="text-[18px]">{slides[activeSlide].text}</span>
+          </motion.div>
+        </AnimatePresence>
+      </span>)
   }
 
   return (
     <>
-    <div className=" slider-container p-10 relative">
-      <Slider {...settings}>
-        {slides.map((slide, index) => (
-          <div key={index} className="relative">
-            <Image
-              src={slide.image}
-              alt={`Slide ${index}`}
-              width={400}
-              height={288}
-              className="mx-auto object-cover shadow"
-            />
-            <div className="overlay-image"></div>
+      <div className=" slider-container p-10 relative">
+        <Slider {...settings}>
+          {slides.map((slide, index) => (
+            <div key={index} className="relative">
+              <Image
+                src={slide.image}
+                alt={`Slide ${index}`}
+                width={400}
+                height={288}
+                className="mx-auto object-cover shadow"
+              />
+              <div className="overlay-image"></div>
+            </div>
+          ))}
+        </Slider>
+
+        <div className="sm:block md:flex justify-between items-center my-5 py-10">
+          <div className="text-[#ef4444] font-extrabold text-5xl tracking-wider">
+            {getAnimatedYear()}
           </div>
-        ))}
-      </Slider>
 
-      <div className="flex justify-between items-center my-5 py-10">
-        <div className="text-[#ef4444] font-extrabold text-5xl tracking-wider">
-          {getAnimatedYear()}
+          <div className=" px-6 w-1/2 h-full">
+            {getAnimatedText()}
+          </div>
+          {/* <div className="custom-dots">
+            <ul className="flex gap-2 justify-end items-baseline">
+              {slides.map((_, index) => (
+                <li
+                  key={index}
+                >
+                  <div className={`dot-indicator w-2 h-2 ${activeSlide === index ? "bg-[#ef4444] h-4 mb-0.5" : "bg-black"}`}></div>
+                </li>
+              ))}
+            </ul>
+          </div> */}
         </div>
-
-        <div className=" px-6 w-1/2 h-full">
-          {getAnimatedText()}
-        </div>
-        <div className="custom-dots">
-          <ul className="flex gap-2 justify-end items-baseline">
-            {slides.map((_, index) => (
-              <li
-                key={index}
-              >
-                <div className={`dot-indicator w-2 h-2 ${activeSlide === index ? "bg-[#ef4444] h-4 mb-0.5" : "bg-black"}`}></div>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <PageFillAnimation />
       </div>
-        <PageFillAnimation/>
-    </div>
     </>
   );
 };

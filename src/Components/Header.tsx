@@ -36,7 +36,7 @@ export default function Header() {
         <motion.div className="absolute bg-white top-0 w-full h-full z-[9999] op" style={{ opacity: compTwoOpacity}}></motion.div>
         <header 
         className={`bg-white shadow-sm p-4 ${mobileOpen ? 'h-[100dvh] mobileHeader' : 'h-auto'
-        } sm:h-auto transition-all duration-300 overflow-hidden top-0 relative w-screen  z-[9999]`}
+        } sm:h-auto transition-all duration-300 top-0 relative w-screen  z-[9999]`}
         
         >
             <div className="max-w-screen-xl mx-auto flex justify-between items-center">
@@ -177,12 +177,12 @@ export default function Header() {
                     <Link href="/how-it-works" className="text-black block">HOW IT WORKS</Link>
                     <Link href="/cost-estimator" className="text-black block">COST ESTIMATOR</Link>
                     <Link href="/contact-us" className="text-black block">CONTACT US</Link>
-                    <span className="flex items-center gap-1 text-black">
+                    {/* <span className="flex items-center gap-1 text-black">
                         <Zap className="w-4 h-4 text-red-500 block" />
-                        {/* <span className="text-black">
+                        <span className="text-black">
                             ZERO COST EMI
-                        </span> */}
-                    </span>
+                        </span> 
+                    </span> */}
                 </div>
             )}
         </header>
