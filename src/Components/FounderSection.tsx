@@ -25,7 +25,7 @@ const FounderSection = () => {
       {/* Background Image */}
       <div className="absolute bottom-0 left-0 w-full h-full">
         <Image
-          src="/founder-image.jpg"
+          src="/founder-image.webp"
           alt="house-image-2"
           fill
           className="object-cover object-center sm:object-left"
