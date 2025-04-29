@@ -4,7 +4,7 @@ import Image from "next/image";
 import CustomInput from "./Forms/CustomInput";
 import CustomTextArea from "./Forms/CustomTextArea";
 import CustomSelect from "./Forms/CustomSelect";
-import { Button, Description, MainTitle, Section, Title } from "./Tag";
+import { Button, Description, MainTitle, Section } from "./Tag";
 
 const ContactHero = () => {
     const [formData, setFormData] = useState({
