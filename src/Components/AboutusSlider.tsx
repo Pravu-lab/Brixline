@@ -136,10 +136,9 @@ const AboutUsSlider = () => {
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: -100, opacity: 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="text-gray-700 text-lg absolute w-full bottom-0 translate-y-1/2"
-            >
-              <p className="text-[#F55252] font-bold">{slides[activeSlide].title}</p>
-              {slides[activeSlide].text}
+              className="text-gray-700 text-lg absolute w-full bottom-0 translate-y-1/2">
+              <p className="text-[#F55252] font-bold text-[28px]">{slides[activeSlide].title}</p>
+              <span className="text-[18px]">{slides[activeSlide].text}</span>
             </motion.div>
           </AnimatePresence>
     </span>)
