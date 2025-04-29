@@ -48,7 +48,7 @@ interface GetQuoteProps {
                     <h3 className="text-center text-[28px] md:text-3xl font-light text-white mt-2">
                             Connect with our <br/> architectural experts.                    
                     </h3>
-                    <form className="mt-8 space-y-4" onSubmit={handleSubmit}>
+                    <form className="mt-8 space-y-4" onSubmit={(e)=>handleSubmit(e)}>
                         <input
                             type="text"
                             placeholder="First Name"
