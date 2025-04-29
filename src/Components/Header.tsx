@@ -1,9 +1,9 @@
 'use client';
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from 'next/navigation';
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, } from "framer-motion";
 
 export default function Header() {
     const [mobileOpen, setMobileOpen] = useState(false);
@@ -19,24 +19,46 @@ export default function Header() {
 
     const pathname = usePathname();
 
-    const ref = useRef(null);
-        const { scrollYProgress } = useScroll({
-          target: ref,
-          offset: ["start end", "end start"],
-        });
-
-    const compTwoOpacity = useTransform(scrollYProgress, [0.8,0.81], [0, 1]);
+    const ref = useRef<HTMLDivElement | null>(null);
+    const [isStuck, setIsStuck] = useState(false);
+  
+    useEffect(() => {
+      let ticking = false;
+  
+      const handleScroll = () => {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            const top = ref.current?.getBoundingClientRect().top ?? 1;
+  
+            // Consider "stuck" when it's at or above the top
+            const stuck = top <= 0;
+  
+            setIsStuck(prev => {
+              // Only update if the value has actually changed
+              if (prev !== stuck) return stuck;
+              return prev;
+            });
+  
+            ticking = false;
+          });
+          ticking = true;
+        }
+      };
+  
+      window.addEventListener('scroll', handleScroll);
+      handleScroll(); // Initial check
+  
+      return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+    
     return (
-        // <header
-        //     className={`bg-black sm:bg-white 'shadow-sm p-4 ${mobileOpen ? 'h-[100dvh]' : 'h-auto'
-        //         } sm:h-auto transition-all duration-300 overflow-hidden`}
-        // >
-        // <div ref={f} className="relative">
        
-        <header 
-        className={`bg-white shadow-sm p-4 ${mobileOpen ? 'h-[100dvh] mobileHeader' : 'h-auto'
-        } sm:h-auto transition-all duration-300 overflow-hidden sticky top-0  w-screen  z-[9999]`}
-        
+        <motion.header ref={ref}
+        className={`bg-white p-4 ${mobileOpen ? 'h-[100dvh] mobileHeader' : 'h-auto'
+        } sm:h-auto transition-all duration-300 overflow-hidden sticky top-0 w-screen z-[999]`}
+        animate={{ opacity: isStuck ? 1 : 0 }}
+        transition={{ duration: 0.4, ease: 'easeOut' }}
+      
         >
             <div className="max-w-screen-xl mx-auto flex justify-between items-center">
                 {/* Logo + City */}
@@ -54,7 +76,7 @@ export default function Header() {
                     </h1>
 
                     {/* City Dropdown */}
-                    <div className="">
+                    <div className="relative">
                         <button
                             onClick={() => setDropdownOpen(!dropdownOpen)}
                             className="flex items-center gap-1 px-4 py-1 bg-[rgba(245,82,82,0.1)] text-red-600 text-xs font-semibold rounded"
@@ -76,7 +98,8 @@ export default function Header() {
                         </button>
 
                         {dropdownOpen && (
-                            <div className="absolute mt-1 bg-[rgba(245,82,82,0.10)] backdrop-blur-2xl shadow-md w-32 min-w-40 text-right z-[1000]">
+                            <div className="fixed top-22 md:top-14
+                             mt-1 bg-[rgba(245,82,82,0.10)] backdrop-blur-2xl shadow-md w-32 min-w-40 text-right z-[1000]">
                                 {cities.map((city) => (
                                     <div
                                         key={city}
@@ -184,6 +207,6 @@ export default function Header() {
                     </span> */}
                 </div>
             )}
-        </header>
+        </motion.header>
     );
 }
