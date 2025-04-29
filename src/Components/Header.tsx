@@ -29,12 +29,14 @@ export default function Header() {
     const compTwoOpacity = useTransform(scrollYProgress, [0.8,0.81], [0, 1]);
     return (
         // <header
-        //     className={`bg-black sm:bg-white shadow-sm p-4 ${mobileOpen ? 'h-[100dvh]' : 'h-auto'
+        //     className={`bg-black sm:bg-white 'shadow-sm p-4 ${mobileOpen ? 'h-[100dvh]' : 'h-auto'
         //         } sm:h-auto transition-all duration-300 overflow-hidden`}
         // >
+        <div ref={ref} className="relative">
+        <motion.div className="absolute bg-white top-0 w-full h-full z-[9999] op" style={{ opacity: compTwoOpacity}}></motion.div>
         <header 
         className={`bg-white shadow-sm p-4 ${mobileOpen ? 'h-[100dvh] mobileHeader' : 'h-auto'
-        } sm:h-auto transition-all duration-300 overflow-hidden sticky w-screen top-0 z-[9999] `}
+        } sm:h-auto transition-all duration-300 overflow-hidden top-0 relative w-screen  z-[9999]`}
         
         >
             <div className="max-w-screen-xl mx-auto flex justify-between items-center">
@@ -183,8 +185,7 @@ export default function Header() {
                     </span>
                 </div>
             )}
-        <motion.div ref={ref} className="pointer-events-none" style={{ opacity: compTwoOpacity, pointerEvents: "none"}} >
-        </motion.div>
         </header>
+        </div>
     );
 }
