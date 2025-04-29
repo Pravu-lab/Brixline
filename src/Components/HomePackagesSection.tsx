@@ -40,9 +40,9 @@ export default function HomePackagesSection() {
   };
 
   return (
-    <Section className='flex sm:!w-full items-center gap-[10%] relative !pr-[0]'>
+    <Section className='flex sm:!w-full items-center gap-[10%] relative'>
       {/* Left Section */}
-      <div className='w-full'>
+      <div className=' w-full'>
         <SubTitle>Discover</SubTitle>
         <Title className="text-black text-left">Our Home Construction Packages</Title>
         <Description className="text-black opacity-50">

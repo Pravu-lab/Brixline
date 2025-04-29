@@ -112,7 +112,7 @@ export default function OurServicesSection() {
         </div>
 
         {/* Card 3 */}
-        <div className="relative rounded-lg overflow-hidden group w-full mt-28">
+        <div className="relative rounded-lg overflow-hidden group w-full md:mt-28">
           <Image
             src="/service3.png"
             alt="Commercial Constructions"
