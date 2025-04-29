@@ -7,7 +7,7 @@
 }
 
 @font-face {
-  font-family: 'Biter';
+  font-family: 'Bitter';
   src: url('../../public/fonts/Bitter-Bold.ttf') format('opentype');
   font-weight: normal;
   font-style: normal;
@@ -28,7 +28,7 @@
   --font-mono: var(--font-geist-mono);
   --font-helvetica: "Helvetica Neue", "sans-serif";
   --font-inter: "Inter Tight";
-  --font-biter: "Biter"
+  --font-Bitter: "Bitter"
 }
 
 @media (prefers-color-scheme: dark) {
@@ -56,7 +56,7 @@ html,
 
 /* Override font for all span tags */
 h1 {
-  font-family: var(--font-biter);
+  font-family: var(--font-Bitter);
 }
 
 /* Utility class for title font size */

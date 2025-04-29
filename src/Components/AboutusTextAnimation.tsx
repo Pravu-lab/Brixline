@@ -16,7 +16,7 @@ export default function ScrollingTextReveal() {
 
     return (
         <Section className="w-full md:w-[90%] m-auto md:px-[5%]">
-            <div className="flex md:p-8 gap-4 justify-between items-center">
+            <div className="flex md:p-8 gap-4 justify-between items-center p-6">
                 <Description className="text-black max-w-[581px]">
                 It all started with an idea, that changed the way we look at construction today. We started with the aim of making the construction simple, transparent and reliable 
                 </Description>
