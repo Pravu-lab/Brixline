@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { Description, MainTitle, Section, SubTitle } from './Tag';
 
+
 export default function OurServicesSection() {
   // Initialize state for each card's visibility
   const [visibleDescriptions, setVisibleDescriptions] = useState({
@@ -27,12 +28,18 @@ export default function OurServicesSection() {
       <div className='w-[85%] m-auto flex gap-10 sm:gap-28 flex-col sm:flex-row'>
         <div className="w-full">
           <SubTitle className="text-left">OUR SERVICES</SubTitle>
-          <MainTitle className="text-left text-white font-bold text-4xl sm:text-5xl lg:text-6xl leading-tight mb-6">
+          {/* <MainTitle className="flex-col py-4 text-left text-white font-bold text-4xl sm:text-5xl lg:text-6xl leading-[0.8] mb-6">
             Flawless<br />
-            construction powered<br />
+            construction, powered<br />
             by deep<br />
             expertise.
-          </MainTitle>
+          </MainTitle> */}
+          <MainTitle className="font-[Bitter] flex-col py-4 text-left text-white text-4xl sm:text-5xl lg:text-6xl mb-6">
+  <span className="block leading-[1]">Flawless</span>
+  <span className="block leading-[1]">construction, powered</span>
+  <span className="block leading-[1]">by deep</span>
+  <span className="block leading-[1]">expertise.</span>
+</MainTitle>
         </div>
 
         {/* Card 1 */}

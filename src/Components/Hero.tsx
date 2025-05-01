@@ -1,11 +1,11 @@
 "use client";
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 // import { Zap } from "lucide-react";
-import Link from "next/link";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
-import { Button, Description, MainTitle } from "./Tag";
+import Link from "next/link";
 import GetQuote from "./GetQuote";
-import { useScroll, useTransform, motion } from "framer-motion";
+import { Button, Description, MainTitle } from "./Tag";
 
 const Hero = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -29,7 +29,7 @@ const Hero = () => {
 
       
   return (
-    <div className="tracking-wide h-full w-full bg-[url('/image%204.png')] bg-cover bg-center relative">
+    <div className="tracking-wide min-h-screen h-full w-full bg-[url('/image%204.png')] bg-cover bg-center relative">
       <div ref={ref} className="absolute top-0 left-0 h-full overflow-hidden z-[9999] flex w-full pointer-events-none">
         {[...Array(5)].map((_, index) => (
           <motion.div
@@ -39,13 +39,13 @@ const Hero = () => {
               originX: 0,
               pointerEvents: "none",
             }}
-            className=" flex-1 bg-white h-full w-0 "
+            className=" hidden md:flex flex-1 bg-white h-full w-0"
           />
         ))}
       </div>
 
       <header
-            className={`bg-black md:bg-transparent p-8 ${mobileOpen ? 'h-[100dvh] mobileHeader' : 'h-auto bg-transparent'
+            className={`bg-black md:bg-transparent p-8 relative ${mobileOpen ? 'h-[100dvh] mobileHeader' : 'h-auto bg-transparent'
               } sm:h-auto transition-all duration-300  z-[999] w-full `}
           >
             <div className="max-w-screen-xl mx-auto flex justify-between items-center">
@@ -73,13 +73,13 @@ const Hero = () => {
                     {selectedCity}
                     {dropdownOpen ? (
                       <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none">
-                        <rect width="12" height="12" transform="matrix(-1 0 0 1 12 0.5)" fill="#F55252" />
+                        <rect width="12" height="10" transform="matrix(-1 0 0 1 12 0.5)" fill="#F55252" />
                         <rect width="5.2" height="1.2" transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 10.5254 7.7)" fill="white" />
                         <rect width="5.2" height="1.2" transform="matrix(0.707107 -0.707107 -0.707107 -0.707107 2.323 8.54853)" fill="white" />
                       </svg>
                     ) : (
                       <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none">
-                        <rect width="12" height="12" transform="matrix(-1 0 0 1 12 0.5)" fill="#F55252" />
+                        <rect width="12" height="10" transform="matrix(-1 0 0 1 12 0.5)" fill="#F55252" />
                         <rect width="5.2" height="1.2" transform="matrix(0.707107 0.707107 0.707107 -0.707107 1.7 4.5)" fill="white" />
                         <rect width="5.2" height="1.2" transform="matrix(-0.707107 0.707107 0.707107 0.707107 9.5 4.5)" fill="white" />
                       </svg>
@@ -87,8 +87,10 @@ const Hero = () => {
                   </button>
     
                   {dropdownOpen && (
-                    <div className="absolute mt-1 bg-[rgba(245,82,82,0.10)] backdrop-blur-2xl shadow-md w-32 min-w-40 text-right z-[1000]">
-                      {cities.map((city) => (
+                    <div className="absolute mt-1 bg-[rgba(245,82,82,0.10)] backdrop-blur-2xl shadow-md w-42 min-w-40 text-right z-[10001]">
+                      {cities
+                      .filter(city => city != selectedCity)
+                      .map((city) => (
                         <div
                           key={city}
                           onClick={() => toggleCity(city)}
@@ -153,7 +155,7 @@ const Hero = () => {
     
             {/* Mobile Nav Menu */}
             {mobileOpen && (
-              <div className="md:hidden p-4 text-sm font-semibold text-white uppercase space-y-3">
+              <div className="md:hidden p-4 text-lg font-semibold text-white uppercase space-y-4 py-20">
                 <div className="flex items-center justify-between gap-1 text-red-500">
                   HOME
                   <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
@@ -169,7 +171,7 @@ const Hero = () => {
                             </span>
                 </span> */}
                 <div className='flex justify-between flex-col pt-10 gap-[18px]'>
-                <h4 className="text-[20px]/[140%] text-white opacity-60 font-semibold sm:mb-3 ">FOLLOW US</h4>
+                <h4 className="text-[10px]/[140%] text-white opacity-60 font-semibold sm:mb-3 py-3">FOLLOW US</h4>
                 <div className="flex space-x-4 text-xl">
                   <a href="#">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
@@ -197,14 +199,15 @@ const Hero = () => {
                   </a>
                 </div>
               </div>
-              <Image
-                src="/mobileimage.png"
-                alt="decorative-shape"
-                height={500}
-                width={500}
-                className="object-cover w-full absolute bottom-0 left-0"
-              />
-    
+              <div className="absolute bottom-0 left-0 w-full h-auto"> <Image
+                                   src="/mobileimage.png"
+                                   alt="decorative-shape"
+                                   height={500}
+                                   width={500}
+                                   className="object-cover w-full  z-10 block sm:hidden"
+                                 />
+                                 </div>
+            
               </div>
             )}
           </header>

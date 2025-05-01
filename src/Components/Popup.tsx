@@ -41,7 +41,7 @@ export default function MobileQuotePopup({
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-gradient-to-b from-black to-neutral-900 text-white flex w-full">
+    <div className="fixed inset-0 z-50 bg-gradient-to-b from-black to-neutral-900 text-white flex w-full z-[999]">
       <div className="flex flex-col sm:flex-row h-full w-full relative">
 
         {/* Form Section */}

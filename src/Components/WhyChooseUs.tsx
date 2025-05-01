@@ -1,5 +1,9 @@
+"use client"
 import React from "react";
 import { Description, SubTitle, Title } from "./Tag";
+import {motion} from 'framer-motion';
+// import { motion } from "framer-motion/dist/es/index.mjs";
+
 
 const uspPoints = [
   {
@@ -62,7 +66,15 @@ const uspPoints = [
 
 const WhyChooseUs = () => {
   return (
-    <section className="bg-white py-16 px-6 sm:px-10 text-center flex flex-col mx-auto justify-center items-center">
+    <section className="bg-white py-32 px-6 sm:px-10 text-center flex flex-col mx-auto justify-center items-center">
+      <motion.div
+      initial={{ opacity: 0, scale: 0.8 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{
+        duration: 4,
+        ease: [0.22, 1, 0.36, 1], // 'easeOutCubic' feel
+      }}
+      >
       <SubTitle className="">How are we different?</SubTitle>
       <Title className=" text-black leading-snug mb-4">
         Brixline Zero Policy: Built
@@ -75,9 +87,11 @@ const WhyChooseUs = () => {
         Your Perfect Home, Designed & Built for You. Hassle-free, On-Time,{" "}
         <br /> and Within Budget.
       </Description>
+      </motion.div>
+     
 
       <div className="grid grid-cols-2 sm:grid-cols-2 gap-2 lg:grid-cols-4 lg:gap-0">
-        {uspPoints.map((point, index) => (
+        {/* {uspPoints.map((point, index) => (
           <div
             key={index}
             className={`flex flex-col items-start p-2 sm:p-6 text-left ${index !== 3 && "lg:border-r" // only add right border on first 3 cards in desktop
@@ -90,7 +104,25 @@ const WhyChooseUs = () => {
             </h4>
             <p className="text-sm text-gray-500">{point.desc}</p>
           </div>
-        ))}
+        ))} */}
+
+{uspPoints.map((point, index) => (
+  <motion.div
+    key={index}
+    className="p-6 flex flex-col items-center text-center space-y-4"
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    // viewport={{ once: true }}
+    transition={{ duration: 3, ease: "easeInOut" }}
+  >
+    <div>{point.icon}</div>
+    <h3 className="font-semibold text-lg text-black">{point.title}</h3>
+    <p className="text-sm text-gray-600">{point.desc}</p>
+  </motion.div>
+))}
+
+      
+
       </div>
     </section>
   );
