@@ -40,10 +40,10 @@ export default function HomePackagesSection() {
   };
 
   return (
-    <Section className='flex sm:!w-full items-center gap-[10%] relative'>
+    <Section className='flex sm:!w-full items-center gap-[10%] relative tracking-wide'>
       {/* Left Section */}
       <div className=' w-full'>
-        <SubTitle>Discover</SubTitle>
+        <h2 className='text-[#F55252] text-[14px] sm:text-[16px] font-bold uppercase mb-1 pl-2 font-helvectica-css'>Discover</h2>
         <Title className="text-black text-left">Our Home Construction Packages</Title>
         <Description className="text-black opacity-50">
           Your Perfect Home, Designed & Built for You. Hassle-free,<br />On-Time, and Within Budget.
@@ -77,7 +77,7 @@ export default function HomePackagesSection() {
                 <div
                   key={city}
                   onClick={() => toggleCity(city)}
-                  className={`px-3 py-2 text-xs cursor-pointer border-b border-b-[rgba(255,255,255,.2)] text-right flex align-middle gap-2.5 justify-end ${selectedCity === city ? 'font-bold text-white' : 'text-white'} hover:bg-gray-100 hover:text-black`}
+                  className={`px-3 py-2 text-xs cursor-pointer border-b border-b-[rgba(255,255,255,.2)] text-right flex align-middle gap-2.5 justify-end ${selectedCity === city ? 'font-bold text-[#F55252]' : 'text-[#F55252] font-bold'} hover:bg-gray-100 hover:text-black`}
                 >
                   {city !== "BENGALURU" && (
                     <div className="bg-[#F55252] text-white p-1 flex align-middle justify-center">

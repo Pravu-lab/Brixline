@@ -14,9 +14,23 @@
 }
 
 @font-face {
+  font-family: 'Bitter';
+  src: url('../../public/fonts/Bitter-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'Inter Tight';
   src: url('../../public/fonts/InterTight-Light.ttf') format('opentype');
   font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../../public/fonts/HelveticaNeueLight.otf') format('opentype');
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -27,8 +41,13 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-helvetica: "Helvetica Neue", "sans-serif";
+  --font-helvetica: "Helvetica Neue", "sans-serif";
   --font-inter: "Inter Tight";
-  --font-Bitter: "Bitter"
+  --font-Bitter: "Bitter";
+}
+
+.font-helvectica-css {
+  font-family: 'Helvetica Neue', sans-serif !important;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -109,7 +109,7 @@ const WhyChooseUs = () => {
 {uspPoints.map((point, index) => (
   <motion.div
     key={index}
-    className="p-6 flex flex-col items-center text-center space-y-4"
+    className="p-2 md:p-6 flex flex-col items-center text-center space-y-4"
     initial={{ opacity: 0, y: 50 }}
     whileInView={{ opacity: 1, y: 0 }}
     // viewport={{ once: true }}

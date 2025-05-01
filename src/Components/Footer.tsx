@@ -39,24 +39,27 @@ export default function FooterSection() {
       <div>
         <div className="grid lg:grid-cols-2 gap-8 pl-0 sm:pl-12">
           {/* Left Content */}
-          <div className='px-4 py-16'>
-            <Title className="text-black mb-4 text-left">
+          <div className='px-1 py-16'>
+            <Title className="text-black mb-4 text-center md:text-left">
               Hire The Best House Construction Service
             </Title>
-            <SubTitle className="text-gray-600 mb-8 text-left">
+            <h2 className="px-1 text-[12px] sm:text-[16px] font-bold uppercase text-gray-600 mb-8 text-center md:text-left">
               Backed by renowned investors who believe in our vision to revolutionize the sports ecosystem.
-            </SubTitle>
+            </h2>
 
             <div className="flex  items-center justify-between mt-12">
               {stats.map((item, i) => (
                 <div
                   key={i}
-                  className={`flex items-center justify-start w-full gap-[16px]`}
+                  className={`flex items-center justify-start w-full gap-[16px] px-2`}
                 >
+                  <div className='flex justify-start items-start'>
                   {item.icon}
+                  </div>
+          
                   <div>
                   <h4 className="font-bold text-lg mt-2 text-black">{item.value}</h4>
-                  <Description className="text-sm mt-1 text-black opacity-70">{item.label}</Description>
+                  <p className="my-0 clamp-description font-bold leading-[140%] text-sm text-black opacity-70">{item.label}</p>
                   </div>
                 </div>
               ))}

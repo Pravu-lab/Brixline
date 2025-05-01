@@ -31,7 +31,7 @@ const Toggle: FC<ToggleProps> = ({ que, ans }) => {
                 }
             </button>
             {isOpen && (
-                <Description className="text-[#161529] mt-4">
+                <Description className="text-[#161529] font-medium mt-4">
                     {ans}
                 </Description>
             )}
