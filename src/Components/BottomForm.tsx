@@ -47,7 +47,7 @@ const BottomForm: React.FC<BottomFormProps> = () => {
             Talk to our Expert
           </h3>
           <form
-            className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4"
+            className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4 max-w-[769px] mx-auto"
             onSubmit={handleSubmit}
           >
             <input

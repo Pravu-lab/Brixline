@@ -10,7 +10,7 @@ import PageFillAnimation from "./PageFillAnimation";
 
 const slidesData = [
   {
-    image: "/service1.png",
+    image: "/Raise1.png",
     title: "Raise a request",
     content: (
       <ul>
@@ -24,7 +24,7 @@ const slidesData = [
     ),
   },
   {
-    image: "/service1.png",
+    image: "/Raise2.png",
     title: "Meet our Expert",
     content: (
       <p>
@@ -34,7 +34,7 @@ const slidesData = [
     ),
   },
   {
-    image: "/service1.png",
+    image: "/Raise3.png",
     title: "Book with Us",
     content: (
       <p>
@@ -44,7 +44,7 @@ const slidesData = [
     ),
   },
   {
-    image: "/service1.png",
+    image: "/Raise4.png",
     title: "Receive Detailed Plans",
     content: (
       <ul>
@@ -69,21 +69,22 @@ const slidesData = [
   },
   {
     image: "/service1.png",
-    title: "Meet our Exp",
+    title: "Track & Transact",
     content: (
       <p>
-        Experts will guide you in selecting the right package for house
-        construction and solve any queries that you may have.
+        To ensure absolute trust, Brixline provides an escrow model where you transfer the amount for every stage of the project. 
+Only on successful completion of a stage, amount is transferred to the contractor. 
+Our project management team tracks and monitors your project through our system and processes - through regular site visits. 
+You get the project updates through our customer application.
       </p>
     ),
   },
   {
-    image: "/service1.png",
-    title: "Meet our Exp",
+    image: "/Raise6.png",
+    title: "Settle in",
     content: (
       <p>
-        Experts will guide you in selecting the right package for house
-        construction and solve any queries that you may have.
+        The last and final stage. We make sure you are well settled in your newly constructed home. Our journey together doesn't end here. We provide 10 years of warranty.
       </p>
     ),
   },

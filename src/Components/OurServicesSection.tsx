@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { Description, MainTitle, Section, SubTitle } from './Tag';
 
+
 export default function OurServicesSection() {
   // Initialize state for each card's visibility
   const [visibleDescriptions, setVisibleDescriptions] = useState({
@@ -22,17 +23,23 @@ export default function OurServicesSection() {
   };
 
   return (
-    <Section className="bg-black text-white flex flex-col gap-12 px-6 py-16 !w-full">
+    <Section className="bg-black text-white flex flex-col gap-12 px-6 py-16 !w-full tracking-wide">
       {/* Top Content */}
       <div className='w-[85%] m-auto flex gap-10 sm:gap-28 flex-col sm:flex-row'>
         <div className="w-full">
-          <SubTitle className="text-left">OUR SERVICES</SubTitle>
-          <MainTitle className="text-left text-white font-bold text-4xl sm:text-5xl lg:text-6xl leading-tight mb-6">
+          <h6 className="text-left text-[#F55252] text-[14px] sm:text-[16px] font-bold uppercase font-helvectica-css">OUR SERVICES</h6>
+          {/* <MainTitle className="flex-col py-4 text-left text-white font-bold text-4xl sm:text-5xl lg:text-6xl leading-[0.8] mb-6">
             Flawless<br />
-            construction powered<br />
+            construction, powered<br />
             by deep<br />
             expertise.
-          </MainTitle>
+          </MainTitle> */}
+          <MainTitle className="font-[Bitter] flex-col py-4 text-left text-white text-4xl sm:text-5xl lg:text-6xl mb-6">
+  <span className="block leading-[1]">Flawless</span>
+  <span className="block leading-[1]">construction, powered</span>
+  <span className="block leading-[1]">by deep</span>
+  <span className="block leading-[1]">expertise.</span>
+</MainTitle>
         </div>
 
         {/* Card 1 */}
@@ -112,7 +119,7 @@ export default function OurServicesSection() {
         </div>
 
         {/* Card 3 */}
-        <div className="relative rounded-lg overflow-hidden group w-full mt-28">
+        <div className="relative rounded-lg overflow-hidden group w-full md:mt-28">
           <Image
             src="/service3.png"
             alt="Commercial Constructions"

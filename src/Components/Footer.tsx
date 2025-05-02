@@ -5,8 +5,8 @@ export default function FooterSection() {
   const stats = [
     {
       icon: <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="none">
-      <path d="M20 28.3281V17.6615C20 17.3078 19.8595 16.9687 19.6095 16.7186C19.3594 16.4686 19.0203 16.3281 18.6667 16.3281H13.3333C12.9797 16.3281 12.6406 16.4686 12.3905 16.7186C12.1405 16.9687 12 17.3078 12 17.6615V28.3281" stroke="#F55252" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M4 13.6611C3.99991 13.2732 4.08445 12.8899 4.24772 12.538C4.41099 12.1862 4.64906 11.8742 4.94533 11.6238L14.2787 3.62509C14.76 3.2183 15.3698 2.99512 16 2.99512C16.6302 2.99512 17.24 3.2183 17.7213 3.62509L27.0547 11.6238C27.3509 11.8742 27.589 12.1862 27.7523 12.538C27.9156 12.8899 28.0001 13.2732 28 13.6611V25.6611C28 26.3683 27.719 27.0466 27.219 27.5467C26.7189 28.0468 26.0406 28.3278 25.3333 28.3278H6.66667C5.95942 28.3278 5.28115 28.0468 4.78105 27.5467C4.28095 27.0466 4 26.3683 4 25.6611V13.6611Z" stroke="#F55252" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M20 28.3281V17.6615C20 17.3078 19.8595 16.9687 19.6095 16.7186C19.3594 16.4686 19.0203 16.3281 18.6667 16.3281H13.3333C12.9797 16.3281 12.6406 16.4686 12.3905 16.7186C12.1405 16.9687 12 17.3078 12 17.6615V28.3281" stroke="#F55252" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M4 13.6611C3.99991 13.2732 4.08445 12.8899 4.24772 12.538C4.41099 12.1862 4.64906 11.8742 4.94533 11.6238L14.2787 3.62509C14.76 3.2183 15.3698 2.99512 16 2.99512C16.6302 2.99512 17.24 3.2183 17.7213 3.62509L27.0547 11.6238C27.3509 11.8742 27.589 12.1862 27.7523 12.538C27.9156 12.8899 28.0001 13.2732 28 13.6611V25.6611C28 26.3683 27.719 27.0466 27.219 27.5467C26.7189 28.0468 26.0406 28.3278 25.3333 28.3278H6.66667C5.95942 28.3278 5.28115 28.0468 4.78105 27.5467C4.28095 27.0466 4 26.3683 4 25.6611V13.6611Z" stroke="#F55252" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>,
       value: '65+',
       label: 'HOMES',
@@ -27,8 +27,8 @@ export default function FooterSection() {
     },
     {
       icon: <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="none">
-      <path d="M20.636 17.5146L22.656 28.8826C22.6786 29.0165 22.6598 29.1541 22.6022 29.277C22.5445 29.3999 22.4507 29.5022 22.3332 29.5704C22.2158 29.6385 22.0804 29.6692 21.9451 29.6583C21.8098 29.6473 21.681 29.5954 21.576 29.5093L16.8027 25.9266C16.5722 25.7545 16.2923 25.6615 16.0047 25.6615C15.717 25.6615 15.4371 25.7545 15.2067 25.9266L10.4253 29.508C10.3204 29.5939 10.1918 29.6458 10.0567 29.6567C9.92151 29.6676 9.78623 29.6371 9.66889 29.5691C9.55154 29.5012 9.45771 29.3991 9.3999 29.2764C9.34209 29.1538 9.32305 29.0164 9.34534 28.8826L11.364 17.5146" stroke="#F55252" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M16 18.9951C20.4183 18.9951 24 15.4134 24 10.9951C24 6.57684 20.4183 2.99512 16 2.99512C11.5817 2.99512 8 6.57684 8 10.9951C8 15.4134 11.5817 18.9951 16 18.9951Z" stroke="#F55252" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M20.636 17.5146L22.656 28.8826C22.6786 29.0165 22.6598 29.1541 22.6022 29.277C22.5445 29.3999 22.4507 29.5022 22.3332 29.5704C22.2158 29.6385 22.0804 29.6692 21.9451 29.6583C21.8098 29.6473 21.681 29.5954 21.576 29.5093L16.8027 25.9266C16.5722 25.7545 16.2923 25.6615 16.0047 25.6615C15.717 25.6615 15.4371 25.7545 15.2067 25.9266L10.4253 29.508C10.3204 29.5939 10.1918 29.6458 10.0567 29.6567C9.92151 29.6676 9.78623 29.6371 9.66889 29.5691C9.55154 29.5012 9.45771 29.3991 9.3999 29.2764C9.34209 29.1538 9.32305 29.0164 9.34534 28.8826L11.364 17.5146" stroke="#F55252" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M16 18.9951C20.4183 18.9951 24 15.4134 24 10.9951C24 6.57684 20.4183 2.99512 16 2.99512C11.5817 2.99512 8 6.57684 8 10.9951C8 15.4134 11.5817 18.9951 16 18.9951Z" stroke="#F55252" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>,
       value: '400+',
       label: 'Quality Checks',
@@ -39,24 +39,27 @@ export default function FooterSection() {
       <div>
         <div className="grid lg:grid-cols-2 gap-8 pl-0 sm:pl-12">
           {/* Left Content */}
-          <div className='px-4 py-16'>
-            <Title className="text-black mb-4 text-left">
+          <div className='px-1 py-16'>
+            <Title className="text-black mb-4 text-center md:text-left">
               Hire The Best House Construction Service
             </Title>
-            <SubTitle className="text-gray-600 mb-8 text-left">
+            <h2 className="px-1 text-[12px] sm:text-[16px] font-bold uppercase text-gray-600 mb-8 text-center md:text-left">
               Backed by renowned investors who believe in our vision to revolutionize the sports ecosystem.
-            </SubTitle>
+            </h2>
 
             <div className="flex  items-center justify-between mt-12">
               {stats.map((item, i) => (
                 <div
                   key={i}
-                  className={`flex items-center justify-start w-full gap-[16px]`}
+                  className={`flex items-center justify-start w-full gap-[16px] px-2`}
                 >
+                  <div className='flex justify-start items-start'>
                   {item.icon}
+                  </div>
+          
                   <div>
                   <h4 className="font-bold text-lg mt-2 text-black">{item.value}</h4>
-                  <Description className="text-sm mt-1 text-black opacity-70">{item.label}</Description>
+                  <p className="my-0 clamp-description font-bold leading-[140%] text-sm text-black opacity-70">{item.label}</p>
                   </div>
                 </div>
               ))}

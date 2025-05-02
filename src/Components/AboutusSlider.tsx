@@ -96,25 +96,36 @@ const AboutUsSlider = () => {
     infinite: true,
     centerPadding: "30px",
     slidesToShow: 3,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: { slidesToShow: 3 }
-      },
-      {
-        breakpoint: 768,
-        settings: { slidesToShow: 3 }
-      },
-      {
-        breakpoint: 480,
-        settings: { slidesToShow: 1.1 }
-      }
-    ],
     speed: 500,
     beforeChange: (_: number, next: number) => setActiveSlide(next),
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
-
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+          arrows: false,
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+        }
+      }
+    ]
   };
 
   const getAnimatedYear = () => {
@@ -140,22 +151,23 @@ const AboutUsSlider = () => {
       );
     });
   };
-  const getAnimatedText = () => {
-    return (
-      <span className="block w-full relative text-center mx-auto">
-        <AnimatePresence>
-          <motion.div
-            key={activeSlide}
-            initial={{ x: 100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            exit={{ x: -100, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="text-gray-700 text-lg absolute w-full bottom-0 translate-y-1/2">
-            <p className="text-[#F55252] font-bold text-[28px]">{slides[activeSlide].title}</p>
-            <span className="text-[18px]">{slides[activeSlide].text}</span>
-          </motion.div>
-        </AnimatePresence>
-      </span>)
+  const getAnimatedText=()=>{
+    return(
+    <span className="block w-full relative text-center mx-auto h-[100px] overflow-hidden">
+      <AnimatePresence>
+            <motion.div
+              key={activeSlide}
+              initial={{ x: 100, y:0, opacity: 0 }}
+              animate={{ x: 0, y:0, opacity: 1 }}
+              exit={{ x: -100, y:0, opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="text-gray-950 font-medium text-lg w-full h-[100px]"
+            >
+              <p className="text-[#ef0e0e] font-bold">{slides[activeSlide].title}</p>
+              {slides[activeSlide].text}
+            </motion.div>
+          </AnimatePresence>
+    </span>)
   }
 
   return (
@@ -176,26 +188,26 @@ const AboutUsSlider = () => {
           ))}
         </Slider>
 
-        <div className="sm:block md:flex justify-between items-center my-5 py-10">
-          <div className="text-[#ef4444] font-extrabold text-5xl tracking-wider">
-            {getAnimatedYear()}
-          </div>
-
-          <div className=" px-6 w-1/2 h-full">
-            {getAnimatedText()}
-          </div>
-          {/* <div className="custom-dots">
-            <ul className="flex gap-2 justify-end items-baseline">
-              {slides.map((_, index) => (
-                <li
-                  key={index}
-                >
-                  <div className={`dot-indicator w-2 h-2 ${activeSlide === index ? "bg-[#ef4444] h-4 mb-0.5" : "bg-black"}`}></div>
-                </li>
-              ))}
-            </ul>
-          </div> */}
+      <div className="flex flex-col md:flex-row justify-between items-center my-5 relative h-full gap-2">
+        <div className="text-[#ef4444] font-extrabold text-5xl tracking-wider">
+          {getAnimatedYear()}
         </div>
+
+        <div className=" px-6 w-full md:w-1/2 h-full order-1 md:order-0">
+          {getAnimatedText()}
+        </div>
+        <div className="custom-dots">
+          <ul className="flex gap-2 justify-end items-baseline">
+            {slides.map((_, index) => (
+              <li
+                key={index}
+              >
+                <div className={`dot-indicator w-2 h-2 ${activeSlide === index ? "bg-[#ef4444] h-4 mb-0.5" : "bg-black"}`}></div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
         <PageFillAnimation />
       </div>
     </>

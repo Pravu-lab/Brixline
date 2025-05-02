@@ -4,9 +4,9 @@ import Image from 'next/image'
 
 const HowItWorks = () => {
     return (
-        <div className="flex flex-col md:flex-row justify-center items-start px-4 sm:px-8 md:px-16 py-12 md:py-20 gap-y-10 md:gap-[91px]">
+        <div className="flex flex-col md:flex-row justify-center items-start sm:px-8 md:px-16 py-12 md:py-20 gap-y-10 md:gap-[91px]">
             {/* Left Section */}
-            <div className="w-full md:w-[65%] order-1 md:order-0">
+            <div className="w-full md:w-[65%] order-1 md:order-0 px-4 md:px-0">
                 <h1 className="text-black text-[32px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-medium leading-tight tracking-tight">
                     Creating Spaces You’ll Love to Call Home
                 </h1>
@@ -18,12 +18,12 @@ const HowItWorks = () => {
                     alt="house-image-2"
                     width={456}
                     height={585}
-                    className="w-full"
+                    className="w-full hidden md:block"
                 />
             </div>
 
             {/* Right Section */}
-            <div className="w-full md:w-[35%] order-0 md:order-1">
+            <div className="w-full md:w-[35%] order-0 md:order-1 px-4 py-16 md:px-0 md:py-0 mobile-background-image">
                 <GetQuote />
             </div>
         </div>

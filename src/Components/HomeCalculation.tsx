@@ -10,7 +10,7 @@ const HomeCalculation = () => {
         Home Construction Cost <br />Calculator
       </Title>
 
-      <Description className="text-white mb-14 font-bold leading-[140%]">
+      <Description className="text-white mb-14 font-extralight leading-[140%]">
         Your Perfect Home, Designed & Built for You. <br />Hassle-free, On-Time, and Within Budget.
       </Description>
 

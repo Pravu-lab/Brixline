@@ -28,7 +28,7 @@ const ConstructionPackage = () => {
   const dataKeys = Object.keys(PackageDetails);
 
   return (
-    <Section className="flex flex-col justify-center bg-[#f7f7f7] !w-full">
+    <Section className="flex flex-col justify-center bg-[#f7f7f7] !w-full py-32">
       <div className=" m-auto text-center">
         <SubTitle>DISCOVER</SubTitle>
         <Title className="text-black">
