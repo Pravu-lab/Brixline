@@ -217,12 +217,12 @@ const Hero = () => {
         <div className="flex flex-col items-start justify-center w-fit">
           {/* Desktop Content */}
           <div className="hidden sm:block">
-            <MainTitle className="leading-[100%] text-left">
+            <MainTitle className="leading-[100%] text-left text-white">
               You dream it,
               <br />
               we build it
             </MainTitle>
-            <Description className="text-[18px] leading-[160%] mt-[11px] text-left">
+            <Description className="text-[18px] leading-[160%] mt-[11px] text-left text-white">
               Crafting timeless spaces through innovative architecture, premium
               materials,
               <br />
@@ -233,12 +233,12 @@ const Hero = () => {
           {/* Mobile Content */}
           <div className=" sm:hidden flex">
             <div className="flex-1">
-              <MainTitle className="leading-[100%] text-left tracking-[-0.02em]">
+              <MainTitle className="leading-[100%] text-left tracking-[-0.02em] text-white">
                 You dream it,
                 <br />
                 we build it
               </MainTitle>
-              <Description className="text-xs sm:text-[18px] leading-[160%] mt-[11px] text-left">
+              <Description className="text-xs sm:text-[18px] leading-[160%] mt-[11px] text-left text-white">
                 Crafting timeless spaces through innovative architecture,
                 premium materials, and a commitment to enduring excellence.
               </Description>
