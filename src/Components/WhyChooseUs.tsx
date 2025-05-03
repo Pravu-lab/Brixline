@@ -66,7 +66,7 @@ const uspPoints = [
 
 const WhyChooseUs = () => {
   return (
-    <section className="bg-white py-32 px-6 sm:px-10 text-center flex flex-col mx-auto justify-center items-center">
+    <section className="bg-white pb-24 md:py-32 px-6 sm:px-10 text-center flex flex-col mx-auto justify-center items-center">
       <motion.div
       initial={{ opacity: 0, scale: 0.8 }}
       whileInView={{ opacity: 1, scale: 1 }}

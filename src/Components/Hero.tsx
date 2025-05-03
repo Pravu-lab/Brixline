@@ -50,7 +50,7 @@ const Hero = () => {
           >
             <div className="max-w-screen-xl mx-auto flex justify-between items-center">
               {/* Logo + City */}
-              <div className="flex flex-col sm:flex-row md:items-baseline sm:items-start gap-4">
+              <div className="flex flex-col sm:flex-row md:items-baseline sm:items-start gap-1 md:gap-4">
                 <h1 className="text-2xl font-bold tracking-tight flex items-center">
                   {/* Logo SVG */}
                   <Link href="/">
@@ -58,7 +58,7 @@ const Hero = () => {
                     width={400}
                     height={400}
                     src="/brixlinewhite.png"
-                    className="object-cover w-[142px]"
+                    className="object-cover w-[160px] md:w-[142px]"
                     alt="decorative-shape"
                     />
                   </Link>
@@ -235,7 +235,7 @@ const Hero = () => {
             <div className="flex-1">
               <MainTitle className="leading-[100%] text-left tracking-[-0.02em] text-white">
                 You dream it,
-                <br  className="hidden md:block"/>
+                <br className="hidden md:block"/>{" "}
                 we build it
               </MainTitle>
               <Description className="text-xs sm:text-[18px] leading-[160%] mt-[11px] text-left text-white">
