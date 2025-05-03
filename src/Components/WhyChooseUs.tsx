@@ -71,7 +71,7 @@ const WhyChooseUs = () => {
       initial={{ opacity: 0, scale: 0.8 }}
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{
-        duration: 4,
+        duration: 0.5,
         ease: [0.22, 1, 0.36, 1], // 'easeOutCubic' feel
       }}
       >
@@ -113,33 +113,13 @@ const WhyChooseUs = () => {
     initial={{ opacity: 0, y: 50 }}
     whileInView={{ opacity: 1, y: 0 }}
     // viewport={{ once: true }}
-    transition={{ duration: 3, ease: "easeInOut" }}
-  >
-    <div>{point.icon}</div>
-    <h3 className="font-semibold text-lg text-black">{point.title}</h3>
-    <p className="text-sm text-gray-600">{point.desc}</p>
-  </motion.div>
-))}
-
-      
-
-
-
-{/* {uspPoints.map((point, index) => (
-  <motion.div
-    key={index}
-    className="p-2 md:p-6 flex flex-col items-center text-center space-y-4"
-    initial={{ opacity: 0, y: 50 }}
-    whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5, ease: "easeInOut" }}
   >
     <div>{point.icon}</div>
     <h3 className="font-semibold text-lg text-black">{point.title}</h3>
     <p className="text-sm text-gray-600">{point.desc}</p>
   </motion.div>
-))} */}
-
-      
+))}
 
       </div>
     </section>

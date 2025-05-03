@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Description, Section, SubTitle, Title } from './Tag';
 import { PackageDetails } from '@/lib/PackageDetails';
+import Image from 'next/image';
 
 type Package = {
   basic_package: PackageDetails;
@@ -17,6 +18,7 @@ type PackageDetails = {
   data: {
     title: string;
     items: string[];
+    image?: string;
   }[];
 };
 
@@ -70,6 +72,7 @@ const ConstructionCard: React.FC<ConstructionCardProps> = ({ packageDetails }) =
 
       {packageDetails.data.map((section, index) => {
         const isOpen = openIndex === index;
+        const isCommercialSection = section.title.toLowerCase().includes('commercial');
         return (
           <div key={section.title} className={`py-3 ${packageDetails.data.length-1 === index ? "pb-0":"border-b border-[rgba(0,0,0,0.05)]"}`}>
             <div
@@ -84,13 +87,34 @@ const ConstructionCard: React.FC<ConstructionCardProps> = ({ packageDetails }) =
               </button>
             </div>
 
-            {isOpen && (
+            {/* {isOpen && (
               <ul className="mt-3 text-sm text-black text-left space-y-1 pl-2">
                 {section.items.map((item, i) => (
                   <li key={i}>• {item}</li>
                 ))}
               </ul>
-            )}
+            )} */}
+            {isOpen && (
+  <div className="mt-3">
+    {isCommercialSection ? (
+      <div className="w-full h-auto">
+        <Image
+          src={section.image}
+          alt={section.title}
+          width={300}
+          height={200}
+          className="w-full h-auto object-cover"
+        />
+      </div>
+    ) : (
+      <ul className="text-sm text-black text-left space-y-1 pl-2">
+        {section.items.map((item, i) => (
+          <li key={i}>• {item}</li>
+        ))}
+      </ul>
+    )}
+  </div>
+)}
           </div>
         );
       })}

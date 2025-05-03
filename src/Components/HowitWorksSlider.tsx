@@ -7,6 +7,7 @@ import {
 } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import PageFillAnimation from "./PageFillAnimation";
+import React from "react"; 
 
 const slidesData = [
   {
@@ -68,7 +69,18 @@ const slidesData = [
     ),
   },
   {
-    image: "/service1.png",
+      image: "/workstart.png",
+      title: "",
+      content: (
+        <div>
+    
+        </div>
+      ),
+      unnumbered: true // Add a flag to identify unnumbered slides
+  },
+  
+  {
+    image: "/lap.png",
     title: "Track & Transact",
     content: (
       <p>
@@ -153,7 +165,7 @@ export default function HowitWorksSlider() {
   const mobileSlider = useTransform(
     scrollYProgress,
     [0.2, 0.7],
-    ["380vw", "-300vw"]
+    ["430vw", "-300vw"]
   );
 
   return (
@@ -226,9 +238,11 @@ export default function HowitWorksSlider() {
                     className="w-[300px] mx-auto object-cover mb-4"
                   />
                   <div className=" flex items-end gap-[15px]">
-                    <span className="text-[#F55252] text-[32px]/[120%] font-bold">{`0${
-                      index + 1
-                    }`}</span>
+                    {!slide.unnumbered && (
+                       <span className="text-[#F55252] text-[32px]/[120%] font-bold">{`0${
+                        index + 1
+                      }`}</span>
+                    )}
                     <div>
                       <h3 className="mb-[12px] text-[#F55252] text-[32px]/[120%] font-[600] ">
                         {slide.title}
@@ -245,7 +259,7 @@ export default function HowitWorksSlider() {
           <PageFillAnimation/>
         </div>
       ) : (
-        <div className="sticky top-0 h-screen w-full overflow-hidden mx-auto">
+        <div className="sticky top-0 left-0 h-screen w-full overflow-hidden mx-auto">
           <motion.h1
             className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[38px]/[120%] font-black z-20 text-left text-black"
             style={{ x: mobileH1 }}
@@ -262,7 +276,9 @@ export default function HowitWorksSlider() {
 
           <motion.div
             className="absolute right-0 w-full h-screen flex items-center justify-center z-10"
-            style={{ x: mobileSlider }}
+            style={{ x: mobileSlider, 
+                     paddingTop: '80px'
+            }}
           >
             <div className="flex gap-10">
               {slidesData.map((slide, index) => (
@@ -272,11 +288,14 @@ export default function HowitWorksSlider() {
                     alt="Slide 1"
                     className="w-[150px] mx-auto object-cover mb-4"
                   />
-                  <div className="flex items-end gap-[15px]">
-                    <span className="text-[#F55252] text-[18px]/[120%] font-bold">{`0${
-                      index + 1
-                    }`}</span>
-                    <div>
+                  <div className={`flex items-end ${slide.unnumbered ? 'justify-center items-center' : 'gap-[15px]'}`}>
+                    {!slide.unnumbered && (
+                      <span className="text-[#F55252] text-[18px]/[120%] font-bold">{`0${
+                        index + 1
+                      }`}</span>
+                    )}
+                    
+                    <div className={slide.unnumbered ? 'text-center justify-between w-full' : ''}>
                       <h3 className="mb-[12px] text-[#F55252] text-[18px]/[120%] font-[600]">
                         {slide.title}
                       </h3>
