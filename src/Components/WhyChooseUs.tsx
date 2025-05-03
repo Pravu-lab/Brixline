@@ -2,7 +2,6 @@
 import React from "react";
 import { Description, SubTitle, Title } from "./Tag";
 import {motion} from 'framer-motion';
-
 // import { motion } from "framer-motion/dist/es/index.mjs";
 
 
@@ -72,27 +71,27 @@ const WhyChooseUs = () => {
       initial={{ opacity: 0, scale: 0.8 }}
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{
-        duration: 2,
+        duration: 4,
         ease: [0.22, 1, 0.36, 1], // 'easeOutCubic' feel
       }}
       >
-      <h1 className="font-bold font-helvetica text-red-500">HOW ARE WE DIFFERENT?</h1>
-      <Title className=" text-black leading-snug mb-4 py-3">
+      <SubTitle className="">How are we different?</SubTitle>
+      <Title className=" text-black leading-snug mb-4">
         Brixline Zero Policy: Built
         <br />
         On Trust, Delivered With
         <br />
         Excellence
       </Title>
-      <p className="text-black font-semibold opacity-60 mb-10">
+      <Description className="text-black opacity-50 mb-10">
         Your Perfect Home, Designed & Built for You. Hassle-free, On-Time,{" "}
         <br /> and Within Budget.
-      </p>
+      </Description>
       </motion.div>
      
 
       <div className="grid grid-cols-2 sm:grid-cols-2 gap-2 lg:grid-cols-4 lg:gap-0">
-        {uspPoints.map((point, index) => (
+        {/* {uspPoints.map((point, index) => (
           <div
             key={index}
             className={`flex flex-col items-start p-2 sm:p-6 text-left ${index !== 3 && "lg:border-r" // only add right border on first 3 cards in desktop
@@ -105,7 +104,25 @@ const WhyChooseUs = () => {
             </h4>
             <p className="text-sm text-gray-500 font-semibold">{point.desc}</p>
           </div>
-        ))}
+        ))} */}
+
+{uspPoints.map((point, index) => (
+  <motion.div
+    key={index}
+    className="p-2 md:p-6 flex flex-col items-center text-center space-y-4"
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    // viewport={{ once: true }}
+    transition={{ duration: 3, ease: "easeInOut" }}
+  >
+    <div>{point.icon}</div>
+    <h3 className="font-semibold text-lg text-black">{point.title}</h3>
+    <p className="text-sm text-gray-600">{point.desc}</p>
+  </motion.div>
+))}
+
+      
+
 
 
 {/* {uspPoints.map((point, index) => (

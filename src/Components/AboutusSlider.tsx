@@ -115,15 +115,22 @@ const AboutUsSlider = () => {
           slidesToScroll: 2,
           initialSlide: 2,
           arrows: false,
+        // },
+        // breakpoint: 600,
+        // settings: {
+        //   slidesToShow: 2,
+        //   slidesToScroll: 2,
+        //   initialSlide: 2,
+        //   arrows: false,
         }
       },
       {
         breakpoint: 480,
-        settings: {
+        settings: { 
           slidesToShow: 1,
           slidesToScroll: 1,
           arrows: false,
-        }
+          }
       }
     ]
   };
@@ -151,7 +158,7 @@ const AboutUsSlider = () => {
       );
     });
   };
-  const getAnimatedText=()=>{
+  const getAnimatedText =()=>{
     return(
     <span className="block w-full relative text-center mx-auto h-[100px] overflow-hidden">
       <AnimatePresence>
@@ -163,55 +170,108 @@ const AboutUsSlider = () => {
               transition={{ duration: 0.3, ease: "easeInOut" }}
               className="text-gray-950 font-medium text-lg w-full h-[100px]"
             >
-              <p className="text-[#ef0e0e] font-bold">{slides[activeSlide].title}</p>
-              {slides[activeSlide].text}
-            </motion.div>
-          </AnimatePresence>
-    </span>)
-  }
 
-  return (
-    <>
-      <div className=" slider-container p-10 relative">
-        <Slider {...settings}>
-          {slides.map((slide, index) => (
-            <div key={index} className="relative">
-              <Image
-                src={slide.image}
-                alt={`Slide ${index}`}
-                width={400}
-                height={288}
-                className="mx-auto object-cover shadow"
-              />
-              <div className="overlay-image"></div>
-            </div>
-          ))}
-        </Slider>
+<p className="text-[#F55252] font-bold">{slides[activeSlide].title}</p>
 
-      <div className="flex flex-col md:flex-row justify-between items-center my-5 relative h-full gap-2">
-        <div className="text-[#ef4444] font-extrabold text-5xl tracking-wider">
-          {getAnimatedYear()}
-        </div>
+{slides[activeSlide].text}
 
-        <div className=" px-6 w-full md:w-1/2 h-full order-1 md:order-0">
-          {getAnimatedText()}
-        </div>
-        <div className="custom-dots">
-          <ul className="flex gap-2 justify-end items-baseline">
-            {slides.map((_, index) => (
-              <li
-                key={index}
-              >
-                <div className={`dot-indicator w-2 h-2 ${activeSlide === index ? "bg-[#ef4444] h-4 mb-0.5" : "bg-black"}`}></div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-        <PageFillAnimation />
-      </div>
-    </>
-  );
+</motion.div>
+
+</AnimatePresence>
+
+</span>)
+
+}
+
+
+
+return (
+
+<>
+
+<div className=" slider-container p-10 relative">
+
+<Slider {...settings}>
+
+{slides.map((slide, index) => (
+
+<div key={index} className="relative">
+
+<Image
+
+  src={slide.image}
+
+  alt={`Slide ${index}`}
+
+  width={400}
+
+  height={288}
+
+  className="mx-auto object-cover shadow"
+
+/>
+
+<div className="overlay-image"></div>
+
+</div>
+
+))}
+
+</Slider>
+
+
+
+<div className="flex flex-col md:flex-row justify-between items-center my-5 relative h-full gap-2">
+
+<div className="text-[#ef4444] font-extrabold text-5xl tracking-wider">
+
+{getAnimatedYear()}
+
+</div>
+
+
+
+<div className=" px-6 w-full md:w-1/2 h-full order-1 md:order-0">
+
+{getAnimatedText()}
+
+</div>
+
+<div className="custom-dots">
+
+<ul className="flex gap-2 justify-end items-baseline">
+
+{slides.map((_, index) => (
+
+<li
+
+  key={index}
+
+>
+
+  <div className={`dot-indicator w-2 h-2 ${activeSlide === index ? "bg-[#ef4444] h-4 mb-0.5" : "bg-black"}`}></div>
+
+</li>
+
+))}
+
+</ul>
+
+</div>
+
+</div>
+
+<PageFillAnimation />
+
+</div>
+
+</>
+
+);
+
 };
 
+
+
 export default AboutUsSlider;
+
