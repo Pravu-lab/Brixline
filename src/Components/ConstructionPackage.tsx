@@ -96,7 +96,7 @@ const ConstructionCard: React.FC<ConstructionCardProps> = ({ packageDetails }) =
             )} */}
             {isOpen && (
   <div className="mt-3">
-    {isCommercialSection ? (
+    {isCommercialSection && section.image ? (
       <div className="w-full h-auto">
         <Image
           src={section.image}
