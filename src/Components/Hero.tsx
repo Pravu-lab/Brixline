@@ -219,7 +219,7 @@ const Hero = () => {
           <div className="hidden sm:block">
             <MainTitle className="leading-[100%] text-left text-white">
               You dream it,
-              <br />
+              <br/>
               we build it
             </MainTitle>
             <Description className="text-[18px] leading-[160%] mt-[11px] text-left text-white">
@@ -235,7 +235,7 @@ const Hero = () => {
             <div className="flex-1">
               <MainTitle className="leading-[100%] text-left tracking-[-0.02em] text-white">
                 You dream it,
-                <br />
+                <br  className="hidden md:block"/>{" "}
                 we build it
               </MainTitle>
               <Description className="text-xs sm:text-[18px] leading-[160%] mt-[11px] text-left text-white">

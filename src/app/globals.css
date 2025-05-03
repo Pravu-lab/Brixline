@@ -41,7 +41,7 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-helvetica: "Helvetica Neue", "sans-serif";
-  --font-helvetica: "Helvetica Neue", "sans-serif";
+  /* --font-helvetica: "Helvetica Neue", "sans-serif"; */
   --font-inter: "Inter Tight";
   --font-Bitter: "Bitter";
 }

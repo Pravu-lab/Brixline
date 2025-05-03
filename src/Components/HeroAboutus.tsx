@@ -11,7 +11,7 @@ const AboutHero = () => {
                 {/* Text Section */}
                 <div className="flex justify-end items-start sm:items-end w-fit h-fit sm:h-full sm:pt-[120px]">
                     {/* Desktop Content */}
-                    <Title className="leading-[100%] text-left !text-[40px] sm:!text-[82px] font-normal">
+                    <Title className="leading-[100%] text-left !text-[40px] sm:!text-[82px] font-normal text-white">
                         Building Dreams for<br className='hidden md:block'/>{" "}
                         Bengaluru People
                     </Title>
