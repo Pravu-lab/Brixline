@@ -102,7 +102,7 @@ const WhyChooseUs = () => {
             <h4 className="text-lg font-semibold text-black mb-2">
               {point.title}
             </h4>
-            <p className="text-sm text-gray-500">{point.desc}</p>
+            <p className="text-sm text-gray-500 font-semibold">{point.desc}</p>
           </div>
         ))} */}
 
@@ -120,6 +120,24 @@ const WhyChooseUs = () => {
     <p className="text-sm text-gray-600">{point.desc}</p>
   </motion.div>
 ))}
+
+      
+
+
+
+{/* {uspPoints.map((point, index) => (
+  <motion.div
+    key={index}
+    className="p-2 md:p-6 flex flex-col items-center text-center space-y-4"
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5, ease: "easeInOut" }}
+  >
+    <div>{point.icon}</div>
+    <h3 className="font-semibold text-lg text-black">{point.title}</h3>
+    <p className="text-sm text-gray-600">{point.desc}</p>
+  </motion.div>
+))} */}
 
       
 

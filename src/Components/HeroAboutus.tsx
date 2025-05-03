@@ -26,7 +26,7 @@ const AboutHero = () => {
             {/* Background Image */}
             <div className="absolute bottom-0 left-0 w-full h-full">
                 <Image
-                    src="/about-us.png"
+                    src="/images123.png"
                     alt="house-image-2"
                     fill
                     className="object-cover object-left"

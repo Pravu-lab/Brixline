@@ -2,6 +2,7 @@ import React from 'react'
 import { Description, Section, SubTitle, Title } from './Tag'
 import Image from 'next/image'
 
+
 const Aboutus = () => {
   return (
 <div className='px-2 md:px-10 py-8 sm:py-12 relative bg-black !w-full overflow-y-hidden'>
@@ -47,10 +48,10 @@ const Aboutus = () => {
         <Title>
         What we focus and strive for
         </Title>
-        <Description className='text-center'>
+        <h2 className='text-center'>
         Your Perfect Home, Designed & Built for You. Hassle-free,<br className='hidden md:block'/> On-Time, and Within Budget.
-        </Description>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 text-center w-full mt-12">
+        </h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 text-center w-full mt-12 overflow-x-hidden">
         {[
           {
             icon: <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
@@ -112,12 +113,12 @@ const Aboutus = () => {
             key={i}
             className={`flex flex-col items-start justify-between px-4 py-6 
                 ${
-      i === arr.length - 1 ? 'col-span-2 sm:col-span-1' : ''
-    }`}
+      i === arr.length - 1 ? 'col-span-2 sm:col-span-1' : ''}
+    `}
           >
             {item.icon}
-            <h4 className="text-white font-semibold text-sm mt-4 text-left">{item.title}</h4>
-            <Description className="text-white opacity-70 mt-1 text-left">{item.desc}</Description>
+            <h4 className="text-white font-semibold text-lg mt-4 text-left">{item.title}</h4>
+            <p className="text-white opacity-70 mt-1 text-left text-sm font-light">{item.desc}</p>
           </div>
           
         ))}
