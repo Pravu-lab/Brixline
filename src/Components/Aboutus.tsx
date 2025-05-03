@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 const Aboutus = () => {
   return (
-<Section className='bg-black !w-full overflow-hidden'>
+<div className='px-2 md:px-10 py-8 sm:py-12 relative bg-black !w-full overflow-y-hidden'>
     <div className='flex w-[90%] m-auto gap-16 flex-col sm:flex-row'>
         <div className='w-full sm:w-[60%]'>
                     <Image
@@ -49,7 +49,7 @@ const Aboutus = () => {
         What we focus and strive for
         </Title>
         <h2 className='text-center'>
-        Your Perfect Home, Designed & Built for You. Hassle-free,<br/> On-Time, and Within Budget.
+        Your Perfect Home, Designed & Built for You. Hassle-free,<br className='hidden md:block'/> On-Time, and Within Budget.
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 text-center w-full mt-12 overflow-x-hidden">
         {[
@@ -133,7 +133,7 @@ const Aboutus = () => {
                       className="w-full h-full"
                     />
     </div>
-</Section>
+</div>
 )
 }
 

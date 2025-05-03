@@ -40,20 +40,20 @@ export default function HomePackagesSection() {
   };
 
   return (
-    <Section className='flex sm:!w-full items-center gap-[10%] relative tracking-wide'>
+    <div className='px-3 md:px-10 py-8 sm:py-12 flex sm:!w-full items-center gap-[10%] relative tracking-wide'>
       {/* Left Section */}
       <div className=' w-full'>
         <h2 className='text-[#F55252] text-[14px] sm:text-[16px] font-bold uppercase mb-1 pl-2 font-helvectica-css'>Discover</h2>
         <Title className="text-black text-left">Our Home Construction Packages</Title>
         <Description className="text-black opacity-50">
-          Your Perfect Home, Designed & Built for You. Hassle-free,<br />On-Time, and Within Budget.
+          Your Perfect Home, Designed & Built for You. Hassle-free,<br className='hidden md:block'/>On-Time, and Within Budget.
         </Description>
 
         {/* Location and Toggle */}
         <div className="mt-6 flex items-center gap-6 flex-wrap">
           <button
             onClick={() => setDropdownOpen(!dropdownOpen)}
-            className="flex items-center gap-1 px-4 py-1 bg-[rgba(245,82,82,0.1)] text-red-600 text-xs font-semibold rounded"
+            className="flex items-center gap-1 px-4 py-1 bg-black text-white text-xs font-semibold rounded"
           >
             {selectedCity}
             {dropdownOpen ? (
@@ -63,21 +63,22 @@ export default function HomePackagesSection() {
                 <rect width="5.2" height="1.2" transform="matrix(0.707107 -0.707107 -0.707107 -0.707107 2.323 8.54853)" fill="white" />
               </svg>
             ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none">
-                <rect width="12" height="12" transform="matrix(-1 0 0 1 12 0.5)" fill="#F55252" />
-                <rect width="5.2" height="1.2" transform="matrix(0.707107 0.707107 0.707107 -0.707107 1.7 4.5)" fill="white" />
-                <rect width="5.2" height="1.2" transform="matrix(-0.707107 0.707107 0.707107 0.707107 9.5 4.5)" fill="white" />
-              </svg>
+              <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="12" height="12" transform="matrix(-1 8.74228e-08 8.74228e-08 1 12 0.5)" fill="black"/>
+<rect width="5.2" height="1.2" transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 10.5255 7.69995)" fill="white"/>
+<rect width="5.2" height="1.2" transform="matrix(0.707107 -0.707107 -0.707107 -0.707107 2.32305 8.54858)" fill="white"/>
+</svg>
+
             )}
           </button>
 
           {dropdownOpen && (
-            <div className="absolute mt-1 bg-[rgba(245,82,82,0.10)] backdrop-blur-2xl shadow-md w-32 min-w-40 text-right z-[1000]">
+            <div className="absolute mt-1 bg-black backdrop-blur-2xl shadow-md w-32 min-w-40 text-right z-[1000]">
               {cities.map((city) => (
                 <div
                   key={city}
                   onClick={() => toggleCity(city)}
-                  className={`px-3 py-2 text-xs cursor-pointer border-b border-b-[rgba(255,255,255,.2)] text-right flex align-middle gap-2.5 justify-end ${selectedCity === city ? 'font-bold text-[#F55252]' : 'text-[#F55252] font-bold'} hover:bg-gray-100 hover:text-black`}
+                  className={`px-3 py-2 text-xs cursor-pointer border-b border-b-[rgba(255,255,255,.2)] text-right flex align-middle gap-2.5 justify-end ${selectedCity === city ? 'font-bold text-white' : 'text-white font-bold'} hover:bg-gray-100 hover:text-black`}
                 >
                   {city !== "BENGALURU" && (
                     <div className="bg-[#F55252] text-white p-1 flex align-middle justify-center">
@@ -166,6 +167,6 @@ export default function HomePackagesSection() {
         />
       )}
       <PageFillAnimation />
-    </Section>
+    </div>
   );
 }
