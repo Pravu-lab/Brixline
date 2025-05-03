@@ -63,14 +63,14 @@ const FounderSection = () => {
           <path opacity="0.2" d="M0 85V39.1739L26.0384 0H65.5397L47.0466 39.1739H71.9013V85H0ZM90.0987 85V39.1739L116.137 0H155.638L137.145 39.1739H162V85H90.0987Z" fill="#F55252" />
         </svg>
         {/* Desktop Content */}
-        <Title className="leading-[100%] text-left !text-[28px] sm:!text-[48px] capitalize font-biter font-bold mt-[32px] !mb-[90px]">
+        <Title className="leading-[100%] text-left !text-[28px] sm:!text-[48px] capitalize font-biter font-bold mt-[32px] !mb-[90px] text-white">
           we build trust, comfort, and spaces where families create memories that last a lifetime.
         </Title>
 
-        <MainTitle className='!text-[28px] sm:!text-[34.57px] !text-left'>
+        <MainTitle className='!text-[28px] sm:!text-[34.57px] !text-left text-white'>
           PRAVAS  CHANDRAGIRI
         </MainTitle>
-        <Description className='!text-[14.75px] font-extrabold leading-[140%]'>CEO & FOUNDER</Description>
+        <Description className='!text-[14.75px] font-extrabold leading-[140%] text-white'>CEO & FOUNDER</Description>
       </div>
 
       {/* Background Image */}
