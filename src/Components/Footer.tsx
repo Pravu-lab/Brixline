@@ -9,7 +9,7 @@ export default function FooterSection() {
       <path d="M4 13.6611C3.99991 13.2732 4.08445 12.8899 4.24772 12.538C4.41099 12.1862 4.64906 11.8742 4.94533 11.6238L14.2787 3.62509C14.76 3.2183 15.3698 2.99512 16 2.99512C16.6302 2.99512 17.24 3.2183 17.7213 3.62509L27.0547 11.6238C27.3509 11.8742 27.589 12.1862 27.7523 12.538C27.9156 12.8899 28.0001 13.2732 28 13.6611V25.6611C28 26.3683 27.719 27.0466 27.219 27.5467C26.7189 28.0468 26.0406 28.3278 25.3333 28.3278H6.66667C5.95942 28.3278 5.28115 28.0468 4.78105 27.5467C4.28095 27.0466 4 26.3683 4 25.6611V13.6611Z" stroke="#F55252" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>,
       value: '65+',
-      label: 'HOMES',
+      label: 'Homes',
     },
     {
       icon: <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
@@ -51,15 +51,15 @@ export default function FooterSection() {
               {stats.map((item, i) => (
                 <div
                   key={i}
-                  className={`flex items-center justify-start w-full gap-[16px] px-2`}
+                  className={`flex items-center justify-start w-full gap-1 md:gap-[16px] px-0 md:px-2`}
                 >
-                  <div className='flex justify-start items-start'>
+                  <div className='flex justify-center items-center'>
                   {item.icon}
                   </div>
           
                   <div>
-                  <h4 className="font-bold text-lg mt-2 text-black">{item.value}</h4>
-                  <p className="my-0 clamp-description font-bold leading-[140%] text-sm text-black opacity-70">{item.label}</p>
+                  <h4 className="flex justify-start items-center font-bold text-lg mt-2 text-black">{item.value}</h4>
+                  <p className="flex justify-center items-center my-0 font-bold leading-[140%] text-xs text-black opacity-70">{item.label}</p>
                   </div>
                 </div>
               ))}

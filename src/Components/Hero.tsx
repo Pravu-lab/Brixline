@@ -58,7 +58,7 @@ const Hero = () => {
                     width={400}
                     height={400}
                     src="/brixlinewhite.png"
-                    className="object-cover w-full"
+                    className="object-cover w-[142px]"
                     alt="decorative-shape"
                     />
                   </Link>

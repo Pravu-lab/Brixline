@@ -16,25 +16,25 @@ export default function ScrollingTextReveal() {
     "Most customer centric company making Construction absolutely simple, transparent and reliable for everyone";
 
   return (
-    <Section className="w-full md:w-[90%] mx-auto m-auto md:px-[5%]">
+    <div className="px-3 md:px-10 py-8 sm:py-12 relative w-full md:w-[90%] mx-auto m-auto">
       {/* <div className="flex md:p-8 gap-4 justify-between items-center p-6"> */}
-      <div className="flex flex-col md:flex-row items-center justify-center py-4 gap-4 ">
-        <h2 className="my-0 clamp-description font-medium text-lg leading-[160%] text-black w-full md:w-1/2 md:p-4 py-48 md:py-10 md:mx-auto mx-auto">
+      <div className="flex md:flex-row items-center justify-center py-0 md:py-4 gap-4">
+        <h2 className="my-0 font-semibold text-xs md:text-lg leading-[160%] text-black w-full md:w-1/2 md:p-4 py-2 md:py-10 md:mx-auto mx-auto">
           It all started with an idea, that changed the way we look at
-          construction <br /> today. We started with the aim of making the construction
-          simple, <br /> transparent and reliable
+          construction <br className="hidden md:block"/> today. We started with the aim of making the construction
+          simple, <br className="hidden md:block"/> transparent and reliable
         </h2>
         <Image
           src="/aboutLogo.png"
           alt="house-image-2"
           width={700}
           height={700}
-          className="max-w-[160px] w-full h-fit mx-auto my-auto"
+          className="w-[110px] md:max-w-[160px] md:w-full h-fit mx-auto my-auto"
         />
       </div>
       <div
         ref={ref}
-        className="flex flex-wrap gap-x-2 p-8 text-xl leading-relaxed justify-center"
+        className="flex flex-wrap gap-x-2 p-0 md:p-8 text-xl leading-relaxed justify-center mt-12 md:mt-0"
       >
         {text.split(" ").map((word, wordIndex) => (
           <div key={wordIndex} className="whitespace-nowrap flex">
@@ -50,7 +50,7 @@ export default function ScrollingTextReveal() {
 
               return (
                 <motion.h1
-                className="text-black text-[32px] md:text-7xl tracking-[-4px] leading-[1.2]"
+                className="text-black text-[32px] md:text-7xl tracking-normal md:tracking-[-4px] leading-[1.2]"
                 key={index}
                 style={{
                   opacity,
@@ -67,6 +67,6 @@ export default function ScrollingTextReveal() {
           </div>
         ))}
       </div>
-    </Section>
+    </div>
   );
 }
