@@ -76,7 +76,7 @@ const slidesData = [
     
         </div>
       ),
-      unnumbered: true // Add a flag to identify unnumbered slides
+      unnumbered: true
   },
   
   {
@@ -100,6 +100,16 @@ You get the project updates through our customer application.
       </p>
     ),
   },
+  {
+    image: "/workend.png",
+    title: "",
+    content: (
+      <div>
+  
+      </div>
+    ),
+    unnumbered: true
+},
 ];
 
 export default function HowitWorksSlider() {
