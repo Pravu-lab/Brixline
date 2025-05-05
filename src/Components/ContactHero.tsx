@@ -43,7 +43,7 @@ const ContactHero = () => {
                 {/* Left side: Image */}
                 <div className="relative h-[500px] md:h-full">
                     <Image
-                        src="/png/contact-hero.png"
+                        src="/png/contactx.png"
                         alt="bookwithus"
                         width={634}
                         height={100}

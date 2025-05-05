@@ -110,12 +110,14 @@ export default function Header() {
                         {dropdownOpen && (
                             <div className="fixed top-22 md:top-14
                              mt-1 bg-[rgba(245,82,82,0.10)] backdrop-blur-2xl shadow-md w-32 min-w-40 text-right z-[1000]">
-                                {cities.map((city) => (
+                                {cities
+                                .filter(city => city != selectedCity)
+                                .map((city) => (
                                     <div
                                         key={city}
                                         onClick={() => toggleCity(city)}
-                                        className={`px-3 py-2 text-xs cursor-pointer border-b-1 border-b-[rgba(255,255,255,.2)] text-right flex align-middle gap-2.5 justify-end ${selectedCity === city ? 'font-bold text-white' : 'text-white'
-                                            } hover:bg-gray-100 hover:text-black`}
+                                        className={`px-3 py-2 text-xs cursor-pointer border-b-1 border-b-[rgba(255,255,255,.2)] text-right flex align-middle gap-2.5 justify-end ${selectedCity === city ? 'font-bold text-white' : 'text-black'
+                                            } hover:bg-black hover:text-white`}
                                     >
 
                                         {city !== "BENGALURU" && (

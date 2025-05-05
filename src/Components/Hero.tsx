@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import GetQuote from "./GetQuote";
 import { Button, Description, MainTitle } from "./Tag";
+import { usePathname } from "next/navigation";
 
 const Hero = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -13,6 +14,8 @@ const Hero = () => {
   const [selectedCity, setSelectedCity] = useState("BENGALURU");
 
   const cities = ["BENGALURU", "CHENNAI", "HYDERABAD"];
+
+   const pathname = usePathname();
 
   const toggleCity = (city: string) => {
     setSelectedCity(city);
@@ -94,7 +97,7 @@ const Hero = () => {
                         <div
                           key={city}
                           onClick={() => toggleCity(city)}
-                          className={`px-3 py-2 text-xs cursor-pointer border-b-1 border-b-[rgba(255,255,255,.2)] text-right flex align-middle gap-2.5 justify-end ${selectedCity === city ? 'font-bold text-white' : 'text-white'
+                          className={`px-3 py-2 text-xs cursor-pointer border-b-1 border-b-[rgba(255,255,255,.2)] text-right flex align-middle gap-2.5 justify-end ${selectedCity === city ? 'font-bold text-black' : 'text-white'
                             } hover:bg-gray-100 hover:text-black`}
                         >
     
@@ -113,7 +116,7 @@ const Hero = () => {
     
               {/* Desktop Navigation */}
               
-              <nav className="hidden md:flex gap-6 items-center text-sm font-semibold text-black uppercase">
+              {/* <nav className="hidden md:flex gap-6 items-center text-sm font-semibold text-black uppercase">
                 <Link href="/" className="flex items-center gap-1 text-red-500">
                   <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
                   HOME
@@ -121,12 +124,53 @@ const Hero = () => {
                 <Link className="text-white" href="/about">ABOUT US</Link>
                 <Link className="text-white" href="/how-it-works">HOW IT WORKS</Link>
                 <Link className="text-white" href="/cost-estimator">COST ESTIMATOR</Link>
-                <Link className="text-white" href="/contact-us">CONTACT US</Link>
+                <Link className="text-white" href="/contact-us">CONTACT US</Link> */}
                 {/* <span className="flex items-center gap-1 text-black">
                             <Zap className="w-4 h-4 text-red-500" />
                             ZERO COST EMI
                         </span> */}
-              </nav>
+              {/* </nav> */}
+
+              <nav className="hidden md:flex gap-6 items-center text-sm font-semibold text-black uppercase sticky top-0">
+                    <Link href="/" className={`flex items-center gap-1 ${pathname === '/' ? 'text-red-500' : ''}`}>
+                        {pathname === '/' && (
+                            <span className="w-2 h-2 rounded-full bg-red-500 inline-block ml-2" />
+                        )}
+                        HOME
+                    </Link>
+
+                    <Link href="/about" className={`${pathname === '/about' ? 'text-red-500' : ''}`}>
+                        {pathname === '/about' && (
+                            <span className="w-2 h-2 rounded-full bg-red-500 inline-block ml-2" />
+                        )}
+                        ABOUT US
+                    </Link>
+
+                    <Link href="/how-it-works" className={`${pathname === '/how-it-works' ? 'text-red-500' : ''}`}>
+                        {pathname === '/how-it-works' && (
+                            <span className="w-2 h-2 rounded-full bg-red-500 inline-block ml-2" />
+                        )}
+                        HOW IT WORKS
+                    </Link>
+
+                    <Link href="/cost-estimator" className={`${pathname === '/cost-estimator' ? 'text-red-500' : ''}`}>
+                        {pathname === '/cost-estimator' && (
+                            <span className="w-2 h-2 rounded-full bg-red-500 inline-block ml-2" />
+                        )}
+                        COST ESTIMATOR
+                    </Link>
+
+                    <Link href="/contact-us" className={`${pathname === '/contact-us' ? 'text-red-500' : ''}`}>
+                        {pathname === '/contact-us' && (
+                            <span className="w-2 h-2 rounded-full bg-red-500 inline-block ml-2" />
+                        )}
+                        CONTACT US
+                    </Link>
+                    {/* <span className="flex items-center gap-1 text-black">
+                        <Zap className="w-4 h-4 text-red-500" />
+                        ZERO COST EMI
+                    </span> */}
+                </nav>
     
               {/* Mobile Menu Toggle */}
               <div className="md:hidden">
