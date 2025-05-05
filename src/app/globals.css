@@ -6,6 +6,18 @@
   --viewportDesktop: 1440;
 }
 
+[data-scroll-container] {
+  transform-style: preserve-3d;
+}
+
+.your-animated-element {
+  backface-visibility: hidden;
+}
+
+[data-speed], .your-animated-element {
+  will-change: auto !important;
+}
+
 @font-face {
   font-family: 'Bitter';
   src: url('../../public/fonts/Bitter-Bold.ttf') format('opentype');
