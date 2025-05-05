@@ -134,7 +134,7 @@ export default function Header() {
                 </div>
 
                 {/* Desktop Navigation */}
-                <nav className="hidden md:flex gap-6 items-center text-sm font-semibold text-black uppercase sticky top-0">
+                <nav className="hidden md:flex gap-6  items-center text-sm font-semibold text-black uppercase sticky top-0">
                     <Link href="/" className={`flex items-center gap-1 ${pathname === '/' ? 'text-red-500' : ''}`}>
                         {pathname === '/' && (
                             <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
@@ -142,28 +142,28 @@ export default function Header() {
                         HOME
                     </Link>
 
-                    <Link href="/about" className={`${pathname === '/about' ? 'text-red-500' : ''}`}>
+                    <Link href="/about" className={`flex items-center gap-1 ${pathname === '/about' ? 'text-red-500' : ''}`}>
                         {pathname === '/about' && (
                             <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
                         )}
                         ABOUT US
                     </Link>
 
-                    <Link href="/how-it-works" className={`${pathname === '/how-it-works' ? 'text-red-500' : ''}`}>
+                    <Link href="/how-it-works" className={` flex items-center gap-1 ${pathname === '/how-it-works' ? 'text-red-500' : ''}`}>
                         {pathname === '/how-it-works' && (
                             <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
                         )}
                         HOW IT WORKS
                     </Link>
 
-                    <Link href="/cost-estimator" className={`${pathname === '/cost-estimator' ? 'text-red-500' : ''}`}>
+                    <Link href="/cost-estimator" className={`flex items-center gap-1 ${pathname === '/cost-estimator' ? 'text-red-500' : ''}`}>
                         {pathname === '/cost-estimator' && (
                             <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
                         )}
                         COST ESTIMATOR
                     </Link>
 
-                    <Link href="/contact-us" className={`${pathname === '/contact-us' ? 'text-red-500' : ''}`}>
+                    <Link href="/contact-us" className={`flex items-center gap-1 ${pathname === '/contact-us' ? 'text-red-500' : ''}`}>
                         {pathname === '/contact-us' && (
                             <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
                         )}
