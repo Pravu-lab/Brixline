@@ -5,6 +5,7 @@ import Image from 'next/image'
 
 const Aboutus = () => {
   return (
+    <main className="min-h-[calc(100vh-80px)]">
 <div className='px-2 md:px-10 py-8 sm:py-12 relative bg-black !w-full overflow-y-hidden'>
     <div className='flex w-[90%] m-auto gap-16 flex-col sm:flex-row'>
         <div className='w-full sm:w-[60%]'>
@@ -134,6 +135,7 @@ const Aboutus = () => {
                     />
     </div>
 </div>
+</main>
 )
 }
 

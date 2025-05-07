@@ -156,7 +156,6 @@ export default function HowitWorksSlider() {
   const isMobile = useIsMobile();
   const titleX = useTransform(scrollYProgress, [0, 0.3], ["0vw", "-28vw"]);
   const titleY = useTransform(scrollYProgress, [0, 0.3], ["0vh", "0vh"]);
-
   const logoX = useTransform(scrollYProgress, [0, 0.3], ["0vw", "35vw"]);
   const logoY = useTransform(scrollYProgress, [0.3, 0.35], ["125%", "0%"]);
   const logoScale = useTransform(scrollYProgress, [0, 0.3], [1, 1.5]);
