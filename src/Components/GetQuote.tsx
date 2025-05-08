@@ -21,18 +21,20 @@ interface GetQuoteProps {
         setIsLoading(true);
 
         try {
-            // const response = await fetch("/api/submit", {
-            //     method: "POST",
-            //     headers: {
-            //         "Content-Type": "application/json",
-            //     },
-            //     body: JSON.stringify(formData),
-            // });
+            const response = await fetch("/api/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
 
-            // if (!response.ok) throw new Error("Submission failed");
+            if (!response.ok) throw new Error("Submission failed");
 
             setFormData({ name: "", contact: "", location: "" });
-            showThankYouWithTimeout();
+            if(response.ok){
+                showThankYouWithTimeout();
+            }
             // alert("Thank you! We'll be in touch soon.");
         } catch (error) {
             console.error("Submission error:", error);
