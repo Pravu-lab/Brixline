@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import LenisProvider from "@/contexts/LenisProvider";
+import Home from "./page";
+import { ThankYouProvider } from "@/contexts/ThankYouContext";
+import ThankYouPopup from "@/Components/ThankYouPopup";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,7 +31,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased font-intertight`}
       >
-        <LenisProvider>{children}</LenisProvider>
+        {/* {children} */}
+        <ThankYouProvider>
+          <LenisProvider>{children}</LenisProvider>
+          <ThankYouPopup />
+        </ThankYouProvider>
       </body>
     </html>
   );

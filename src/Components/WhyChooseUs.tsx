@@ -6,8 +6,8 @@ import {motion} from 'framer-motion';
 
 
 const uspPoints = [
-  {
-    icon: (
+  { 
+    icon: ( // ontime delivery image
       <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
         <path d="M38 6H10C7.79086 6 6 7.79086 6 10V38C6 40.2091 7.79086 42 10 42H38C40.2091 42 42 40.2091 42 38V10C42 7.79086 40.2091 6 38 6Z" stroke="#F55252" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
         <path d="M24 18V30" stroke="#F55252" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
@@ -23,7 +23,7 @@ const uspPoints = [
     desc: "Your home, delivered on time, or we pay you a penalty. No excuses.",
   },
   {
-    icon: (
+    icon: ( //fixed pricing
       <svg xmlns="http://www.w3.org/2000/svg" width="49" height="48" viewBox="0 0 49 48" fill="none">
         <path d="M24.25 44C35.2957 44 44.25 35.0457 44.25 24C44.25 12.9543 35.2957 4 24.25 4C13.2043 4 4.25 12.9543 4.25 24C4.25 35.0457 13.2043 44 24.25 44Z" stroke="#F55252" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
         <path d="M17.9501 15H29.9501" stroke="#F55252" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
