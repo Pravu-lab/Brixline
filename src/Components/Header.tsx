@@ -7,17 +7,10 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from "react";
 
 
-export default function Header({ transparent = false, forceWhiteLogo = false }: { transparent?: boolean, forceWhiteLogo?: boolean }) {
+export default function Header({ transparent = false, forceWhiteLogo = false, whiteText = false }: { transparent?: boolean, forceWhiteLogo?: boolean, whiteText?: boolean }) {
     const [mobileOpen, setMobileOpen] = useState(false);
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [selectedCity, setSelectedCity] = useState("BENGALURU");
-
-    // const [isHomepage, setIsHomepage] = useState(false);
-
-    // useEffect(() => {
-    //   // Check if we're on the homepage
-    //   setIsHomepage(localStorage.getItem("isHomepage") === "true");
-    // }, []);
 
     const cities = ["BENGALURU", "CHENNAI", "HYDERABAD"];
 
@@ -64,7 +57,7 @@ export default function Header({ transparent = false, forceWhiteLogo = false }: 
        
         <motion.header 
         ref={ref}
-        className={`${transparent ? 'bg-transparent' : 'bg-white'} p-4 ${mobileOpen ? 'h-[100dvh] mobileHeader !bg-black' : 'h-auto'
+        className={` ${transparent ? 'bg-transparent' : 'bg-white'} p-4 ${mobileOpen ? 'h-[100dvh] mobileHeader !bg-black' : 'h-auto'
         } sm:h-auto transition-all duration-300 overflow-hidden sticky top-0 w-screen z-[999]`}
         animate={{ opacity: isStuck ? 1 : 0 }}
         transition={{ duration: 0.4, ease: 'easeOut' }}
@@ -153,7 +146,7 @@ export default function Header({ transparent = false, forceWhiteLogo = false }: 
                 </div>
 
                 {/* Desktop Navigation */}
-                <nav className="hidden md:flex gap-6  items-center text-sm font-semibold text-black uppercase sticky top-0">
+                <nav className={`hidden md:flex gap-6  items-center text-sm font-semibold ${whiteText ? 'text-white' : 'text-black'} uppercase sticky top-0`}>
                     <Link href="/" className={`flex items-center gap-1 ${pathname === '/' ? 'text-red-500' : ''}`}>
                         {pathname === '/' && (
                             <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />

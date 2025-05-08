@@ -1,4 +1,5 @@
 "use client";
+import { useThankYou } from '@/contexts/ThankYouContext';
 import React, { useState } from 'react';
 
 interface GetQuoteProps {
@@ -8,6 +9,7 @@ interface GetQuoteProps {
 
   const GetQuote: React.FC<GetQuoteProps> = ({ classname }) => {
     const [isLoading, setIsLoading] = useState(false);
+    const { showThankYouWithTimeout } = useThankYou();
     const [formData, setFormData] = useState({
         name: "",
         contact: "",
@@ -19,18 +21,19 @@ interface GetQuoteProps {
         setIsLoading(true);
 
         try {
-            const response = await fetch("/api/submit", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(formData),
-            });
+            // const response = await fetch("/api/submit", {
+            //     method: "POST",
+            //     headers: {
+            //         "Content-Type": "application/json",
+            //     },
+            //     body: JSON.stringify(formData),
+            // });
 
-            if (!response.ok) throw new Error("Submission failed");
+            // if (!response.ok) throw new Error("Submission failed");
 
             setFormData({ name: "", contact: "", location: "" });
-            alert("Thank you! We'll be in touch soon.");
+            showThankYouWithTimeout();
+            // alert("Thank you! We'll be in touch soon.");
         } catch (error) {
             console.error("Submission error:", error);
             alert("Something went wrong. Please try again.");
@@ -38,6 +41,12 @@ interface GetQuoteProps {
             setIsLoading(false);
         }
     };
+
+    const handleContactChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const numericValue = e.target.value.replace(/\D/g, '');
+        setFormData({ ...formData, contact: numericValue });
+    };
+    
     return (
         <div className={`relative w-full flex justify-end ${classname}`}>
             <div className='max-w-[390px] relative max-h-[532px]'>
@@ -63,7 +72,8 @@ interface GetQuoteProps {
                                 aria-label="Contact Number"
                                 className="w-full p-4 border border-[#DADBE4]  outline-none focus:ring-2 focus:ring-[#A9ADB7] bg-white text-black"
                                 value={formData.contact}
-                                onChange={(e) => setFormData({ ...formData, contact: e.target.value })}
+                                // onChange={(e) => setFormData({ ...formData, contact: e.target.value })}
+                                onChange={handleContactChange}
                             />
 
                         <div className="relative">

@@ -1,44 +1,115 @@
 "use client";
-import { useState } from "react";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import CustomInput from "./Forms/CustomInput";
-import CustomTextArea from "./Forms/CustomTextArea";
 import CustomSelect from "./Forms/CustomSelect";
+import CustomTextArea from "./Forms/CustomTextArea";
 import { Button, Description, MainTitle, Section } from "./Tag";
+import { useThankYou } from "@/contexts/ThankYouContext";
 
 const ContactHero = () => {
     const [formData, setFormData] = useState({
-        name: "",
-        contact: "",
+        firstName: "",
+        contactNumber: "",
         location: "",
         enquiryType: "",
         enquiry: ""
     })
 
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const { showThankYouWithTimeout } = useThankYou();
+    // const [showThankYou, setShowThankYou] = useState(false);
+
+    // useEffect(() => {
+    //     if (showThankYou) {
+    //         // Hide the entire navbar container
+    //         const navbarContainer = document.querySelector('header') as HTMLElement | null;
+    //         if (navbarContainer) navbarContainer.style.display = 'none';
+    //         document.body.style.overflow = 'hidden';
+    //     } else {
+    //         // Show the navbar container
+    //         const navbarContainer = document.querySelector('header') as HTMLElement | null;
+    //         if (navbarContainer) navbarContainer.style.display = '';
+    //         document.body.style.overflow = '';
+    //     }
+
+    //     return () => {
+    //         // Cleanup - ensure navbar is visible if component unmounts
+    //         const navbarContainer = document.querySelector('header') as HTMLElement | null;
+    //         if (navbarContainer) navbarContainer.style.display = '';
+    //         document.body.style.overflow = '';
+    //     };
+    // }, [showThankYou]);
+
+
+
         const handleSubmit = async (e: React.FormEvent) => {
             e.preventDefault();
+            setIsSubmitting(true);
     
             try {
-                const response = await fetch("/api/submit", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(formData),
-                });
+                // const response = await fetch("/api/submit", {
+                //     method: "POST",
+                //     headers: {
+                //         "Content-Type": "application/json",
+                //     },
+                //     body: JSON.stringify(formData),
+                // });
     
-                if (!response.ok) throw new Error("Submission failed");
+                // if (!response.ok) throw new Error("Submission failed");
     
-                setFormData({ name: "", contact: "", location: "", enquiryType: "", enquiry: "" });
-                alert("Thank you! We'll be in touch soon.");
+                setFormData({ firstName: "", contactNumber: "", location: "", enquiryType: "", enquiry: "" });
+                // setShowThankYou(true)
+                // setTimeout(() => setShowThankYou(false), 10000); // thankyou popup disappears after 5 seconds.
+
+                showThankYouWithTimeout();
+
+
+                // alert("Thank you! We'll be in touch soon.");
             } catch (error) {
                 console.error("Submission error:", error);
                 alert("Something went wrong. Please try again.");
-            } 
+            } finally{
+                setIsSubmitting(false);
+            }
         };
     const enquiryTypeOption = [{ label: "social", value: "Social" }]
+
+    const handleContactChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value;
+        if (/^\d*$/.test(value) && value.length <= 13) { // number limit to 13
+            setFormData(prev => ({ ...prev, contactNumber: value }));
+        }
+    };
     return (
         <Section className="!p-0 md:!px-10" >
+
+{/* {showThankYou && ( */}
+        {/* <div className="fixed inset-0 bg-[rgba(0,0,0,0.9)] flex items-center justify-center z-50 p-4">
+          <div className="bg-white p-6 max-w-md text-center text-black">
+          <div className="flex justify-center mb-6">
+      <img 
+        src="./temporary.png"
+        alt="Thank you illustration"
+        className="w-full max-h-70 object-contain" // Adjust size as needed
+      />
+    </div>
+            <h2 className="font-extrabold text-red-600">THANK YOU FOR REACHING OUT!</h2>
+            <p className="text-xl font-bold">We've Received Your Request And Our
+           Team Is Reviewing Your Details.</p> */}
+            {/* <p className="my-4">
+              Whether you're building your dream home or planning a
+              renovation, we're excited to help bring your vision to life.
+            Expect a call or email from us within the next 24 hours.</p>
+            <button
+              onClick={() => setShowThankYou(false)}
+              className="mt-6 bg-[#F55252] text-white px-6 py-2 rounded-lg"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )} */}
             <div className="grid lg:grid-cols-2 grid-cols-1 items-center relative">
                 {/* Left side: Image */}
                 <div className="relative h-[500px] md:h-full">
@@ -62,21 +133,26 @@ const ContactHero = () => {
 
                 {/* Right side: Form */}
                 <div className="flex justify-center items-center p-4 md:p-5 bg-white md:bg-gray-100 h-full">
-                    <form onSubmit={(e)=>handleSubmit(e)} className="w-full max-w-2xl p-4 md:p-8 grid grid-cols-1 md:grid-cols-2 gap-5 bg-gray-100 md:bg-transparent z-10 mt-[-150px] md:mt-0">
+                    <form onSubmit={handleSubmit} className="w-full max-w-2xl p-4 md:p-8 grid grid-cols-1 md:grid-cols-2 gap-5 bg-gray-100 md:bg-transparent z-10  md:mt-0"> {/* mt-[-150px] */}
                         <CustomInput
                             onChange={(val) =>
                                 setFormData((prev) => ({ ...prev, firstName: val.target.value }))
                             }
-                            value={formData.name}
+                            value={formData.firstName}
                             placeholder="First Name"
+                            type="text"
+                            
                         />
 
                         <CustomInput
-                            onChange={(val) =>
-                                setFormData((prev) => ({ ...prev, contactNumber: val.target.value }))
-                            }
-                            value={formData.contact}
+                            // onChange={(val) =>
+                            //     setFormData((prev) => ({ ...prev, contactNumber: val.target.value }))
+                            // }
+                            onChange={handleContactChange}
+                            value={formData.contactNumber}
                             placeholder="Contact Number"
+                            type="tel" // numeric keyboard in mobile
+                            
                         />
 
                         <CustomInput
@@ -127,8 +203,8 @@ const ContactHero = () => {
                             </Description>
 
                             <div className="w-full">
-                                <Button className="w-full py-3 text-sm h-full bg-[#F55252] text-white rounded-lg">
-                                    SUBMIT
+                                <Button className="w-full py-3 text-sm h-full bg-[#F55252] text-white rounded-lg cursor-pointer">
+                                {isSubmitting ? 'Submitting...' : 'SUBMIT'}
                                 </Button>
                             </div>
                         </div>

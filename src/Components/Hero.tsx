@@ -24,27 +24,18 @@ const Hero = () => {
       useEffect(() => {
         const handleScroll = () => {
           const currentScrollY = window.scrollY;
-          
-          // Show/hide based on scroll direction
           if (currentScrollY > lastScrollY.current && currentScrollY > 50) {
             setIsVisible(false); // Hide when scrolling down
           } else {
             setIsVisible(true); // Show when scrolling up
           }
-          
           setIsScrolled(currentScrollY > 50); //track to check scroll past threshold
           
           lastScrollY.current = currentScrollY;
         };
-
-       
-      
-    
         window.addEventListener("scroll", handleScroll, { passive: true });
         return () => window.removeEventListener("scroll", handleScroll);
       }, []);
-
-
       // useEffect(() => {
       //   // Set a flag when homepage mounts
       //   localStorage.setItem("isHomepage", "true");
@@ -73,7 +64,7 @@ const Hero = () => {
             }`}
           >
             {/* <div className='bg-transparent border-1 text-white'> */}
-              <Header transparent={!isScrolled} forceWhiteLogo={!isScrolled}/>
+              <Header transparent={!isScrolled} forceWhiteLogo={!isScrolled} whiteText={!isScrolled}/>
           
           </motion.div>
         )}

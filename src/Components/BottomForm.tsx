@@ -1,4 +1,5 @@
 "use client";
+import { useThankYou } from "@/contexts/ThankYouContext";
 import React, { useState } from "react";
 
 interface BottomFormProps {
@@ -7,6 +8,7 @@ interface BottomFormProps {
 
 const BottomForm: React.FC<BottomFormProps> = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const { showThankYouWithTimeout } = useThankYou();
   const [formData, setFormData] = useState({
     name: "",
     contact: "",
@@ -19,18 +21,18 @@ const BottomForm: React.FC<BottomFormProps> = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch("/api/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      // const response = await fetch("/api/submit", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify(formData),
+      // });
 
-      if (!response.ok) throw new Error("Submission failed");
+      // if (!response.ok) throw new Error("Submission failed");
 
       setFormData({ name: "", contact: "", email: "", location: "" });
-      alert("Thank you! We'll be in touch soon.");
+      showThankYouWithTimeout();
     } catch (error) {
       console.error("Submission error:", error);
       alert("Something went wrong. Please try again.");
@@ -38,6 +40,12 @@ const BottomForm: React.FC<BottomFormProps> = () => {
       setIsLoading(false);
     }
   };
+
+   const handleContactChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+          // Remove all non-digit characters
+          const numericValue = e.target.value.replace(/\D/g, '');
+          setFormData({ ...formData, contact: numericValue });
+      };
 
   return (
     <div className="bg-black">
@@ -64,7 +72,8 @@ const BottomForm: React.FC<BottomFormProps> = () => {
               aria-label="Contact Number"
               className="w-full p-4 border border-[#DADBE4] outline-none focus:ring-2 focus:ring-[#A9ADB7] bg-white text-black"
               value={formData.contact}
-              onChange={(e) => setFormData({ ...formData, contact: e.target.value })}
+              // onChange={(e) => setFormData({ ...formData, contact: e.target.value })}
+              onChange={handleContactChange}
             />
             <input
               type="email"
@@ -88,6 +97,7 @@ const BottomForm: React.FC<BottomFormProps> = () => {
                 type="submit"
                 disabled={isLoading}
                 className="w-full max-w-sm bg-[#F55252] text-sm text-white py-4 font-bold transition flex justify-center items-center gap-2.5 disabled:opacity-50"
+                // onClick={handleSubmit}
               >
                 GET A FREE QUOTE
               </button>
