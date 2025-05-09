@@ -44,7 +44,7 @@ const uspPoints = [
       </svg>
     ),
     title: "Unmatched Quality",
-    desc: "7-stage quality checks and 400+ tests guarantee perfection.",
+    desc: "431+ quality checks with 3-layered audit system. ",
   },
   {
     icon: (
@@ -59,8 +59,8 @@ const uspPoints = [
         <path d="M16.75 4V12" stroke="#F55252" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    title: "Zero EMI Cost",
-    desc: "Start building today with zero EMI during the construction phase.",
+    title: "Easy EMI Options",
+    desc: "Start building today with easy EMI during the construction phase.",
   },
 ];
 
@@ -77,10 +77,9 @@ const WhyChooseUs = () => {
       >
       <SubTitle className="">How are we different?</SubTitle>
       <Title className=" text-black leading-snug mb-4">
-        Brixline Zero Policy: Built
-        <br />
-        On Trust, Delivered With
-        <br />
+        Built
+        
+        On Trust, Delivered <br /> With
         Excellence
       </Title>
       <Description className="text-black opacity-50 mb-10">

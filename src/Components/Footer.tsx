@@ -22,7 +22,7 @@ export default function FooterSection() {
         <path d="M10.6667 20V28" stroke="#F55252" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         <path d="M10.6667 4V12" stroke="#F55252" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>,
-      value: '30k+',
+      value: '3.6L',
       label: 'Sq. Ft. Delivered',
     },
     {
@@ -30,7 +30,7 @@ export default function FooterSection() {
       <path d="M20.636 17.5146L22.656 28.8826C22.6786 29.0165 22.6598 29.1541 22.6022 29.277C22.5445 29.3999 22.4507 29.5022 22.3332 29.5704C22.2158 29.6385 22.0804 29.6692 21.9451 29.6583C21.8098 29.6473 21.681 29.5954 21.576 29.5093L16.8027 25.9266C16.5722 25.7545 16.2923 25.6615 16.0047 25.6615C15.717 25.6615 15.4371 25.7545 15.2067 25.9266L10.4253 29.508C10.3204 29.5939 10.1918 29.6458 10.0567 29.6567C9.92151 29.6676 9.78623 29.6371 9.66889 29.5691C9.55154 29.5012 9.45771 29.3991 9.3999 29.2764C9.34209 29.1538 9.32305 29.0164 9.34534 28.8826L11.364 17.5146" stroke="#F55252" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
       <path d="M16 18.9951C20.4183 18.9951 24 15.4134 24 10.9951C24 6.57684 20.4183 2.99512 16 2.99512C11.5817 2.99512 8 6.57684 8 10.9951C8 15.4134 11.5817 18.9951 16 18.9951Z" stroke="#F55252" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>,
-      value: '400+',
+      value: '431+',
       label: 'Quality Checks',
     },
   ];
@@ -41,7 +41,7 @@ export default function FooterSection() {
           {/* Left Content */}
           <div className='px-1 py-16'>
             <Title className="text-black mb-4 text-center md:text-left">
-              Hire The Best House Construction Service
+              Hire The Best Home Construction Service
             </Title>
             <h2 className="px-1 text-[12px] sm:text-[16px] font-bold uppercase text-gray-600 mb-8 text-center md:text-left">
               Backed by renowned investors who believe in our vision to revolutionize the sports ecosystem.

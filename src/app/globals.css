@@ -9,6 +9,7 @@
 @font-face {
   font-family: 'Bitter';
   src: url('../../public/fonts/Bitter-Bold.ttf') format('opentype');
+  /* src: url('/public/fonts/Bitter-Bold.ttf') format('opentype'); */
   font-weight: normal;
   font-style: normal;
 }
@@ -16,8 +17,13 @@
 @font-face {
   font-family: 'Bitter';
   src: url('../../public/fonts/Bitter-Regular.ttf') format('truetype');
+  /* src: url('/public/fonts/Bitter-Regular.ttf') format('truetype'); */
   font-weight: 400;
   font-style: normal;
+}
+
+.bitter-font {
+  font-family: 'Bitter', serif;
 }
 
 @font-face {
