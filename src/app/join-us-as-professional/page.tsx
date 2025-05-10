@@ -1,15 +1,21 @@
 "use client";
 import { useEffect, useState } from "react";
-import {
-  AnimatePresence,
-  motion,
-} from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import FooterSection from "@/Components/Footer";
 import Header from "@/Components/Header";
 import Image from "next/image";
 
-export default function ZeroCostEMI() {
+export default function JoinUsAsProfessionals() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    city: "",
+    phone: "",
+    email: "",
+  });
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,6 +25,40 @@ export default function ZeroCostEMI() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError("");
+    setSuccess(false);
+
+    if (!formData.name || !formData.city || !formData.phone) {
+      setError("Please fill in all required fields");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const response = await fetch("/api/partner", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Submission failed");
+      }
+
+      setSuccess(true);
+      setFormData({ name: "", city: "", phone: "", email: "" });
+    } catch (err) {
+      setError("Failed to submit form. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
     <>
       <AnimatePresence>
@@ -26,7 +66,7 @@ export default function ZeroCostEMI() {
         <motion.div
           initial={{ opacity: 1 }}
           animate={{
-            opacity: 1, 
+            opacity: 1,
             backgroundColor: isScrolled
               ? "rgba(255,255,255,1)"
               : "rgba(255,255,255,0)",
@@ -34,7 +74,7 @@ export default function ZeroCostEMI() {
           transition={{ duration: 0.3 }}
           className={`fixed top-0 left-0 w-full z-[1000] ${
             isScrolled ? "shadow-md" : ""
-          } [&_header]:!opacity-100`} 
+          } [&_header]:!opacity-100`}
         >
           <Header
             transparent={!isScrolled}
@@ -88,16 +128,31 @@ export default function ZeroCostEMI() {
         </div>
         <div className="px-3">
           <div className="relative bg-white mx-auto max-w-screen-lg h-[490px] md:h-[212px] shadow-sm mt-5 md:mt-10 px-4 py-6 md:p-8">
-            <form className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 h-full">
+            <form
+              className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 h-full"
+              onSubmit={handleSubmit}
+            >
               <div className="md:row-start-1 md:col-span-1">
                 <input
                   type="text"
                   placeholder="Name*"
-                  className="w-full p-4 !text-black placeholder:text-black font-normal border border-black/10 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  value={formData.name}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
+                  required
+                  className="w-full p-4 !text-black placeholder:text-black font-normal border border-black/10 focus:outline-none focus:ring-2 focus:ring-gray-100"
                 />
               </div>
               <div className="md:row-start-1 md:col-span-1 relative">
-                <select className="w-full p-4 border !text-black placeholder:text-black font-normal border-black/10 appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <select
+                  value={formData.city}
+                  onChange={(e) =>
+                    setFormData({ ...formData, city: e.target.value })
+                  }
+                  required
+                  className="w-full p-4 border !text-black placeholder:text-black font-normal border-black/10 appearance-none focus:outline-none focus:ring-2 focus:ring-gray-100"
+                >
                   <option value="">City*</option>
                   <option>Mumbai</option>
                   <option>Delhi</option>
@@ -117,14 +172,20 @@ export default function ZeroCostEMI() {
                 <input
                   type="tel"
                   placeholder="Phone*"
-                  className="w-full p-4 border !text-black placeholder:text-black font-normal border-black/10 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  value={formData.phone}
+                onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                  className="w-full p-4 border !text-black placeholder:text-black font-normal border-black/10 focus:outline-none focus:ring-2 focus:ring-gray-100"
+                  required
                 />
               </div>
               <div className="md:row-start-1 md:col-span-1">
                 <input
                   type="email"
                   placeholder="Email"
-                  className="w-full p-4 border !text-black placeholder:text-black font-normal border-black/10 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  value={formData.email}
+                onChange={(e) => setFormData({...formData, email: e.target.value})}
+
+                  className="w-full p-4 border !text-black placeholder:text-black font-normal border-black/10 focus:outline-none focus:ring-2 focus:ring-gray-100"
                 />
               </div>
 
@@ -139,9 +200,15 @@ export default function ZeroCostEMI() {
               </div>
 
               <div className="md:row-start-2 md:col-span-2 flex items-center justify-end order-1 md:order-2">
-                <button className="w-full bg-[#F55252] text-white px-8 py-3.5 h-full hover:bg-blue-700 transition-colors text-sm font-medium">
-                  Submit
-                </button>
+              <button
+                type="submit"
+                disabled={loading}
+                className={`w-full bg-[#F55252] text-white px-8 py-3.5 h-full transition-colors text-sm font-medium ${
+                  loading ? "opacity-50 cursor-not-allowed" : "hover:bg-red-600"
+                }`}
+              >
+                {loading ? "Submitting..." : "Submit"}
+              </button>
               </div>
             </form>
           </div>
