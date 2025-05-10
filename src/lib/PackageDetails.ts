@@ -19,8 +19,8 @@ export const PackageDetails = {
       {
         title: "Structure",
         items: [
-          "Steel – Sunvik, Prime Gold, Kamadhenu, or equivalent",
-          "Cement – Dalmia, Bharathi, or equivalent (43 or 53 Grade)",
+          "Steel – Sunvik,Kamadhenu or equivalent,upto rupees 65",
+          "Cement – Maha, Priya or equivalent, upto rupees 360",
           "Aggregates – 20 mm & 40 mm graded stone aggregates",
           "Blocks – Standard solid concrete (6-inch: ext and 4-inch: int)",
           "RCC Mix – M20 / M25 as per recommendation",
@@ -40,7 +40,7 @@ export const PackageDetails = {
         title: "Bathroom",
         items: [
           "Ceramic Wall Dado - Up to 7 ft height – ₹50 per sq. ft.",
-          "Sanitaryware & CP Fittings - Up to ₹37,000 per 1000 sq. ft. (Cera or equivalent)",
+          "Sanitaryware & CP Fittings - Up to ₹18,000 per Bathroom (Hindware or equivalent)",
           "CPVC Pipes - APL Apollo or approved equivalent",
           "Bathroom Doors - Waterproof flush doors or WPC (Wood Polymer Composite)",
         ],
@@ -48,7 +48,7 @@ export const PackageDetails = {
       {
         title: "Door & Windows",
         items: [
-          "Windows - UPVC with glass and mesh shutters (2-track system), using Jindal profiles",
+          "Windows - UPVC with glass and mesh shutters (2-track system), Upto rupees 400/sq.ft",
           'Main Door - Veneer-finished flush door with a 5" x 3" Sal wood frame – Total value ₹25,000 including fixtures',
           'Internal Doors - Membrane or laminate-finished flush doors up to ₹9,000 including fixtures; door frames made of 4" x 2.5" Sal wood',
         ],
@@ -56,7 +56,7 @@ export const PackageDetails = {
       {
         title: "Painting",
         items: [
-          "Interior Painting(2:1:2) - JK Wall Putty with Tractor Emulsion or approved equivalent (Asian Paints)",
+          "Interior Painting(2:1:2) - Alt Tech putty with Asian primer and Tractor Emulsion or equivalent (Asian Paints)",
           "Exterior Painting(1:2) - Asian Primer with Ace Exterior Emulsion or equivalent (Asian Paints)",
         ],
       },
@@ -66,7 +66,7 @@ export const PackageDetails = {
           "Living & Dining - Vitrified tiles up to ₹60 per sq. ft.",
           "Rooms & Kitchen- Tiles up to ₹50 per sq. ft.",
           "Balcony & Open Areas - Anti-skid tiles up to ₹40 per sq. ft.",
-          "Staircase - Sadarahalli granite up to ₹70 per sq. ft.",
+          "Staircase - Granite up to ₹70 per sq.ft.",
           "Parking Area - Anti-skid tiles up to ₹40 per sq. ft.",
         ],
       },
@@ -82,7 +82,7 @@ export const PackageDetails = {
         title: "Miscellaneous",
         items: [
           "Overhead Tank - Double-layered 1500 Ltr – Apollo make",
-          "Underground Sump - 2.5x built-up area",
+          "Underground Sump - 2 x Built-up area, 4,000 to 20,000 sq.ft",
           "Staircase Railing & Window Grill - Mild steel (MS)",
         ],
       },
@@ -108,8 +108,8 @@ export const PackageDetails = {
       {
         title: "Structure",
         items: [
-          "Steel - Jindal or equivalent",
-          "Cement - Dalmia, Bharathi, or equivalent – 43 or 53 grade",
+          "Steel - Jindal panther or equivalent, upto rupees 73",
+          "Cement - Dalmia, Bharti or equivalent, upto rupees 370",
           "Aggregates - 20 mm & 40 mm",
           "Blocks – Standard solid concrete (6-inch: ext and 4-inch: int)",
           "RCC Mix – M20 / M25 as per recommendation",
@@ -129,7 +129,7 @@ export const PackageDetails = {
         title: "Bathroom",
         items: [
           "Ceramic Wall Dado - Up to 7 ft height – ₹50 per sq. ft.",
-          "Sanitaryware & CP Fittings - Up to ₹45,000 per 1000 sq. ft. (Hindware or equivalent)",
+          "Sanitaryware & CP Fittings - Up to ₹20,000 per Bathroom (Jaquar/ESSCO or equivalent)",
           "CPVC Pipes - APL Apollo or approved equivalent",
           "Bathroom Doors - Waterproof flush doors or WPC (Wood Polymer Composite)",
         ],
@@ -137,7 +137,7 @@ export const PackageDetails = {
       {
         title: "Door & Windows",
         items: [
-          "Windows - UPVC windows with glass and mesh shutters (3-track), Lesso Eti or approved equivalent",
+          "Windows - UPVC windows with glass and mesh shutters (3-track), upto rupees 440/sq.ft",
           'Main Door - Teak door with a 5" x 3" teak frame, at ₹30,000 including fixtures',
           'Internal Doors - Membrane or flush doors with laminates, valued up to ₹11,000 including fixtures; door frames made of 4" x 2.5" Sal wood',
         ],
@@ -145,7 +145,7 @@ export const PackageDetails = {
       {
         title: "Painting",
         items: [
-          "Interior Painting(2:1:2) - JK Wall Putty with Tractor Emulsion or approved equivalent (Asian Paints)",
+          "Interior Painting(2:1:2) - JK Putty with Asian primer and Tractor Emulsion or equivalent (Asian Paints)",
           "Exterior Painting(1:2) - Asian Primer with Ace Exterior Emulsion or equivalent (Asian Paints)",
         ],
       },
@@ -155,8 +155,8 @@ export const PackageDetails = {
           "Living & Dining - Tiles or granite up to ₹100 per sq. ft.",
           "Rooms & Kitchen - Tiles up to ₹80 per sq. ft.",
           "Balcony & Open Areas - Anti-skid tiles up to ₹60 per sq. ft.",
-          "Staircase - Sadarahalli granite up to ₹80 per sq. ft.",
-          "Parking - Anti-skid tiles up to ₹50 per sq. ft.",
+          "Staircase - Granite up to ₹80 per sq. ft.",
+          "Parking - Anti-skid tiles up to ₹40 per sq. ft.",
         ],
       },
       {
@@ -198,8 +198,8 @@ export const PackageDetails = {
       {
         title: "Structure",
         items: [
-          "Steel - Jindal or approved equivalent",
-          "Cement - ACC, Ultratech, or equivalent – 43 or 53 grade",
+          "Steel - TATA or equivalent, upto rupees 80",
+          "Cement - Ultratech, Birla Super or equivalent, upto rupees 400",
           "Aggregates - 20mm & 40mm",
           "Blocks – Standard solid concrete (6-inch: ext and 4-inch: int)",
           "RCC Mix – M20 / M25 as per recommendation",
@@ -219,7 +219,7 @@ export const PackageDetails = {
         title: "Bathroom",
         items: [
           "Ceramic Wall Dado (up to 7' height) - upto ₹80 per sq. ft.",
-          "Sanitaryware & CP Fittings - upto ₹80,000 per 1000 sq. ft. (Jaquar make)",
+          "Sanitaryware & CP Fittings - upto ₹25,000 per Bathroom (Cera or equivalent)",
           "CPVC Pipes - APL Apollo or approved equivalent",
           "Bathroom Doors - Waterproof flush doors or WPC",
           "Mirror, Soap Dish, Towel Rail - upto ₹12,000 for 1000 sq. ft.",
@@ -229,7 +229,7 @@ export const PackageDetails = {
       {
         title: "Door & Windows",
         items: [
-          "Windows - UPVC windows with glass and mesh shutters (3-track with 1 mesh), Prominance, NCL Veka, or equivalent",
+          "Windows - UPVC windows with glass and mesh shutters (3-track with 1 mesh), Upto rupees 600/sq.ft",
           'Main Door - Teak door with a 5" x 3.5" teak frame, upto at ₹45,000 including fixtures',
           'Internal Doors - Membrane or flush doors with laminates, upto ₹13,000 including fixtures; door frames made of 4" x 3" Sal wood',
           'Pooja Room Door - Burma Teak door with a 5" x 2.5" teak frame, upto at ₹28,000 for every 2,000 sq. ft. of package area',
@@ -238,7 +238,7 @@ export const PackageDetails = {
       {
         title: "Painting",
         items: [
-          "Interior Painting(2:1:2) - JK Wall Putty with Apcolite Emulsion or equivalent (Asian Paints)",
+          "Interior Painting(2:1:2) - Asian Putty with Asian primer and Apcolite Emulsion or equivalent (Asian Paints)",
           "Exterior Painting(1:2) - Asian Primer with Apcolite Exterior Emulsion or equivalent (Asian Paints)",
         ],
       },
@@ -248,8 +248,8 @@ export const PackageDetails = {
           "Living & Dining - Granite or Marble up to ₹140 per sq. ft.",
           "Rooms & Kitchen - Granite or marble up to ₹120 per sq. ft.",
           "Balcony & Open Areas - Anti-skid tiles up to ₹80 per sq. ft.",
-          "Staircase - Sadarahalli granite up to ₹110 per sq. ft.",
-          "Parking - Anti-skid tiles up to ₹70 per sq. ft.",
+          "Staircase - Granite up to ₹110 per sq. ft.",
+          "Parking - Anti-skid tiles up to ₹50 per sq. ft.",
         ],
       },
       {
@@ -291,7 +291,7 @@ export const PackageDetails = {
       {
         title: "Structure",
         items: [
-          "Steel - Jindal or approved equivalent",
+          "Steel - TATA or equivalent, upto rupees 80",
           "Cement - ACC, Ultratech, or equivalent – 43 or 53 grade",
           "Aggregates - 20mm & 40mm",
           "Blocks – Standard solid concrete (6-inch: ext and 4-inch: int)",
@@ -312,7 +312,7 @@ export const PackageDetails = {
         title: "Bathroom",
         items: [
           "Ceramic Wall Dado (up to 7' height) - upto ₹90 per sq. ft.",
-          "Sanitaryware & CP Fittings - upto ₹90,000 per 1000 sq. ft. (Kohler make)",
+          "Sanitaryware & CP Fittings - upto ₹30,000 per Bathroom (Kohler or equivalent)",
           "CPVC Pipes - APL Apollo or equivalent",
           "Bathroom Doors - Waterproof flush doors or WPC",
           "Mirror, Soap Dish, Towel Rail - upto ₹12,000 for 1000 sq. ft.",
@@ -322,7 +322,7 @@ export const PackageDetails = {
       {
         title: "Door & Windows",
         items: [
-          "Windows - UPVC windows with glass and mesh shutters (3-track with 1 mesh), Fenesta or approved equivalent",
+          "Windows - UPVC windows with glass and mesh shutters (3-track with 1 mesh), Upto rupees 650/sq.ft",
           'Main Door - Teak door with a 5" x 3.5" teak frame, upto ₹60,000 including fixtures',
           'Internal Doors - Membrane or flush doors with laminates, upto ₹15,000 including fixtures; door frames made of 4" x 3" Sal wood',
           'Pooja Room Door - Burma Teak door with a 5" x 2.5" teak frame, upto ₹32,000 for every 2,000 sq. ft. of package area',
@@ -331,8 +331,8 @@ export const PackageDetails = {
       {
         title: "Painting",
         items: [
-          "Interior Painting(2:1:2) - JK Wall Putty with Apcolite Emulsion or equivalent (Asian Paints)",
-          "Exterior Painting(1:2) - Asian Primer with Apcolite Exterior Emulsion or equivalent (Asian Paints)",
+          "Interior Painting(2:1:2) - Asian Putty with Asian primer and Royale Emulsion or equivalent (Asian Paints)",
+          "Exterior Painting(1:2) - Asian Primer with Royale Exterior Emulsion or equivalent (Asian Paints)",
         ],
       },
       {
@@ -341,8 +341,8 @@ export const PackageDetails = {
           "Living & Dining - Granite or Marble up to ₹160 per sq. ft.",
           "Rooms & Kitchen - Granite or marble up to ₹140 per sq. ft.",
           "Balcony & Open Areas - Anti-skid tiles up to ₹80 per sq. ft.",
-          "Staircase - Sadarahalli granite up to ₹120 per sq. ft.",
-          "Parking - Anti-skid tiles up to ₹80 per sq. ft.",
+          "Staircase - Granite up to ₹120 per sq. ft.",
+          "Parking - Anti-skid tiles up to ₹50 per sq. ft.",
         ],
       },
       {
