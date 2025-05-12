@@ -56,7 +56,7 @@ export default function MobileQuotePopup({
       {/* Desktop Layout */}
       <div className="hidden md:flex relative flex-row h-[80vh] w-full max-w-7xl bg-gradient-to-b from-black to-neutral-900 text-white rounded-xl overflow-hidden border border-gray-700">
         {/* Form Section */}
-        <div className="relative w-[60%] p-10 overflow-y-auto">
+        <div className="relative w-[40%] p-10 overflow-y-auto">
           <button 
             onClick={handleClose}
             // className="absolute top-5 right-5 z-50 text-xl font-medium text-white hover:text-gray-200 bg-black/40 hover:bg-black/60 rounded-full w-12 h-12 flex items-center justify-center transition-all duration-200"
@@ -71,13 +71,13 @@ export default function MobileQuotePopup({
             </h2>
 
             <div className="w-half grid grid-cols-2 gap-6 mb-10">
-              <input className="bg-white text-black p-3 rounded focus:outline-none" placeholder="First Name" />
-              <input className="bg-white text-black p-3 rounded focus:outline-none" placeholder="Contact Number" />
-              <input className="bg-white text-black p-3 rounded focus:outline-none" placeholder="Email Address" />
-              <input className="bg-white text-black p-3 rounded focus:outline-none" placeholder="Location of Plot" />
+              <input className="bg-white text-black p-3 rounded focus:outline-none" placeholder="Name" />
+              <input className="bg-white text-black p-3 rounded focus:outline-none" placeholder="Number" />
+              <input className="bg-white text-black p-3 rounded focus:outline-none" placeholder="Email " />
+              <input className="bg-white text-black p-3 rounded focus:outline-none" placeholder="Plot Location" />
             </div>
 
-            <Button className="bg-[#F55252] text-white !py-2 px-8 rounded-lg font-semibold hover:bg-[#e04a4a] transition-colors">
+            <Button className="cursor-pointer bg-[#F55252] text-white px-2 !py-2 rounded-lg font-bold hover:bg-[#e04a4a] transition-colors">
               GET A FREE QUOTE
             </Button>
 
@@ -90,7 +90,7 @@ export default function MobileQuotePopup({
         </div>
 
         {/* Accordion Section */}
-        <div className="w-[40%] bg-[#5b5a5a] p-8 overflow-y-auto">
+        <div className="w-[60%] bg-[#5b5a5a] p-8 overflow-y-auto">
           <div className="text-center">
             <h2 className="text-4xl font-bold">₹ {data.price}</h2>
             <p className="text-sm text-gray-100 mb-6">/sq.ft (Incl. GST)</p>
@@ -134,7 +134,7 @@ export default function MobileQuotePopup({
                     className="flex justify-between items-center cursor-pointer group"
                     onClick={() => setOpenIndex(openIndex === index ? null : index)}
                   >
-                    <h3 className="font-semibold text-lg group-hover:text-[#F55252] transition-colors">
+                    <h3 className="font-semibold text-[20px] group-hover:text-[#F55252] transition-colors">
                       {section.title}
                     </h3>
                     <button className="w-7 h-7 text-sm font-bold rounded-sm bg-[#F55252]">
@@ -142,7 +142,7 @@ export default function MobileQuotePopup({
                     </button>
                   </div>
                   {openIndex === index && (
-                    <ul className="mt-3 text-sm text-gray-300 space-y-2 pl-4 text-left">
+                    <ul className="mt-3 text-[15px] text-gray-300 space-y-2 pl-4 text-left">
                       {section.items.map((item, i) => (
                         <li key={i}>• {item}</li>
                       ))}
@@ -158,7 +158,7 @@ export default function MobileQuotePopup({
       {/* Mobile Layout */}
       <div className="md:hidden flex flex-col h-full w-full bg-gradient-to-b from-black to-neutral-900 text-white overflow-hidden">
         {/* Form Section - Top Half */}
-        <div className="relative h-[60vh] min-h-[60vh] p-6 flex flex-col">
+        <div className="relative h-[50vh] min-h-[40vh] p-6 flex flex-col">
           <button 
             onClick={handleClose}
             // className="absolute top-5 right-5 z-50 text-xl font-medium text-white hover:text-gray-200 bg-black/40 hover:bg-black/60 rounded-full w-9 h-9 flex items-center justify-center transition-all duration-200"
@@ -193,7 +193,7 @@ export default function MobileQuotePopup({
         </div>
 
         {/* Accordion Section - Bottom Half with Scroll */}
-        <div className="h-[40vh] bg-[#5b5a5a] p-6 overflow-y-auto">
+        <div className="h-[50vh] bg-[#5b5a5a] p-6 overflow-y-auto">
           <div className="text-center">
             <h2 className="text-3xl font-bold">₹ {data.price}</h2>
             <p className="text-sm text-gray-100 mb-4">/sq.ft (Incl. GST)</p>
@@ -237,7 +237,7 @@ export default function MobileQuotePopup({
                     className="flex justify-between items-center cursor-pointer group"
                     onClick={() => setOpenIndex(openIndex === index ? null : index)}
                   >
-                    <h3 className="font-semibold text-base group-hover:text-[#F55252] transition-colors">
+                    <h3 className="font-semibold text-[20px] group-hover:text-[#F55252] transition-colors">
                       {section.title}
                     </h3>
                     <button className="w-6 h-6 text-xs font-bold rounded-sm bg-[#F55252]">
@@ -245,7 +245,7 @@ export default function MobileQuotePopup({
                     </button>
                   </div>
                   {openIndex === index && (
-                    <ul className="mt-2 text-xs text-gray-300 space-y-1 pl-4 text-left">
+                    <ul className="mt-2 text-sm text-gray-300 space-y-1 pl-4 text-left">
                       {section.items.map((item, i) => (
                         <li key={i}>• {item}</li>
                       ))}
