@@ -90,7 +90,7 @@ const servicesBlock = [
         />
       </svg>
     ),
-    title: "15-Year Structural Warranty",
+    title: "20-Year Structural Warranty",
     desc: "Long-Lasting Quality you can trust.",
   },
   {
