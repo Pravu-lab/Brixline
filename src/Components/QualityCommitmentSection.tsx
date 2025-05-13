@@ -312,7 +312,7 @@ export default function QualityCommitmentSection() {
             </div>
             <div className="text-left py-7 pl-5 md:pl-15 w-full xl:w-[400px] border-r border-t border-white/20">
               <h3 className="text-3xl font-bold">100% Money Safety</h3>
-              <p className="text-sm mt-1">STRESS FREE DELIVERY</p>
+              <p className="text-sm mt-1">STRESS FREE BUILDING</p>
             </div>
             <div className="text-left py-7 pl-5 md:pl-15 w-full border-t border-white/20">
               <h3 className="text-3xl font-bold">431+</h3>
