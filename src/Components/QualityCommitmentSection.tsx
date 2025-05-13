@@ -70,7 +70,7 @@ const servicesBlock = [
       </svg>
     ),
     title: "100% Money Safety ",
-    desc: "Safe payments through escrow for stress-free building..",
+    desc: "Safe payments through ESCROW for stress-free building.",
   },
   {
     icon: (
