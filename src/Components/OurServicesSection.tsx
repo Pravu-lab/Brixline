@@ -57,14 +57,14 @@ export default function OurServicesSection() {
           <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex justify-between gap-6 items-center w-[90%] mb-4">
             <div>
               <h3 className="text-[32px] font-extrabold leading-[120%] text-white">
-                Renovation &<br /> Remodeling
+                Innovative &<br /> Modern Designs
               </h3>
 
               {/* Conditional rendering of Description */}
               <Description
                 className={`mt-2 text-sm leading-[140%] text-white font-bold description-slide ${visibleDescriptions.card1 ? 'description-slide-visible' : ''}`}
               >
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ad quia praesentium est quis deleniti quidem nihil voluptate earum esse.
+             Dedicated in-house architects crafting standout, innovative designs with speed, precision, and creative excellence.
               </Description>
             </div>
             {/* Button to toggle description visibility */}
@@ -101,7 +101,8 @@ export default function OurServicesSection() {
               <Description
                 className={`mt-2 text-sm leading-[140%] text-white font-bold description-slide ${visibleDescriptions.card2 ? 'description-slide-visible' : ''}`}
               >
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ad quia praesentium est quis deleniti quidem nihil voluptate earum esse.
+              Seamless turnkey solutions that handle every detail—so you avoid the hassle and enjoy total peace of mind
+
               </Description>
             </div>
             {/* Button to toggle description visibility */}

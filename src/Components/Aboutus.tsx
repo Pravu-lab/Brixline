@@ -65,8 +65,8 @@ const Aboutus = () => {
             <path d="M10.6667 20V28" stroke="#F55252" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             <path d="M10.6667 4V12" stroke="#F55252" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>,
-            title: '10-Month Express Delivery',
-            desc: 'Dream home delivered in just 10 months.',
+            title: '100% Money Safety',
+            desc: 'Safe payments through escrow for stress-free building.',
           },
           {
             icon: <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
@@ -106,7 +106,7 @@ const Aboutus = () => {
             <path d="M21.2363 17.1865L23.2563 28.5545C23.2789 28.6884 23.2601 28.826 23.2024 28.9489C23.1447 29.0718 23.0509 29.1741 22.9335 29.2423C22.8161 29.3104 22.6806 29.341 22.5453 29.3301C22.41 29.3192 22.2812 29.2673 22.1763 29.1812L17.4029 25.5985C17.1725 25.4264 16.8926 25.3334 16.6049 25.3334C16.3173 25.3334 16.0374 25.4264 15.8069 25.5985L11.0256 29.1799C10.9207 29.2658 10.7921 29.3177 10.6569 29.3286C10.5218 29.3395 10.3865 29.309 10.2691 29.241C10.1518 29.1731 10.058 29.071 10.0001 28.9483C9.94234 28.8256 9.9233 28.6883 9.94559 28.5545L11.9643 17.1865" stroke="#F55252" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             <path d="M16.6001 18.6665C21.0184 18.6665 24.6001 15.0848 24.6001 10.6665C24.6001 6.24823 21.0184 2.6665 16.6001 2.6665C12.1818 2.6665 8.6001 6.24823 8.6001 10.6665C8.6001 15.0848 12.1818 18.6665 16.6001 18.6665Z" stroke="#F55252" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>,
-            title: '400+ Quality Checks',
+            title: '431+ Quality Checks',
             desc: 'Advanced standards ensuring perfection.',
           },
         ].map((item, i,arr) => (

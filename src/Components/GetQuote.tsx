@@ -57,7 +57,7 @@ interface GetQuoteProps {
                         FREE CONSULTATION
                     </span>
                     <h3 className="text-center text-[28px] md:text-3xl font-light text-white mt-0 md:mt-2">
-                            Connect with our <br/> architectural experts.                    
+                            Connect with our <br/> Technical experts.                    
                     </h3>
                     <form className="mt-2 md:mt-8 space-y-4" onSubmit={(e)=>handleSubmit(e)}>
                         <input
