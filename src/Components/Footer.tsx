@@ -103,8 +103,8 @@ export default function FooterSection() {
             </div>
             <p className="text-xs opacity-80 mt-[22px] leading-relaxed">
               FRANSISCO TECHNOLOGY PRIVATE LIMITED. <br />
-              INCUBEX KRM1 126, 1st Cross Road, KHB Colony, 5th Block <br />
-              KORAMANGALA, BENGALURU, KARNATAKA 560047
+              Opp To Jyoti Niwas College<br/>No:126, 4th floor, KHB Colony, 5th Block <br />
+              Koramangala, Bengaluru, Karnataka. 560095
             </p>
           </div>
 
