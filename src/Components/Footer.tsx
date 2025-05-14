@@ -91,7 +91,17 @@ export default function FooterSection() {
                 className="object-cover object-left !static"
               />
             </div>
-            <p className="text-xs opacity-80 mt-[42px] leading-relaxed">
+            <div className='mt-6'>
+            <Image
+                src="/svg/stars.svg"
+                alt="stars"
+                height={15}
+                width={91}
+                className="h-[15px]"
+              />
+              <p>Rated 4.7/5 Based on  4176 customer ratings</p>
+            </div>
+            <p className="text-xs opacity-80 mt-[22px] leading-relaxed">
               FRANCISCO TECHNOLOGY PRIVATE LIMITED. <br />
               INCUBEX KRM1 126, 1st Cross Road, KHB Colony, 5th Block <br />
               KORAMANGALA, BENGALURU, KARNATAKA 560047
