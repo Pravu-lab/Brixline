@@ -41,10 +41,10 @@ export default function FooterSection() {
           {/* Left Content */}
           <div className='px-1 py-16'>
             <Title className="text-black mb-4 text-center md:text-left">
-              Hire The Best Home Construction Service
+              Get the best-in class home construction service:
             </Title>
             <h2 className="px-1 text-[12px] sm:text-[16px] font-bold uppercase text-gray-600 mb-8 text-center md:text-left">
-              Backed by renowned investors who believe in our vision to revolutionize the sports ecosystem.
+              Backed by top investors committed to our mission of revolutionizing the home construction industry.
             </h2>
 
             <div className="flex  items-center justify-between mt-12">

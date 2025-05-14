@@ -13,16 +13,14 @@ export default function ScrollingTextReveal() {
   });
 
   const text =
-    "Most customer centric company making Construction absolutely simple, transparent and reliable for everyone";
+    "Bringing reliability, transparency, and customer focus to make home construction simple for everyone.";
 
   return (
     <div className="px-3 md:px-10 py-8 sm:py-12 relative w-full md:w-[90%] mx-auto m-auto">
       {/* <div className="flex md:p-8 gap-4 justify-between items-center p-6"> */}
       <div className="flex md:flex-row items-center justify-center py-0 md:py-4 gap-4">
         <h2 className="my-0 font-semibold text-xs md:text-lg leading-[160%] text-black w-full md:w-1/2 md:p-4 py-2 md:py-10 md:mx-auto mx-auto">
-          It all started with an idea, that changed the way we look at
-          construction <br className="hidden md:block"/> today. We started with the aim of making the construction
-          simple, <br className="hidden md:block"/> transparent and reliable
+        After 3+ years in the commercial space and delivering over 65 projects, we recognized a pressing challenge in residential construction—and chose to address it, starting with Bengaluru.
         </h2>
         <Image
           src="/aboutLogo.png"

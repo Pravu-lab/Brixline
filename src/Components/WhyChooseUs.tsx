@@ -20,7 +20,7 @@ const uspPoints = [
       </svg>
     ),
     title: "On-Time Delivery",
-    desc: "Your home, delivered on time, or we pay you a penalty. No excuses.",
+    desc: "Intelligent scheduling and an efficient process to ensure on-time delivery.",
   },
   {
     icon: ( //fixed pricing
@@ -83,8 +83,7 @@ const WhyChooseUs = () => {
         Excellence
       </Title>
       <Description className="text-black opacity-50 mb-10">
-        Your Perfect Home, Designed & Built for You. Hassle-free, On-Time,{" "}
-        <br /> and Within Budget.
+       Your home, designed and built for you—on time, within budget, and without hassle.
       </Description>
       </motion.div>
      

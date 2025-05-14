@@ -9,40 +9,40 @@ import PageFillAnimation from "./PageFillAnimation";
 
 const slides = [
   {
-    year: 2024,
+    year: 2022,
     image: "/service1.png",
-    title: "Crossed 600 Units Mark.",
-    text: "Launched 5 New Projects. Expanded Our Real Estate Reach.",
-  },
-  {
-    year: 2023,
-    image: "/service2.png",
-    title: "Crossed 600 Units Mark.",
-    text: "We Have Booked Projects Which Will Provide Home To 600+ Families.",
+    title: "Laying the Foundation",
+    text: "Started with a clear vision to bring quality and structure to commercial construction.",
   },
   {
     year: 2022,
+    image: "/service2.png",
+    title: "First Milestone Achieved.",
+    text: "Secured our first commercial project—marking the beginning of our journey.",
+  },
+  {
+    year: 2023,
     image: "/service1.png",
-    title: "Crossed 600 Units Mark.",
-    text: "Launched 5 New Projects. Expanded Our Real Estate Reach.",
+    title: "Gaining Momentum",
+    text: "Successfully closed 20 commercial projects, building strong client trust and credibility.",
   },
   {
     year: 2024,
     image: "/service1.png",
-    title: "Crossed 600 Units Mark.",
-    text: "Launched 5 New Projects. Expanded Our Real Estate Reach.",
+    title: " Major Milestone",
+    text: "Celebrated the delivery of our 50th commercial project, reinforcing our commitment to excellence.",
   },
   {
-    year: 2023,
+    year: 2024,
     image: "/service2.png",
-    title: "Crossed 600 Units Mark.",
-    text: " We Have Booked Projects Which Will Provide Home To 600+ Families.",
+    title: "New Opportunities Emerge",
+    text: "Began receiving inquiries for residential construction, uncovering key challenges faced by homeowners.",
   },
   {
-    year: 2022,
+    year: 2025,
     image: "/service1.png",
-    title: "Crossed 600 Units Mark.",
-    text: "Launched 5 New Projects. Expanded Our Real Estate Reach.",
+    title: "Expanding Our Vision",
+    text: "Ventured into residential construction to simplify the building experience for people in Bengaluru—bringing reliability, transparency, and customer-first service.",
   },
 ];
 

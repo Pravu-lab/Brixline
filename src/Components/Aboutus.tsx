@@ -6,7 +6,7 @@ import Image from 'next/image'
 const Aboutus = () => {
   return (
     <main className="min-h-[calc(100vh-80px)]">
-<div className='px-2 md:px-10 py-8 sm:py-12 relative bg-black !w-full overflow-y-hidden'>
+<div className='px-2 md:px-10 py-8 sm:py-12 relative bg-black !w-full overflow-hidden'>
     <div className='flex w-[90%] m-auto gap-16 flex-col sm:flex-row'>
         <div className='w-full sm:w-[60%]'>
                     <Image
@@ -22,12 +22,14 @@ const Aboutus = () => {
                 About us
             </SubTitle>
             <Title className='text-left text-white'>
-            We are a multifaceted construction company
+            Redefining Construction in Bengaluru
             </Title>
             <Description className='text-white'>
-            We are a multifaceted construction company trusted by hundreds of homeowners Bengaluru. We offer a wide range of construction services from architectural construction to interior renovation.<br/>
-            We currently have more than 65+ residential projects under our belt. We take pride in providing unbeatable quality & precision in our turnkey construction service.<br/>
-            Our track record is a green flag with 100% on-time project completion.
+           From concept to completion, we make construction simple, transparent, and reliable.
+With 65+ successful projects across Bengaluru, we bring end-to-end construction expertise—from design, planning to execution.
+Our commitment to quality and timely delivery has earned us the trust of all our customers..
+We don’t just build homes—we build confidence.
+
             </Description>
         </div>
     </div>
@@ -66,14 +68,14 @@ const Aboutus = () => {
             <path d="M10.6667 4V12" stroke="#F55252" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>,
             title: '100% Money Safety',
-            desc: 'Safe payments through escrow for stress-free building.',
+            desc: 'Safe payments through ESCROW for stress-free building.',
           },
           {
             icon: <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
             <path d="M27.0665 17.3333C27.0665 23.9999 22.3998 27.3333 16.8532 29.2666C16.5627 29.365 16.2472 29.3603 15.9598 29.2533C10.3998 27.3333 5.73315 23.9999 5.73315 17.3333V7.99995C5.73315 7.64633 5.87363 7.30719 6.12368 7.05714C6.37373 6.80709 6.71287 6.66662 7.06649 6.66662C9.73315 6.66662 13.0665 5.06662 15.3865 3.03995C15.669 2.79861 16.0283 2.66602 16.3998 2.66602C16.7714 2.66602 17.1307 2.79861 17.4132 3.03995C19.7465 5.07995 23.0665 6.66662 25.7332 6.66662C26.0868 6.66662 26.4259 6.80709 26.676 7.05714C26.926 7.30719 27.0665 7.64633 27.0665 7.99995V17.3333Z" stroke="#F55252" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>,
             title: '20-Year Structural Warranty',
-            desc: 'It’s a long-lasting quality you can trust.',
+            desc: 'Long-Lasting quality you can trust.',
           },
           {
             icon: <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
@@ -86,7 +88,7 @@ const Aboutus = () => {
             <path d="M4.80005 13.3335H10.1334" stroke="#F55252" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             <path d="M11.4668 2.6665V7.99984" stroke="#F55252" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>,
-            title: 'Build Now, Pay Later',
+            title: 'Easy Finance Option',
             desc: 'Easy EMI and construction finance options.',
           },
           {

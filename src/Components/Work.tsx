@@ -19,10 +19,18 @@ const Work = () => {
 
   const headings = [
     "Meet Our Expert",
-    "Meet Our Expert",
+    "Get a quotation",
     "Book With Us",
-    "Receive Designs",
-    "Receive Designs",
+    "Receive the Design",
+    "Settle-In",
+  ];
+
+    const infoTexts = [
+    "Schedule a meeting with our technical expert to learn more about our offerings.",
+    "Receive a clear, no-hidden-cost quotation with price protection.",
+    "Begin your dream home journey with a 5% booking of the estimated project cost.",
+    "Our in-house architects create innovative designs, refined until you're fully satisfied.",
+    "Settle into your dream home with a 20-year structural warranty"
   ];
 
   const handlePrev = () => {
@@ -134,12 +142,18 @@ const Work = () => {
       </div>
 
       {/* Info text */}
-      <div className="flex justify-center items-center mt-5 md:mt-8">
-        <p className="text-black text-center text-md md:text-xl px-0 md:px-0">
-          Good to go! You pay 8% of the estimated
-          <br className="hidden md:block" /> project cost as the booking amount
-          to start the house construction
-        </p>
+     <div className="overflow-hidden h-[80px] md:h-[100px] flex items-center mt-5 md:mt-8">
+        <motion.div
+          key={currentIndex}
+          initial={{ x: direction * 100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="w-full"
+        >
+          <p className="text-black text-center text-md md:text-xl px-0 md:px-0">
+            {infoTexts[currentIndex]}
+          </p>
+        </motion.div>
       </div>
 
       {/* Call-to-action */}

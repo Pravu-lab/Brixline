@@ -99,10 +99,7 @@ const Hero = () => {
               we build it
             </MainTitle>
             <Description className="text-sm leading-[160%] mt-[11px] text-left text-white">
-              Crafting timeless spaces through innovative architecture, premium
-              materials,
-              <br />
-              and a commitment to enduring excellence.
+            Constructing dream homes with innovative design, unmatched quality<br/> and on-time delivery—where excellence meets value.
             </Description>
           </div>
 

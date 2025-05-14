@@ -12,7 +12,7 @@ const HomeCalculation = () => {
       </Title>
 
       <Description className="text-white mb-14 font-extralight leading-[140%]">
-        Your Perfect Home, Designed & Built for You. <br />Hassle-free, On-Time, and Within Budget.
+        Get an estimate of your home construction cost. To help you plan better.
       </Description>
 
 <Link href="/cost-estimator">
