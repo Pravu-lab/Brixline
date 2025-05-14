@@ -102,7 +102,7 @@ export default function FooterSection() {
               <p>Rated 4.7/5 Based on  4176 customer ratings</p>
             </div>
             <p className="text-xs opacity-80 mt-[22px] leading-relaxed">
-              FRANCISCO TECHNOLOGY PRIVATE LIMITED. <br />
+              FRANSISCO TECHNOLOGY PRIVATE LIMITED. <br />
               INCUBEX KRM1 126, 1st Cross Road, KHB Colony, 5th Block <br />
               KORAMANGALA, BENGALURU, KARNATAKA 560047
             </p>
