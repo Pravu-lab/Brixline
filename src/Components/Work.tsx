@@ -8,7 +8,15 @@ const Work = () => {
   const [currentIndex, setCurrentIndex] = useState(2);
   const [direction, setDirection] = useState<1 | -1>(1);
   const totalPositions = 5;
-  const images = Array(5).fill("/png/project-image.png");
+  // const images = Array(5).fill("/png/project-image.png");
+  const images = [
+    "/png/car-img-1.png",
+    "/png/car-img-2.png",
+    "/png/car-img-3.png",
+    "/png/car-img-4.png",
+    "/png/car-img-5.png",
+  ];
+
   const headings = [
     "Meet Our Expert",
     "Meet Our Expert",
