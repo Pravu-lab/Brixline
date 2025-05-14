@@ -46,7 +46,7 @@ export default function HomePackagesSection() {
         <h2 className='text-[#F55252] text-[14px] sm:text-[16px] font-bold uppercase mb-1 pl-2 font-helvectica-css'>Discover</h2>
         <Title className="text-black text-left">Our Home Construction Packages</Title>
         <Description className="text-black opacity-50">
-          Your Perfect Home, Designed & Built for You. Hassle-free,<br className='hidden md:block'/>On-Time, and Within Budget.
+          Best in the Industry packages that deliver value without compromising quality.
         </Description>
 
         {/* Location and Toggle */}

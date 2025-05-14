@@ -69,8 +69,8 @@ const servicesBlock = [
         />
       </svg>
     ),
-    title: "10-Month Express Delivery",
-    desc: "Dream home delivered in just 10 months.",
+    title: "100% Money Safety ",
+    desc: "Safe payments through ESCROW for stress-free building.",
   },
   {
     icon: (
@@ -91,7 +91,7 @@ const servicesBlock = [
       </svg>
     ),
     title: "20-Year Structural Warranty",
-    desc: "It’s a long-lasting quality you can trust.",
+    desc: "Long-Lasting Quality you can trust.",
   },
   {
     icon: (
@@ -311,8 +311,8 @@ export default function QualityCommitmentSection() {
               <p className="text-sm mt-1">ONGOING & COMPLETED PROJECTS</p>
             </div>
             <div className="text-left py-7 pl-5 md:pl-15 w-full xl:w-[400px] border-r border-t border-white/20">
-              <h3 className="text-3xl font-bold">10 Months</h3>
-              <p className="text-sm mt-1">EXPRESS DELIVERY</p>
+              <h3 className="text-3xl font-bold">100% Money Safety</h3>
+              <p className="text-sm mt-1">STRESS FREE BUILDING</p>
             </div>
             <div className="text-left py-7 pl-5 md:pl-15 w-full border-t border-white/20">
               <h3 className="text-3xl font-bold">431+</h3>
