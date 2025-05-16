@@ -117,13 +117,13 @@ const Hero = () => {
               </Description>
             </div>
             <Image
-              src="/Frame 2147225342.png"
+              src="/NewLogo2.png"
               alt="decorative-shape"
               height={140}
               width={141}
               className="h-fit w-full max-w-[141px]"
             />
-          </div>
+ </div>
 
           <Button className="bg-[#F55252] flex justify-evenly items-center w-[282px] border-[#F55252] mt-[50px]">
             <span className="text-sm text-white leading-[100%] font-bold">
@@ -169,11 +169,11 @@ const Hero = () => {
         {/* Decorative Image for Desktop */}
         <div className="absolute left-0 right-0 top-1/2 z-10 w-full hidden xl:flex justify-center items-center h-full pb-[210px]">
           <Image
-            src="/svg/10-years-logo.svg"
+            src="/NewLogo.svg"
             alt="decorative-shape"
             height={120}
             width={120}
-            className="h-[195px] w-[195px] transform -translate-y-1/2 "
+            className="h-[145px] w-[145px] transform -translate-y-1/2 "
           />
         </div>
 
