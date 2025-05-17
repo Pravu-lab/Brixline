@@ -9,10 +9,10 @@ const Work = () => {
   const [direction, setDirection] = useState<1 | -1>(1);
   const totalPositions = 5;
   const images = [
-    "/png/car-img-1.png",
-    "/png/car-img-2.png",
-    "/png/car-img-3.png",
-    "/png/car-img-4.png",
+    "/png/MeetExpert.png",
+    "/png/BookUs2.png",
+    "/png/ReceivePlan.png",
+    "/png/ReceivePlan2.png",
     "/png/car-img-5.png",
   ];
 
@@ -72,21 +72,23 @@ const Work = () => {
           className="flex justify-center items-center gap-2 md:gap-4"
         >
           {leftText ? (
-            <div className="flex-none whitespace-nowrap text-black text-[12px] md:text-[20px] text-center font-normal ">
-              {leftText}
-            </div>
-          ) : (
-            <div className="text-black text-[12px] md:text-[20px] text-center font-normal invisible">
-              placeholder sample
-            </div>
-          )}
-
+             <div className="flex-none whitespace-nowrap relative max-w-[120px] md:max-w-[200px] overflow-hidden">
+              <div className="text-black text-[12px] md:text-[20px] text-center font-normal">
+                {leftText}
+              </div>
+              <div className="absolute inset-y-0 left-0 w-3/4 bg-gradient-to-r from-white to-transparent" />
+             </div>
+            ) : (
+              <div className="text-black text-[12px] md:text-[20px] text-center font-normal invisible">
+                placeholder sample
+              </div>
+            )}
           <Image
             src="/svg/lefttoright.svg"
             alt="left-to-right"
             width={36}
             height={22}
-            className="w-6 md:w-9 h-3 md:h-5"
+            className="w-4 md:w-9 h-2 md:h-5"
           />
 
           <div className="flex-none whitespace-nowrap text-[#F55252] text-[16px] md:text-[24px] text-center font-semibold uppercase">
@@ -98,18 +100,21 @@ const Work = () => {
             alt="right-to-left"
             width={36}
             height={22}
-            className="w-6 md:w-9 h-3 md:h-5"
+            className="w-4 md:w-9 h-2 md:h-5"
           />
 
-          {rightText ? (
-            <div className="flex-none whitespace-nowrap text-black text-[12px] md:text-[20px] text-center font-normal">
-              {rightText}
-            </div>
-          ) : (
-            <div className="text-black text-[12px] md:text-[20px] text-center font-normal invisible">
-              placeholder samples
-            </div>
-          )}
+           {rightText ? (
+             <div className="flex-none whitespace-nowrap relative max-w-[120px] md:max-w-[200px] overflow-hidden">
+              <div className="text-black text-[12px] md:text-[20px] text-center font-normal">
+                 {rightText}
+              </div>
+             <div className="absolute inset-y-0 right-0 w-3/4 bg-gradient-to-l from-white to-transparent" />
+             </div>
+              ) : (
+                <div className="text-black text-[12px] md:text-[20px] text-center font-normal invisible">
+                  placeholder sample
+                </div>
+              )}
         </motion.div>
       </div>
 
@@ -127,7 +132,7 @@ const Work = () => {
               alt="go-previous"
               width={60}
               height={60}
-              className="w-[50px] h-[50px] md:w-[40px] md:h-[40px]"
+              className="w-[30px] h-[30px] md:w-[40px] md:h-[40px]"
             />
           </button>
         </div>
@@ -143,7 +148,7 @@ const Work = () => {
               alt="go-next"
               width={60}
               height={60}
-              className="w-[50px] h-[50px] md:w-[40px] md:h-[40px]"
+              className="w-[30px] h-[30px] md:w-[40px] md:h-[40px]"
             />
           </button>
         </div>
@@ -163,7 +168,7 @@ const Work = () => {
                   alt={`project-image-${index}`}
                   width={600}
                   height={413}
-                  className="w-[280px] h-[180px] sm:w-[321px] sm:h-[219px] md:w-[600px] md:h-[440px] object-cover"
+                  className="w-[280px] h-[180px] sm:w-[321px] sm:h-[219px] md:w-[600px] md:h-[480px] object-cover"
                 />
               </div>
             ))}
@@ -171,8 +176,9 @@ const Work = () => {
         </div>
       </div>
 
+
       {/* Info text */}
-      <div className="overflow-hidden h-[80px] md:h-[100px] flex items-center mt-5 md:mt-8">
+      <div className="overflow-hidden h-[80px] md:h-[100px] flex items-center mt-3 md:-mt-4">
         <motion.div
           key={currentIndex}
           initial={{ x: direction * 100, opacity: 0 }}
@@ -186,8 +192,27 @@ const Work = () => {
         </motion.div>
       </div>
 
+{/* dots */}
+<div className="flex gap-3 mt-2 md:-mt-5 mb-6 md:mb-8 justify-center">
+          {Array.from({ length: totalPositions }).map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => {
+                setDirection(idx > currentIndex ? 1 : -1);
+                setCurrentIndex(idx);
+              }}
+              className={`w-2 h-2 transition-colors duration-300 ${
+                idx === currentIndex ? "bg-[#F55252]" : "bg-gray-300"
+              }`}
+            />
+          ))}
+       </div>
+      
+
+
+
       {/* Call-to-action */}
-      <div className="flex justify-center items-center mt-3 md:-mt-5 -mb-4">
+      <div className="flex justify-center items-center mt-3 md:-mt-2 -mb-4">
         <div className="border px-8 md:px-10 py-3 md:py-4 text-white bg-[#F55252]">
           LET'S BUILD NOW
         </div>
@@ -225,21 +250,7 @@ const Work = () => {
           </button>
         </div>
 
-        {/* Dots (visible on all screens) */}
-        <div className="flex gap-2 mt-4">
-          {Array.from({ length: totalPositions }).map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => {
-                setDirection(idx > currentIndex ? 1 : -1);
-                setCurrentIndex(idx);
-              }}
-              className={`w-2 h-2 transition-colors duration-300 ${
-                idx === currentIndex ? "bg-[#F55252]" : "bg-gray-300"
-              }`}
-            />
-          ))}
-        </div>
+       
       </div>
     </Section>
   );
