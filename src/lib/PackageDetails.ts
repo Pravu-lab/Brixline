@@ -58,7 +58,7 @@ export const PackageDetails = {
         title: "Painting",
         items: [
           "Interior Painting(2:1:2) - 2 coats Alltek Putty + 1 Primer + 2 coats Tractor Emulsion or equivalent (Asian Paints)",
-          "Exterior Painting(1:2) - 1 coat Primer + 2 coats Ace Exterior or equivalent (Asian Paints)",
+          "Exterior Painting(1:2) - 1 coat Primer + 2 coats Ace Exterior or equivalent",
         ],
       },
       {
