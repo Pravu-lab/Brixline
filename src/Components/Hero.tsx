@@ -125,9 +125,9 @@ const Hero = () => {
             />
  </div>
 
-          <Button className="bg-[#F55252] flex justify-evenly items-center w-[282px] border-[#F55252] mt-[50px]">
+          <Button className="bg-[#F55252] flex justify-evenly items-center w-[242px] border-[#F55252] mt-[50px]">
             <span className="text-sm text-white leading-[100%] font-bold">
-              DOWNLOAD THE BROCHURE
+              DOWNLOAD BROCHURE
             </span>
             <svg
               xmlns="http://www.w3.org/2000/svg"

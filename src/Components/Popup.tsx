@@ -54,105 +54,131 @@ export default function MobileQuotePopup({
   return (
     <div className="fixed inset-0 z-[1000] flex items-center justify-center backdrop-blur-md bg-black/30">
       {/* Desktop Layout */}
-      <div className="hidden md:flex relative flex-row h-[80vh] w-full max-w-7xl bg-gradient-to-b from-black to-neutral-900 text-white rounded-xl overflow-hidden border border-gray-700">
-        {/* Form Section */}
-        <div className="relative w-[40%] p-10 overflow-y-auto">
-          <button 
-            onClick={handleClose}
-            // className="absolute top-5 right-5 z-50 text-xl font-medium text-white hover:text-gray-200 bg-black/40 hover:bg-black/60 rounded-full w-12 h-12 flex items-center justify-center transition-all duration-200"
-            className="absolute top-6 right-6 z-50 text-3xl font-bold text-white hover:text-gray-200 bg-black/70 hover:bg-black/90 rounded-full w-12 h-12 flex items-center justify-center transition-all duration-200 shadow-lg"
-            aria-label="Close popup"
-          >
-            ×
-          </button>
-          <div className="w-[80%] mx-auto flex flex-col items-center justify-center h-full">
-            <h2 className="text-md md:text-3xl font-bold text-center mb-10">
-              Connect with our <br /> architectural experts.
-            </h2>
+      <div className="hidden md:flex relative flex-row h-[80vh] w-full max-w-7xl bg-gradient-to-b from-black to-neutral-900 text-white overflow-hidden border border-gray-700">
 
-            <div className="w-half grid grid-cols-2 gap-6 mb-10">
-              <input className="bg-white text-black p-3 rounded focus:outline-none" placeholder="Name" />
-              <input className="bg-white text-black p-3 rounded focus:outline-none" placeholder="Number" />
-              <input className="bg-white text-black p-3 rounded focus:outline-none" placeholder="Email " />
-              <input className="bg-white text-black p-3 rounded focus:outline-none" placeholder="Plot Location" />
-            </div>
-
-            <Button className="cursor-pointer bg-[#F55252] text-white px-2 !py-2 rounded-lg font-bold hover:bg-[#e04a4a] transition-colors">
-              GET A FREE QUOTE
-            </Button>
-
-            <p className="text-xs mt-8 text-gray-400 text-center">
-              By proceeding, you agree to our{' '}
-              <a href="#" className="underline hover:text-gray-300">terms</a> &{' '}
-              <a href="#" className="underline hover:text-gray-300">privacy policy</a>.
-            </p>
-          </div>
-        </div>
+       
 
         {/* Accordion Section */}
-        <div className="w-[60%] bg-[#5b5a5a] p-8 overflow-y-auto">
-          <div className="text-center">
-            <h2 className="text-4xl font-bold">₹ {data.price}</h2>
-            <p className="text-sm text-gray-100 mb-6">/sq.ft (Incl. GST)</p>
+       <div className="w-[70%] bg-neutral-800 relative flex flex-col">
+  {/* Fixed Header - Doesn't Scroll */}
+  <div className="p-8 pb-0 sticky top-0 z-10 bg-neutral-800">
+    <div className="text-center">
+      <h2 className="text-4xl font-bold">₹ {data.price}</h2>
+      <p className="text-sm text-gray-100 mb-6">/sq.ft (Incl. GST)</p>
 
-            <div className="inline-block px-4 py-2 text-sm font-semibold rounded-lg bg-[#884e4e] mb-8 relative">
-              <select
-                ref={selectRef}
-                value={selectedPackageKey}
-                onChange={handlePackageChange}
-                className="bg-transparent text-white focus:outline-none cursor-pointer appearance-none"
-              >
-                <option value="basic_package" className='bg-[#9b4e4e] font-bold'>Basic Package</option>
-                <option value="standard_package" className='bg-[#9b4e4e] font-bold'>Standard Package</option>
-                <option value="premium_package" className='bg-[#9b4e4e] font-bold'>Premium Package</option>
-                <option value="elite_package" className='bg-[#9b4e4e] font-bold'>Elite Package</option>
-              </select>
-              <div className="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none w-3 h-3">
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  width="11" 
-                  height="11" 
-                  viewBox="0 0 11 11" 
-                  fill="none"
-                >
-                  <rect 
-                    x="10.2676" 
-                    y="10.2637" 
-                    width="9.58333" 
-                    height="9.58333" 
-                    transform="rotate(-180 10.2676 10.2637)" 
-                    fill="#F55252"
-                  />
-                </svg>
-              </div>
-            </div>
-
-            <div className="divide-y divide-gray-700">
-              {data.data.map((section, index) => (
-                <div key={index} className="py-4">
-                  <div
-                    className="flex justify-between items-center cursor-pointer group"
-                    onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                  >
-                    <h3 className="font-semibold text-[20px] group-hover:text-[#F55252] transition-colors">
-                      {section.title}
-                    </h3>
-                    <button className="w-7 h-7 text-sm font-bold rounded-sm bg-[#F55252]">
-                      {openIndex === index ? '–' : '+'}
-                    </button>
-                  </div>
-                  {openIndex === index && (
-                    <ul className="mt-3 text-[15px] text-gray-300 space-y-2 pl-4 text-left">
-                      {section.items.map((item, i) => (
-                        <li key={i}>• {item}</li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
+      <div className="inline-block px-4 py-2 text-sm font-semibold rounded-lg bg-[rgba(245,82,82,0.1)]  mb-8 relative">
+        <select
+          ref={selectRef}
+          value={selectedPackageKey}
+          onChange={handlePackageChange}
+          className="bg-transparent text-red-400 focus:outline-none cursor-pointer appearance-none"
+        >
+          <option value="basic_package" className='bg-neutral-800 font-bold'>Basic Package</option>
+          <option value="standard_package" className='bg-neutral-800 font-bold'>Standard Package</option>
+          <option value="premium_package" className='bg-neutral-800 font-bold'>Premium Package</option>
+          <option value="elite_package" className='bg-neutral-800 font-bold'>Elite Package</option>
+        </select>
+        <div className="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none w-3 h-3">
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            width="11" 
+            height="11" 
+            viewBox="0 0 11 11" 
+            fill="none"
+          >
+            <rect 
+              x="10.2676" 
+              y="10.2637" 
+              width="9.58333" 
+              height="9.58333" 
+              transform="rotate(-180 10.2676 10.2637)" 
+              fill="#F55252"
+            />
+          </svg>
         </div>
+      </div>
+    </div>
+  </div>
+
+  {/* Scrollable Content */}
+  <div className="p-8 pt-0 overflow-y-auto custom-scrollbar flex-grow">
+    <div className="divide-y divide-gray-700">
+      {data.data.map((section, index) => (
+        <div key={index} className="py-4">
+          <div
+            className="flex justify-between items-center cursor-pointer group"
+            onClick={() => setOpenIndex(openIndex === index ? null : index)}
+          >
+            <h3 className="font-semibold text-[20px] group-hover:text-[#F55252] transition-colors">
+              {section.title}
+            </h3>
+            <button className="w-7 h-7 text-sm font-bold rounded-sm bg-[#F55252]">
+              {openIndex === index ? '–' : '+'}
+            </button>
+          </div>
+          {openIndex === index && (
+            <ul className="mt-3 text-[15px] text-gray-300 space-y-2 pl-4 text-left">
+              {section.items.map((item, i) => (
+                <li key={i}>• {item}</li>
+              ))}
+            </ul>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
+
+
+{/*new form section*/}
+        <div className="relative w-[30%] p-10 overflow-y-auto">
+  <button 
+    onClick={handleClose}
+    className="absolute top-6 right-6 z-50 text-3xl font-bold text-white hover:text-gray-200 bg-black/70 hover:bg-black cursor-pointer rounded-full w-12 h-12 flex items-center justify-center transition-all duration-200 shadow-lg"
+    aria-label="Close popup"
+  >
+    ×
+  </button>
+  <div className="w-full mx-auto flex flex-col items-center justify-center h-full">
+    <h2 className="text-md md:text-2xl font-bold text-center mb-10">
+      Connect with our <br /> architectural experts.
+    </h2>
+
+    {/* Full-width form inputs */}
+    <div className="w-[120%] grid gap-4 mb-10">
+      <input 
+        className="w-full bg-white text-black p-3 focus:outline-none" 
+        placeholder="Name" 
+      />
+      <input 
+        className="w-full bg-white text-black p-3 focus:outline-none" 
+        placeholder="Number" 
+      />
+      <input 
+        className="w-full bg-white text-black p-3 focus:outline-none" 
+        placeholder="Email" 
+      />
+      <input 
+        className="w-full bg-white text-black p-3 focus:outline-none" 
+        placeholder="Plot Location" 
+      />
+    </div>
+
+    {/* Full-width button */}
+    <Button 
+      className="w-[120%] cursor-pointer bg-[#F55252] text-white px-4 py-3 font-bold hover:bg-[#e04a4a] transition-colors border-none"
+    >
+      GET A FREE QUOTE
+    </Button>
+
+    <p className="text-xs mt-3 text-gray-400 text-center">
+      By proceeding, you agree to our{' '}
+      <a href="#" className="underline hover:text-gray-300">terms</a> &{' '}
+      <a href="#" className="underline hover:text-gray-300">privacy policy</a>.
+    </p>
+  </div>
+</div>
       </div>
 
       {/* Mobile Layout */}

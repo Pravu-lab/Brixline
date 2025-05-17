@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { Description, MainTitle, Section, SubTitle } from './Tag';
 
 
+
 export default function OurServicesSection() {
   // Initialize state for each card's visibility
   const [visibleDescriptions, setVisibleDescriptions] = useState({
@@ -27,7 +28,7 @@ export default function OurServicesSection() {
       {/* Top Content */}
       <div className='w-[85%] m-auto flex gap-10 sm:gap-28 flex-col sm:flex-row'>
         <div className="w-full">
-          <h6 className="text-left text-[#F55252] text-[14px] sm:text-[16px] font-bold uppercase font-helvectica-css">OUR SERVICES</h6>
+          <h6 className="text-left text-[#F55252] text-[14px] sm:text-[16px] font-bold uppercase font-[Bitter]">OUR SERVICES</h6>
           {/* <MainTitle className="flex-col py-4 text-left text-white font-bold text-4xl sm:text-5xl lg:text-6xl leading-[0.8] mb-6">
             Flawless<br />
             construction, powered<br />

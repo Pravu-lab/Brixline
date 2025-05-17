@@ -232,3 +232,14 @@ h1 {
   background-color: #ef4444 !important;
 } */
 
+.custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    background-color: #292727; /* Gray background */
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #F55252; /* Red scroll thumb */
+    border-radius: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: #e04a4a; /* Darker red on hover */
+  }
