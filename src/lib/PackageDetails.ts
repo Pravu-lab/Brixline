@@ -19,8 +19,8 @@ export const PackageDetails = {
       {
         title: "Structure",
         items: [
-          "Steel – Sunvik,Kamadhenu or equivalent,upto rupees 65",
-          "Cement – Maha, Priya or equivalent, upto rupees 360",
+          "Steel – Sunvik,Kamadhenu or equivalent,upto ₹65",
+          "Cement – Maha, Priya or equivalent, upto ₹360",
           "Aggregates – 20 mm & 40 mm graded stone aggregates",
           "Blocks – Standard solid concrete (6-inch: ext and 4-inch: int)",
           "RCC Mix – M20 / M25 as per recommendation",
@@ -30,10 +30,10 @@ export const PackageDetails = {
       {
         title: "Kitchen",
         items: [
-          "Ceramic Wall Dado – Up to ₹60 per sq. ft., 3 ft. Height",
+          "Ceramic Wall Dado – Up to ₹60 per sq. ft., 3ft. Height",
           "Main Sink Faucet – Up to ₹2,000",
-          "Faucets & Accessories – All ISI-marked",
-          "Kitchen Sink – Stainless steel single-bowl sink upto ₹5,000",
+          "Other Faucets or Accessories – ISI-marked",
+          "Kitchen Sink: Stainless Steel single-bowl sink upto ₹5,000",
         ],
       },
       {
@@ -108,8 +108,8 @@ export const PackageDetails = {
       {
         title: "Structure",
         items: [
-          "Steel - Jindal panther or equivalent, upto rupees 73",
-          "Cement - Dalmia, Bharti or equivalent, upto rupees 370",
+          "Steel - Jindal panther or equivalent, upto ₹73",
+          "Cement - Dalmia, Bharti or equivalent, upto ₹370",
           "Aggregates - 20 mm & 40 mm",
           "Blocks – Standard solid concrete (6-inch: ext and 4-inch: int)",
           "RCC Mix – M20 / M25 as per recommendation",
@@ -198,8 +198,8 @@ export const PackageDetails = {
       {
         title: "Structure",
         items: [
-          "Steel - TATA or equivalent, upto rupees 80",
-          "Cement - Ultratech, Birla Super or equivalent, upto rupees 400",
+          "Steel - TATA or equivalent, upto ₹80",
+          "Cement - Ultratech, Birla Super or equivalent, upto ₹400",
           "Aggregates - 20mm & 40mm",
           "Blocks – Standard solid concrete (6-inch: ext and 4-inch: int)",
           "RCC Mix – M20 / M25 as per recommendation",
@@ -219,17 +219,16 @@ export const PackageDetails = {
         title: "Bathroom",
         items: [
           "Ceramic Wall Dado (up to 7' height) - upto ₹80 per sq. ft.",
-          "Sanitaryware & CP Fittings - upto ₹25,000 per Bathroom (Cera or equivalent)",
+          "Sanitaryware & CP Fittings - upto ₹25,000 per Bathroom (Jaquar or equivalent)",
           "CPVC Pipes - APL Apollo or approved equivalent",
           "Bathroom Doors - Waterproof flush doors or WPC",
-          "Mirror, Soap Dish, Towel Rail - upto ₹12,000 for 1000 sq. ft.",
           "Solar Water Heater Provision",
         ],
       },
       {
         title: "Door & Windows",
         items: [
-          "Windows - UPVC windows with glass and mesh shutters (3-track with 1 mesh), Upto rupees 600/sq.ft",
+          "Windows - UPVC windows with glass and mesh shutters (3-track with 1 mesh), Upto ₹600/sq.ft",
           'Main Door - Teak door with a 5" x 3.5" teak frame, upto at ₹45,000 including fixtures',
           'Internal Doors - Membrane or flush doors with laminates, upto ₹13,000 including fixtures; door frames made of 4" x 3" Sal wood',
           'Pooja Room Door - Burma Teak door with a 5" x 2.5" teak frame, upto at ₹28,000 for every 2,000 sq. ft. of package area',
@@ -265,7 +264,7 @@ export const PackageDetails = {
         items: [
           "Overhead Tank - Triple-layered 2000 Ltr – Apollo make",
           "Underground Sump - 2.5x built-up area",
-          "Staircase Railing & Window Grill - Stainless steel (SS)",
+          "Staircase Railing & Window Grill - Stainless steel(SS)",
         ],
       },
     ],
@@ -291,7 +290,7 @@ export const PackageDetails = {
       {
         title: "Structure",
         items: [
-          "Steel - TATA or equivalent, upto rupees 80",
+          "Steel - TATA or equivalent, upto ₹80",
           "Cement - ACC, Ultratech, or equivalent – 43 or 53 grade",
           "Aggregates - 20mm & 40mm",
           "Blocks – Standard solid concrete (6-inch: ext and 4-inch: int)",
@@ -322,7 +321,7 @@ export const PackageDetails = {
       {
         title: "Door & Windows",
         items: [
-          "Windows - UPVC windows with glass and mesh shutters (3-track with 1 mesh), Upto rupees 650/sq.ft",
+          "Windows - UPVC windows with glass and mesh shutters (3-track with 1 mesh), Upto ₹650/sq.ft",
           'Main Door - Teak door with a 5" x 3.5" teak frame, upto ₹60,000 including fixtures',
           'Internal Doors - Membrane or flush doors with laminates, upto ₹15,000 including fixtures; door frames made of 4" x 3" Sal wood',
           'Pooja Room Door - Burma Teak door with a 5" x 2.5" teak frame, upto ₹32,000 for every 2,000 sq. ft. of package area',
