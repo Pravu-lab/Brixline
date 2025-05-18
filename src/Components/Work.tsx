@@ -5,26 +5,29 @@ import { Button, Section, SubTitle, Title } from "./Tag";
 import Image from "next/image";
 
 const Work = () => {
-  const [currentIndex, setCurrentIndex] = useState(2);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState<1 | -1>(1);
-  const totalPositions = 5;
+  const totalPositions = 6;
   const images = [
-    "/png/MeetExpert.png",
-    "/png/BookUs2.png",
-    "/png/ReceivePlan.png",
-    "/png/ReceivePlan2.png",
-    "/png/car-img-5.png",
+    "/pngs/Raise a reques.png",
+    "/pngs/meet experts.png",
+    "/pngs/workwithus2.png",
+    "/pngs/receive details plans.png",
+    "/pngs/workbegins.png",
+    "/pngs/settle in.png",
   ];
 
   const headings = [
+    "Raise A Request",
     "Meet Our Expert",
-    "Get a quotation",
-    "Book With Us",
-    "Receive the Design",
+    "Work With Us",
+    "Receive Detailed Plans",
+    "Work Begins",
     "Settle-In",
   ];
 
   const infoTexts = [
+    "Submit a Home construction service request.",
     "Schedule a meeting with our technical expert to learn more about our offerings.",
     "Receive a clear, no-hidden-cost quotation with price protection.",
     "Begin your dream home journey with a 5% booking of the estimated project cost.",
@@ -53,7 +56,7 @@ const Work = () => {
   const getTranslateX = () => `-${currentIndex * 100}%`;
 
   return (
-    <Section className="w-full max-w-4xl mx-auto py-8 px-4 sm:px-0">
+    <Section className="w-full max-w-6xl mx-auto py-8 px-4 sm:px-0">
     
       <div className="mb-6 md:mb-8 text-center">
         <SubTitle className="mb-4">HOW WE WORK</SubTitle>
@@ -72,7 +75,9 @@ const Work = () => {
           className="flex justify-center items-center gap-2 md:gap-4"
         >
           {leftText ? (
-             <div className="flex-none whitespace-nowrap relative max-w-[120px] md:max-w-[200px] overflow-hidden">
+             <div
+              onClick={() => currentIndex > 0 && handlePrev()}
+              className="flex-none whitespace-nowrap relative max-w-[120px] md:max-w-[200px] overflow-hidden cursor-pointer">
               <div className="text-black text-[12px] md:text-[20px] text-center font-normal">
                 {leftText}
               </div>
@@ -104,7 +109,9 @@ const Work = () => {
           />
 
            {rightText ? (
-             <div className="flex-none whitespace-nowrap relative max-w-[120px] md:max-w-[200px] overflow-hidden">
+             <div
+             onClick={() => currentIndex < totalPositions - 1 && handleNext()}
+             className="flex-none whitespace-nowrap relative max-w-[120px] md:max-w-[200px] overflow-hidden cursor-pointer">
               <div className="text-black text-[12px] md:text-[20px] text-center font-normal">
                  {rightText}
               </div>
@@ -121,35 +128,57 @@ const Work = () => {
       {/* Image carousel with relative positioning for desktop buttons */}
       <div className="relative">
         {/* Desktop-only navigation buttons */}
-        <div className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 z-10">
+        <div className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-8 z-10">
           <button
             onClick={handlePrev}
             disabled={currentIndex === 0}
-            className="disabled:opacity-50"
+            className="disabled:opacity-50 group"
           >
-            <Image
-              src="/svg/left-button.svg"
-              alt="go-previous"
-              width={60}
-              height={60}
-              className="w-[30px] h-[30px] md:w-[40px] md:h-[40px]"
-            />
-          </button>
-        </div>
+          <svg 
+          className="group-hover:hidden"
+  width="40" 
+  height="40" 
+  viewBox="0 0 60 60" 
+  fill="none" 
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <rect width="60" height="60" rx="3" transform="matrix(-1 0 0 1 60 0)" fill="#FEEEEE"/>
+  <path d="M23.2217 26.2549L26.9746 30.0078L23.2217 33.7607L33.2422 43.7812L37 40.0234L26.9844 30.0078L37 19.9922L33.2422 16.2344L23.2217 26.2549Z" fill="#F55252"/>
+</svg>
 
-        <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 z-10">
+            <svg 
+            className="hidden group-hover:block"
+  width="40" 
+  height="40" 
+  viewBox="0 0 60 60" 
+  fill="none" 
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <rect width="60" height="60" rx="3" transform="matrix(-1 0 0 1 60 0)" fill="#F55252"/>
+  <path d="M23.2217 26.2549L26.9746 30.0078L23.2217 33.7607L33.2422 43.7812L37 40.0234L26.9844 30.0078L37 19.9922L33.2422 16.2344L23.2217 26.2549Z" fill="white"/>
+</svg>
+          </button>
+       </div>
+
+        <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-8 z-10">
           <button
             onClick={handleNext}
             disabled={currentIndex === totalPositions - 1}
-            className="disabled:opacity-50"
+            className="disabled:opacity-50 group"
           >
-            <Image
-              src="/svg/right-button.svg"
-              alt="go-next"
-              width={60}
-              height={60}
-              className="w-[30px] h-[30px] md:w-[40px] md:h-[40px]"
-            />
+          <svg
+          className="group-hover:hidden"
+          width="40" height="40" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="60" height="60" rx="3" fill="#FEEEEE"/>
+  <path d="M36.7783 26.2549L33.0254 30.0078L36.7783 33.7607L26.7578 43.7812L23 40.0234L33.0156 30.0078L23 19.9922L26.7578 16.2344L36.7783 26.2549Z" fill="#F55252"/>
+</svg>
+
+<svg
+className="hidden group-hover:block"
+width="40" height="40" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="60" height="60" rx="3" fill="#F55252"/>
+  <path d="M36.7783 26.2549L33.0254 30.0078L36.7783 33.7607L26.7578 43.7812L23 40.0234L33.0156 30.0078L23 19.9922L26.7578 16.2344L36.7783 26.2549Z" fill="white"/>
+</svg>
           </button>
         </div>
 
@@ -193,7 +222,7 @@ const Work = () => {
       </div>
 
 {/* dots */}
-<div className="flex gap-3 mt-2 md:-mt-5 mb-6 md:mb-8 justify-center">
+{/* <div className="flex gap-3 mt-2 md:-mt-5 mb-6 md:mb-8 justify-center">
           {Array.from({ length: totalPositions }).map((_, idx) => (
             <button
               key={idx}
@@ -206,7 +235,7 @@ const Work = () => {
               }`}
             />
           ))}
-       </div>
+       </div> */}
       
 
 

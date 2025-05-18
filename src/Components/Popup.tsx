@@ -35,11 +35,56 @@ export default function MobileQuotePopup({
   useEffect(() => {
     const navbar = document.querySelector('nav') as HTMLElement | null;
     if (navbar) navbar.style.display = 'none';
-    document.body.style.overflow = 'hidden';
+
+    const scrollY = window.scrollY;
+  
+  // Prevent scrolling on body
+  document.body.style.position = 'fixed';
+  document.body.style.top = `-${scrollY}px`;
+  document.body.style.width = '100%';
+  document.body.style.overflow = 'hidden';
+
+ const preventBodyScroll = (e: TouchEvent) => {
+    const target = e.target as HTMLElement;
+    const isScrollable = target.closest('.scrollable-content') as HTMLElement;
+  if (!isScrollable || (isScrollable.scrollHeight <= isScrollable.clientHeight)) {
+    e.preventDefault();
+  }
+  };
+
+    // Wheel event handler
+  const handleWheel = (e: WheelEvent) => {
+    const target = e.target as HTMLElement;
+    const isScrollable = target.closest('.scrollable-content') as HTMLElement;
+    if (!isScrollable) {
+      e.preventDefault();
+    }
+  };
+
+
+  document.addEventListener('touchmove', preventBodyScroll, { passive: false });
+  document.addEventListener('wheel', handleWheel, { passive: false });
+
+    // document.documentElement.style.overflow = 'hidden';
+    // document.body.style.overflow = 'hidden';
 
     return () => {
-      if (navbar) navbar.style.display = '';
-      document.body.style.overflow = '';
+    if (navbar) navbar.style.display = '';
+
+    const scrollY = document.body.style.top;
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    document.body.style.overflow = '';
+    window.scrollTo(0, parseInt(scrollY || '0') * -1);
+    
+    // Remove touchmove prevention
+    document.removeEventListener('touchmove', preventBodyScroll);
+    document.removeEventListener('wheel', handleWheel);
+
+
+      // document.documentElement.style.overflow = '';
+      // document.body.style.overflow = '';
     };
   }, []);
 
@@ -53,7 +98,7 @@ export default function MobileQuotePopup({
   const data = AllPackages[selectedPackageKey];
 
   return (
-    <div className="fixed inset-0 z-[1000] flex items-center justify-center backdrop-blur-md bg-black/30">
+    <div className="fixed inset-0 z-[1000] flex items-center justify-center backdrop-blur-md bg-black/30 overflow-hidden">
       {/* Desktop Layout */}
       <div className="hidden md:flex relative flex-row h-[80vh] w-full max-w-7xl bg-gradient-to-b from-black to-neutral-900 text-white overflow-hidden border border-gray-700">
         {/* Accordion Section */}
@@ -87,8 +132,13 @@ export default function MobileQuotePopup({
     </div>
   </div>
 
-  {/* Scrollable Content */}
-  <div className="p-8 pt-0 overflow-y-auto custom-scrollbar flex-grow">
+  {/* Scrollable Content accordion */}
+  <div className="p-8 pt-0 overflow-y-auto custom-scrollbar flex-grow scrollable-content"
+    onWheel={(e) => {
+    // Allow wheel events to propagate naturally within scrollable area
+    e.stopPropagation();
+  }}
+  >
     <div className="divide-y divide-gray-700">
       {data.data.map((section, index) => (
         <div key={index} className="py-4">
