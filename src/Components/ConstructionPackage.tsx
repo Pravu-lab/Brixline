@@ -66,8 +66,8 @@ const ConstructionCard: React.FC<ConstructionCardProps> = ({
   setOpenIndex 
 }) => {
   return (
-    <div className="mt-6 w-full shadow-[0px_34px_64px_0px_#00000017] pb-12 px-4 max-h-[728px] overflow-y-scroll bg-white min-w-[316px] sm:max-w-[316px]">
-      <div className="sticky bg-white text-center top-0 pt-12">
+    <div className="mt-6 w-full shadow-[0px_34px_64px_0px_#00000017] pb-12 px-4 max-h-[1058px] bg-white min-w-[316px] sm:max-w-[316px]">
+      <div className="sticky bg-white text-center top-15 pt-4 pb-4 z-10 -mx-4 px-4">
         <div className="text-black text-[40px] font-extrabold mb-4">
           {packageDetails.price}
           <br />
