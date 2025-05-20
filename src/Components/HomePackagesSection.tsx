@@ -122,7 +122,8 @@ export default function HomePackagesSection() {
               {packages.map((pkg, i) => (
                 <div
                   key={i}
-                  className="bg-[#F55252] text-white p-6 w-full flex flex-col sm:flex-row justify-between md:items-center"
+                  className="bg-[#F55252] text-white p-6 w-full flex flex-col sm:flex-row justify-between md:items-center cursor-pointer"
+                  onClick={() => handleClick(pkg.key)}
                 >
                   <div>
                     <h3 className="text-xl font-bold">₹ {pkg.price}</h3>

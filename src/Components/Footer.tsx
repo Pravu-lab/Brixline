@@ -91,6 +91,7 @@ export default function FooterSection() {
                 className="object-cover object-left !static"
               />
             </div>
+<<<<<<< HEAD
             {/* <div className='mt-6'>
             <Image
                 src="/svg/stars.svg"
@@ -101,6 +102,18 @@ export default function FooterSection() {
               />
               <p>Rated 4.7/5 Based on  4176 customer ratings</p>
             </div> */}
+=======
+            {/* <div className='mt-6'> */}
+            {/* <Image
+                src="/svg/stars.svg"
+                alt="stars"
+                //height={15}
+                //width={91}
+              //   className="h-[15px]"
+              // />
+              {/* <p>Rated 4.7/5 Based on  4176 customer ratings</p> */}
+            {/*</div> */}
+>>>>>>> 0068acb320cd1b4f18d3b33d99a96dbbe35c4524
             <p className="text-xs opacity-80 mt-[22px] leading-relaxed">
               FRANSISCO TECHNOLOGY PRIVATE LIMITED. <br />
               Opp To Jyoti Niwas College<br/>No:126, 4th floor, KHB Colony, 5th Block <br />
@@ -110,43 +123,43 @@ export default function FooterSection() {
 
           {/* Navigation Links */}
           <div className="flex flex-col space-y-3 sm:ml-20">
-            <a href="#" className="hover:text-gray-400 text-[16px]">Home</a>
-            <a href="#" className="hover:text-gray-400 text-[16px]">About Us</a>
-            <a href="#" className="hover:text-gray-400 text-[16px]">How It Works</a>
+            <a href="/" className="hover:text-gray-400 text-[16px]">Home</a>
+            <a href="/about" className="hover:text-gray-400 text-[16px]">About Us</a>
+            <a href="/how-it-works" className="hover:text-gray-400 text-[16px]">How It Works</a>
           </div>
 
           <div className="flex flex-col space-y-3 sm:ml-20">
-            <a href="#" className="hover:text-gray-400 text-[16px]">Cost Estimator</a>
-            <a href="#" className="hover:text-gray-400 text-[16px]">Contact Us</a>
+            <a href="/cost-estimator" className="hover:text-gray-400 text-[16px]">Cost Estimator</a>
+            <a href="/contact-us" className="hover:text-gray-400 text-[16px]">Contact Us</a>
           </div>
 
           {/* Social Links */}
           <div className='flex sm:flex-col sm:items-end col-span-2 sm:col-span-1 sm:justify-normal justify-between items-center'>
             <h4 className="text-[20px] text-white opacity-60 font-semibold sm:mb-3 ">FOLLOW US</h4>
             <div className="flex space-x-4 text-xl">
-              <a href="#">
+              <a href="https://x.com/Brixline_com" target="_blank"> {/*twitter */}
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                  <path d="M22 4.82815C22 4.82815 21.3 6.92815 20 8.22815C21.6 18.2281 10.6 25.5281 2 19.8281C4.2 19.9281 6.4 19.2281 8 17.8281C3 16.3281 0.5 10.4281 3 5.82815C5.2 8.42815 8.6 9.92815 12 9.82815C11.1 5.62815 16 3.22815 19 6.02815C20.1 6.02815 22 4.82815 22 4.82815Z" stroke="#F55252" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                 <path d="M22 4.82815C22 4.82815 21.3 6.92815 20 8.22815C21.6 18.2281 10.6 25.5281 2 19.8281C4.2 19.9281 6.4 19.2281 8 17.8281C3 16.3281 0.5 10.4281 3 5.82815C5.2 8.42815 8.6 9.92815 12 9.82815C11.1 5.62815 16 3.22815 19 6.02815C20.1 6.02815 22 4.82815 22 4.82815Z" stroke="#F55252" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </a>
-              <a href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+              {/* <a href="#"> linked in */}
+                {/* <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
                   <path d="M16 8.82812C17.5913 8.82812 19.1174 9.46027 20.2426 10.5855C21.3679 11.7107 22 13.2368 22 14.8281V21.8281H18V14.8281C18 14.2977 17.7893 13.789 17.4142 13.4139C17.0391 13.0388 16.5304 12.8281 16 12.8281C15.4696 12.8281 14.9609 13.0388 14.5858 13.4139C14.2107 13.789 14 14.2977 14 14.8281V21.8281H10V14.8281C10 13.2368 10.6321 11.7107 11.7574 10.5855C12.8826 9.46027 14.4087 8.82812 16 8.82812Z" stroke="#F55252" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   <path d="M6 9.82812H2V21.8281H6V9.82812Z" stroke="#F55252" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   <path d="M4 6.82812C5.10457 6.82812 6 5.93269 6 4.82812C6 3.72356 5.10457 2.82812 4 2.82812C2.89543 2.82812 2 3.72356 2 4.82812C2 5.93269 2.89543 6.82812 4 6.82812Z" stroke="#F55252" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-              </a>
-              <a href="#">
+              </a> */}
+              <a href="https://www.facebook.com/people/Brixline/61574932005740" target="_blank"> {/*facebook */}
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
                   <path d="M18 2.82812H15C13.6739 2.82813 12.4021 3.35491 11.4645 4.29259C10.5268 5.23027 10 6.50204 10 7.82812V10.8281H7V14.8281H10V22.8281H14V14.8281H17L18 10.8281H14V7.82812C14 7.56291 14.1054 7.30855 14.2929 7.12102C14.4804 6.93348 14.7348 6.82812 15 6.82812H18V2.82812Z" stroke="#F55252" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </a>
-              <a href="#">
+              <a href="https://www.instagram.com/brixline_com/?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D#" target="_blank"> {/*instagram */}
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
                   <path d="M17 2.82812H7C4.23858 2.82812 2 5.0667 2 7.82812V17.8281C2 20.5895 4.23858 22.8281 7 22.8281H17C19.7614 22.8281 22 20.5895 22 17.8281V7.82812C22 5.0667 19.7614 2.82812 17 2.82812Z" stroke="#F55252" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   <path d="M15.9997 12.1984C16.1231 13.0307 15.981 13.8806 15.5935 14.6274C15.206 15.3742 14.5929 15.9798 13.8413 16.3581C13.0898 16.7364 12.2382 16.868 11.4075 16.7344C10.5768 16.6007 9.80947 16.2085 9.21455 15.6136C8.61962 15.0187 8.22744 14.2513 8.09377 13.4206C7.96011 12.59 8.09177 11.7383 8.47003 10.9868C8.84829 10.2353 9.45389 9.62217 10.2007 9.23467C10.9475 8.84717 11.7975 8.70501 12.6297 8.82843C13.4786 8.95431 14.2646 9.34989 14.8714 9.95673C15.4782 10.5636 15.8738 11.3495 15.9997 12.1984Z" stroke="#F55252" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   <path d="M17.5 7.32812H17.51" stroke="#F55252" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+               </svg>
               </a>
             </div>
           </div>

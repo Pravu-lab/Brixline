@@ -11,7 +11,7 @@ import React from "react";
 
 const slidesData = [
   {
-    image: "/Raise1.png",
+    image: "/pngs/Raise a reques.png",
     title: "Raise a request",
     content: (
       <ul>
@@ -24,7 +24,7 @@ const slidesData = [
     ),
   },
   {
-    image: "/Raise2.png",
+    image: "/pngs/meet experts.png",
     title: "Meet our Expert",
     content: (
       <p>
@@ -34,7 +34,7 @@ const slidesData = [
     ),
   },
   {
-    image: "/Raise3.png",
+    image: "/pngs/work with us.png",
     title: "Work With Us",
     content: (
       <p>
@@ -43,7 +43,7 @@ const slidesData = [
     ),
   },
   {
-    image: "/Raise4.png",
+    image: "/pngs/receive details plans.png",
     title: "Receive Detailed Plans",
     content: (
       <ul>
@@ -68,7 +68,7 @@ const slidesData = [
   },
   
   {
-    image: "/lap.png",
+    image: "/pngs/workbegins.png",
     title: "Work begins on your site",
     content: (
       <p>
@@ -79,7 +79,7 @@ Sit back and relax—we ensure quality execution and on-time delivery.
     ),
   },
   {
-    image: "/Raise6.png",
+    image: "/pngs/settle in.png",
     title: "Settle in",
     content: (
       <p>
