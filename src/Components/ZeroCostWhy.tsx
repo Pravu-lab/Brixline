@@ -273,7 +273,7 @@ const ZeroCostWhy = () => {
     <div className="ml-6"> {/* Added left margin and top padding */}
       <div className="h-50 md:h-60 w-50 md:w-60 -mr-7 md:-mr-2 -mb-5 rounded-md flex items-center justify-center"> {/* Fixed size container */}
         <Image
-          src="/Zero/help22.png"
+          src="/svg/help22.svg"
           alt="Balance Transfer"
           width={200}
           height={200}

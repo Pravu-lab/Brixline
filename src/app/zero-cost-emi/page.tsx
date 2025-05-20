@@ -14,7 +14,7 @@ const page = () => {
     {/* <WhyChooseUs/> */}
     <ZeroCostWhy/>
     {/* <BottomForm/> */}
-    <FAQ/>
+    {/* <FAQ/> */}
     <FooterSection/>
     </>
   )

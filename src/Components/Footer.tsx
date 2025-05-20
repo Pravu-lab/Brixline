@@ -118,9 +118,9 @@ export default function FooterSection() {
           </div>
 
           <div className="flex flex-col space-y-3 sm:ml-20">
-            <a href="/career">Career</a>
-            <a href="/join-us-as-professional">Join Us As Professional</a>
-            <a href="/channel-partner">Channel Partner</a>
+            <a href="/career" className="hover:text-gray-400 text-[16px]">Career</a>
+            <a href="/join-us-as-professional" className="hover:text-gray-400 text-[16px]">Join Us As Professional</a>
+            <a href="/channel-partner" className="hover:text-gray-400 text-[16px]">Channel Partner</a>
             <a href="/contact-us" className="hover:text-gray-400 text-[16px]">Contact Us</a>
           </div>
 
