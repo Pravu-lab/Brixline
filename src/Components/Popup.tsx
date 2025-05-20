@@ -226,98 +226,121 @@ export default function MobileQuotePopup({
 </div>
       </div>
 
-      {/* Mobile Layout */}
-      <div className="md:hidden flex flex-col w-full h-screen bg-gradient-to-b from-black to-neutral-900 text-white overflow-y-auto pt-10">
-        <div className="relative p-6 flex flex-col">
-          <button 
-            onClick={handleClose}
-            className="absolute top-6 right-6 z-50 text-3xl font-bold text-white hover:text-gray-200 bg-black/70 hover:bg-black/90 rounded-full w-12 h-12 flex items-center justify-center transition-all duration-200 shadow-lg"
-            aria-label="Close popup"
+    {/* Mobile Layout */}
+<div className="md:hidden flex flex-col w-full h-screen bg-gradient-to-b from-black to-neutral-900 text-white">
+  {/* Scrollable wrapper */}
+  <div className="flex-1 overflow-y-auto scrollable-content">
+    {/* Contact Form */}
+    <div className="relative p-6">
+      <button
+        onClick={handleClose}
+        className="absolute top-6 right-6 z-50 text-3xl font-bold text-white hover:text-gray-200 bg-black/70 hover:bg-black/90 rounded-full w-12 h-12 flex items-center justify-center transition-all duration-200 shadow-lg"
+        aria-label="Close popup"
+      >
+        ×
+      </button>
+      <div className="flex flex-col items-center justify-center">
+        <h2 className="text-2xl font-bold text-center mb-6">
+          Connect with our architectural experts.
+        </h2>
+        <div className="w-full grid grid-cols-1 gap-4 mb-6">
+          <input
+            className="bg-white text-black p-3 rounded focus:outline-none"
+            placeholder="First Name"
+          />
+          <input
+            className="bg-white text-black p-3 rounded focus:outline-none"
+            placeholder="Contact Number"
+          />
+          <input
+            className="bg-white text-black p-3 rounded focus:outline-none"
+            placeholder="Email Address"
+          />
+          <input
+            className="bg-white text-black p-3 rounded focus:outline-none"
+            placeholder="Location of Plot"
+          />
+        </div>
+        <Button className="bg-[#F55252] text-white !py-2 px-8 rounded-lg font-semibold hover:bg-[#e04a4a] transition-colors w-full max-w-xs">
+          GET A FREE QUOTE
+        </Button>
+        <p className="text-xs mt-6 text-gray-400 text-center">
+          By proceeding, you agree to our{' '}
+          <a href="#" className="underline hover:text-gray-300">terms</a> &{' '}
+          <a href="#" className="underline hover:text-gray-300">privacy policy</a>.
+        </p>
+      </div>
+    </div>
+
+    {/* Price & Accordion */}
+    <div className="bg-[#5b5a5a] p-6">
+      <div className="text-center">
+        <h2 className="text-3xl font-bold">₹ {data.price}</h2>
+        <p className="text-sm text-gray-100 mb-4">/sq.ft (Incl. GST)</p>
+
+        <div className="inline-block px-4 py-2 text-sm font-semibold rounded-lg bg-[#884e4e] mb-6 relative">
+          <select
+            ref={selectRef}
+            value={selectedPackageKey}
+            onChange={handlePackageChange}
+            className="bg-transparent text-white focus:outline-none cursor-pointer appearance-none"
           >
-            ×
-          </button>
-          <div className="flex flex-col items-center justify-center">
-            <h2 className="text-2xl font-bold text-center mb-6">
-              Connect with our architectural experts.
-            </h2>
-            <div className="w-full grid grid-cols-1 gap-4 mb-6">
-              <input className="bg-white text-black p-3 rounded focus:outline-none" placeholder="First Name" />
-              <input className="bg-white text-black p-3 rounded focus:outline-none" placeholder="Contact Number" />
-              <input className="bg-white text-black p-3 rounded focus:outline-none" placeholder="Email Address" />
-              <input className="bg-white text-black p-3 rounded focus:outline-none" placeholder="Location of Plot" />
-            </div>
-            <Button className="bg-[#F55252] text-white !py-2 px-8 rounded-lg font-semibold hover:bg-[#e04a4a] transition-colors w-full max-w-xs">
-              GET A FREE QUOTE
-            </Button>
-            <p className="text-xs mt-6 text-gray-400 text-center">
-              By proceeding, you agree to our{' '}
-              <a href="#" className="underline hover:text-gray-300">terms</a> &{' '}
-              <a href="#" className="underline hover:text-gray-300">privacy policy</a>.
-            </p>
+            <option value="basic_package" className="bg-[#9b4e4e] font-bold">
+              Basic Package
+            </option>
+            <option value="standard_package" className="bg-[#9b4e4e] font-bold">
+              Standard Package
+            </option>
+            <option value="premium_package" className="bg-[#9b4e4e] font-bold">
+              Premium Package
+            </option>
+            <option value="elite_package" className="bg-[#9b4e4e] font-bold">
+              Elite Package
+            </option>
+          </select>
+          <div className="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none w-3 h-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11" fill="none">
+              <rect
+                x="10.2676"
+                y="10.2637"
+                width="9.58333"
+                height="9.58333"
+                transform="rotate(-180 10.2676 10.2637)"
+                fill="#F55252"
+              />
+            </svg>
           </div>
         </div>
-        <div className="bg-[#5b5a5a] p-6">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold">₹ {data.price}</h2>
-            <p className="text-sm text-gray-100 mb-4">/sq.ft (Incl. GST)</p>
-            <div className="inline-block px-4 py-2 text-sm font-semibold rounded-lg bg-[#884e4e] mb-6 relative">
-              <select
-                ref={selectRef}
-                value={selectedPackageKey}
-                onChange={handlePackageChange}
-                className="bg-transparent text-white focus:outline-none cursor-pointer appearance-none"
+
+        <div className="divide-y divide-gray-700">
+          {data.data.map((section, index) => (
+            <div key={index} className="py-3">
+              <div
+                className="flex justify-between items-center cursor-pointer group"
+                onClick={() => setOpenIndex(openIndex === index ? null : index)}
               >
-                <option value="basic_package" className='bg-[#9b4e4e] font-bold'>Basic Package</option>
-                <option value="standard_package" className='bg-[#9b4e4e] font-bold'>Standard Package</option>
-                <option value="premium_package" className='bg-[#9b4e4e] font-bold'>Premium Package</option>
-                <option value="elite_package" className='bg-[#9b4e4e] font-bold'>Elite Package</option>
-              </select>
-              <div className="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none w-3 h-3">
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  width="11" 
-                  height="11" 
-                  viewBox="0 0 11 11" 
-                  fill="none"
-                >
-                  <rect 
-                    x="10.2676" 
-                    y="10.2637" 
-                    width="9.58333" 
-                    height="9.58333" 
-                    transform="rotate(-180 10.2676 10.2637)" 
-                    fill="#F55252"
-                  />
-                </svg>
+                <h3 className="font-semibold text-[20px] group-hover:text-[#F55252] transition-colors">
+                  {section.title}
+                </h3>
+                <button className="w-6 h-6 text-xs font-bold rounded-sm bg-[#F55252]">
+                  {openIndex === index ? '–' : '+'}
+                </button>
               </div>
+              {openIndex === index && (
+                <ul className="mt-2 text-sm text-gray-300 space-y-1 pl-4 text-left">
+                  {section.items.map((item, i) => (
+                    <li key={i}>• {item}</li>
+                  ))}
+                </ul>
+              )}
             </div>
-            <div className="divide-y divide-gray-700">
-              {data.data.map((section, index) => (
-                <div key={index} className="py-3">
-                  <div
-                    className="flex justify-between items-center cursor-pointer group"
-                    onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                  >
-                    <h3 className="font-semibold text-[20px] group-hover:text-[#F55252] transition-colors">
-                      {section.title}
-                    </h3>
-                    <button className="w-6 h-6 text-xs font-bold rounded-sm bg-[#F55252]">
-                      {openIndex === index ? '–' : '+'}
-                    </button>
-                  </div>
-                  {openIndex === index && (
-                    <ul className="mt-2 text-sm text-gray-300 space-y-1 pl-4 text-left">
-                      {section.items.map((item, i) => (
-                        <li key={i}>• {item}</li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
     </div>
   );
 }
