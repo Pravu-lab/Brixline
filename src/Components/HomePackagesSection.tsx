@@ -8,7 +8,7 @@ import { PackageDetails as AllPackages } from '@/lib/PackageDetails';
 import PageFillAnimation from './PageFillAnimation';
 
 const packages = [
-  { price: "1,760", label: "BASIC PACKAGE", key: 'basic_package' },
+  { price: "1,799", label: "BASIC PACKAGE", key: 'basic_package' },
   { price: "1,970", label: "STANDARD PACKAGE", key: 'standard_package' },
   { price: "2,120", label: "PREMIUM PACKAGE", key: 'premium_package' },
   { price: "2,350", label: "ELITE PACKAGE", key: 'elite_package' },
@@ -46,7 +46,7 @@ export default function HomePackagesSection() {
         <h2 className='text-[#F55252] text-[14px] sm:text-[16px] font-bold uppercase mb-1 pl-2 font-helvectica-css'>Discover</h2>
         <Title className="text-black text-left">Our Home Construction Packages</Title>
         <Description className="text-black opacity-50">
-          Your Perfect Home, Designed & Built for You. Hassle-free,<br className='hidden md:block'/>On-Time, and Within Budget.
+          Best in the Industry packages that deliver value without compromising quality.
         </Description>
 
         {/* Location and Toggle */}
@@ -122,7 +122,8 @@ export default function HomePackagesSection() {
               {packages.map((pkg, i) => (
                 <div
                   key={i}
-                  className="bg-[#F55252] text-white p-6 w-full flex flex-col sm:flex-row justify-between md:items-center"
+                  className="bg-[#F55252] text-white p-6 w-full flex flex-col sm:flex-row justify-between md:items-center cursor-pointer"
+                  onClick={() => handleClick(pkg.key)}
                 >
                   <div>
                     <h3 className="text-xl font-bold">₹ {pkg.price}</h3>

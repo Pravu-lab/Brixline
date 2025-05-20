@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { Description, MainTitle, Section, SubTitle } from './Tag';
 
 
+
 export default function OurServicesSection() {
   // Initialize state for each card's visibility
   const [visibleDescriptions, setVisibleDescriptions] = useState({
@@ -27,7 +28,7 @@ export default function OurServicesSection() {
       {/* Top Content */}
       <div className='w-[85%] m-auto flex gap-10 sm:gap-28 flex-col sm:flex-row'>
         <div className="w-full">
-          <h6 className="text-left text-[#F55252] text-[14px] sm:text-[16px] font-bold uppercase font-helvectica-css">OUR SERVICES</h6>
+          <h6 className="text-left text-[#F55252] text-[14px] sm:text-[16px] font-bold uppercase font-[Bitter]">OUR SERVICES</h6>
           {/* <MainTitle className="flex-col py-4 text-left text-white font-bold text-4xl sm:text-5xl lg:text-6xl leading-[0.8] mb-6">
             Flawless<br />
             construction, powered<br />
@@ -57,14 +58,14 @@ export default function OurServicesSection() {
           <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex justify-between gap-6 items-center w-[90%] mb-4">
             <div>
               <h3 className="text-[32px] font-extrabold leading-[120%] text-white">
-                Renovation &<br /> Remodeling
+                Innovative &<br /> Modern Designs
               </h3>
 
               {/* Conditional rendering of Description */}
               <Description
                 className={`mt-2 text-sm leading-[140%] text-white font-bold description-slide ${visibleDescriptions.card1 ? 'description-slide-visible' : ''}`}
               >
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ad quia praesentium est quis deleniti quidem nihil voluptate earum esse.
+             Dedicated in-house architects crafting standout, innovative designs with speed, precision, and creative excellence.
               </Description>
             </div>
             {/* Button to toggle description visibility */}
@@ -101,7 +102,8 @@ export default function OurServicesSection() {
               <Description
                 className={`mt-2 text-sm leading-[140%] text-white font-bold description-slide ${visibleDescriptions.card2 ? 'description-slide-visible' : ''}`}
               >
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ad quia praesentium est quis deleniti quidem nihil voluptate earum esse.
+              Seamless turnkey solutions that handle every detail—so you avoid the hassle and enjoy total peace of mind
+
               </Description>
             </div>
             {/* Button to toggle description visibility */}

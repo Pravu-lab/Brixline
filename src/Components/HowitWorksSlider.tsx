@@ -11,59 +11,47 @@ import React from "react";
 
 const slidesData = [
   {
-    image: "/Raise1.png",
+    image: "/pngs/Raise a reques.png",
     title: "Raise a request",
     content: (
       <ul>
         <li>
-          Raise a house construction service request or call us at +91 7505 205
-          205. Our team will get in touch with you to understand your
-          requirements in more detail
+         Submit a home construction service request or call us at +91-8618960406.
         </li>
-        <li>They will arrange the meeting with our technical expert.</li>
+        <li> Our team will connect with you to understand your requirements in detail and arrange a meeting with our technical expert.
+  </li>
       </ul>
     ),
   },
   {
-    image: "/Raise2.png",
+    image: "/pngs/meet experts.png",
     title: "Meet our Expert",
     content: (
       <p>
-        Experts will guide you in selecting the right package for house
-        construction and solve any queries that you may have.
+       Our experts will help you choose the right house construction package and address any questions or concerns you may have.
+ 
       </p>
     ),
   },
   {
-    image: "/Raise3.png",
-    title: "Book with Us",
+    image: "/pngs/work with us.png",
+    title: "Work With Us",
     content: (
       <p>
-        Good to go ! You pay 8% of the estimated project cost as the booking
-        amount
+       Ready to get started? Simply pay 5% of the estimated project cost as a booking amount to begin your journey with us.
       </p>
     ),
   },
   {
-    image: "/Raise4.png",
+    image: "/pngs/receive details plans.png",
     title: "Receive Detailed Plans",
     content: (
       <ul>
         <li>
-          Our architects will provide exhaustive drawings and designs till you
-          are completely satisfied.
+          Our architects deliver complete designs — floor plans, 3D elevations, electrical, plumbing, and structural layouts.
         </li>
         <li>
-          House construction Designs include floor plans, 3D elevations,
-          electrical, plumbing and structural designs.
-        </li>
-        <li>
-          Project manager is allotted and project management team works on your
-          contract.
-        </li>
-        <li>
-          All project details like specifications, work and payment schedules
-          etc are fed into the system.
+          A project manager is assigned, and all project details are logged for smooth execution.
         </li>
       </ul>
     ),
@@ -80,36 +68,26 @@ const slidesData = [
   },
   
   {
-    image: "/lap.png",
-    title: "Track & Transact",
+    image: "/pngs/workbegins.png",
+    title: "Work begins on your site",
     content: (
       <p>
-        To ensure absolute trust, Brixline provides an escrow model where you transfer the amount for every stage of the project. 
-Only on successful completion of a stage, amount is transferred to the contractor. 
-Our project management team tracks and monitors your project through our system and processes - through regular site visits. 
-You get the project updates through our customer application.
+       Top-rated contractors begin work on your site, supervised by our expert team.
+Sit back and relax—we ensure quality execution and on-time delivery.
+
       </p>
     ),
   },
   {
-    image: "/Raise6.png",
+    image: "/pngs/settle in.png",
     title: "Settle in",
     content: (
       <p>
-        The last and final stage. We make sure you are well settled in your newly constructed home. Our journey together doesn't end here. We provide 10 years of warranty.
+        The final step—move into your beautifully constructed home.<br/>
+Our journey doesn’t end here; we back our work with a 20-year warranty for your peace of mind.
       </p>
     ),
   },
-  {
-    image: "/workend.png",
-    title: "",
-    content: (
-      <div>
-  
-      </div>
-    ),
-    unnumbered: true
-},
 ];
 
 export default function HowitWorksSlider() {
@@ -201,7 +179,7 @@ export default function HowitWorksSlider() {
             className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 lg:text-[48px]/[120%] md:text-[38px]/[120%] font-black z-20 lg:w-[450px] md:w-[350px] text-left text-black"
             style={{ x: titleX, y: titleY }}
           >
-            We make your dream home possible.
+          Making your dream home a reality.
           </motion.h1>
 
           {/* Logo */}
@@ -227,7 +205,7 @@ export default function HowitWorksSlider() {
               className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 lg:text-[48px]/[120%] md:text-[38px]/[120%] font-black z-20 lg:w-[450px] md:w-[350px] text-left text-black"
               style={{ x: titleX, y: titleY }}
             >
-              We make your dream home possible.
+                Making your dream home a reality.
             </motion.h1>
 
           {/* Slides Section */}
@@ -273,7 +251,7 @@ export default function HowitWorksSlider() {
             className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[38px]/[120%] font-black z-20 text-left text-black"
             style={{ x: mobileH1 }}
           >
-            We make your dream home possible.
+            Making your dream home a reality.
             <span className="w-9 h-9 z-20">
               <img
                 src="/favLogo.png"

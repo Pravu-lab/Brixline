@@ -44,6 +44,15 @@ const Hero = () => {
       //     localStorage.removeItem("isHomepage");
       //   };
       // }, []);
+
+      const handleDownload = () => {
+        const link = document.createElement("a");
+        link.href = "/pdf/Brixline.pdf";
+        link.download = "Brixline-Brochure.pdf";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      };
       
   return (
     <div className="relative">
@@ -99,10 +108,7 @@ const Hero = () => {
               we build it
             </MainTitle>
             <Description className="text-sm leading-[160%] mt-[11px] text-left text-white">
-              Crafting timeless spaces through innovative architecture, premium
-              materials,
-              <br />
-              and a commitment to enduring excellence.
+            Constructing dream homes with innovative design, unmatched quality<br/> and on-time delivery—where excellence meets value.
             </Description>
           </div>
 
@@ -120,17 +126,17 @@ const Hero = () => {
               </Description>
             </div>
             <Image
-              src="/Frame 2147225342.png"
+              src="/NewLogo2.png"
               alt="decorative-shape"
               height={140}
               width={141}
               className="h-fit w-full max-w-[141px]"
             />
-          </div>
+ </div>
 
-          <Button className="bg-[#F55252] flex justify-evenly items-center w-[282px] border-[#F55252] mt-[50px]">
+          <Button type="button" onClick={handleDownload} className="bg-[#F55252] flex justify-evenly items-center w-[242px] border-[#F55252] mt-[50px] cursor-pointer z-50">
             <span className="text-sm text-white leading-[100%] font-bold">
-              DOWNLOAD THE BROCHURE
+              DOWNLOAD BROCHURE
             </span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -172,11 +178,11 @@ const Hero = () => {
         {/* Decorative Image for Desktop */}
         <div className="absolute left-0 right-0 top-1/2 z-10 w-full hidden xl:flex justify-center items-center h-full pb-[210px]">
           <Image
-            src="/svg/10-years-logo.svg"
+            src="/NewLogo.svg"
             alt="decorative-shape"
             height={120}
             width={120}
-            className="h-[195px] w-[195px] transform -translate-y-1/2 "
+            className="h-[145px] w-[145px] transform -translate-y-1/2 "
           />
         </div>
 

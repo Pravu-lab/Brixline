@@ -9,6 +9,7 @@
 @font-face {
   font-family: 'Bitter';
   src: url('../../public/fonts/Bitter-Bold.ttf') format('opentype');
+  /* src: url('/public/fonts/Bitter-Bold.ttf') format('opentype'); */
   font-weight: normal;
   font-style: normal;
 }
@@ -16,8 +17,13 @@
 @font-face {
   font-family: 'Bitter';
   src: url('../../public/fonts/Bitter-Regular.ttf') format('truetype');
+  /* src: url('/public/fonts/Bitter-Regular.ttf') format('truetype'); */
   font-weight: 400;
   font-style: normal;
+}
+
+.bitter-font {
+  font-family: 'Bitter', serif;
 }
 
 @font-face {
@@ -282,3 +288,14 @@ h1 {
 
 
 
+.custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    background-color: #292727; /* Gray background */
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #F55252; /* Red scroll thumb */
+    border-radius: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: #e04a4a; /* Darker red on hover */
+  }

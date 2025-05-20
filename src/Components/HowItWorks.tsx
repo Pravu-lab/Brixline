@@ -8,10 +8,10 @@ const HowItWorks = () => {
             {/* Left Section */}
             <div className="w-full md:w-[65%] order-1 md:order-0 px-4 md:px-0">
                 <h1 className="text-black text-[32px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-medium leading-tight tracking-tight">
-                    Creating Spaces You’ll Love to Call Home
+                    Constructing Spaces You’ll Love to Call Home
                 </h1>
                 <p className="text-black text-base sm:text-lg mt-4 mb-6 max-w-[90%]">
-                    We combine industry expertise with a deep understanding of your vision to create a home that reflects your lifestyle, needs, and aspirations. From planning to completion, we make the process smooth and stress-free.
+                    We blend industry expertise with your vision to build homes that reflect your lifestyle. Our team combines youthful energy with experienced insight for balanced, innovative execution. From start to finish, we ensure a smooth, transparent, and stress-free construction journey.
                 </p>
                 <Image
                     src="/howitworks.png"

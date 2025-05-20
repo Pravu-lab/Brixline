@@ -5,6 +5,10 @@ interface TagProps {
   className?: string;
 }
 
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  className?: string;
+}
+
 export const Section: React.FC<TagProps> = ({ children, className }) => {
     const baseClasses = 'px-10 py-8 sm:py-12 relative';
 
@@ -52,10 +56,13 @@ export const Description: React.FC<TagProps> = ({ children, className }) => {
   );
 };
 
-export const Button: React.FC<TagProps> = ({ children, className }) => {
-    const baseClasses = 'py-[20px] border h-[62px]';
+export const Button: React.FC<ButtonProps> = ({ children, className, ...props }) => {
+  const baseClasses = "py-[20px] border h-[62px]";
   return (
-    <button className={`${baseClasses} ${className || ''}`}>
+    <button
+      className={`${baseClasses} ${className || ""}`}
+      {...props}
+    >
       {children}
     </button>
   );

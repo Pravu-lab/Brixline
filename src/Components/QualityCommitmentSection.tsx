@@ -69,8 +69,8 @@ const servicesBlock = [
         />
       </svg>
     ),
-    title: "10-Month Express Delivery",
-    desc: "Dream home delivered in just 10 months.",
+    title: "100% Money Safety ",
+    desc: "Safe payments through ESCROW for stress-free building.",
   },
   {
     icon: (
@@ -90,8 +90,8 @@ const servicesBlock = [
         />
       </svg>
     ),
-    title: "10-Year Structural Warranty",
-    desc: "It’s a long-lasting quality you can trust.",
+    title: "20-Year Structural Warranty",
+    desc: "Long-Lasting Quality you can trust.",
   },
   {
     icon: (
@@ -160,7 +160,7 @@ const servicesBlock = [
         />
       </svg>
     ),
-    title: "Build Now, Pay Later",
+    title: "Easy Finance Option",
     desc: "Easy EMI and construction finance options.",
   },
   {
@@ -244,7 +244,7 @@ const servicesBlock = [
         />
       </svg>
     ),
-    title: "400+ Quality Checks",
+    title: "431+ Quality Checks",
     desc: "Advanced standards ensuring perfection.",
   },
 ];
@@ -303,19 +303,19 @@ export default function QualityCommitmentSection() {
         <div className="bg-[#F55252] m-auto text-white w-full max-w-6xl flex mt-[-125px] flex-col sm:flex-row">
           <div className="grid grid-cols-2 gap-0 rounded-xl w-full">
             <div className="text-left py-7 pl-5 md:pl-15 grid md:w-[210px] lg:w-[230px] xl:w-[290px] border-r border-white/20">
-              <h3 className="text-3xl font-bold">32k</h3>
+              <h3 className="text-3xl font-bold">3.6L</h3>
               <p className="text-sm mt-1">SQ. FT. DELIVERED</p>
             </div>
             <div className="text-left py-7 pl-5 md:pl-0 w-inherit md:w-[250px]">
-              <h3 className="text-3xl font-bold">15</h3>
-              <p className="text-sm mt-1">ONGOING PROJECTS</p>
+              <h3 className="text-3xl font-bold">65+</h3>
+              <p className="text-sm mt-1">ONGOING & COMPLETED PROJECTS</p>
             </div>
             <div className="text-left py-7 pl-5 md:pl-15 w-full xl:w-[400px] border-r border-t border-white/20">
-              <h3 className="text-3xl font-bold">10 Months</h3>
-              <p className="text-sm mt-1">EXPRESS DELIVERY</p>
+              <h3 className="text-3xl font-bold">100% Money Safety</h3>
+              <p className="text-sm mt-1">STRESS FREE BUILDING</p>
             </div>
             <div className="text-left py-7 pl-5 md:pl-15 w-full border-t border-white/20">
-              <h3 className="text-3xl font-bold">470+</h3>
+              <h3 className="text-3xl font-bold">431+</h3>
               <p className="text-sm mt-1">QUALITY CHECKS</p>
             </div>
           </div>

@@ -21,8 +21,8 @@ export default function Home() {
     <OurServicesSection/>
     <QualityCommitmentSection/>
     <Work/>
-    <Testimonial/>
-    <FAQ/>
+    {/* <Testimonial/> */}
+    {/* <FAQ/> */}
     <FooterSection/>
     </>
   );
