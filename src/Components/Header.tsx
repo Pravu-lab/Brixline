@@ -10,7 +10,18 @@ import { useEffect, useRef, useState } from "react";
 export default function Header({ transparent = false, forceWhiteLogo = false, whiteText = false }: { transparent?: boolean, forceWhiteLogo?: boolean, whiteText?: boolean }) {
     const [mobileOpen, setMobileOpen] = useState(false);
     const [dropdownOpen, setDropdownOpen] = useState(false);
+    const [dropdownHovered, setDropdownHovered] = useState(false);
+    const [moreDropdownOpen, setMoreDropdownOpen] = useState(false);
     const [selectedCity, setSelectedCity] = useState("BENGALURU");
+const [dropdownTimeout, setDropdownTimeout] = useState(null);
+const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+const clearExistingTimeout = () => {
+  if (dropdownTimeoutRef.current) {
+    clearTimeout(dropdownTimeoutRef.current);
+    dropdownTimeoutRef.current = null;
+  }
+};
 
     const cities = ["BENGALURU", "CHENNAI", "HYDERABAD"];
 
@@ -58,7 +69,7 @@ export default function Header({ transparent = false, forceWhiteLogo = false, wh
         <motion.header 
         ref={ref}
         className={` ${transparent ? 'bg-transparent' : 'bg-white'} p-4 ${mobileOpen ? 'h-[100dvh] mobileHeader !bg-black' : 'h-auto'
-        } sm:h-auto transition-all duration-300 overflow-hidden sticky top-0 w-screen z-[999]`}
+        } sm:h-auto transition-all duration-300 sticky top-0 w-screen z-[999]`}
         animate={{ opacity: isStuck ? 1 : 0 }}
         transition={{ duration: 0.4, ease: 'easeOut' }}
       
@@ -175,11 +186,67 @@ export default function Header({ transparent = false, forceWhiteLogo = false, wh
                         COST ESTIMATOR
                     </Link>
 
-                    <Link href="/contact-us" className={`flex items-center gap-1 ${pathname === '/contact-us' ? 'text-red-500' : ''}`}>
-                        {pathname === '/contact-us' && (
+                   <div
+  className="relative"
+  onMouseEnter={() => {
+    clearExistingTimeout();
+    setMoreDropdownOpen(true);
+  }}
+  onMouseLeave={() => {
+    // Start timeout only when leaving the main button area
+    dropdownTimeoutRef.current = setTimeout(() => {
+      setMoreDropdownOpen(false);
+    }, 300);
+  }}
+>
+  <button
+    onClick={() => setMoreDropdownOpen(!moreDropdownOpen)}
+    className={`flex items-center gap-1 ${whiteText ? 'text-white' : 'text-black'} ${pathname === '/contact-us' || pathname === '/career' || moreDropdownOpen ? 'text-red-500' : ''}`}
+  >
+    MORE
+    {moreDropdownOpen ?
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none">
+        <rect width="5.2" height="1.2" transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 10.5254 7.7)" fill="red" />
+        <rect width="5.2" height="1.2" transform="matrix(0.707107 -0.707107 -0.707107 -0.707107 2.323 8.54853)" fill="red" />
+      </svg>
+      : 
+      <svg width="12" height="6" viewBox="0 0 12 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fillRule="evenodd" clipRule="evenodd" d="M11.506 1.70233L10.0029 0.19928L5.99661 4.2056L1.99036 0.199342L0.487305 1.70239L4.49544 5.71053L5.99667 4.2093L7.49785 5.71047L11.506 1.70233Z" fill={whiteText ? 'white' : 'black'}/>
+      </svg>
+    }
+  </button>
+
+  {moreDropdownOpen && (
+    <div
+      className="absolute mt-4 right-0 bg-red-100 shadow-md min-w-40 z-[9999]"
+      onMouseEnter={clearExistingTimeout}
+      onMouseLeave={() => {
+        setMoreDropdownOpen(false);
+      }}
+    >
+      <Link 
+        href="/contact-us"
+        className={`block px-4 py-2 text-sm ${pathname === '/contact-us' ? 'text-red-500' : 'text-black'} hover:bg-gray-100`}
+        onClick={() => setMoreDropdownOpen(false)}
+      >
+        CONTACT US
+      </Link>
+      <Link
+        href="/career"
+        className={`block px-4 py-2 text-sm ${pathname === '/career' ? 'text-red-500' : 'text-black'} hover:bg-gray-100`}
+        onClick={() => setMoreDropdownOpen(false)}
+      >
+        Career
+      </Link>
+    </div>
+  )}
+</div>
+
+                    <Link href="/zero-cost-emi" className={`flex items-center gap-1 ${pathname === '/zero-cost-emi' ? 'text-red-500' : ''}`}>
+                        {pathname === '/zero-cost-emi' && (
                             <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
                         )}
-                        CONTACT US
+                        ZERO COST EMI
                     </Link>
                     {/* <span className="flex items-center gap-1 text-black">
                         <Zap className="w-4 h-4 text-red-500" />
@@ -247,9 +314,39 @@ export default function Header({ transparent = false, forceWhiteLogo = false, wh
                 <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
             )}
         </Link>
-        <Link href="/contact-us" className={`flex items-center justify-between ${pathname === '/contact-us' ? 'text-red-500' : ''}`}>
-            CONTACT US
-            {pathname === '/contact-us' && (
+       <div className="relative">
+  <button 
+    onClick={() => setMoreDropdownOpen(!moreDropdownOpen)}
+    className={`flex items-center justify-between w-full ${pathname === '/contact-us' ? 'text-red-500' : ''}`}
+  >
+    MORE
+    <svg width="12" height="6" viewBox="0 0 12 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fillRule="evenodd" clipRule="evenodd" d="M11.506 1.70233L10.0029 0.19928L5.99661 4.2056L1.99036 0.199342L0.487305 1.70239L4.49544 5.71053L5.99667 4.2093L7.49785 5.71047L11.506 1.70233Z" fill="white"/>
+    </svg>
+  </button>
+
+  {moreDropdownOpen && (
+    <div className="pl-4">
+      <Link 
+        href="/contact-us" 
+        className={`block py-2 ${pathname === '/contact-us' ? 'text-red-500' : ''}`}
+        onClick={() => setMoreDropdownOpen(false)}
+      >
+        CONTACT US
+      </Link>
+      <Link
+        href="/career" 
+        className={`block py-2 ${pathname === '/career' ? 'text-red-500' : ''}`}
+        onClick={() => setMoreDropdownOpen(false)}
+      >
+        CAREER 
+      </Link>
+    </div>
+  )}
+</div>
+        <Link href="/zero-cost-emi" className={`flex items-center justify-between ${pathname === '/zero-cost-emi' ? 'text-red-500' : ''}`}>
+            ZERO COST EMI
+            {pathname === '/zero-cost-emi' && (
                 <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
             )}
         </Link>

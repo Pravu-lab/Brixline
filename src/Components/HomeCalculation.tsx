@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Button, Description, Title } from './Tag';
+import Link from 'next/link';
 
 const HomeCalculation = () => {
   return (
@@ -14,9 +15,12 @@ const HomeCalculation = () => {
         Your Perfect Home, Designed & Built for You. <br />Hassle-free, On-Time, and Within Budget.
       </Description>
 
-      <Button className="text-white border-white w-[320px]">
+<Link href="/cost-estimator">
+ <Button className="text-white border-white w-[320px] cursor-pointer">
         CALCULATE NOW
       </Button>
+</Link>
+     
 
       {/* Bottom Decoration */}
       <div className="absolute w-full overflow-hidden bottom-0">

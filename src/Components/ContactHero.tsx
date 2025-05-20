@@ -59,13 +59,7 @@ const ContactHero = () => {
                 // if (!response.ok) throw new Error("Submission failed");
     
                 setFormData({ firstName: "", contactNumber: "", location: "", enquiryType: "", enquiry: "" });
-                // setShowThankYou(true)
-                // setTimeout(() => setShowThankYou(false), 10000); // thankyou popup disappears after 5 seconds.
-
                 showThankYouWithTimeout();
-
-
-                // alert("Thank you! We'll be in touch soon.");
             } catch (error) {
                 console.error("Submission error:", error);
                 alert("Something went wrong. Please try again.");
