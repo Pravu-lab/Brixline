@@ -91,10 +91,10 @@ export default function FooterSection() {
                 className="object-cover object-left !static"
               />
             </div>
-            <p className="text-xs opacity-80 mt-[42px] leading-relaxed">
+           <p className="text-xs opacity-80 mt-[42px] leading-relaxed">
               FRANCISCO TECHNOLOGY PRIVATE LIMITED. <br />
               126, 1st Cross Road, KHB Colony, 5th Block <br />
-              KORAMANGALA, BENGALURU, KARNATAKA 560047
+              KORAMANGALA, BENGALURU, KARNATAKA 560047 </p>
             {/* <div className='mt-6'>
             <Image
                 src="/svg/stars.svg"
