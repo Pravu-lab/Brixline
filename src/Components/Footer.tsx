@@ -105,11 +105,7 @@ export default function FooterSection() {
               />
               <p>Rated 4.7/5 Based on  4176 customer ratings</p>
             </div> */}
-            <p className="text-xs opacity-80 mt-[22px] leading-relaxed">
-              FRANSISCO TECHNOLOGY PRIVATE LIMITED. <br />
-              Opp To Jyoti Niwas College<br/>No:126, 4th floor, KHB Colony, 5th Block <br />
-              Koramangala, Bengaluru, Karnataka. 560095
-            </p>
+          
           </div>
 
           {/* Navigation Links */}
@@ -117,10 +113,14 @@ export default function FooterSection() {
             <a href="/" className="hover:text-gray-400 text-[16px]">Home</a>
             <a href="/about" className="hover:text-gray-400 text-[16px]">About Us</a>
             <a href="/how-it-works" className="hover:text-gray-400 text-[16px]">How It Works</a>
+             <a href="/cost-estimator" className="hover:text-gray-400 text-[16px]">Cost Estimator</a>
+             <a href="/zero-cost-emi" className="hover:text-gray-400 text-[16px]">Zero Cost EMI</a>
           </div>
 
           <div className="flex flex-col space-y-3 sm:ml-20">
-            <a href="/cost-estimator" className="hover:text-gray-400 text-[16px]">Cost Estimator</a>
+            <a href="/career">Career</a>
+            <a href="/join-us-as-professional">Join Us As Professional</a>
+            <a href="/channel-partner">Channel Partner</a>
             <a href="/contact-us" className="hover:text-gray-400 text-[16px]">Contact Us</a>
           </div>
 

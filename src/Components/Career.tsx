@@ -65,7 +65,7 @@ const Career = () => {
           <div className="flex flex-col items-center justify-between w-full text-center">
             {/* Desktop Content */}
             <div>
-              <MainTitle className="leading-[100%] text-center text-white">
+              <MainTitle className="bitter-font font-normal leading-[100%] text-center text-white">
                 Real Growth
                 <br/>
                 Real leaders

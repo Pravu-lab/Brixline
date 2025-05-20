@@ -243,6 +243,20 @@ const clearExistingTimeout = () => {
       >
         Career
       </Link>
+      <Link
+        href="/join-us-as-professional"
+        className={`block px-4 py-2 text-sm ${pathname === '/career' ? 'text-red-500' : 'text-black'} hover:bg-gray-100`}
+        onClick={() => setMoreDropdownOpen(false)}
+      >
+        Join Us As Professionals
+      </Link>
+      <Link
+        href="/channel-partner"
+        className={`block px-4 py-2 text-sm ${pathname === '/career' ? 'text-red-500' : 'text-black'} hover:bg-gray-100`}
+        onClick={() => setMoreDropdownOpen(false)}
+      >
+        Channel Partner
+      </Link>
     </div>
   )}
 </div>
@@ -345,6 +359,20 @@ const clearExistingTimeout = () => {
         onClick={() => setMoreDropdownOpen(false)}
       >
         CAREER 
+      </Link>
+       <Link
+        href="/channel-partner" 
+        className={`block py-2 ${pathname === '/channel-partner' ? 'text-red-500' : ''}`}
+        onClick={() => setMoreDropdownOpen(false)}
+      >
+        CHANNEL PARTNER 
+      </Link>
+       <Link
+        href="/join-us-as-professional" 
+        className={`block py-2 ${pathname === '/join-us-as-professional' ? 'text-red-500' : ''}`}
+        onClick={() => setMoreDropdownOpen(false)}
+      >
+        JOIN US AS PROFESIONAL
       </Link>
     </div>
   )}

@@ -197,7 +197,7 @@ width="40" height="40" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/
                   alt={`project-image-${index}`}
                   width={600}
                   height={413}
-                  className="w-[280px] h-[180px] sm:w-[321px] sm:h-[219px] md:w-[600px] md:h-[480px] object-cover"
+                  className="w-[280px] h-[180px] sm:w-[321px] sm:h-[219px] md:w-[700px] md:h-[480px] object-cover"
                 />
               </div>
             ))}
