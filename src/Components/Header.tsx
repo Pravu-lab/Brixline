@@ -206,8 +206,12 @@ const clearExistingTimeout = () => {
 >
   <button
     onClick={() => setMoreDropdownOpen(!moreDropdownOpen)}
-    className={`flex items-center gap-1 ${whiteText ? 'text-white' : 'text-black'} ${pathname === '/contact-us' || pathname === '/career' || moreDropdownOpen ? 'text-red-500' : ''}`}
+    className={`flex items-center gap-1 ${pathname === '/contact-us' || pathname === '/career'|| pathname === '/join-us-as-professional' || pathname === '/channel-partner' || moreDropdownOpen ? 'text-red-500' : ''}`}
   >
+     {(pathname === '/contact-us' || pathname === '/career' || pathname === '/join-us-as-professional' || pathname === '/channel-partner') && (
+      <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
+    )}
+
     MORE
     {moreDropdownOpen ?
       <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none">
@@ -223,7 +227,7 @@ const clearExistingTimeout = () => {
 
   {moreDropdownOpen && (
     <div
-      className="absolute mt-4 right-0 bg-red-100 shadow-md min-w-40 z-[9999]"
+      className="absolute mt-4 right-0 bg-white shadow-md min-w-40 z-[9999]"
       onMouseEnter={clearExistingTimeout}
       onMouseLeave={() => {
         setMoreDropdownOpen(false);
@@ -231,28 +235,28 @@ const clearExistingTimeout = () => {
     >
       <Link 
         href="/contact-us"
-        className={`block px-4 py-2 text-sm ${pathname === '/contact-us' ? 'text-red-500' : 'text-black'} hover:bg-gray-100`}
+        className={`block px-4 py-2 text-sm ${pathname === '/contact-us' ? 'text-red-500' : 'text-black'} hover:bg-gray-300`}
         onClick={() => setMoreDropdownOpen(false)}
       >
         CONTACT US
       </Link>
       <Link
         href="/career"
-        className={`block px-4 py-2 text-sm ${pathname === '/career' ? 'text-red-500' : 'text-black'} hover:bg-gray-100`}
+        className={`block px-4 py-2 text-sm ${pathname === '/career' ? 'text-red-500' : 'text-black'} hover:bg-gray-300`}
         onClick={() => setMoreDropdownOpen(false)}
       >
         Career
       </Link>
       <Link
         href="/join-us-as-professional"
-        className={`block px-4 py-2 text-sm ${pathname === '/career' ? 'text-red-500' : 'text-black'} hover:bg-gray-100`}
+        className={`block px-4 py-2 text-sm ${pathname === '/join-us-as-professional' ? 'text-red-500' : 'text-black'} hover:bg-gray-300`}
         onClick={() => setMoreDropdownOpen(false)}
       >
         Join Us As Professionals
       </Link>
       <Link
         href="/channel-partner"
-        className={`block px-4 py-2 text-sm ${pathname === '/career' ? 'text-red-500' : 'text-black'} hover:bg-gray-100`}
+        className={`block px-4 py-2 text-sm ${pathname === '/channel-partner' ? 'text-red-500' : 'text-black'} hover:bg-gray-300`}
         onClick={() => setMoreDropdownOpen(false)}
       >
         Channel Partner
@@ -336,12 +340,16 @@ const clearExistingTimeout = () => {
        <div className="relative">
   <button 
     onClick={() => setMoreDropdownOpen(!moreDropdownOpen)}
-    className={`flex items-center justify-between w-full ${pathname === '/contact-us' ? 'text-red-500' : ''}`}
+    className={`flex items-center justify-between w-full ${pathname === '/contact-us' || pathname === '/career'|| pathname === '/join-us-as-professional' || pathname === '/channel-partner' || moreDropdownOpen ? 'text-red-500' : ''}`}
   >
+    
     MORE
     <svg width="12" height="6" viewBox="0 0 12 6" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path fillRule="evenodd" clipRule="evenodd" d="M11.506 1.70233L10.0029 0.19928L5.99661 4.2056L1.99036 0.199342L0.487305 1.70239L4.49544 5.71053L5.99667 4.2093L7.49785 5.71047L11.506 1.70233Z" fill="white"/>
     </svg>
+     {/* {(pathname === '/contact-us' || pathname === '/career' || pathname === '/join-us-as-professional' || pathname === '/channel-partner') && (
+      <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
+    )} */}
   </button>
 
   {moreDropdownOpen && (

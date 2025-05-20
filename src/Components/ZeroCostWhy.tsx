@@ -20,7 +20,7 @@ const ZeroCostWhy = () => {
                     </div>
 
                     {/* Centered Table Container - Mobile scrollable */}
-                    <div className="w-full md:min-w-full lg:w-[1225px] overflow-x-auto">
+                    <div className="w-full md:min-w-full lg:w-[1210px] overflow-x-auto">
                         <table className="min-w-[600px] bg-white text-black font-bold">
                             <thead>
                                 <tr>
@@ -134,7 +134,7 @@ const ZeroCostWhy = () => {
   </div>
 
   {/* Box 5 - Wider box - Kept original styling */}
-  <div className="bg-white border border-gray-200 p-4 flex flex-col md:flex-row md:col-span-2 h-full md:h-[250px] w-full md:w-[710px] lg:w-[813px]">
+  <div className="bg-white border border-gray-200 p-4 flex flex-col md:flex-row md:col-span-2 h-full md:h-[250px] w-full md:w-[710px] lg:w-[808px]">
     {/* Mobile: stacked content */}
     <div className="flex flex-col order-2 md:order-1 md:flex-1">
       {/* Circles - centered on mobile */}
@@ -262,7 +262,7 @@ const ZeroCostWhy = () => {
               <div className="bg-red-50 p-4">
   <div className="flex flex-row items-center">
     {/* Text Container - Left */}
-    <div className="flex-1 pr-1 md:pr-4 py-4"> {/* Added right padding and vertical padding */}
+    <div className="flex-1 pl-3 pr-1 md:pr-4 py-4"> {/* Added right padding and vertical padding */}
       <h3 className="font-bold text-lg md:text-xl text-black mb-6 md:mb-3">Mortgage Loan</h3>
       <p className="text-gray-600 text-sm md:text-base">
         Take a loan against your property at attractive rates for your personal or business needs
@@ -289,7 +289,7 @@ const ZeroCostWhy = () => {
                 <div className="bg-red-50 p-4">
   <div className="flex flex-row items-center">
     {/* Text Container - Left */}
-    <div className="flex-1 pr-1 md:pr-4 py-4"> {/* Added right padding and vertical padding */}
+    <div className="flex-1 pl-3 pr-1 md:pr-4 py-4"> {/* Added right padding and vertical padding */}
       <h3 className="font-bold text-lg md:text-xl text-black mb-6 md:mb-3">Balance Transfer</h3>
       <p className="text-gray-600 text-sm md:text-base">
         Shift to lower interest rates and reduce your EMI's. Get top-up loans, repay faster and save in Lakhs
