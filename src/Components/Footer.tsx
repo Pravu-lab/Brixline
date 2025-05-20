@@ -91,7 +91,6 @@ export default function FooterSection() {
                 className="object-cover object-left !static"
               />
             </div>
-<<<<<<< HEAD
             {/* <div className='mt-6'>
             <Image
                 src="/svg/stars.svg"
@@ -102,18 +101,6 @@ export default function FooterSection() {
               />
               <p>Rated 4.7/5 Based on  4176 customer ratings</p>
             </div> */}
-=======
-            {/* <div className='mt-6'> */}
-            {/* <Image
-                src="/svg/stars.svg"
-                alt="stars"
-                //height={15}
-                //width={91}
-              //   className="h-[15px]"
-              // />
-              {/* <p>Rated 4.7/5 Based on  4176 customer ratings</p> */}
-            {/*</div> */}
->>>>>>> 0068acb320cd1b4f18d3b33d99a96dbbe35c4524
             <p className="text-xs opacity-80 mt-[22px] leading-relaxed">
               FRANSISCO TECHNOLOGY PRIVATE LIMITED. <br />
               Opp To Jyoti Niwas College<br/>No:126, 4th floor, KHB Colony, 5th Block <br />
