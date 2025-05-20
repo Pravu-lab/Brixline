@@ -258,33 +258,34 @@ const ZeroCostWhy = () => {
   </div>
 </div>
 
-                {/* Balance Transfer box - Mobile: image right, text left */}
+                {/* Mortgage - Mobile: image right, text left */}
               <div className="bg-red-50 p-4">
   <div className="flex flex-row items-center">
     {/* Text Container - Left */}
     <div className="flex-1 pr-1 md:pr-4 py-4"> {/* Added right padding and vertical padding */}
-      <h3 className="font-bold text-lg md:text-xl text-black mb-6 md:mb-3">Balance Transfer</h3>
+      <h3 className="font-bold text-lg md:text-xl text-black mb-6 md:mb-3">Mortgage Loan</h3>
       <p className="text-gray-600 text-sm md:text-base">
-        Shift to lower interest rates and reduce your EMI's. Get top-up loans, repay faster and save in Lakhs
+        Take a loan against your property at attractive rates for your personal or business needs
       </p>
     </div>
     
     {/* Image Container - Right */}
-    <div className="ml-6"> {/* Added left margin and top padding */}
-      <div className="h-50 md:h-60 w-50 md:w-60 -mr-7 md:-mr-2 -mb-5 rounded-md flex items-center justify-center"> {/* Fixed size container */}
+    <div className="ml-6 "> {/* Added left margin and top padding */}
+      <div className="h-50 md:h-55 w-50 md:w-55 -mr-7  md:-mr-2 pb-6 md:pb-0 rounded-md flex items-center justify-center"> {/* Fixed size container */}
         <Image
           src="/svg/help22.svg"
           alt="Balance Transfer"
           width={200}
           height={200}
-          className="object-contain h-full w-full"
+          className="object-contain"
+          style={{marginBottom: '-40px', marginRight:'8px'}}
         />
       </div>
     </div>
   </div>
 </div>
 
-                {/* Mortgage Loan box - Mobile: image right, text left */}
+                {/* Balance Transfer - Mobile: image right, text left */}
                 <div className="bg-red-50 p-4">
   <div className="flex flex-row items-center">
     {/* Text Container - Left */}
@@ -299,7 +300,7 @@ const ZeroCostWhy = () => {
     <div className="ml-6"> {/* Added left margin and top padding */}
       <div className="h-50 md:h-60 w-50 md:w-60 -mr-7 md:-mr-2 -mb-5 rounded-md flex items-center justify-center"> {/* Fixed size container */}
         <Image
-          src="/Zero/help11.png"
+          src="/png/help202.png"
           alt="Balance Transfer"
           width={200}
           height={200}
