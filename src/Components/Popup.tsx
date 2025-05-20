@@ -177,34 +177,28 @@ export default function MobileQuotePopup({
       </div>
 
       {/* Mobile Layout */}
-      <div className="md:hidden flex flex-col h-full w-full bg-gradient-to-b from-black to-neutral-900 text-white overflow-hidden">
-        {/* Form Section - Top Half */}
-        <div className="relative h-[50vh] min-h-[40vh] p-6 flex flex-col">
+      <div className="md:hidden flex flex-col w-full h-screen bg-gradient-to-b from-black to-neutral-900 text-white overflow-y-auto pt-10">
+        <div className="relative p-6 flex flex-col">
           <button 
             onClick={handleClose}
-            // className="absolute top-5 right-5 z-50 text-xl font-medium text-white hover:text-gray-200 bg-black/40 hover:bg-black/60 rounded-full w-9 h-9 flex items-center justify-center transition-all duration-200"
             className="absolute top-6 right-6 z-50 text-3xl font-bold text-white hover:text-gray-200 bg-black/70 hover:bg-black/90 rounded-full w-12 h-12 flex items-center justify-center transition-all duration-200 shadow-lg"
             aria-label="Close popup"
           >
             ×
           </button>
-          
-          <div className="flex flex-col items-center justify-center h-full">
+          <div className="flex flex-col items-center justify-center">
             <h2 className="text-2xl font-bold text-center mb-6">
               Connect with our architectural experts.
             </h2>
-
             <div className="w-full grid grid-cols-1 gap-4 mb-6">
               <input className="bg-white text-black p-3 rounded focus:outline-none" placeholder="First Name" />
               <input className="bg-white text-black p-3 rounded focus:outline-none" placeholder="Contact Number" />
               <input className="bg-white text-black p-3 rounded focus:outline-none" placeholder="Email Address" />
               <input className="bg-white text-black p-3 rounded focus:outline-none" placeholder="Location of Plot" />
             </div>
-
             <Button className="bg-[#F55252] text-white !py-2 px-8 rounded-lg font-semibold hover:bg-[#e04a4a] transition-colors w-full max-w-xs">
               GET A FREE QUOTE
             </Button>
-
             <p className="text-xs mt-6 text-gray-400 text-center">
               By proceeding, you agree to our{' '}
               <a href="#" className="underline hover:text-gray-300">terms</a> &{' '}
@@ -212,13 +206,10 @@ export default function MobileQuotePopup({
             </p>
           </div>
         </div>
-
-        {/* Accordion Section - Bottom Half with Scroll */}
-        <div className="h-[50vh] bg-[#5b5a5a] p-6 overflow-y-auto">
+        <div className="bg-[#5b5a5a] p-6">
           <div className="text-center">
             <h2 className="text-3xl font-bold">₹ {data.price}</h2>
             <p className="text-sm text-gray-100 mb-4">/sq.ft (Incl. GST)</p>
-
             <div className="inline-block px-4 py-2 text-sm font-semibold rounded-lg bg-[#884e4e] mb-6 relative">
               <select
                 ref={selectRef}
@@ -250,7 +241,6 @@ export default function MobileQuotePopup({
                 </svg>
               </div>
             </div>
-
             <div className="divide-y divide-gray-700">
               {data.data.map((section, index) => (
                 <div key={index} className="py-3">
@@ -281,4 +271,3 @@ export default function MobileQuotePopup({
     </div>
   );
 }
-

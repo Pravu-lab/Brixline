@@ -44,6 +44,15 @@ const Hero = () => {
       //     localStorage.removeItem("isHomepage");
       //   };
       // }, []);
+
+      const handleDownload = () => {
+        const link = document.createElement("a");
+        link.href = "/pdf/Brixline.pdf";
+        link.download = "Brixline-Brochure.pdf";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      };
       
   return (
     <div className="relative">
@@ -125,7 +134,7 @@ const Hero = () => {
             />
  </div>
 
-          <Button className="bg-[#F55252] flex justify-evenly items-center w-[242px] border-[#F55252] mt-[50px]">
+          <Button type="button" onClick={handleDownload} className="bg-[#F55252] flex justify-evenly items-center w-[242px] border-[#F55252] mt-[50px] cursor-pointer z-50">
             <span className="text-sm text-white leading-[100%] font-bold">
               DOWNLOAD BROCHURE
             </span>
