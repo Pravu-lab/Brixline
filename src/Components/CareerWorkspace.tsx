@@ -22,7 +22,7 @@ const CareerWork: React.FC = () => {
         <span className='flex-1'>
         <span className="inline-block mr-2">ON SITE</span>
         <Image 
-          src="/union404.png"
+          src="/union404.svg"
           alt="location"
           width={10}
           height={10}
@@ -30,7 +30,7 @@ const CareerWork: React.FC = () => {
         />
         <span className="ml-2 mr-2">FULL TIME</span>
         <Image 
-          src="/union404.png"
+          src="/union404.svg"
           alt="location"
           width={10}
           height={10}
