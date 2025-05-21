@@ -4,10 +4,12 @@ import {
   useMotionValueEvent,
   useScroll,
   useTransform,
+  useSpring
 } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import PageFillAnimation from "./PageFillAnimation";
 import React from "react"; 
+import Image from "next/image";
 
 const slidesData = [
   {
@@ -60,8 +62,15 @@ const slidesData = [
       image: "/workstart.png",
       title: "",
       content: (
-        <div>
-    
+        <div className="flex justify-center items-center gap-4 bg-black text-white text-[18px] py-4 px-8 leading-[120%] font-medium w-[465px]">
+           <Image
+              src="/svg/red-tick.svg"
+              alt="red-tick"
+              width={45}
+              height={45}
+              className="h-[43px] w-[43px]"
+            />
+        Amazing Construction work starts now
         </div>
       ),
       unnumbered: true
@@ -107,10 +116,17 @@ export default function HowitWorksSlider() {
     } else {
       setGlow(false);
     }
-    const slideIndex = Math.min(
-      slidesData.length,
-      Math.max(1, Math.ceil(latest * slidesData.length))
-    );
+      // only start counting after 30% scroll, and speed it up 1.5×
+      const startOffset = 0.3;
+      const speedMultiplier = 1.5;
+      const normalized = latest <= startOffset
+        ? 0
+        : (latest - startOffset) / (1 - startOffset);
+      const rawCount = normalized * slidesData.length * speedMultiplier;
+      const slideIndex = Math.min(
+        slidesData.length,
+        Math.max(1, Math.ceil(rawCount))
+      );
     setCurrentSlide(slideIndex);
   });
 
@@ -138,16 +154,23 @@ export default function HowitWorksSlider() {
   const logoY = useTransform(scrollYProgress, [0.3, 0.35], ["125%", "0%"]);
   const logoScale = useTransform(scrollYProgress, [0, 0.3], [1, 1.5]);
 
+  const startOffset = 0.3;
+  const speedMultiplier = 1.5;
   const sliderY = useTransform(
     scrollYProgress,
     [0.2, 0.8],
     ["500vh", "-500vh"]
   );
-  const slideProgress = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [0,1]
-  );
+  const fillProgress = useTransform(
+      scrollYProgress,
+      [startOffset, 1],
+      [0, 2 * speedMultiplier],
+      { clamp: true }
+    );
+    const fillProgressSpring = useSpring(fillProgress, {
+      stiffness: 50,
+      damping: 20
+    });
   const mobileH1 = useTransform(scrollYProgress, [0, 0.3], ["0vw", "-100vw"]);
   const mobileSlider = useTransform(
     scrollYProgress,
@@ -156,7 +179,7 @@ export default function HowitWorksSlider() {
   );
 
   return (
-    <div ref={ref} className="h-[400vh] w-screen relative">
+    <div ref={ref} className="h-[250vh] w-screen relative">
       {!isMobile ? (
         <div className="sticky top-0 h-screen w-full overflow-hidden mx-auto">
           {/* Progress bar with number below */}
@@ -164,7 +187,7 @@ export default function HowitWorksSlider() {
             {/* Progress bar */}
             <div className="h-64 w-2 bg-gray-300 rounded-full overflow-hidden relative">
               <motion.div
-                style={{ scaleY: slideProgress }}
+          style={{ scaleY: fillProgressSpring }}
                 className="bg-red-500 w-full h-full origin-bottom absolute bottom-0 left-0"
               />
             </div>
@@ -184,7 +207,7 @@ export default function HowitWorksSlider() {
 
           {/* Logo */}
           <motion.div
-            className="absolute top-1/2 right-1/2 transform translate-x-1/2 -translate-y-1/2 lg:w-12 md:w-9 lg:h-12 md:h-9 z-20"
+            className="absolute top-86 right-158 transform translate-x-1/2 -translate-y-1/2 lg:w-12 md:w-9 lg:h-12 md:h-9 z-20"
             style={{ x: logoX, y: logoY, scale: logoScale }}
           >
             <div className="pulse-wrapper">
@@ -213,17 +236,19 @@ export default function HowitWorksSlider() {
             className="absolute bottom-0 left-0 w-full h-screen flex items-center justify-center z-10"
             style={{ y: sliderY }}
           >
-            <div className="flex flex-col gap-10">
+            <div className="flex flex-col gap-20">
               {slidesData.map((slide, index) => (
                 <div
                   className="p-6 rounded-lg lg:w-[500px] md:w-[400px] mx-auto"
                   key={index}
                 >
-                  <img
-                    src={slide.image}
-                    alt="Slide 1"
-                    className="w-[300px] mx-auto object-cover mb-4"
-                  />
+                  {!slide.unnumbered && (
+                    <img
+                      src={slide.image}
+                      alt="Slide 1"
+                      className="w-[300px] mx-auto object-cover mb-4"
+                    />
+                  )}
                   <div className=" flex items-end gap-[15px]">
                     {!slide.unnumbered && (
                        <span className="text-[#F55252] text-[32px]/[120%] font-bold">{`0${
@@ -270,11 +295,13 @@ export default function HowitWorksSlider() {
             <div className="flex gap-10">
               {slidesData.map((slide, index) => (
                 <div className="p-6 rounded-lg w-screen mx-auto" key={index}>
-                  <img
-                    src={slide.image}
-                    alt="Slide 1"
-                    className="w-[150px] mx-auto object-cover mb-4"
-                  />
+                    {!slide.unnumbered && (
+                    <img
+                      src={slide.image}
+                      alt="Slide 1"
+                      className="w-[150px] mx-auto object-cover mb-4"
+                    />
+                  )}
                   <div className={`flex items-end ${slide.unnumbered ? 'justify-center items-center' : 'gap-[15px]'}`}>
                     {!slide.unnumbered && (
                       <span className="text-[#F55252] text-[18px]/[120%] font-bold">{`0${
