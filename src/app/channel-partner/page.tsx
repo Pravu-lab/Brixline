@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import FooterSection from "@/Components/Footer";
 import Header from "@/Components/Header";
 import Image from "next/image";
+import { useThankYou } from "@/contexts/ThankYouContext";
 
 export default function ChannelPartnerPage() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,6 +18,7 @@ export default function ChannelPartnerPage() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
+  const { showThankYouWithTimeout } = useThankYou();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,7 +55,10 @@ export default function ChannelPartnerPage() {
       }
 
       setSuccess(true);
-      setFormData({ name: "", email: "", phone: "", city: "", organization: "" }); 
+      setFormData({ name: "", email: "", phone: "", city: "", organization: "" });
+      if (response.ok) {
+        showThankYouWithTimeout();
+      }
     } catch (err) {
       setError("Failed to submit form. Please try again.");
     } finally {
@@ -208,7 +213,7 @@ export default function ChannelPartnerPage() {
           <p className="uppercase text-[#F55252] text-sm md:text-base font-bold leading-[140%] text-center">
             discover
           </p>
-          <h2 className="text-black text-3xl md:text-5xl leading-[120%] font-black text-center">
+          <h2 className="text-black text-3xl md:text-5xl leading-[120%] font-medium text-center">
             How To Become A <br /> Channel Partner
           </h2>
           <p className="text-[#131313] text-sm md:text-base font-medium leading-[140%] text-center">
@@ -289,7 +294,7 @@ export default function ChannelPartnerPage() {
           <div className="flex flex-col justify-center items-start gap-2 md:gap-0 px-9 md:px-0">
             <p className="text-[#F55252] block md:hidden text-sm font-bold leading-[140%]">WHY US?
             </p>
-            <h4 className="text-white text-[32px] md:text-4xl lg:text-5xl font-semibold leading-[120%]">
+            <h4 className="text-white text-[32px] md:text-4xl lg:text-5xl font-medium leading-[120%]">
               Love Working <br /> With Us
             </h4>
             <p className="text-white/40 text-md font-medium leading-[160%]">

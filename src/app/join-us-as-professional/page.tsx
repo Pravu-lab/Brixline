@@ -1,9 +1,9 @@
 "use client";
-import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
 import FooterSection from "@/Components/Footer";
 import Header from "@/Components/Header";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function JoinUsAsProfessionals() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -220,7 +220,7 @@ export default function JoinUsAsProfessionals() {
             <p className="uppercase text-[#F55252] text-sm md:text-base font-bold leading-[140%] text-center">
               discover
             </p>
-            <h2 className="text-black text-3xl md:text-5xl leading-[120%] font-black text-center">
+            <h2 className="text-black text-3xl md:text-5xl leading-[120%] font-medium text-center">
               Reasons To Love Working <br /> With Us
             </h2>
             <p className="text-[#131313] text-sm md:text-base font-medium leading-[140%] text-center">
@@ -318,7 +318,7 @@ export default function JoinUsAsProfessionals() {
             <p className="uppercase text-[#F55252] text-sm md:text-base font-bold leading-[140%] text-center md:text-left">
               professionals
             </p>
-            <h2 className="text-black text-3xl md:text-5xl leading-[120%] font-black text-center md:text-left">
+            <h2 className="text-black text-3xl md:text-5xl leading-[120%] font-medium text-center md:text-left">
               Meet Our <br /> Professionals
             </h2>
             <p className="text-[#131313] text-sm md:text-base font-medium leading-[140%] text-center md:text-left">
@@ -393,7 +393,7 @@ export default function JoinUsAsProfessionals() {
             <p className="uppercase text-[#F55252] text-sm md:text-base font-bold leading-[140%] text-center">
               process
             </p>
-            <h2 className="text-black text-3xl md:text-5xl leading-[120%] font-black text-center">
+            <h2 className="text-black text-3xl md:text-5xl leading-[120%] font-medium text-center">
               Simple Steps To Get You <br /> Onboard
             </h2>
           </div>

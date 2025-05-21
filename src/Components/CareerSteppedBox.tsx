@@ -34,7 +34,7 @@ const CareerSteppedBox: React.FC = () => {
               `}
             >
               <div className="text-lg">{boxContents[index].top}</div>
-              <div className="text-sm">{boxContents[index].bottom}</div>
+              <div className="text-sm font-medium">{boxContents[index].bottom}</div>
             </div>
           ))}
         </div>
@@ -56,7 +56,7 @@ const CareerSteppedBox: React.FC = () => {
               `}
             >
               <div className="text-lg">{boxContents[index].top}</div>
-              <div className="text-sm">{boxContents[index].bottom}</div>
+              <div className="text-sm font-medium">{boxContents[index].bottom}</div>
             </div>
           ))}
         </div>

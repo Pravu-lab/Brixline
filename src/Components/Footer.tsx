@@ -43,7 +43,7 @@ export default function FooterSection() {
             <Title className="text-black mb-4 text-center md:text-left">
               Get the best-in class home construction service:
             </Title>
-            <h2 className="px-1 text-[12px] sm:text-[16px] font-bold uppercase text-gray-600 mb-8 text-center md:text-left">
+            <h2 className="px-1 text-[12px] sm:text-[16px] font-medium text-gray-600 mb-8 text-center md:text-left">
               Backed by top investors committed to our mission of revolutionizing the home construction industry.
             </h2>
 
@@ -92,9 +92,8 @@ export default function FooterSection() {
               />
             </div>
            <p className="text-xs opacity-80 mt-[42px] leading-relaxed">
-              FRANCISCO TECHNOLOGY PRIVATE LIMITED. <br />
-              opp To Jyoti Niwas College No: 126, 4th floor, KHB Colony<br />
-              5th Block KORAMANGALA, BENGALURU, KARNATAKA 560095 </p>
+              Opp To Jyoti Niwas College No: 126, 4th floor, KHB Colony<br />
+              5th Block Koramangala, BENGALURU, KARNATAKA 560095 </p>
             {/* <div className='mt-6'>
             <Image
                 src="/svg/stars.svg"

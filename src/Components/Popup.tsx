@@ -186,7 +186,7 @@ export default function MobileQuotePopup({
     <span className="relative -top-0.5">×</span>
   </button>
   <div className="w-full mx-auto flex flex-col items-center justify-center h-full">
-    <h2 className="text-md md:text-2xl font-bold text-center mb-10">
+    <h2 className="text-md md:text-2xl font-medium text-center mb-10">
       Connect with our <br /> architectural experts.
     </h2>
 

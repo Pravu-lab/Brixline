@@ -1,11 +1,11 @@
 "use client";
+import { useThankYou } from "@/contexts/ThankYouContext";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import CustomInput from "./Forms/CustomInput";
 import CustomSelect from "./Forms/CustomSelect";
 import CustomTextArea from "./Forms/CustomTextArea";
 import { Button, Description, MainTitle, Section } from "./Tag";
-import { useThankYou } from "@/contexts/ThankYouContext";
 
 const ContactHero = () => {
     const [formData, setFormData] = useState({
@@ -88,7 +88,7 @@ const ContactHero = () => {
         className="w-full max-h-70 object-contain" // Adjust size as needed
       />
     </div>
-            <h2 className="font-extrabold text-red-600">THANK YOU FOR REACHING OUT!</h2>
+            <h2 className="font-extrabold text-[#F55252]">THANK YOU FOR REACHING OUT!</h2>
             <p className="text-xl font-bold">We've Received Your Request And Our
            Team Is Reviewing Your Details.</p> */}
             {/* <p className="my-4">
@@ -197,7 +197,7 @@ const ContactHero = () => {
                             </Description>
 
                             <div className="w-full">
-                                <Button className="w-full py-3 text-sm h-full bg-[#F55252] text-white rounded-lg cursor-pointer">
+                                <Button className="w-full py-3 cursor-pointer bg-[#F55252] text-white px-4 font-bold hover:bg-[#e04a4a] transition-colors border-none">
                                 {isSubmitting ? 'Submitting...' : 'SUBMIT'}
                                 </Button>
                             </div>

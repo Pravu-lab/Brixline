@@ -76,7 +76,7 @@ const ThankYouPopup = () => {
             className="w-full max-h-70 object-contain"
           />
         </div>
-        <h2 className="font-extrabold text-red-600">THANK YOU FOR REACHING OUT!</h2>
+        <h2 className="font-extrabold text-[#F55252]">THANK YOU FOR REACHING OUT!</h2>
         <p className="text-xl font-bold">We've Received Your Request And Our
         Team Is Reviewing Your Details.</p>
         <p className="my-4">

@@ -7,7 +7,6 @@ import {
 } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import PageFillAnimation from "./PageFillAnimation";
-import React from "react"; 
 
 const slidesData = [
   {
@@ -176,7 +175,7 @@ export default function HowitWorksSlider() {
 
           {/* Heading */}
           <motion.h1
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 lg:text-[48px]/[120%] md:text-[38px]/[120%] font-black z-20 lg:w-[450px] md:w-[350px] text-left text-black"
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 lg:text-[48px]/[120%] md:text-[38px]/[120%] font-medium z-20 lg:w-[450px] md:w-[350px] text-left text-black"
             style={{ x: titleX, y: titleY }}
           >
           Making your dream home a reality.
@@ -202,7 +201,7 @@ export default function HowitWorksSlider() {
             </div>
             </motion.div>
             <motion.h1
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 lg:text-[48px]/[120%] md:text-[38px]/[120%] font-black z-20 lg:w-[450px] md:w-[350px] text-left text-black"
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 lg:text-[48px]/[120%] md:text-[38px]/[120%] font-medium z-20 lg:w-[450px] md:w-[350px] text-left text-black"
               style={{ x: titleX, y: titleY }}
             >
                 Making your dream home a reality.
@@ -226,15 +225,15 @@ export default function HowitWorksSlider() {
                   />
                   <div className=" flex items-end gap-[15px]">
                     {!slide.unnumbered && (
-                       <span className="text-[#F55252] text-[32px]/[120%] font-bold">{`0${
+                       <span className="text-[#F55252] text-[32px]/[120%] font-semibold">{`0${
                         index + 1
                       }`}</span>
                     )}
                     <div>
-                      <h3 className="mb-[12px] text-[#F55252] text-[32px]/[120%] font-[600] ">
+                      <h3 className="mb-[12px] text-[#F55252] text-[32px]/[120%] font-semibold ">
                         {slide.title}
                       </h3>
-                      <span className="text-black text-[24px]/[120%] font-black">
+                      <span className="text-black text-[24px]/[120%] font-medium">
                         {slide.content}
                       </span>
                     </div>
@@ -248,7 +247,7 @@ export default function HowitWorksSlider() {
       ) : (
         <div className="sticky top-0 left-0 h-screen w-full overflow-hidden mx-auto">
           <motion.h1
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[38px]/[120%] font-black z-20 text-left text-black"
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[38px]/[120%] font-medium z-20 text-left text-black"
             style={{ x: mobileH1 }}
           >
             Making your dream home a reality.
@@ -286,7 +285,7 @@ export default function HowitWorksSlider() {
                       <h3 className="mb-[12px] text-[#F55252] text-[18px]/[120%] font-[600]">
                         {slide.title}
                       </h3>
-                      <span className="text-black text-[14px]/[120%] font-black">
+                      <span className="text-black text-[14px]/[120%] font-medium">
                         {slide.content}
                       </span>
                     </div>

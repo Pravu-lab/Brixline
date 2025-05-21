@@ -6,7 +6,7 @@ const ZeroCostWhy = () => {
         <div>
             <div className="bg-gray-200 font-sans min-h-screen p-1 md:p-5">
                 <div className="max-w-[1200px] mx-auto p-5 md:ml-2  lg:ml-25">
-                    <h1 className="text-center text-gray-700 mb-2.5 font-semibold">
+                    <h1 className="text-[#F55252] text-center text-[14px] sm:text-[16px] font-bold uppercase mb-1 pl-2 inter-tight-font">
                         WHY CHOOSE US
                     </h1>
                     <div className="text-center mb-10">
@@ -215,7 +215,7 @@ const ZeroCostWhy = () => {
 
             {/* offerings */}
             <div>
-                <h1 className="text-center text-red-600 mb-2.5 font-semibold mt-28">
+                <h1 className="text-center inter-tight-font text-[#F55252] mb-2.5 font-semibold mt-28">
                     OUR OFFERINGS
                 </h1> 
                 <div className="text-center mb-10">

@@ -78,7 +78,6 @@ const WhyChooseUs = () => {
       <SubTitle className="">How are we different?</SubTitle>
       <Title className=" text-black leading-snug mb-4">
         Built
-        
         On Trust, Delivered <br /> With
         Excellence
       </Title>

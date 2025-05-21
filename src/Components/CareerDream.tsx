@@ -60,7 +60,7 @@ const CareerDream = () => {
             <div className="flex flex-col md:flex-row p-4 md:p-18">
                 {/* Left text - unchanged for desktop */}
                 <div className="flex flex-col justify-start items-start mb-8 md:mb-0 pl-12 text-center md:text-left md:pl-0">
-                    <div className="text-black text-2xl md:text-5xl font-bold">
+                    <div className="text-black text-2xl md:text-5xl font-medium">
                         Voice Of The Dream Team
                     </div>
                     <div className="text-gray-700 pt-8 text-sm md:text-base">
@@ -147,9 +147,9 @@ const CareerDream = () => {
                                     idx < currentIndex ? "-translate-x-full" : "translate-x-full"
                                 }`}
                             >
-                                <div className="font-extrabold text-lg">{testimonial.quote}</div>
+                                <div className="font-medium text-lg">{testimonial.quote}</div>
                                 <div className="mt-40">
-                                    <div className="font-bold">{testimonial.name}</div>
+                                    <div className="font-medium">{testimonial.name}</div>
                                     <div className="text-sm">- {testimonial.position}</div>
                                 </div>
                             </div>

@@ -1,8 +1,6 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import { Description, Section } from "./Tag";
-import Image from "next/image";
 import CareerSteppedBox from "./CareerSteppedBox";
 
 export default function CareerTextAnimation() {
@@ -77,7 +75,7 @@ useEffect(() => {
       {/* Rest of your existing components */}
       <div className="bg-[url('/career22bg.png')] bg-cover h-[1050px] tracking-wide m-0 p-0">
         <div className="text-white pt-156 flex flex-col justify-center items-center px-2 md:px-40 ">
-          <div className="font-bold text-red-500">
+          <div className="font-bold text-[#F55252]">
             WHY US?
           </div>
           <div className="text-xl md:text-5xl font-bold md:p-5 text-center">

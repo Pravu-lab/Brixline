@@ -237,7 +237,7 @@ const CareerWork: React.FC = () => {
   return (
    <div className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-2xl md:text-5xl font-bold text-gray-900 mb-6 md:mb-0 pt-20 text-center pl-0 md:pl-81">
+        <h2 className="text-2xl md:text-5xl font-medium text-gray-900 mb-6 md:mb-0 pt-20 text-center pl-0 md:pl-81">
           Explore Career Opportunities
         </h2>
 

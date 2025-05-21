@@ -8,6 +8,7 @@ import { Description, MainTitle } from "./Tag";
 
 const ZeroCostEmi = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [error, setError] = useState("");
   const [isVisible, setIsVisible] = useState(true);
   const lastScrollY = useRef(0);
   const [isLoading, setIsLoading] = useState(false);
@@ -36,23 +37,29 @@ const ZeroCostEmi = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError("")
     setIsLoading(true);
 
-      try {
-      // const response = await fetch("/api/submit", {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   body: JSON.stringify(formData),
-      // });
+    if (!formData.name || !formData.city) {
+      setError("Please fill in all required fields");
+      return;
+    }
 
-      // if (!response.ok) throw new Error("Submission failed");
+      try {
+      const response = await fetch("/api/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) throw new Error("Submission failed");
 
       setFormData({ name: "", contact: "", city: "" });
-      // if (response.ok) {
+      if (response.ok) {
         showThankYouWithTimeout();
-      // }
+      }
     } catch (error) {
       console.error("Submission error:", error);
       alert("Something went wrong. Please try again.");
@@ -179,7 +186,7 @@ const ZeroCostEmi = () => {
 
 
  <div className="relative w-max flex justify-end mt-[20px] sm:mt-0">
-            <div className='max-w-[390px] relative max-h-[532px]'>
+            <div className='max-w-[390px] relative max-h-[562px] '>
               <div className='absolute px-7 pt-[50px] md:pt-[72px] z-20 w-full'>
                 {/* <span className='absolute bg-[#F55252] text-xs px-5 py-[7px] font-bold top-0 left-1/4 rounded-bl-2xl rounded-br-2xl'>
                   FREE CONSULTATION

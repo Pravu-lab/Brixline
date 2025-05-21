@@ -28,9 +28,20 @@
 
 @font-face {
   font-family: 'Inter Tight';
-  src: url('../../public/fonts/InterTight-Light.ttf') format('opentype');
+  src: url('/public/fonts/Bitter-Bold.ttf') format('opentype');
+  /* src: url('/public/fonts/Bitter-Bold.ttf') format('opentype'); */
   font-weight: normal;
   font-style: normal;
+}
+@font-face {
+  font-family: 'Inter Tight';
+  src: url('../../public/fonts/InterTight-VariableFont_wght.ttf') format('woff2');
+  font-weight: 100 200 300 400 500 600;
+  font-style: normal;
+}
+
+.inter-tight-font{
+  font-family: 'Inter Tight', sans-serif;
 }
 
 @font-face {
@@ -249,7 +260,7 @@ h1 {
   font-weight: bolder;
   font-family: sans-serif;
   margin-bottom: 5px;
-  color: #ff0000;
+  color: #f55252;
 }
 
 .stat-label {

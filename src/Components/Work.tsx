@@ -241,7 +241,7 @@ width="40" height="40" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/
 
 
       {/* Call-to-action */}
-      <div className="flex justify-center items-center mt-3 md:-mt-2 -mb-4">
+      <div className="flex justify-center items-center mt-3 md:-mt-2 -mb-4 font-bold">
         <div className="border px-8 md:px-10 py-3 md:py-4 text-white bg-[#F55252]">
           LET'S BUILD NOW
         </div>
