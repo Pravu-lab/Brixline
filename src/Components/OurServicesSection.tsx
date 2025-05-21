@@ -57,7 +57,7 @@ export default function OurServicesSection() {
 
           <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex justify-between gap-6 items-center w-[90%] mb-4">
             <div>
-              <h3 className="text-[32px] font-extrabold leading-[120%] text-white">
+              <h3 className="text-[24px] font-medium leading-[120%] text-white">
                 Innovative &<br /> Modern Designs
               </h3>
 
@@ -98,7 +98,7 @@ export default function OurServicesSection() {
           </div>
           <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex justify-between items-center w-[90%] mb-4">
             <div>
-              <h3 className="text-[24px] font-semibold text-white">Turn-Key <br />Construction</h3>
+              <h3 className="text-[24px] font-medium text-white">Turn-Key <br />Construction</h3>
               <Description
                 className={`mt-2 text-sm leading-[140%] text-white font-bold description-slide ${visibleDescriptions.card2 ? 'description-slide-visible' : ''}`}
               >
@@ -131,7 +131,7 @@ export default function OurServicesSection() {
           />
           <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex justify-between items-center w-[90%] mb-4">
             <div>
-              <h3 className="text-[24px] font-semibold text-white">
+              <h3 className="text-[24px] font-medium text-white">
                 Commercial <br />Constructions
               </h3>
               <Description

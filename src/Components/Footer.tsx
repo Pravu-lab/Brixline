@@ -92,8 +92,9 @@ export default function FooterSection() {
               />
             </div>
            <p className="text-xs opacity-80 mt-[42px] leading-relaxed">
-              Opp To Jyoti Niwas College No: 126, 4th floor, KHB Colony<br />
-              5th Block Koramangala, BENGALURU, KARNATAKA 560095 </p>
+              Fransisco Technology Private limited<br/>
+              Opp To Jyoti Niwas College No: 126,<br/> 4th floor, KHB Colony, 5th Block Koramangala, <br />
+              BENGALURU, KARNATAKA-560095 </p>
             {/* <div className='mt-6'>
             <Image
                 src="/svg/stars.svg"
