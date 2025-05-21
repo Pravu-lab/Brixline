@@ -123,7 +123,7 @@ const ZeroCostEmi = () => {
 
               <div className="stats-container">
   <div className="stat-item">
-    <div className="stat-value">Zero</div>
+    <div className="stat-value">Zero*</div>
     <div className="stat-label">INTEREST RATES</div>
   </div>
   
@@ -169,13 +169,13 @@ const ZeroCostEmi = () => {
 
           {/* Decorative Image for Desktop */}
           {/* <div className="absolute left-0 right-0 top-1/2 z-10 w-full hidden xl:flex justify-center items-center h-full pb-[210px]"> */}
-          <div className="absolute right-0 xl:right-[390px] top-[50%] xl:top-[25%] z-10 flex justify-center items-center">
+          <div className="absolute right-0 xl:right-[425px] top-[50%] xl:top-[25%] z-10 flex justify-center items-center">
             <Image
-              src="/svg/10-years-logo.svg"
+              src="/NewLogo2.png"
               alt="decorative-shape"
               height={120}
               width={120}
-              className="h-[110px] w-[110px] sm:h-[120px] sm:w-[120px] xl:h-[140px] xl:w-[140px] transform -translate-y-1/2"
+              className="h-[110px] w-[110px] sm:h-[120px] sm:w-[120px] xl:h-[120px] xl:w-[120px] transform -translate-y-1/2"
             />
           </div>
 

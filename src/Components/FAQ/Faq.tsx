@@ -54,10 +54,10 @@ const FAQ = () => {
             ans:{
                 intro: "Brixline offers four construction packages:",
                 points: [
-                    "Basic Package: ₹1,799/sq.ft (Incl. GST)",
-                    "Standard Package: ₹1,970/sq.ft (Incl. GST)",
-                    "Premium Package: ₹2,120/sq.ft (Incl. GST)",
-                    "Elite Package: ₹2,350/sq.ft (Incl. GST)"
+                    "Basic Package: ₹1,819/sq.ft (Incl. GST)",
+                    "Standard Package: ₹1,999/sq.ft (Incl. GST)",
+                    "Premium Package: ₹2,220/sq.ft (Incl. GST)",
+                    "Elite Package: ₹2,415/sq.ft (Incl. GST)"
                 ]
             }
         },
@@ -115,7 +115,7 @@ const FAQ = () => {
                 intro: "Clients can reach Brixline through:",
                 points: [
                     "Website: www.brixline.com",
-                    "Address: 126, 1st Cross Road, KHB Colony, 5th Block, Koramangala, Bengaluru, Karnataka 560047",
+                    "Address: Fransisco Technology Private limited.Opp To Jyoti Niwas College No : 126, 4th Floor, KHB Colony, 5th Block Koramangala, Bengaluru, Karnataka 560095",
                     "Phone: +91 86189 60406",
                     "Email: hello@brixline.com"
                 ]
