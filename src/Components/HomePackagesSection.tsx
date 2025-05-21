@@ -43,7 +43,7 @@ export default function HomePackagesSection() {
     <div className='px-3 md:px-10 py-8 sm:py-12 flex sm:!w-full items-center gap-[10%] relative tracking-wide'>
       {/* Left Section */}
       <div className=' w-full'>
-        <h2 className='text-[#F55252] text-[14px] sm:text-[16px] font-bold uppercase mb-1 pl-2 font-helvectica-css'>Discover</h2>
+        <h2 className='text-[#F55252] text-[14px] sm:text-[16px] font-bold uppercase mb-1 pl-2 inter-tight'>Discover</h2>
         <Title className="text-black text-left">Our Home Construction Packages</Title>
         <Description className="text-black opacity-50">
           Best in the Industry packages that deliver value without compromising quality.

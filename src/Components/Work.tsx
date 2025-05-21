@@ -197,7 +197,7 @@ width="40" height="40" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/
                   alt={`project-image-${index}`}
                   width={600}
                   height={413}
-                  className="w-[280px] h-[180px] sm:w-[321px] sm:h-[219px] md:w-[600px] md:h-[480px] object-cover"
+                  className="w-[280px] h-[180px] sm:w-[321px] sm:h-[219px] md:w-[700px] md:h-[480px] object-cover"
                 />
               </div>
             ))}
@@ -241,7 +241,7 @@ width="40" height="40" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/
 
 
       {/* Call-to-action */}
-      <div className="flex justify-center items-center mt-3 md:-mt-2 -mb-4">
+      <div className="flex justify-center items-center mt-3 md:-mt-2 -mb-4 font-bold">
         <div className="border px-8 md:px-10 py-3 md:py-4 text-white bg-[#F55252]">
           LET'S BUILD NOW
         </div>

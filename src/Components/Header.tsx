@@ -10,7 +10,18 @@ import { useEffect, useRef, useState } from "react";
 export default function Header({ transparent = false, forceWhiteLogo = false, whiteText = false }: { transparent?: boolean, forceWhiteLogo?: boolean, whiteText?: boolean }) {
     const [mobileOpen, setMobileOpen] = useState(false);
     const [dropdownOpen, setDropdownOpen] = useState(false);
+    const [dropdownHovered, setDropdownHovered] = useState(false);
+    const [moreDropdownOpen, setMoreDropdownOpen] = useState(false);
     const [selectedCity, setSelectedCity] = useState("BENGALURU");
+    const [dropdownTimeout, setDropdownTimeout] = useState(null);
+    const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+const clearExistingTimeout = () => {
+  if (dropdownTimeoutRef.current) {
+    clearTimeout(dropdownTimeoutRef.current);
+    dropdownTimeoutRef.current = null;
+  }
+};
 
     const cities = ["BENGALURU", "CHENNAI", "HYDERABAD"];
 
@@ -58,7 +69,7 @@ export default function Header({ transparent = false, forceWhiteLogo = false, wh
         <motion.header 
         ref={ref}
         className={` ${transparent ? 'bg-transparent' : 'bg-white'} p-4 ${mobileOpen ? 'h-[100dvh] mobileHeader !bg-black' : 'h-auto'
-        } sm:h-auto transition-all duration-300 overflow-hidden sticky top-0 w-screen z-[999]`}
+        } sm:h-auto transition-all duration-300 sticky top-0 w-screen z-[999]`}
         animate={{ opacity: isStuck ? 1 : 0 }}
         transition={{ duration: 0.4, ease: 'easeOut' }}
       
@@ -105,7 +116,7 @@ export default function Header({ transparent = false, forceWhiteLogo = false, wh
                     <div className="relative">
                         <button
                             onClick={() => setDropdownOpen(!dropdownOpen)}
-                            className="flex items-center gap-1 px-4 py-1 bg-[rgba(245,82,82,0.1)] text-red-600 text-xs font-semibold rounded"
+                            className="flex items-center gap-1 px-4 py-1 bg-[rgba(245,82,82,0.1)] text-[#F55252] text-xs font-semibold rounded"
                         >
                             {selectedCity}
                             {dropdownOpen ? (
@@ -151,45 +162,119 @@ export default function Header({ transparent = false, forceWhiteLogo = false, wh
                 </div>
 
                 {/* Desktop Navigation */}
-                <nav className={`hidden md:flex gap-6  items-center text-sm font-semibold ${whiteText ? 'text-white' : 'text-black'} uppercase sticky top-0`}>
-                    <Link href="/" className={`flex items-center gap-1 ${pathname === '/' ? 'text-red-500' : ''}`}>
+                <nav className={`hidden md:flex gap-6  items-center text-sm font-bold ${whiteText ? 'text-white' : 'text-black'} uppercase sticky top-0`}>
+                    <Link href="/" className={`flex items-center gap-1 ${pathname === '/' ? 'text-[#F55252]' : ''}`}>
                         {pathname === '/' && (
                             <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
                         )}
-                        HOME
+                        <span className="inter-tight-font" >HOME</span>
                     </Link>
 
-                    <Link href="/about" className={`flex items-center gap-1 ${pathname === '/about' ? 'text-red-500' : ''}`}>
+                    <Link href="/about" className={`flex items-center gap-1 ${pathname === '/about' ? 'text-[#F55252]' : ''}`}>
                         {pathname === '/about' && (
                             <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
                         )}
-                        ABOUT US
+                        <span className="inter-tight-font">ABOUT US</span>
                     </Link>
 
-                    <Link href="/how-it-works" className={` flex items-center gap-1 ${pathname === '/how-it-works' ? 'text-red-500' : ''}`}>
+                    <Link href="/how-it-works" className={` flex items-center gap-1 ${pathname === '/how-it-works' ? 'text-[#F55252]' : ''}`}>
                         {pathname === '/how-it-works' && (
                             <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
                         )}
-                        HOW IT WORKS
+                        <span className="inter-tight-font">HOW IT WORKS</span>
                     </Link>
 
-                    <Link href="/cost-estimator" className={`flex items-center gap-1 ${pathname === '/cost-estimator' ? 'text-red-500' : ''}`}>
+                    <Link href="/cost-estimator" className={`flex items-center gap-1 ${pathname === '/cost-estimator' ? 'text-[#F55252]' : ''}`}>
                         {pathname === '/cost-estimator' && (
                             <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
                         )}
-                        COST ESTIMATOR
+                        <span className="inter-tight-font">COST ESTIMATOR</span>
                     </Link>
 
-                    <Link href="/contact-us" className={`flex items-center gap-1 ${pathname === '/contact-us' ? 'text-red-500' : ''}`}>
-                        {pathname === '/contact-us' && (
+                   <div
+  className="relative"
+  onMouseEnter={() => {
+    clearExistingTimeout();
+    setMoreDropdownOpen(true);
+  }}
+  onMouseLeave={() => {
+    // Start timeout only when leaving the main button area
+    dropdownTimeoutRef.current = setTimeout(() => {
+      setMoreDropdownOpen(false);
+    }, 300);
+  }}
+>
+  <button
+    onClick={() => setMoreDropdownOpen(!moreDropdownOpen)}
+    className={`flex items-center gap-1 ${pathname === '/contact-us' || pathname === '/career'|| pathname === '/join-us-as-professional' || pathname === '/channel-partner' || moreDropdownOpen ? 'text-[#F55252]' : ''}`}
+  >
+     {(pathname === '/contact-us' || pathname === '/career' || pathname === '/join-us-as-professional' || pathname === '/channel-partner') && (
+      <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
+    )}
+
+    <span className="inter-tight-font">MORE</span>
+    {moreDropdownOpen ?
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none">
+        <rect width="5.2" height="1.2" transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 10.5254 7.7)" fill="red" />
+        <rect width="5.2" height="1.2" transform="matrix(0.707107 -0.707107 -0.707107 -0.707107 2.323 8.54853)" fill="red" />
+      </svg>
+      : 
+      <svg width="12" height="6" viewBox="0 0 12 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fillRule="evenodd" clipRule="evenodd" d="M11.506 1.70233L10.0029 0.19928L5.99661 4.2056L1.99036 0.199342L0.487305 1.70239L4.49544 5.71053L5.99667 4.2093L7.49785 5.71047L11.506 1.70233Z" fill={whiteText ? 'white' : 'black'}/>
+      </svg>
+    }
+  </button>
+
+  {moreDropdownOpen && (
+    <div
+      className="absolute mt-4 right-0 bg-white shadow-md min-w-40 z-[9999]"
+      onMouseEnter={clearExistingTimeout}
+      onMouseLeave={() => {
+        setMoreDropdownOpen(false);
+      }}
+    >
+      <Link 
+        href="/contact-us"
+        className={`block px-4 py-2 text-sm ${pathname === '/contact-us' ? 'text-[#F55252]' : 'text-black'} hover:bg-gray-300`}
+        onClick={() => setMoreDropdownOpen(false)}
+      >
+        CONTACT US
+      </Link>
+      <Link
+        href="/career"
+        className={`block px-4 py-2 text-sm ${pathname === '/career' ? 'text-[#F55252]' : 'text-black'} hover:bg-gray-300`}
+        onClick={() => setMoreDropdownOpen(false)}
+      >
+        Career
+      </Link>
+      <Link
+        href="/join-us-as-professional"
+        className={`block px-4 py-2 text-sm ${pathname === '/join-us-as-professional' ? 'text-[#F55252]' : 'text-black'} hover:bg-gray-300`}
+        onClick={() => setMoreDropdownOpen(false)}
+      >
+        Join Us As Professionals
+      </Link>
+      <Link
+        href="/channel-partner"
+        className={`block px-4 py-2 text-sm ${pathname === '/channel-partner' ? 'text-[#F55252]' : 'text-black'} hover:bg-gray-300`}
+        onClick={() => setMoreDropdownOpen(false)}
+      >
+        Channel Partner
+      </Link>
+    </div>
+  )}
+</div>
+
+                    <Link href="/zero-cost-emi" className={`flex items-center gap-1 text-[#F55252] `}>
+                        {pathname === '/zero-cost-emi' && (
                             <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
                         )}
-                        CONTACT US
+                        <svg width="13" height="18" viewBox="0 0 13 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M13 0.25H3L1 10.25H4.5L0 17.75L11 9.25H7L13 0.25Z" fill="#F55252"/>
+</svg>
+                        <span className="inter-tight-font">ZERO COST EMI</span>
+                        
                     </Link>
-                    {/* <span className="flex items-center gap-1 text-black">
-                        <Zap className="w-4 h-4 text-red-500" />
-                        ZERO COST EMI
-                    </span> */}
                 </nav>
 
                 {/* Mobile Menu Toggle */}
@@ -220,46 +305,94 @@ export default function Header({ transparent = false, forceWhiteLogo = false, wh
             {/* Mobile Nav Menu */}
             {mobileOpen && (
                     <div className="md:hidden p-4 text-lg font-semibold text-white uppercase space-y-4 py-20">
-                      {/* <div className={`${pathname === '/home' ? 'flex items-center justify-between gap-1 text-red-500' : " "}`}>
+                      {/* <div className={`${pathname === '/home' ? 'flex items-center justify-between gap-1 text-[#F55252]' : " "}`}>
                         HOME
                         {pathname === '/home' && (
                                <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
                         )
                         }
                       </div> */}
-        <Link href="/" className={`flex items-center justify-between ${pathname === '/' ? 'text-red-500' : ''}`}>
+        <Link href="/" className={`flex items-center justify-between ${pathname === '/' ? 'text-[#F55252]' : ''}`}>
             HOME
             {pathname === '/' && (
                 <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
             )}
         </Link>
                       
-        <Link href="/about" className={`flex items-center justify-between ${pathname === '/about' ? 'text-red-500' : ''}`}>
+        <Link href="/about" className={`flex items-center justify-between ${pathname === '/about' ? 'text-[#F55252]' : ''}`}>
             ABOUT US
             {pathname === '/about' && (
                 <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
             )}
         </Link>
-        <Link href="/how-it-works" className={`flex items-center justify-between ${pathname === '/how-it-works' ? 'text-red-500' : ''}`}>
+        <Link href="/how-it-works" className={`flex items-center justify-between ${pathname === '/how-it-works' ? 'text-[#F55252]' : ''}`}>
             HOW IT WORKS
             {pathname === '/how-it-works' && (
                 <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
             )}
         </Link>
-        <Link href="/cost-estimator" className={`flex items-center justify-between ${pathname === '/cost-estimator' ? 'text-red-500' : ''}`}>
+        <Link href="/cost-estimator" className={`flex items-center justify-between ${pathname === '/cost-estimator' ? 'text-[#F55252]' : ''}`}>
             COST ESTIMATOR
             {pathname === '/cost-estimator' && (
                 <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
             )}
         </Link>
-        <Link href="/contact-us" className={`flex items-center justify-between ${pathname === '/contact-us' ? 'text-red-500' : ''}`}>
-            CONTACT US
-            {pathname === '/contact-us' && (
+       <div className="relative">
+  <button 
+    onClick={() => setMoreDropdownOpen(!moreDropdownOpen)}
+    className={`flex items-center justify-between w-full ${pathname === '/contact-us' || pathname === '/career'|| pathname === '/join-us-as-professional' || pathname === '/channel-partner' || moreDropdownOpen ? 'text-[#F55252]' : ''}`}
+  >
+    
+    MORE
+    <svg width="12" height="6" viewBox="0 0 12 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fillRule="evenodd" clipRule="evenodd" d="M11.506 1.70233L10.0029 0.19928L5.99661 4.2056L1.99036 0.199342L0.487305 1.70239L4.49544 5.71053L5.99667 4.2093L7.49785 5.71047L11.506 1.70233Z" fill="white"/>
+    </svg>
+     {/* {(pathname === '/contact-us' || pathname === '/career' || pathname === '/join-us-as-professional' || pathname === '/channel-partner') && (
+      <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
+    )} */}
+  </button>
+
+  {moreDropdownOpen && (
+    <div className="pl-4">
+      <Link 
+        href="/contact-us" 
+        className={`block py-2 ${pathname === '/contact-us' ? 'text-[#F55252]' : ''}`}
+        onClick={() => setMoreDropdownOpen(false)}
+      >
+        CONTACT US
+      </Link>
+      <Link
+        href="/career" 
+        className={`block py-2 ${pathname === '/career' ? 'text-[#F55252]' : ''}`}
+        onClick={() => setMoreDropdownOpen(false)}
+      >
+        CAREER 
+      </Link>
+       <Link
+        href="/channel-partner" 
+        className={`block py-2 ${pathname === '/channel-partner' ? 'text-[#F55252]' : ''}`}
+        onClick={() => setMoreDropdownOpen(false)}
+      >
+        CHANNEL PARTNER 
+      </Link>
+       <Link
+        href="/join-us-as-professional" 
+        className={`block py-2 ${pathname === '/join-us-as-professional' ? 'text-[#F55252]' : ''}`}
+        onClick={() => setMoreDropdownOpen(false)}
+      >
+        JOIN US AS PROFESIONAL
+      </Link>
+    </div>
+  )}
+</div>
+        <Link href="/zero-cost-emi" className={`flex items-center justify-between ${pathname === '/zero-cost-emi' ? 'text-[#F55252]' : ''}`}>
+            ZERO COST EMI
+            {pathname === '/zero-cost-emi' && (
                 <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
             )}
         </Link>
                       {/* <span className="flex items-center gap-1 ">
-                        <Zap className="w-4 h-4 text-red-500 block" />
+                        <Zap className="w-4 h-4 text-[#F55252] block" />
                         <span className="text-black">
                                       ZERO COST EMI
                                   </span>

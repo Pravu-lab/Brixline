@@ -7,6 +7,7 @@ import Header from '@/Components/Header'
 import React from 'react'
 import AboutUsSlider from '@/Components/AboutusSlider'
 import ScrollingText from '@/Components/AboutusTextAnimation'
+import FAQ from '@/Components/FAQ/Faq'
 
 const page = () => {
   return (
@@ -18,6 +19,7 @@ const page = () => {
 <Aboutus/>
 <FounderSection/>
 <OurPartners/>
+<FAQ/>
 <FooterSection/>
     </>
   )

@@ -79,7 +79,7 @@ const Hero = () => {
         )}
       </AnimatePresence>
 
-      <div className="tracking-wide min-h-screen h-[1050px] md:h-full w-full bg-[url('/image%204.png')] bg-cover bg-center relative">
+      <div className="tracking-wide min-h-screen h-[1050px] md:h-full w-full bg-[url('/heroimg.png')] bg-cover bg-center relative">
       <div ref={ref} className="absolute top-0 left-0 h-full overflow-hidden z-[9999] flex w-full pointer-events-none">
         {[...Array(5)].map((_, index) => (
           <motion.div

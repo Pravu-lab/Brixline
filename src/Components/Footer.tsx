@@ -43,7 +43,7 @@ export default function FooterSection() {
             <Title className="text-black mb-4 text-center md:text-left">
               Get the best-in class home construction service:
             </Title>
-            <h2 className="px-1 text-[12px] sm:text-[16px] font-bold uppercase text-gray-600 mb-8 text-center md:text-left">
+            <h2 className="px-1 text-[12px] sm:text-[16px] font-medium text-gray-600 mb-8 text-center md:text-left">
               Backed by top investors committed to our mission of revolutionizing the home construction industry.
             </h2>
 
@@ -91,6 +91,9 @@ export default function FooterSection() {
                 className="object-cover object-left !static"
               />
             </div>
+           <p className="text-xs opacity-80 mt-[42px] leading-relaxed">
+              Opp To Jyoti Niwas College No: 126, 4th floor, KHB Colony<br />
+              5th Block Koramangala, BENGALURU, KARNATAKA 560095 </p>
             {/* <div className='mt-6'>
             <Image
                 src="/svg/stars.svg"
@@ -101,11 +104,7 @@ export default function FooterSection() {
               />
               <p>Rated 4.7/5 Based on  4176 customer ratings</p>
             </div> */}
-            <p className="text-xs opacity-80 mt-[22px] leading-relaxed">
-              FRANSISCO TECHNOLOGY PRIVATE LIMITED. <br />
-              Opp To Jyoti Niwas College<br/>No:126, 4th floor, KHB Colony, 5th Block <br />
-              Koramangala, Bengaluru, Karnataka. 560095
-            </p>
+          
           </div>
 
           {/* Navigation Links */}
@@ -113,10 +112,14 @@ export default function FooterSection() {
             <a href="/" className="hover:text-gray-400 text-[16px]">Home</a>
             <a href="/about" className="hover:text-gray-400 text-[16px]">About Us</a>
             <a href="/how-it-works" className="hover:text-gray-400 text-[16px]">How It Works</a>
+             <a href="/cost-estimator" className="hover:text-gray-400 text-[16px]">Cost Estimator</a>
+             <a href="/zero-cost-emi" className="hover:text-gray-400 text-[16px]">Zero Cost EMI</a>
           </div>
 
           <div className="flex flex-col space-y-3 sm:ml-20">
-            <a href="/cost-estimator" className="hover:text-gray-400 text-[16px]">Cost Estimator</a>
+            <a href="/career" className="hover:text-gray-400 text-[16px]">Career</a>
+            <a href="/join-us-as-professional" className="hover:text-gray-400 text-[16px]">Join Us As Professional</a>
+            <a href="/channel-partner" className="hover:text-gray-400 text-[16px]">Channel Partner</a>
             <a href="/contact-us" className="hover:text-gray-400 text-[16px]">Contact Us</a>
           </div>
 

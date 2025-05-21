@@ -133,7 +133,7 @@ export default function EstimatePage() {
           <Description className="text-xs text-white md:col-span-2 ">
             The costs indicated are approximate costs for each resource. Actual cost estimates may vary for your city. Please check with our technical expert for a more accurate pricing or visit our office for a custom cost estimate as per your requirement. This amount is an approximate amount for construction area & it does not include compound wall area.
           </Description>
-          <Button className="bg-[#F55252] border-[#F55252] text-white px-6 py-3 font-bold uppercase rounded md:col-span-1 self-end">Estimate Cost For Free</Button>
+          <Button className="bg-[#F55252] border-[#F55252] text-white px-6 py-3 font-bold uppercase md:col-span-1 self-end">Estimate Cost For Free</Button>
         </form>
 
         {estimates.length > 0 && (

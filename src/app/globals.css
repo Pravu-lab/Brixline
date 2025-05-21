@@ -28,9 +28,20 @@
 
 @font-face {
   font-family: 'Inter Tight';
-  src: url('../../public/fonts/InterTight-Light.ttf') format('opentype');
+  src: url('/public/fonts/Bitter-Bold.ttf') format('opentype');
+  /* src: url('/public/fonts/Bitter-Bold.ttf') format('opentype'); */
   font-weight: normal;
   font-style: normal;
+}
+@font-face {
+  font-family: 'Inter Tight';
+  src: url('../../public/fonts/InterTight-VariableFont_wght.ttf') format('woff2');
+  font-weight: 100 200 300 400 500 600;
+  font-style: normal;
+}
+
+.inter-tight-font{
+  font-family: 'Inter Tight', sans-serif;
 }
 
 @font-face {
@@ -227,10 +238,66 @@ h1 {
   }
 }
 
+.stats-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 20px 0;
+  margin-left: 0;
+  width: 100%;
+}
 
-/* .bg-red-500 {
-  background-color: #ef4444 !important;
-} */
+.stat-item {
+  text-align: left;
+  min-width: 150px;
+  margin-right: 40px;
+}
+
+.stat-value {
+  font-size: 3rem;
+  font-weight: bolder;
+  font-family: sans-serif;
+  margin-bottom: 5px;
+  color: #f55252;
+}
+
+.stat-label {
+  font-size: 1rem;
+  font-weight:bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffffff;
+  text-align: left;
+}
+
+/* For mobile devices */
+@media (max-width: 640px) {
+  .stats-container {
+    flex-direction: row; /* Stack items vertically */
+    align-items: flex-start; /* Align to the left */
+    gap: 10px;
+  }
+  
+  .stat-item {
+    margin-right: 0;
+    margin-bottom: 20px;
+    flex:1;
+    min-width: 0;
+  }
+  
+  .stat-value {
+    font-size: 2rem;
+  }
+  
+  .stat-label {
+    font-size: 0.8rem;
+  }
+}
+
+
+
 
 .custom-scrollbar::-webkit-scrollbar {
     width: 8px;

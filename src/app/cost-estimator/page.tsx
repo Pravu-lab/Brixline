@@ -15,7 +15,7 @@ const page = () => {
   <EstimatePage/>
   <ConstructionPackage/>
   <BottomForm/>
-  <FAQ/>
+  {/* <FAQ/> */}
   <FooterSection/>
   </>
   )
