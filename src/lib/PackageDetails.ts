@@ -1,7 +1,7 @@
 export const PackageDetails = {
   basic_package: {
     name: "Basic Package",
-    price: "1,799",
+    price: "1,819",
     desc: "/sq ft. (Incl. GST)",
     data: [
       {
@@ -18,7 +18,7 @@ export const PackageDetails = {
         title: "Structure",
         items: [
           "Steel – Sunvik,Kamadhenu or equivalent,upto ₹65,000/- per MT",
-          "Cement - Dalmia, Bharti or equivalent, upto ₹370/- per Bak",
+          "Cement - Dalmia, Bharti or equivalent, upto ₹370/- per Bag",
           "Aggregates – 20mm & 40mm graded stone aggregate5",
           "Blocks – Standard Solid Concrete (6-inch: ext and 4-inch: int)",
           "RCC Mix – M20 / M25 as per recommendation",
@@ -28,7 +28,7 @@ export const PackageDetails = {
       {
         title: "Kitchen",
         items: [
-          "Ceramic Wall Dado – Up to ₹40 per sq ft, 3ft Height",
+          "Ceramic Wall Dado – Up to ₹40/- per sq ft, 3ft Height",
           "CounterTop:18mm Granite(2' wide), upto ₹120/sq ft.",
           "Main Sink Faucet – Up to ₹2,000/-",
           "Other Faucets or Accessories – ISI-marked",
