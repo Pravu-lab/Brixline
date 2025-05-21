@@ -118,7 +118,7 @@ export default function HowitWorksSlider() {
     }
       // only start counting after 30% scroll, and speed it up 1.5×
       const startOffset = 0.3;
-      const speedMultiplier = 1.5;
+      const speedMultiplier = 1.2;
       const normalized = latest <= startOffset
         ? 0
         : (latest - startOffset) / (1 - startOffset);
@@ -218,7 +218,7 @@ export default function HowitWorksSlider() {
                 </>
               )}
               <img
-                src="/favLogo.png"
+                src="/svg/bred.svg"
                 alt="Logo"
                 className={`relative  lg:w-12 md:w-9 lg:h-12 md:h-9`}
               />
