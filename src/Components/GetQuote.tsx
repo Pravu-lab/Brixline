@@ -1,5 +1,6 @@
 "use client";
 import { useThankYou } from '@/contexts/ThankYouContext';
+import { kMaxLength } from 'buffer';
 import React, { useState } from 'react';
 
 interface GetQuoteProps {
@@ -10,6 +11,7 @@ interface GetQuoteProps {
   const GetQuote: React.FC<GetQuoteProps> = ({ classname }) => {
     const [isLoading, setIsLoading] = useState(false);
     const { showThankYouWithTimeout } = useThankYou();
+    const [error, setError] = useState("");
     const [formData, setFormData] = useState({
         name: "",
         contact: "",
@@ -19,7 +21,15 @@ interface GetQuoteProps {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsLoading(true);
+        setError("");
 
+    if (!formData.name || !formData.contact || !formData.location) {
+      setError("Please fill in all required fields");
+      setIsLoading(false)
+      return;
+    }
+
+    setIsLoading(true);
         try {
             const response = await fetch("/api/submit", {
                 method: "POST",
@@ -35,10 +45,10 @@ interface GetQuoteProps {
             if(response.ok){
                 showThankYouWithTimeout();
             }
-            // alert("Thank you! We'll be in touch soon.");
+            
         } catch (error) {
             console.error("Submission error:", error);
-            alert("Something went wrong. Please try again.");
+            setError("Something went wrong. Please try again.");
         } finally {
             setIsLoading(false);
         }
@@ -46,7 +56,9 @@ interface GetQuoteProps {
 
     const handleContactChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const numericValue = e.target.value.replace(/\D/g, '');
-        setFormData({ ...formData, contact: numericValue });
+        if(numericValue.length < 14 ){
+            setFormData({ ...formData, contact: numericValue });
+        }
     };
     
     return (
@@ -64,9 +76,10 @@ interface GetQuoteProps {
                             type="text"
                             placeholder="First Name"
                             aria-label="First Name"
-                            className="w-full p-4 border border-[#DADBE4]  outline-none focus:ring-2 focus:ring-[#A9ADB7] bg-white text-black"
+                            className={`w-full p-4 border-[#DADBE4] bg-white outline-none focus:ring-2 focus:ring-[#A9ADB7]  text-black`}
                             value={formData.name}
                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                            required
                         />
                             <input
                                 type="tel"
@@ -76,6 +89,7 @@ interface GetQuoteProps {
                                 value={formData.contact}
                                 // onChange={(e) => setFormData({ ...formData, contact: e.target.value })}
                                 onChange={handleContactChange}
+                                required
                             />
 
                         <div className="relative">
@@ -86,6 +100,7 @@ interface GetQuoteProps {
                                 className="w-full p-4 border border-[#DADBE4]  outline-none focus:ring-2 focus:ring-[#A9ADB7] bg-white text-black"
                                 value={formData.location}
                                 onChange={(e) => setFormData({ ...formData, location: e.target.value })}
+                                required
                             />
                             <div className="absolute right-4 top-1/2 transform -translate-y-1/2 flex gap-2 items-center pointer-events-none">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -95,12 +110,13 @@ interface GetQuoteProps {
                             </div>
                         </div>
 
+                        
                         <button
                             type="submit"
-                            disabled={isLoading}
+                            // disabled={isLoading}
                             className="w-full bg-[#F55252] text-sm text-white py-4  font-bold transition flex justify-center items-center gap-2.5 mt-4 md:mt-7 disabled:opacity-50"
                         >
-                                GET A FREE QUOTE
+                                 {isLoading ? "Assessing..." : "GET A FREE QUOTE"}
                         </button>
                     </form>
                     <p className="text-center font-normal text-xs text-[#fff] mt-0 md:mt-3 pt-4">

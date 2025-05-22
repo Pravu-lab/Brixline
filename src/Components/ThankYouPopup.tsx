@@ -71,9 +71,9 @@ const ThankYouPopup = () => {
       <div className="bg-white p-6 max-w-md text-center text-black overflow-hidden">
         <div className="flex justify-center mb-6">
           <img 
-            src="./temporary.png"
+            src="./ThankMe.png"
             alt="Thank you illustration"
-            className="w-full max-h-70 object-contain"
+            className="w-full max-h-50 object-contain"
           />
         </div>
         <h2 className="font-extrabold text-[#F55252]">THANK YOU FOR REACHING OUT!</h2>
@@ -85,7 +85,7 @@ const ThankYouPopup = () => {
         Expect a call or email from us within the next 24 hours.</p>
         <button
           onClick={() => setShowThankYou(false)}
-          className="mt-6 bg-[#F55252] text-white px-6 py-2 rounded-lg"
+          className="mt-6 bg-[#F55252] text-white px-6 py-2 "
         >
           Close
         </button>
