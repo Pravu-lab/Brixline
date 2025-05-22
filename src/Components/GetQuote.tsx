@@ -2,6 +2,7 @@
 import { useThankYou } from '@/contexts/ThankYouContext';
 import { kMaxLength } from 'buffer';
 import React, { useState } from 'react';
+import { LoadingAnimation } from './loader/LoadingAnimation';
 
 interface GetQuoteProps {
     classname?: string;
@@ -116,7 +117,12 @@ interface GetQuoteProps {
                             // disabled={isLoading}
                             className="w-full bg-[#F55252] text-sm text-white py-4  font-bold transition flex justify-center items-center gap-2.5 mt-4 md:mt-7 disabled:opacity-50"
                         >
-                                 {isLoading ? "Assessing..." : "GET A FREE QUOTE"}
+                                 {isLoading ? 
+                                 (
+                                    <>
+                                    <LoadingAnimation className="w-5 h-5 text-white"/>
+                                    </>
+                                 ) : "GET A FREE QUOTE"}
                         </button>
                     </form>
                     <p className="text-center font-normal text-xs text-[#fff] mt-0 md:mt-3 pt-4">
