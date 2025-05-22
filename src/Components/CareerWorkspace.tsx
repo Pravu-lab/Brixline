@@ -16,8 +16,9 @@ const CareerWork: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const uniImage = "/uniImage.png"
   // Helper function to render description with conditional icon
-  const renderDescription = (isActive: boolean, workType: string, employmentType: string, location: string) => {
-    const locationIcon = isActive ? "/Union101.svg" : "/plus.svg";
+  const renderDescription = (isActive: boolean, workType: string, employmentType: string, location: string, isMobile: boolean = false) => {
+    // const locationIcon = (isMobile || !isActive) ? "/Union101.svg" : "/plus.svg";
+    const locationIcon = isMobile ? "/plus.svg" : (!isActive ? "plus.svg" : "/Union101.svg")
     
     return (
       <span className='flex flex-col'>
@@ -141,10 +142,10 @@ const CareerWork: React.FC = () => {
           <div className="w-full md:w-3/5 relative">
             {/* Mobile View - Horizontal Scrollable Boxes */}
             <div className="md:hidden flex overflow-x-auto space-x-4 scrollbar-hide pb-4 text-black">
-              {careerData.map((item) => (
+              {careerData.map((item,index) => (
                 <div key={item.id} className="min-w-[250px] bg-gray-200 p-4 flex-shrink-0">
                   <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                  <p className="text-black text-sm">{item.description}</p>
+                  <p className="text-black text-sm"> {renderDescription(index === currentIndex, item.workType, item.employmentType, item.location, true)}</p>
                 </div>
               ))}
             </div>
