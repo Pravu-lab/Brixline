@@ -8,34 +8,28 @@ const CareerDream = () => {
     
     const testimonials = [
         {
-            image: "/profile2.png",
-            quote: "Every day feels like game day here — fast-paced, collaborative, and full of purpose",
-            name: "Cella Paul",
-            position: "Lead Architect"
+            image: "/GANESH.svg",
+            quote: "Every day feels like game day here fast-paced and collaborative.",
+            name: "Ganesh Das",
+            position: "Head Of Design"
         },
         {
-            image: "/profile2.png",
-            quote: "Working here has been the most rewarding experience of my career",
-            name: "John Doe",
-            position: "Senior Developer"
+            image: "/GATHISH.svg",
+            quote: "Working here has been the most rewarding experience of my career.",
+            name: "Gathish Nayak",
+            position: "Growth Lead"
         },
         {
-            image: "/profile2.png",
-            quote: "The culture of innovation and teamwork is truly inspiring",
-            name: "Jane Smith",
-            position: "Product Manager"
+            image: "/vaishnav.svg",
+            quote: "The culture of innovation and teamwork is truly inspiring.",
+            name: "Vaishnav Raj",
+            position: "Founder's Office"
         },
         {
-            image: "/profile2.png",
-            quote: "I've grown more in one year here than five years at my previous job",
-            name: "Mike Johnson",
-            position: "UX Designer"
-        },
-        {
-            image: "/profile2.png",
-            quote: "The opportunities for learning and impact are unparalleled",
-            name: "Sarah Williams",
-            position: "Data Scientist"
+            image: "/ABI.svg",
+            quote: "Love working with a Team of high spirited individuals.",
+            name: "Abi Ben Xavier",
+            position: "Head Of Operations"
         }
     ];
 
@@ -64,7 +58,7 @@ const CareerDream = () => {
                         Voice Of The Dream Team
                     </div>
                     <div className="text-gray-700 pt-8 text-sm md:text-base">
-                        Hear what it's like to build, grow, and <br/> thrive with us — straight from the people <br/> powering the future of sports.
+                        Hear what it's like to build, grow, and <br/> thrive with us — straight from the people <br/> powering the future.
                     </div>
                     
                     {/* Desktop controls - unchanged */}
@@ -138,7 +132,7 @@ const CareerDream = () => {
 </div>
 
                     {/* Testimonial text */}
-                    <div className="relative bg-gray-200 w-full min-h-[300px] text-black flex flex-col justify-between p-6 overflow-hidden">
+                    <div className="relative bg-gray-200 w-full min-h-[300px] text-black p-6 flex flex-col justify-between overflow-hidden">
                         {testimonials.map((testimonial, idx) => (
                             <div
                                 key={idx}
@@ -147,12 +141,14 @@ const CareerDream = () => {
                                     idx < currentIndex ? "-translate-x-full" : "translate-x-full"
                                 }`}
                             >
+                                {/* <div className="flex flex-col justify-between"> */}
                                 <div className="font-medium text-lg">{testimonial.quote}</div>
-                                <div className="mt-40">
+                                <div className="mt-35">
                                     <div className="font-medium">{testimonial.name}</div>
-                                    <div className="text-sm">- {testimonial.position}</div>
+                                    <div className="text-sm">{testimonial.position}</div>
                                 </div>
                             </div>
+                            // </div>
                         ))}
                     </div>
 
@@ -235,9 +231,9 @@ const CareerDream = () => {
                                 }`}
                             >
                                 <div className="font-extrabold text-xl">{testimonial.quote}</div>
-                                <div className="">
+                                <div className="mt-35">
                                     <div className="font-bold">{testimonial.name}</div>
-                                    <div className="text-sm">- {testimonial.position}</div>
+                                    <div className="text-sm">{testimonial.position}</div>
                                 </div>
                             </div>
                         ))}

@@ -8,10 +8,10 @@ import { PackageDetails as AllPackages } from '@/lib/PackageDetails';
 import PageFillAnimation from './PageFillAnimation';
 
 const packages = [
-  { price: "1,799", label: "BASIC PACKAGE", key: 'basic_package' },
-  { price: "1,970", label: "STANDARD PACKAGE", key: 'standard_package' },
-  { price: "2,120", label: "PREMIUM PACKAGE", key: 'premium_package' },
-  { price: "2,350", label: "ELITE PACKAGE", key: 'elite_package' },
+  { price: "1,819", label: "BASIC PACKAGE", key: 'basic_package' },
+  { price: "1,999", label: "STANDARD PACKAGE", key: 'standard_package' },
+  { price: "2,220", label: "PREMIUM PACKAGE", key: 'premium_package' },
+  { price: "2,415", label: "ELITE PACKAGE", key: 'elite_package' },
 ] as const;
 
 type PackageKey = typeof packages[number]['key'];

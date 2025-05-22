@@ -23,7 +23,7 @@ export default function ScrollingTextReveal() {
         After 3+ years in the commercial space and delivering over 65 projects, we recognized a pressing challenge in residential construction—and chose to address it, starting with Bengaluru.
         </h2>
         <Image
-          src="/aboutLogo.png"
+          src="/20years.svg"
           alt="house-image-2"
           width={700}
           height={700}

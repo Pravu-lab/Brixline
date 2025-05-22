@@ -3,6 +3,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { Button } from './Tag';
 import Image from 'next/image';
+import { useThankYou } from '@/contexts/ThankYouContext';
+import Link from 'next/link';
+import { LoadingAnimation } from './loader/LoadingAnimation';
 
 type PackageKey = 'basic_package' | 'standard_package' | 'premium_package' | 'elite_package';
 
@@ -30,6 +33,15 @@ export default function MobileQuotePopup({
 }: MobileQuotePopupProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const selectRef = useRef<HTMLSelectElement | null>(null);
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    number:"",
+    email: "",
+    location: "",
+  });
+  const { showThankYouWithTimeout } = useThankYou();
 
   // Hiding navbar when popup opens
   useEffect(() => {
@@ -87,6 +99,50 @@ export default function MobileQuotePopup({
       // document.body.style.overflow = '';
     };
   }, []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError("");
+    
+
+    if (!formData.name || !formData.number || !formData.email || !formData.location) {
+      setError("Please fill in all required fields");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const response = await fetch("/api/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Submission failed");
+      }
+
+      
+      setFormData({ name: "", number: "", email: "", location: ""});
+      if (response.ok) {
+        showThankYouWithTimeout();
+      }
+    } catch (err) {
+      setError("Failed to submit form. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+    const handleContactChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+          const numericValue = e.target.value.replace(/\D/g, '');
+          if(numericValue.length < 14 ){
+              setFormData({ ...formData, number: numericValue });
+          }
+      };
 
   const handleClose = () => setOpen(false);
 
@@ -191,31 +247,52 @@ export default function MobileQuotePopup({
     </h2>
 
     {/* Full-width form inputs */}
-    <div className="w-[115%] grid gap-4 mb-10">
-      <input 
-        className="w-full bg-white text-black p-3 focus:outline-none" 
-        placeholder="Name" 
+    <form className='w-[115%]' onSubmit={handleSubmit}>
+    <div className=" grid gap-4 mb-10 ">
+      <input
+      type="text"
+      value={formData.name}
+      onChange={(e) => setFormData({ ...formData, name : e.target.value })} 
+      className="w-full bg-white text-black p-3 focus:outline-none" 
+      placeholder="Name"
+      required
       />
       <input 
-        className="w-full bg-white text-black p-3 focus:outline-none" 
-        placeholder="Number" 
+      type="tel"
+      value={formData.number}
+      onChange = {handleContactChange}
+      className="w-full bg-white text-black p-3 focus:outline-none" 
+      placeholder="Number"
+      required
       />
-      <input 
-        className="w-full bg-white text-black p-3 focus:outline-none" 
-        placeholder="Email"
+      <input
+      value={formData.email}
+      onChange= {(e) => setFormData({ ...formData, email: e.target.value})}
+      className="w-full bg-white text-black p-3 focus:outline-none" 
+      placeholder="Email"
+      required
       />
-      <input 
+      <input
+      value={formData.location}
+      onChange={(e) => setFormData({ ...formData, location: e.target.value})} 
         className="w-full bg-white text-black p-3 focus:outline-none" 
         placeholder="Plot Location"
       />
     </div>
 
     {/* Full-width button */}
-    <Button 
-      className="w-[115%] cursor-pointer bg-[#F55252] text-white px-4 py-3 font-bold hover:bg-[#e04a4a] transition-colors border-none"
+    
+    <Button
+      className="w-[100%] cursor-pointer bg-[#F55252] text-white px-4 py-3 font-bold hover:bg-[#e04a4a] transition-colors border-none"
     >
-      GET A FREE QUOTE
+      {loading ? (
+        <>
+        <LoadingAnimation className='w-5 h-5 mx-auto'/>
+        </>
+        ) : "GET A FREE QUOTE"}
     </Button>
+    
+    </form>
 
     <p className="text-xs mt-3 text-gray-400 text-center">
       By proceeding, you agree to our{' '}
@@ -234,7 +311,7 @@ export default function MobileQuotePopup({
     <div className="relative p-6">
       <button
         onClick={handleClose}
-        className="absolute top-6 right-6 z-50 text-3xl font-bold text-white hover:text-gray-200 bg-black/70 hover:bg-black/90 rounded-full w-12 h-12 flex items-center justify-center transition-all duration-200 shadow-lg"
+        className="absolute top-6 right-6 z-50 text-3xl font-bold text-white hover:text-gray-200 bg-black/70 hover:bg-black/90 w-12 h-12 flex items-center justify-center transition-all duration-200 shadow-lg"
         aria-label="Close popup"
       >
         ×
@@ -243,27 +320,50 @@ export default function MobileQuotePopup({
         <h2 className="text-2xl font-bold text-center mb-6">
           Connect with our architectural experts.
         </h2>
+        <form className='w-full' onSubmit={handleSubmit}>
         <div className="w-full grid grid-cols-1 gap-4 mb-6">
           <input
-            className="bg-white text-black p-3 rounded focus:outline-none"
+           type="text"
+      value={formData.name}
+      onChange={(e) => setFormData({ ...formData, name : e.target.value })} 
+            className="bg-white text-black p-3 focus:outline-none"
             placeholder="First Name"
+            required
           />
           <input
-            className="bg-white text-black p-3 rounded focus:outline-none"
+          type="tel"
+          value={formData.number}
+          onChange = {handleContactChange}
+            className="bg-white text-black p-3 focus:outline-none"
             placeholder="Contact Number"
+            required
           />
           <input
-            className="bg-white text-black p-3 rounded focus:outline-none"
+           value={formData.email}
+      onChange= {(e) => setFormData({ ...formData, email: e.target.value})}
+            className="bg-white text-black p-3 focus:outline-none"
             placeholder="Email Address"
+            required
           />
           <input
-            className="bg-white text-black p-3 rounded focus:outline-none"
+           value={formData.location}
+      onChange= {(e) => setFormData({ ...formData, location: e.target.value})}
+            className="bg-white text-black p-3 focus:outline-none"
             placeholder="Location of Plot"
+            required
           />
         </div>
-        <Button className="bg-[#F55252] text-white !py-2 px-8 rounded-lg font-semibold hover:bg-[#e04a4a] transition-colors w-full max-w-xs">
-          GET A FREE QUOTE
+        <Button 
+        type="submit"
+        className="bg-[#F55252] text-white !py-2 px-8 font-semibold hover:bg-[#e04a4a] transition-colors border-none w-full"
+        disabled={loading}>
+          {loading ? (
+        <>
+        <LoadingAnimation className='w-5 h-5 mx-auto'/>
+        </>
+        ) : "GET A FREE QUOTE"}
         </Button>
+        </form>
         <p className="text-xs mt-6 text-gray-400 text-center">
           By proceeding, you agree to our{' '}
           <a href="#" className="underline hover:text-gray-300">terms</a> &{' '}

@@ -276,6 +276,15 @@ export default function QualityCommitmentSection() {
             height={600}
             className="w-full object-cover md:object-contain"
           />
+          <div>
+            <Image
+            src="/RedWarrenty.svg"
+            alt="warranty"
+            width={20}
+            height={20}
+            className="w-[115px] h-[115px] md:w-[100px] md:h-[100px] ml-55 -mt-28 md:ml-200 md:-mt-25"
+            />
+          </div>
         </div>
 
         {/* Features Row */}

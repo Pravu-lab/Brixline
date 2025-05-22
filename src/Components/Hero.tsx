@@ -6,6 +6,7 @@ import Image from "next/image";
 import GetQuote from "./GetQuote";
 import Header from "./Header";
 import { Button, Description, MainTitle } from "./Tag";
+import { LoadingAnimation } from "./loader/LoadingAnimation";
 
 
 const Hero = () => {
@@ -13,6 +14,7 @@ const Hero = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const lastScrollY = useRef(0);
+  const [loading,setLoading] = useState(false)
 
       const { scrollYProgress } = useScroll({
         target: ref,
@@ -46,13 +48,19 @@ const Hero = () => {
       // }, []);
 
       const handleDownload = () => {
+        setLoading(true);
         const link = document.createElement("a");
         link.href = "/pdf/Brixline.pdf";
         link.download = "Brixline-Brochure.pdf";
+
+
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
+
+        setTimeout(() => setLoading(false), 1000)
       };
+
       
   return (
     <div className="relative">
@@ -134,45 +142,56 @@ const Hero = () => {
             />
  </div>
 
-          <Button type="button" onClick={handleDownload} className="bg-[#F55252] flex justify-evenly items-center w-[242px] border-[#F55252] mt-[50px] cursor-pointer z-50">
-            <span className="text-sm text-white leading-[100%] font-bold">
-              DOWNLOAD BROCHURE
-            </span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="34"
-              height="34"
-              viewBox="0 0 34 34"
-              fill="none"
-            >
-              <g clipPath="url(#clip0_266_1416)">
-                <path
-                  d="M24.0416 17L16.9706 24.0711L9.89951 17"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M16.9706 9.92893V24.0711"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_266_1416">
-                  <rect
-                    width="24"
-                    height="24"
-                    fill="white"
-                    transform="translate(33.9411 17) rotate(135)"
-                  />
-                </clipPath>
-              </defs>
-            </svg>
-          </Button>
+         <Button 
+  type="button" 
+  onClick={handleDownload} 
+  className="bg-[#F55252] flex justify-center items-center gap-2 w-[242px] border-[#F55252] mt-[50px] cursor-pointer z-50"
+  disabled={loading}
+>
+  {loading ? (
+    <LoadingAnimation className="w-5 h-5" />
+  ) : (
+    <>
+      <span className="text-sm text-white leading-[100%] font-bold">
+        DOWNLOAD BROCHURE
+      </span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="34"
+        height="34"
+        viewBox="0 0 34 34"
+        fill="none"
+      >
+        <g clipPath="url(#clip0_266_1416)">
+          <path
+            d="M24.0416 17L16.9706 24.0711L9.89951 17"
+            stroke="white"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M16.9706 9.92893V24.0711"
+            stroke="white"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </g>
+        <defs>
+          <clipPath id="clip0_266_1416">
+            <rect
+              width="24"
+              height="24"
+              fill="white"
+              transform="translate(33.9411 17) rotate(135)"
+            />
+          </clipPath>
+        </defs>
+      </svg>
+    </>
+  )}
+</Button>
         </div>
 
         {/* Decorative Image for Desktop */}

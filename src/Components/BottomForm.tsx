@@ -1,6 +1,7 @@
 "use client";
 import { useThankYou } from "@/contexts/ThankYouContext";
 import React, { useState } from "react";
+import { LoadingAnimation } from "./loader/LoadingAnimation";
 
 interface BottomFormProps {
   classname?: string;
@@ -67,6 +68,7 @@ const BottomForm: React.FC<BottomFormProps> = () => {
           >
             <input
               type="text"
+              required
               placeholder="First Name"
               aria-label="First Name"
               className="w-full p-4 border border-[#DADBE4] outline-none focus:ring-2 focus:ring-[#A9ADB7] bg-white text-black"
@@ -77,6 +79,7 @@ const BottomForm: React.FC<BottomFormProps> = () => {
             />
             <input
               type="tel"
+              required
               placeholder="Contact Number"
               aria-label="Contact Number"
               className="w-full p-4 border border-[#DADBE4] outline-none focus:ring-2 focus:ring-[#A9ADB7] bg-white text-black"
@@ -86,6 +89,7 @@ const BottomForm: React.FC<BottomFormProps> = () => {
             />
             <input
               type="email"
+              required
               placeholder="Email Address"
               aria-label="Email Address"
               className="w-full p-4 border border-[#DADBE4] outline-none focus:ring-2 focus:ring-[#A9ADB7] bg-white text-black"
@@ -96,6 +100,7 @@ const BottomForm: React.FC<BottomFormProps> = () => {
             />
             <input
               type="text"
+              required
               placeholder="Location of Plot"
               aria-label="Location of Plot"
               className="w-full p-4 border border-[#DADBE4] outline-none focus:ring-2 focus:ring-[#A9ADB7] bg-white text-black"
@@ -108,12 +113,17 @@ const BottomForm: React.FC<BottomFormProps> = () => {
             <div className="md:col-span-2 flex justify-center mt-4">
               <button
                 type="submit"
-                disabled={
-                  isLoading
-                }
-                className="w-full max-w-sm bg-[#F55252] text-sm text-white py-4 font-bold transition flex justify-center items-center gap-2.5 disabled:opacity-50"
+  
+                onSubmit={handleSubmit}
+                disabled={isLoading}
+                className="w-full max-w-sm bg-[#F55252] text-sm text-white py-4 font-bold transition flex justify-center items-center gap-2.5 "
+                onClick={handleSubmit}
               >
-                GET A FREE QUOTE
+                {isLoading  ? ( 
+                  <LoadingAnimation/>
+                )
+                 : 
+                 "GET A FREE QUOTE" }
               </button>
             </div>
           </form>

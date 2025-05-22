@@ -1,6 +1,8 @@
 "use client";
-import { useThankYou } from "@/contexts/ThankYouContext";
-import React, { useState } from "react";
+import { useThankYou } from '@/contexts/ThankYouContext';
+import { kMaxLength } from 'buffer';
+import React, { useState } from 'react';
+import { LoadingAnimation } from './loader/LoadingAnimation';
 
 interface GetQuoteProps {
   classname?: string;
