@@ -18,18 +18,25 @@ const BottomForm: React.FC<BottomFormProps> = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    const { name, contact, email, location } = formData;
+    if (!name.trim() || !contact.trim() || !email.trim() || !location.trim()) {
+      alert("Please fill out all the fields.");
+      return;
+    }
+
     setIsLoading(true);
 
     try {
-      // const response = await fetch("/api/submit", {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   body: JSON.stringify(formData),
-      // });
+      const response = await fetch("/api/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-      // if (!response.ok) throw new Error("Submission failed");
+      if (!response.ok) throw new Error("Submission failed");
 
       setFormData({ name: "", contact: "", email: "", location: "" });
       showThankYouWithTimeout();
@@ -41,11 +48,11 @@ const BottomForm: React.FC<BottomFormProps> = () => {
     }
   };
 
-   const handleContactChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-          // Remove all non-digit characters
-          const numericValue = e.target.value.replace(/\D/g, '');
-          setFormData({ ...formData, contact: numericValue });
-      };
+  const handleContactChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // Remove all non-digit characters
+    const numericValue = e.target.value.replace(/\D/g, "");
+    setFormData({ ...formData, contact: numericValue });
+  };
 
   return (
     <div className="bg-black">
@@ -64,7 +71,9 @@ const BottomForm: React.FC<BottomFormProps> = () => {
               aria-label="First Name"
               className="w-full p-4 border border-[#DADBE4] outline-none focus:ring-2 focus:ring-[#A9ADB7] bg-white text-black"
               value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, name: e.target.value })
+              }
             />
             <input
               type="tel"
@@ -81,7 +90,9 @@ const BottomForm: React.FC<BottomFormProps> = () => {
               aria-label="Email Address"
               className="w-full p-4 border border-[#DADBE4] outline-none focus:ring-2 focus:ring-[#A9ADB7] bg-white text-black"
               value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, email: e.target.value })
+              }
             />
             <input
               type="text"
@@ -89,15 +100,18 @@ const BottomForm: React.FC<BottomFormProps> = () => {
               aria-label="Location of Plot"
               className="w-full p-4 border border-[#DADBE4] outline-none focus:ring-2 focus:ring-[#A9ADB7] bg-white text-black"
               value={formData.location}
-              onChange={(e) => setFormData({ ...formData, location: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, location: e.target.value })
+              }
             />
 
             <div className="md:col-span-2 flex justify-center mt-4">
               <button
                 type="submit"
-                disabled={isLoading}
+                disabled={
+                  isLoading
+                }
                 className="w-full max-w-sm bg-[#F55252] text-sm text-white py-4 font-bold transition flex justify-center items-center gap-2.5 disabled:opacity-50"
-                // onClick={handleSubmit}
               >
                 GET A FREE QUOTE
               </button>
@@ -105,7 +119,8 @@ const BottomForm: React.FC<BottomFormProps> = () => {
           </form>
 
           <p className="w-full max-w-sm mx-auto text-center font-normal text-xs text-white mt-3">
-            By proceeding, you are indicating that you have read and agree to our
+            By proceeding, you are indicating that you have read and agree to
+            our
             <a href="#" className="font-normal underline">
               {" "}
               terms of use{" "}

@@ -16,6 +16,72 @@ export default function JoinUsAsProfessionals() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
+  const [currentSlide, setCurrentSlide] = useState(2);
+
+  const carouselVariants = {
+    active: {
+      x: 0,
+      opacity: 1,
+      transition: { 
+        duration: 0.5,
+        ease: [0.4, 0, 0.2, 1],
+      }
+    },
+    previous: {
+      x: '-100%',
+      opacity: 0,
+      transition: {
+        duration: 0.5,
+        ease: [0.4, 0, 0.2, 1]
+      }
+    },
+    next: {
+      x: '100%',
+      opacity: 0,
+      transition: {
+        duration: 0.5,
+        ease: [0.4, 0, 0.2, 1]
+      }
+    }
+  };
+
+  const testimonials = [
+    {
+      quote: "First testimonial content. They have a very different approach with construction technology.",
+      name: "Mr. First",
+      role: "Contractor with Brixline",
+      experience: "+5 Years Experience",
+      projects: "+50 Projects"
+    },
+    {
+      quote: "Second testimonial content. Never seen such efficient project management before.",
+      name: "Mr. Second",
+      role: "Contractor with Brixline",
+      experience: "+6 Years Experience",
+      projects: "+60 Projects"
+    },
+    {
+      quote: "They have a very different approach with construction technology, making them more trustworthy.",
+      name: "Mr. RajShekhar",
+      role: "Contractor with Brixline",
+      experience: "+8 Years Experience",
+      projects: "+85 Projects"
+    },
+    {
+      quote: "Fourth testimonial content. Amazing collaboration and support system.",
+      name: "Mr. Fourth",
+      role: "Contractor with Brixline",
+      experience: "+7 Years Experience",
+      projects: "+75 Projects"
+    },
+    {
+      quote: "Fifth testimonial content. Best platform for professional growth.",
+      name: "Mr. Fifth",
+      role: "Contractor with Brixline",
+      experience: "+9 Years Experience",
+      projects: "+90 Projects"
+    }
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,6 +123,18 @@ export default function JoinUsAsProfessionals() {
       setError("Failed to submit form. Please try again.");
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handlePrev = () => {
+    if (currentSlide > 0) {
+      setCurrentSlide(prev => prev - 1);
+    }
+  };
+
+  const handleNext = () => {
+    if (currentSlide < testimonials.length - 1) {
+      setCurrentSlide(prev => prev + 1);
     }
   };
   return (
@@ -312,33 +390,60 @@ export default function JoinUsAsProfessionals() {
           </div>
         </section>
       </div>
+     
       <section className="mx-auto max-w-screen-xl text-black px-3 md:px-10 py-16 tracking-wide">
-        <div className="flex flex-col lg:flex-row justify-center items-center gap-[30px] md:gap-[68px] ">
+        <div className="flex flex-col lg:flex-row justify-center items-center gap-[30px] md:gap-[68px]">
           <div className="flex flex-col justify-center items-center md:items-start gap-3">
-            <p className="uppercase text-[#F55252] text-sm md:text-base font-bold leading-[140%] text-center md:text-left">
+            <p className="uppercase text-[#F55252] text-sm md:text-base font-bold leading-[140%]">
               professionals
             </p>
             <h2 className="text-black text-3xl md:text-5xl leading-[120%] font-medium text-center md:text-left">
               Meet Our <br /> Professionals
             </h2>
             <p className="text-[#131313] text-sm md:text-base font-medium leading-[140%] text-center md:text-left">
-              We guarantee a hassle free experience{" "}
-              <br className="block md:hidden" /> for our{" "}
-              <br className="hidden md:block" /> contractors as well.
+              We guarantee a hassle free experience for our contractors as well.
             </p>
           </div>
+
           <div className="flex flex-col md:flex-row justify-start items-center gap-7 h-full">
-            <div className="flex justify-center items-center">
+            {/* Image Carousel */}
+            <div className="relative w-[216px] h-[269px] md:w-[277px] md:h-[345px] overflow-hidden">
+          {testimonials.map((_, idx) => (
+            <motion.div
+              key={idx}
+              initial={false}
+              animate={
+                idx === currentSlide ? 'active' :
+                idx < currentSlide ? 'previous' : 'next'
+              }
+              variants={carouselVariants}
+              className="absolute inset-0"
+            >
               <Image
                 src="/svg/worker-image.svg"
                 alt="worker-image"
-                width={277}
-                height={345}
-                className="w-[216px] h-[269px] md:w-[277px] md:h-[345px]"
+                fill
+                className="object-contain"
+                style={{ transform: 'translateZ(0)' }} // Force GPU acceleration
               />
-            </div>
-            <div className="flex flex-col gap-10 md:gap-20 w-inherit md:w-[380px] ">
-              <div>
+            </motion.div>
+          ))}
+        </div>
+
+            {/* Text Carousel */}
+            <div className="flex flex-col gap-10 md:gap-20 w-full md:w-[380px]">
+              <div className="relative h-[200px] overflow-hidden">
+              {testimonials.map((testimonial, idx) => (
+              <motion.div
+                key={idx}
+                initial={false}
+                animate={
+                  idx === currentSlide ? 'active' :
+                  idx < currentSlide ? 'previous' : 'next'
+                }
+                variants={carouselVariants}
+                className="absolute inset-0"
+              >
                 <div className="flex justify-center md:justify-start items-start">
                   <Image
                     src="/svg/quotes.svg"
@@ -348,40 +453,52 @@ export default function JoinUsAsProfessionals() {
                     className="w-[38px] h-[27px]"
                   />
                 </div>
-
                 <p className="text-black text-center md:text-left text-base font-medium leading-[160%] pt-5 md:pt-2 px-5 md:px-0">
-                  They have a very different approach with the construction,
-                  I’ve never seen any other company use technology with
-                  construction, It makes them more trustworthy.
+                  {testimonial.quote}
                 </p>
                 <div className="flex flex-row justify-center md:justify-start items-start gap-2 md:gap-5 text-black text-xs leading-[160%] font-normal pt-5 md:pt-2 h-12">
-                  <div className="flex flex-col justify-center md:justify-start items-start gap-1">
-                    <p>Mr. RajShekhar</p>
-                    <p>Contractor with Brixline</p>
+                  <div className="flex flex-col gap-1">
+                    <p>{testimonial.name}</p>
+                    <p>{testimonial.role}</p>
                   </div>
                   <div className="w-px border-r border-black/10 self-stretch" />
-                  <div className="flex flex-col justify-center md:justify-start items-start gap-1">
-                    <p>+8 Years Total Experience</p>
-                    <p>+85 Total Projects</p>
-                    <p></p>
+                  <div className="flex flex-col gap-1">
+                    <p>{testimonial.experience}</p>
+                    <p>{testimonial.projects}</p>
                   </div>
                 </div>
+              </motion.div>
+            ))}
               </div>
+
+              {/* Navigation Buttons */}
               <div className="flex justify-center md:justify-start items-center gap-4">
-                <Image
-                  src="/svg/left-button.svg"
-                  alt="left-button"
-                  width={52}
-                  height={52}
-                  className="w-[52px] h-[52px]"
-                />
-                <Image
-                  src="/svg/right-button.svg"
-                  alt="right-button"
-                  width={52}
-                  height={52}
-                  className="w-[52px] h-[52px]"
-                />
+                <button
+                  onClick={handlePrev}
+                  disabled={currentSlide === 0}
+                  className={`${currentSlide === 0 ? "opacity-50 cursor-not-allowed" : ""}`}
+                >
+                  <Image
+                    src="/svg/left-button.svg"
+                    alt="left-button"
+                    width={52}
+                    height={52}
+                    className="w-[52px] h-[52px]"
+                  />
+                </button>
+                <button
+                  onClick={handleNext}
+                  disabled={currentSlide === testimonials.length - 1}
+                  className={`${currentSlide === testimonials.length - 1 ? "opacity-50 cursor-not-allowed" : ""}`}
+                >
+                  <Image
+                    src="/svg/right-button.svg"
+                    alt="right-button"
+                    width={52}
+                    height={52}
+                    className="w-[52px] h-[52px]"
+                  />
+                </button>
               </div>
             </div>
           </div>

@@ -192,9 +192,9 @@ export default function HowitWorksSlider() {
               />
             </div>
             {/* Slide Number */}
-            <div className="mt-4 text-black text-sm font-bold rotate-[270deg]">
+            {/* <div className="mt-4 text-black text-sm font-bold rotate-[270deg]">
               {String(currentSlide).padStart(2, "0")} / {slidesData.length.toString().padStart(2, "0")}
-            </div>
+            </div> */}
           </div>
 
           {/* Heading */}
