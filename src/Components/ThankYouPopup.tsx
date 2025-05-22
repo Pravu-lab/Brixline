@@ -67,7 +67,7 @@ const ThankYouPopup = () => {
   if (!showThankYou) return null;
 
   return (
-    <div className="fixed inset-0 bg-[rgba(0,0,0,0.9)] flex items-center justify-center z-50 p-4">
+    <div className="fixed inset-0 bg-[rgba(0,0,0,0.9)] flex items-center justify-center z-1000 p-4">
       <div className="bg-white p-6 max-w-md text-center text-black overflow-hidden">
         <div className="flex justify-center mb-6">
           <img 

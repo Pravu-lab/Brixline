@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { Button } from './Tag';
 import Image from 'next/image';
+import { useThankYou } from '@/contexts/ThankYouContext';
+import Link from 'next/link';
 
 type PackageKey = 'basic_package' | 'standard_package' | 'premium_package' | 'elite_package';
 
@@ -30,6 +32,15 @@ export default function MobileQuotePopup({
 }: MobileQuotePopupProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const selectRef = useRef<HTMLSelectElement | null>(null);
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    number:"",
+    email: "",
+    location: "",
+  });
+  const { showThankYouWithTimeout } = useThankYou();
 
   // Hiding navbar when popup opens
   useEffect(() => {
@@ -87,6 +98,50 @@ export default function MobileQuotePopup({
       // document.body.style.overflow = '';
     };
   }, []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError("");
+    
+
+    if (!formData.name || !formData.number || !formData.email || !formData.location) {
+      setError("Please fill in all required fields");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const response = await fetch("/api/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Submission failed");
+      }
+
+      
+      setFormData({ name: "", number: "", email: "", location: ""});
+      if (response.ok) {
+        showThankYouWithTimeout();
+      }
+    } catch (err) {
+      setError("Failed to submit form. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+    const handleContactChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+          const numericValue = e.target.value.replace(/\D/g, '');
+          if(numericValue.length < 14 ){
+              setFormData({ ...formData, number: numericValue });
+          }
+      };
 
   const handleClose = () => setOpen(false);
 
@@ -191,31 +246,48 @@ export default function MobileQuotePopup({
     </h2>
 
     {/* Full-width form inputs */}
-    <div className="w-[115%] grid gap-4 mb-10">
-      <input 
-        className="w-full bg-white text-black p-3 focus:outline-none" 
-        placeholder="Name" 
+    <form className='w-[115%]' onSubmit={handleSubmit}>
+    <div className=" grid gap-4 mb-10 ">
+      <input
+      type="text"
+      value={formData.name}
+      onChange={(e) => setFormData({ ...formData, name : e.target.value })} 
+      className="w-full bg-white text-black p-3 focus:outline-none" 
+      placeholder="Name"
+      required
       />
       <input 
-        className="w-full bg-white text-black p-3 focus:outline-none" 
-        placeholder="Number" 
+      type="tel"
+      value={formData.number}
+      onChange = {handleContactChange}
+      className="w-full bg-white text-black p-3 focus:outline-none" 
+      placeholder="Number"
+      required
       />
-      <input 
-        className="w-full bg-white text-black p-3 focus:outline-none" 
-        placeholder="Email"
+      <input
+      value={formData.email}
+      onChange= {(e) => setFormData({ ...formData, email: e.target.value})}
+      className="w-full bg-white text-black p-3 focus:outline-none" 
+      placeholder="Email"
+      required
       />
-      <input 
+      <input
+      value={formData.location}
+      onChange={(e) => setFormData({ ...formData, location: e.target.value})} 
         className="w-full bg-white text-black p-3 focus:outline-none" 
         placeholder="Plot Location"
       />
     </div>
 
     {/* Full-width button */}
-    <Button 
-      className="w-[115%] cursor-pointer bg-[#F55252] text-white px-4 py-3 font-bold hover:bg-[#e04a4a] transition-colors border-none"
+    
+    <Button
+      className="w-[100%] cursor-pointer bg-[#F55252] text-white px-4 py-3 font-bold hover:bg-[#e04a4a] transition-colors border-none"
     >
-      GET A FREE QUOTE
+      {loading ? "Assessing..." : "GET A FREE QUOTE"}
     </Button>
+    
+    </form>
 
     <p className="text-xs mt-3 text-gray-400 text-center">
       By proceeding, you agree to our{' '}
