@@ -1,6 +1,7 @@
 "use client";
 import FooterSection from "@/Components/Footer";
 import Header from "@/Components/Header";
+import { LoadingAnimation } from "@/Components/loader/LoadingAnimation";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -126,6 +127,12 @@ export default function JoinUsAsProfessionals() {
     }
   };
 
+  const handleContactChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      const numericValue = e.target.value.replace(/\D/g, "");
+      if(numericValue.length <= 13){
+        setFormData({ ...formData, phone: numericValue });
+      }
+    };
   const handlePrev = () => {
     if (currentSlide > 0) {
       setCurrentSlide(prev => prev - 1);
@@ -251,7 +258,7 @@ export default function JoinUsAsProfessionals() {
                   type="tel"
                   placeholder="Phone*"
                   value={formData.phone}
-                onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                onChange={handleContactChange}
                   className="w-full p-4 border !text-black placeholder:text-black font-normal border-black/10 focus:outline-none focus:ring-2 focus:ring-gray-100"
                   required
                 />
@@ -285,7 +292,9 @@ export default function JoinUsAsProfessionals() {
                   loading ? "opacity-50 cursor-not-allowed" : "hover:bg-red-600"
                 }`}
               >
-                {loading ? "Submitting..." : "Submit"}
+                {loading ? (
+                  <LoadingAnimation className="w-3 h-3 mx-auto"/>
+                ) : "Submit"}
               </button>
               </div>
             </form>

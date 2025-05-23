@@ -51,10 +51,12 @@ const GetQuote: React.FC<GetQuoteProps> = ({ classname }) => {
     }
   };
 
-  const handleContactChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const numericValue = e.target.value.replace(/\D/g, "");
-    setFormData({ ...formData, contact: numericValue });
-  };
+   const handleContactChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      const numericValue = e.target.value.replace(/\D/g, "");
+      if(numericValue.length <= 13){
+        setFormData({ ...formData, contact: numericValue });
+      }
+    };
 
   return (
     <div className={`relative w-full flex justify-end ${classname}`}>

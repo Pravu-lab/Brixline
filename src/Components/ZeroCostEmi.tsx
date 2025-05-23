@@ -17,7 +17,7 @@ const ZeroCostEmi = () => {
   const [formData, setFormData] = useState({
     name: "",
     contact: "",
-    city: ""
+    location: ""
   });
 
   useEffect(() => {
@@ -41,7 +41,7 @@ const ZeroCostEmi = () => {
     setError("")
     setIsLoading(true);
 
-    if (!formData.name || !formData.city) {
+    if (!formData.name || !formData.location) {
       setError("Please fill in all required fields");
       return;
     }
@@ -57,7 +57,7 @@ const ZeroCostEmi = () => {
 
       if (!response.ok) throw new Error("Submission failed");
 
-      setFormData({ name: "", contact: "", city: "" });
+      setFormData({ name: "", contact: "", location: "" });
       if (response.ok) {
         showThankYouWithTimeout();
       }
@@ -70,9 +70,11 @@ const ZeroCostEmi = () => {
   };
 
    const handleContactChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const numericValue = e.target.value.replace(/\D/g, '');
-    setFormData({ ...formData, contact: numericValue });
-  };
+      const numericValue = e.target.value.replace(/\D/g, "");
+      if(numericValue.length <= 12){
+        setFormData({ ...formData, contact: numericValue });
+      }
+    };
 
   return (
     <div className="relative">
@@ -193,7 +195,7 @@ const ZeroCostEmi = () => {
                   FREE CONSULTATION
                 </span> */}
                 <h3 className="font-['Helvetica Neue'] text-center text-[28px] md:text-3xl font-light text-white mt-0 md:mt-2">
-                  Join the waitlist by <br/> filling out the form.                   
+                  Join the waitlist by <br/> filling out the form.
                 </h3>
                 <form className="mt-2 md:mt-8 space-y-4" onSubmit={handleSubmit}>
                   <input
@@ -216,9 +218,9 @@ const ZeroCostEmi = () => {
                   />
                   <div className="relative">
                      <select
-                  value={formData.city}
+                  value={formData.location}
                   onChange={(e) =>
-                    setFormData({ ...formData, city: e.target.value })
+                    setFormData({ ...formData, location: e.target.value })
                   }
                   required
                   className="bg-white w-full p-4 border !text-black placeholder:text-black font-normal border-black/10 appearance-none focus:outline-none focus:ring-2 focus:ring-gray-100 "
