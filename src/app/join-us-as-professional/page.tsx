@@ -2,12 +2,14 @@
 import FooterSection from "@/Components/Footer";
 import Header from "@/Components/Header";
 import { LoadingAnimation } from "@/Components/loader/LoadingAnimation";
+import { useThankYou } from "@/contexts/ThankYouContext";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function JoinUsAsProfessionals() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { showThankYouWithTimeout } = useThankYou();
   const [formData, setFormData] = useState({
     name: "",
     city: "",
@@ -120,6 +122,9 @@ export default function JoinUsAsProfessionals() {
 
       setSuccess(true);
       setFormData({ name: "", city: "", phone: "", email: "" });
+      if(response.ok){
+        showThankYouWithTimeout();
+      }
     } catch (err) {
       setError("Failed to submit form. Please try again.");
     } finally {
