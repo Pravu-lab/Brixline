@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import Header from "./Header";
 import { Description, MainTitle } from "./Tag";
+import { LoadingAnimation } from "./loader/LoadingAnimation";
 
 const ZeroCostEmi = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -202,6 +203,7 @@ const ZeroCostEmi = () => {
                     className="w-full p-4 border border-[#DADBE4] outline-none focus:ring-2 focus:ring-[#A9ADB7] bg-white text-black"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    required
                   />
                   <input
                     type="tel"
@@ -210,6 +212,7 @@ const ZeroCostEmi = () => {
                     className="w-full p-4 border border-[#DADBE4] outline-none focus:ring-2 focus:ring-[#A9ADB7] bg-white text-black"
                     value={formData.contact}
                     onChange={handleContactChange}
+                    required
                   />
                   <div className="relative">
                      <select
@@ -231,7 +234,7 @@ const ZeroCostEmi = () => {
                     alt="arrow-down"
                     width={24}
                     height={24}
-                    className="w-6 h-6"
+                    className="w-6 h-6" 
                   />
                     </div>
                   </div>
@@ -240,7 +243,9 @@ const ZeroCostEmi = () => {
                     disabled={isLoading}
                     className="w-full bg-[#F55252] text-sm text-white py-4 font-bold transition flex justify-center items-center gap-2.5 mt-4 md:mt-7 disabled:opacity-50"
                   >
-                    GET A FREE QUOTE
+                    { isLoading ? (
+                      <LoadingAnimation className="w-4 h-4 mx-auto"/>
+                    ) : "GET A FREE QUOTE"}
                   </button>
                 </form>
                 <p className="text-center font-normal text-xs text-[#fff] mt-0 md:mt-3 pt-4">

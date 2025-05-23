@@ -9,6 +9,7 @@ interface CustomInputProps {
     type?: string;
     icon?: React.ReactNode;
     disabled?: boolean;
+    required?: boolean;
 }
 
 const CustomInput: React.FC<CustomInputProps> = ({
@@ -19,6 +20,7 @@ const CustomInput: React.FC<CustomInputProps> = ({
     type = 'text',
     icon,
     disabled = false,
+    required = true,
 }) => {
     return (
         <div className="w-full">
@@ -30,6 +32,7 @@ const CustomInput: React.FC<CustomInputProps> = ({
                     onChange={onChange}
                     placeholder={placeholder}
                     disabled={disabled}
+                    required={required}
                     className={`w-full text-black placeholder-gray-700 font-thin pr-10 pl-3 py-4 border bg-white border-gray-300 rounded-none shadow-xs focus:outline-none  disabled:bg-gray-100`}
                 />
                 {icon && (

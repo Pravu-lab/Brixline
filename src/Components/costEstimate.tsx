@@ -34,25 +34,25 @@ export default function EstimatePage() {
 
     const packages = [
       {
-        name: 'Basic Package - ₹1,900/sq.ft (incl. GST)',
+        name: 'BASIC PACKAGE - ₹1,819/sq.ft (incl. GST)',
         builtUpRate: 1900,
         carParkingRate: 1235,
         balconyRate: 1235,
       },
       {
-        name: 'Classic Package - ₹1,900/sq.ft (incl. GST)',
+        name: 'STANDARD PACKAGE - ₹1,999/sq.ft (incl. GST)',
         builtUpRate: 1900,
         carParkingRate: 1235,
         balconyRate: 1235,
       },
       {
-        name: 'Premium Package - ₹2,350/sq.ft (incl. GST)',
+        name: 'PREMIUM PACKAGE - ₹2,220/sq.ft (incl. GST)',
         builtUpRate: 2350,
         carParkingRate: 1235,
         balconyRate: 1235,
       },
       {
-        name: 'Royal Package - ₹2,350/sq.ft (incl. GST)',
+        name: 'ELITE PACKAGE - ₹2,415/sq.ft (incl. GST)',
         builtUpRate: 2350,
         carParkingRate: 1235,
         balconyRate: 1235,

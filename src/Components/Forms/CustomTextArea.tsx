@@ -9,7 +9,8 @@ interface CustomTextAreaProps {
     type?: string;
     icon?: React.ReactNode;
     disabled?: boolean;
-    rows?: number
+    rows?: number,
+    required?: boolean,
 }
 
 const CustomTextArea: React.FC<CustomTextAreaProps> = ({
@@ -20,6 +21,7 @@ const CustomTextArea: React.FC<CustomTextAreaProps> = ({
     icon,
     disabled = false,
     rows,
+    required = true,
 }) => {
     return (
         <div className="flex flex-col gap-1 w-full">
@@ -31,6 +33,7 @@ const CustomTextArea: React.FC<CustomTextAreaProps> = ({
                     placeholder={placeholder}
                     disabled={disabled}
                     rows={rows}
+                    required
                     className={`w-full text-black placeholder-gray-700 font-thin pr-10 pl-3 py-2 border bg-white border-gray-300 rounded-none shadow-xs focus:outline-none  disabled:bg-gray-100`}
                 />
                 {icon && (

@@ -113,7 +113,7 @@ const BottomForm: React.FC<BottomFormProps> = () => {
             <div className="md:col-span-2 flex justify-center mt-4">
               <button
                 type="submit"
-  
+
                 onSubmit={handleSubmit}
                 disabled={isLoading}
                 className="w-full max-w-sm bg-[#F55252] text-sm text-white py-4 font-bold transition flex justify-center items-center gap-2.5 "

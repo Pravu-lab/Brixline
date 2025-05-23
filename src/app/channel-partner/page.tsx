@@ -5,6 +5,7 @@ import FooterSection from "@/Components/Footer";
 import Header from "@/Components/Header";
 import Image from "next/image";
 import { useThankYou } from "@/contexts/ThankYouContext";
+import { LoadingAnimation } from "@/Components/loader/LoadingAnimation";
 
 export default function ChannelPartnerPage() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -200,7 +201,11 @@ export default function ChannelPartnerPage() {
                         : "hover:bg-red-600"
                     }`}
                   >
-                    {loading ? "Submitting..." : "Submit"}
+                    {loading ? (
+                      <>
+                      <LoadingAnimation className="mx-auto w-3 h-3"/>
+                      </>
+                    ): "Submit"}
                   </button>
                 </div>
               </form>

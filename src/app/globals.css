@@ -258,7 +258,7 @@ h1 {
 .stat-value {
   font-size: 3rem;
   font-weight: bolder;
-  font-family: sans-serif;
+  font-family: "Bitter", sans-serif;
   margin-bottom: 5px;
   color: #f55252;
 }
@@ -289,6 +289,7 @@ h1 {
   
   .stat-value {
     font-size: 2rem;
+    font-family: 'Bitter', serif !important;
   }
   
   .stat-label {
@@ -310,3 +311,5 @@ h1 {
   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
     background-color: #e04a4a; /* Darker red on hover */
   }
+
+

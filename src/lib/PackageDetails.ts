@@ -39,7 +39,7 @@ export const PackageDetails = {
         title: "Bathroom",
         items: [
           "Ceramic Wall Dado - Up to 7 ft height – ₹40/- per sq ft.",
-          "Sanitaryware & CP Fittings - Up to ₹32,000/- (Cera,Hindware, Parryware or equivalent)",
+          "Sanitaryware & CP Fittings - Up to ₹32,000/- per bathroom (Cera,Hindware, Parryware or equivalent)",
           "CPVC Pipes - APL Apollo or equivalent",
           "Bathroom Doors - Waterproof flush doors or WPC (Wood Polymer Composite) upto ₹11,000/-  ",
           "Bathroom Flooring - Anti-Skid Tiles upto ₹40/- per sq ft."
@@ -128,7 +128,7 @@ export const PackageDetails = {
         title: "Bathroom",
         items: [
           "Ceramic Wall Dado - Up to 7 ft height – ₹60/- per sq ft.",
-          "Sanitaryware & CP Fittings - Up to ₹50,000/- (Cera, Jaquar, Hindware or equivalent)",
+          "Sanitaryware & CP Fittings - Up to ₹50,000/- per bathroom(Cera, Jaquar, Hindware or equivalent)",
           "CPVC Pipes - APL Apollo or approved equivalent",
           "Bathroom Doors - Waterproof flush doors or WPC (Wood Polymer Composite) upto ₹11,000/- ",
           "Bathroom Flooring - Anti-Skid Tiles upto ₹60/- per sq ft."
@@ -218,7 +218,7 @@ export const PackageDetails = {
         title: "Bathroom",
         items: [
           "Ceramic Wall Dado (up to 7' height) - upto ₹80/- per sq ft.",
-          "Sanitaryware & CP Fittings - upto ₹70,000/- (Jaquar, ESSCO or equivalent)",
+          "Sanitaryware & CP Fittings - upto ₹70,000/- per bathroom(Jaquar, ESSCO or equivalent)",
           "CPVC Pipes - APL Apollo or approved equivalent",
           "Bathroom Doors - Waterproof flush doors or WPC(Wood Polymer Composite) upto ₹14,000/- ",
           "Solar Water Heater Provision",
@@ -311,7 +311,7 @@ export const PackageDetails = {
         title: "Bathroom",
         items: [
           "Ceramic Wall Dado (up to 7' height) - upto ₹90/- per sq ft.",
-          "Sanitaryware & CP Fittings - upto ₹80,000/- (Jaguar, Kohler or equivalent)",
+          "Sanitaryware & CP Fittings - upto ₹80,000/- per bathroom(Jaguar, Kohler or equivalent)",
           "CPVC Pipes - APL Apollo or equivalent",
           "Bathroom Doors - Waterproof flush doors or WPC(Wood Polymer Composite) upto ₹22,000/-",
           "Solar Water Heater Provision",
