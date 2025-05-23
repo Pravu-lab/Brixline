@@ -280,7 +280,7 @@ const clearExistingTimeout = () => {
                         <svg width="13" height="18" viewBox="0 0 13 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M13 0.25H3L1 10.25H4.5L0 17.75L11 9.25H7L13 0.25Z" fill="#F55252"/>
 </svg>
-                        <span className="inter-tight-font">ZERO COST EMI</span>
+                        <span className="inter-tight-font">LOW COST EMI</span>
                         
                     </Link>
                 </nav>
@@ -339,12 +339,12 @@ const clearExistingTimeout = () => {
                 <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
             )}
         </Link>
-        <Link href="/cost-estimator" className={`flex items-center justify-between ${pathname === '/cost-estimator' ? 'text-[#F55252]' : ''}`}>
+        {/* <Link href="/cost-estimator" className={`flex items-center justify-between ${pathname === '/cost-estimator' ? 'text-[#F55252]' : ''}`}>
             COST ESTIMATOR
             {pathname === '/cost-estimator' && (
                 <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
             )}
-        </Link>
+        </Link> */}
        <div className="relative">
   <button 
     onClick={() => setMoreDropdownOpen(!moreDropdownOpen)}
@@ -394,7 +394,7 @@ const clearExistingTimeout = () => {
   )}
 </div>
         <Link href="/zero-cost-emi" className={`flex items-center justify-between ${pathname === '/zero-cost-emi' ? 'text-[#F55252]' : ''}`}>
-            ZERO COST EMI
+            LOW COST EMI
             {pathname === '/zero-cost-emi' && (
                 <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
             )}
