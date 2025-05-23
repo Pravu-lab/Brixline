@@ -16,8 +16,9 @@ const HomeCalculation = () => {
       </Description>
 
 <Link href="/cost-estimator">
- <Button className="text-white border-white w-[320px] cursor-pointer">
-        CALCULATE NOW
+ <Button className="text-white border-white w-[320px]"
+ disabled>
+        COMING SOON
       </Button>
 </Link>
      

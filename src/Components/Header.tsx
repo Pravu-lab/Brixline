@@ -184,12 +184,12 @@ const clearExistingTimeout = () => {
                         <span className="inter-tight-font">HOW IT WORKS</span>
                     </Link>
 
-                    <Link href="/cost-estimator" className={`flex items-center gap-1 ${pathname === '/cost-estimator' ? 'text-[#F55252]' : ''}`}>
+                    {/* <Link href="/cost-estimator" className={`flex items-center gap-1 ${pathname === '/cost-estimator' ? 'text-[#F55252]' : ''}`}>
                         {pathname === '/cost-estimator' && (
                             <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
                         )}
                         <span className="inter-tight-font">COST ESTIMATOR</span>
-                    </Link>
+                    </Link> */}
 
 <div
   className="relative"
